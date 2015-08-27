@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFileWindowTitle" xml:space="preserve">
+    <value>Create a new song...</value>
+  </data>
+  <data name="ArchiveContainsUnsupportedFiles" xml:space="preserve">
+    <value>Selected archive contains unknown file types.</value>
+  </data>
+  <data name="ArchiveFilesFailedToSaveHeader" xml:space="preserve">
+    <value>Failed to save following songs because an error was encountered while saving them:
+
+</value>
+  </data>
+  <data name="ArchivePathNullException" xml:space="preserve">
+    <value>Specify archive path before reading or writing to drive</value>
+  </data>
+  <data name="DefaultGroupName" xml:space="preserve">
+    <value>No group</value>
+  </data>
+  <data name="FileImportProblemsHeader" xml:space="preserve">
+    <value>Following files were not imported because of respective reasons:</value>
+  </data>
+  <data name="FileImportProblemsTitle" xml:space="preserve">
+    <value>File import</value>
+  </data>
+  <data name="FileNotFoundOnDisk" xml:space="preserve">
+    <value>File was not found on the drive</value>
+  </data>
+  <data name="FilePropertiesViewer_DifferentValues" xml:space="preserve">
+    <value>Different values</value>
+  </data>
+  <data name="HelpFilePath" xml:space="preserve">
+    <value>Pomoc.chm</value>
+  </data>
+  <data name="ImportCommentSng" xml:space="preserve">
+    <value>Imported from .sng</value>
+  </data>
+  <data name="ImportCommentTxt" xml:space="preserve">
+    <value>Imported from .txt</value>
+  </data>
+  <data name="ImportCommentZip" xml:space="preserve">
+    <value>Imported from an archive</value>
+  </data>
+  <data name="ImportGroupName" xml:space="preserve">
+    <value>Imported songs</value>
+  </data>
+  <data name="InvalidFileFormat" xml:space="preserve">
+    <value>Unknown file format or empty file</value>
+  </data>
+  <data name="MessageBoxes_ApplicationAlreadyRunningInfo_Message" xml:space="preserve">
+    <value>The application is already running. If you want to  restart the application close the running instance first.</value>
+  </data>
+  <data name="MessageBoxes_ApplicationAlreadyRunningInfo_Title" xml:space="preserve">
+    <value>Application is already running</value>
+  </data>
+  <data name="MessageBoxes_ArchiveContentsChangedExternally_Message" xml:space="preserve">
+    <value>Opened archive has been modified by another application. Do you want to reload it? (all non-saved changes will be discarded)</value>
+  </data>
+  <data name="MessageBoxes_ArchiveContentsChangedExternally_Title" xml:space="preserve">
+    <value>Archive changed by external application</value>
+  </data>
+  <data name="MessageBoxes_ArchiveDoesNotExist_Message" xml:space="preserve">
+    <value>Archive "{0}" doesn't exist</value>
+  </data>
+  <data name="MessageBoxes_ArchiveDoesNotExist_Title" xml:space="preserve">
+    <value>Open error</value>
+  </data>
+  <data name="MessageBoxes_ArchiveNameChangedExternally_Message" xml:space="preserve">
+    <value>Opened archive has been moved or its name has been changed by another application. Do you want to update the archive path?</value>
+  </data>
+  <data name="MessageBoxes_ArchiveNameChangedExternally_Title" xml:space="preserve">
+    <value>Archive changed by external application</value>
+  </data>
+  <data name="MessageBoxes_FirstStartQuestion_Message" xml:space="preserve">
+    <value>This is the first start of TTS or the settings have been reset. Do you want to view help?</value>
+  </data>
+  <data name="MessageBoxes_FirstStartQuestion_Title" xml:space="preserve">
+    <value>First start</value>
+  </data>
+  <data name="MessageBoxes_GroupIsInvalidInfo_Message" xml:space="preserve">
+    <value>Supplied group name is invalid. Group name can't contain any of the following characters:</value>
+  </data>
+  <data name="MessageBoxes_GroupIsInvalidInfo_Title" xml:space="preserve">
+    <value>Invalid group name</value>
+  </data>
+  <data name="MessageBoxes_InvalidArchiveInfo_Message" xml:space="preserve">
+    <value>Selected archive has invalid format or contains unsupported file types. If this archive does contain valid song files you can use the import tool to add them to a new archive.</value>
+  </data>
+  <data name="MessageBoxes_InvalidArchiveInfo_Title" xml:space="preserve">
+    <value>Unknown archive format</value>
+  </data>
+  <data name="MessageBoxes_NameIsInvalidInfo_Message" xml:space="preserve">
+    <value>Supplied song name is invalid. Group name can't contain any of the following characters:</value>
+  </data>
+  <data name="MessageBoxes_NameIsInvalidInfo_Title" xml:space="preserve">
+    <value>Invalid song name</value>
+  </data>
+  <data name="MessageBoxes_NameIsTakenInfo_Message" xml:space="preserve">
+    <value>Selected name is already taken</value>
+  </data>
+  <data name="MessageBoxes_NameIsTakenInfo_Title" xml:space="preserve">
+    <value>Invalid name</value>
+  </data>
+  <data name="MessageBoxes_NothingToExportInfo_Message" xml:space="preserve">
+    <value>Nothing was selected to export.</value>
+  </data>
+  <data name="MessageBoxes_NothingToExportInfo_Title" xml:space="preserve">
+    <value>Export error</value>
+  </data>
+  <data name="MessageBoxes_NothingToImportInfo_Message" xml:space="preserve">
+    <value>Nothing was selected to import.</value>
+  </data>
+  <data name="MessageBoxes_NothingToImportInfo_Title" xml:space="preserve">
+    <value>Import error</value>
+  </data>
+  <data name="MessageBoxes_RemoveSelectedFiles_Message" xml:space="preserve">
+    <value>Are you sure you want to remove selected songs?</value>
+  </data>
+  <data name="MessageBoxes_RemoveSelectedFiles_Title" xml:space="preserve">
+    <value>Delete song files</value>
+  </data>
+  <data name="MessageBoxes_SaveChangesToOpenedArchive_Message" xml:space="preserve">
+    <value>Save changes to the opened archive before continuing? Unsaved changes will be lost.</value>
+  </data>
+  <data name="MessageBoxes_SaveChangesToOpenedArchive_Title" xml:space="preserve">
+    <value>Save changes to opened archive</value>
+  </data>
+  <data name="MessageBoxes_SaveChangesToOpenedFile_Message" xml:space="preserve">
+    <value>Save changes to the opened song before continuing? Unsaved changes will be lost.</value>
+  </data>
+  <data name="MessageBoxes_SaveChangesToOpenedFile_Title" xml:space="preserve">
+    <value>Save changes to opened song</value>
+  </data>
+  <data name="NameContainsInvalidChars" xml:space="preserve">
+    <value>Supplied name contains invalid characters:</value>
+  </data>
+  <data name="NameIsAlreadyTaken" xml:space="preserve">
+    <value>Supplied name is already taken</value>
+  </data>
+  <data name="NameIsEmpty" xml:space="preserve">
+    <value>Supplied name is empty</value>
+  </data>
+  <data name="NewArchiveDefaultName" xml:space="preserve">
+    <value>New archive</value>
+  </data>
+  <data name="NewFileDefaultName" xml:space="preserve">
+    <value>New song</value>
+  </data>
+  <data name="RenameFileWindowTitle" xml:space="preserve">
+    <value>Rename song...</value>
+  </data>
+  <data name="SearchboxDefaultString" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="SongFileArchive_ToString_Format" xml:space="preserve">
+    <value>Title: {0}, Modified: {1}, Added: {2}, Comment: {3}</value>
+  </data>
+  <data name="SongFileArchive_ToString_MissingComment" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="UnsupportedFileFormat" xml:space="preserve">
+    <value>Unsupported file type</value>
+  </data>
+</root>

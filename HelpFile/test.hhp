@@ -1,0 +1,18 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Pomoc.chm
+Contents file=TOC.hhc
+Default topic=1_InfoOgolne.html
+Display compile progress=No
+Language=0x415 Polish (Poland)
+Title=Pomoc programu TextToScreen
+
+
+[FILES]
+1_InfoOgolne.html
+2_CoNowego.html
+5_Hotkeys.html
+6_Ustawienia.html
+
+[INFOTYPES]
+
