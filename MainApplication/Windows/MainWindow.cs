@@ -609,7 +609,8 @@ namespace TextToScreen.Windows
             if (!Ustawienia.SelectedSettingSet._FirstStartCompleted)
                 new Thread(() =>
                 {
-                    Thread.Sleep(500);
+                    while(!Visible)
+                        Thread.Sleep(200);
                     Invoke(new Action(OnFirstStart));
                 }).Start();
         }
