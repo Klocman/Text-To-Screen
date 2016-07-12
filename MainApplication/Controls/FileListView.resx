@@ -187,7 +187,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -202,7 +202,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton_new.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 22</value>
+    <value>51, 22</value>
   </data>
   <data name="toolStripButton_new.Text" xml:space="preserve">
     <value>New</value>
@@ -214,7 +214,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton_del.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
+    <value>60, 22</value>
   </data>
   <data name="toolStripButton_del.Text" xml:space="preserve">
     <value>Delete</value>
@@ -226,7 +226,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton_ren.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 22</value>
+    <value>70, 22</value>
   </data>
   <data name="toolStripButton_ren.Text" xml:space="preserve">
     <value>Rename</value>
@@ -238,7 +238,7 @@
     <value>Magenta</value>
   </data>
   <data name="propertiesToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 22</value>
+    <value>80, 22</value>
   </data>
   <data name="propertiesToolStripButton.Text" xml:space="preserve">
     <value>Properties</value>
@@ -253,7 +253,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton_ref.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>66, 20</value>
   </data>
   <data name="toolStripButton_ref.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -306,6 +306,30 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="searchBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="searchBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="searchBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 20</value>
+  </data>
+  <data name="searchBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;searchBox1.Name" xml:space="preserve">
+    <value>searchBox1</value>
+  </data>
+  <data name="&gt;&gt;searchBox1.Type" xml:space="preserve">
+    <value>Klocman.Controls.SearchBox, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;searchBox1.Parent" xml:space="preserve">
+    <value>searchSubsection</value>
+  </data>
+  <data name="&gt;&gt;searchBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -334,7 +358,7 @@
     <value>searchSubsection</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="searchInsideFilesCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 47</value>
@@ -364,10 +388,13 @@
     <value>searchSubsection</value>
   </data>
   <data name="&gt;&gt;searchInsideFilesCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="groupFilterComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="groupFilterComboBox.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="groupFilterComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>223, 45</value>
@@ -391,7 +418,7 @@
     <value>searchSubsection</value>
   </data>
   <data name="&gt;&gt;groupFilterComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -424,33 +451,6 @@
     <value>searchSubsection</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="searchBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="searchBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="searchBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
-  </data>
-  <data name="searchBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="searchBox.Text" xml:space="preserve">
-    <value>Search...</value>
-  </data>
-  <data name="&gt;&gt;searchBox.Name" xml:space="preserve">
-    <value>searchBox</value>
-  </data>
-  <data name="&gt;&gt;searchBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;searchBox.Parent" xml:space="preserve">
-    <value>searchSubsection</value>
-  </data>
-  <data name="&gt;&gt;searchBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="searchSubsection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -517,49 +517,49 @@
     <value>110, 17</value>
   </metadata>
   <data name="otwórzToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="otwórzToolStripMenuItem.Text" xml:space="preserve">
     <value>Open</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="usuńToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="usuńToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
   <data name="duplikujToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="duplikujToolStripMenuItem.Text" xml:space="preserve">
     <value>Duplicate</value>
   </data>
   <data name="zmieńNazwęToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="zmieńNazwęToolStripMenuItem.Text" xml:space="preserve">
     <value>Rename</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="kopiujDoSchowkaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="kopiujDoSchowkaToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
   </data>
   <data name="właściwościToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="właściwościToolStripMenuItem.Text" xml:space="preserve">
     <value>Properties</value>
   </data>
   <data name="listViewContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 148</value>
+    <value>170, 148</value>
   </data>
   <data name="&gt;&gt;listViewContextMenuStrip.Name" xml:space="preserve">
     <value>listViewContextMenuStrip</value>
@@ -580,31 +580,31 @@
     <value>nameColumn</value>
   </data>
   <data name="&gt;&gt;nameColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;modifiedColumn.Name" xml:space="preserve">
     <value>modifiedColumn</value>
   </data>
   <data name="&gt;&gt;modifiedColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;createdColumn.Name" xml:space="preserve">
     <value>createdColumn</value>
   </data>
   <data name="&gt;&gt;createdColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;commentColumn.Name" xml:space="preserve">
     <value>commentColumn</value>
   </data>
   <data name="&gt;&gt;commentColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;groupColumn.Name" xml:space="preserve">
     <value>groupColumn</value>
   </data>
   <data name="&gt;&gt;groupColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.7.0.39975, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripButton_new.Name" xml:space="preserve">
     <value>toolStripButton_new</value>

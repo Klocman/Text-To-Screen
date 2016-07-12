@@ -266,9 +266,6 @@
   <data name="RenameFileWindowTitle" xml:space="preserve">
     <value>Rename song...</value>
   </data>
-  <data name="SearchboxDefaultString" xml:space="preserve">
-    <value>Search...</value>
-  </data>
   <data name="SongFileArchive_ToString_Format" xml:space="preserve">
     <value>Title: {0}, Modified: {1}, Added: {2}, Comment: {3}</value>
   </data>

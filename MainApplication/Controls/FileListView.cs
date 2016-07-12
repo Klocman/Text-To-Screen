@@ -44,8 +44,6 @@ namespace TextToScreen.Controls
             };
             createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
             modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
-
-            searchBox.Text = Localisation.SearchboxDefaultString;
         }
 
         public bool FileListFocused => objectListView1.Focused;
@@ -138,7 +136,7 @@ namespace TextToScreen.Controls
         public void FocusSearchBox()
         {
             Focus();
-            searchBox.Focus();
+            searchBox1.FocusSearchBox();
         }
 
         public void PopulateItems(IEnumerable<SongFileEntry> source)
@@ -236,14 +234,15 @@ namespace TextToScreen.Controls
 
         private bool CheckStringMatch(SongFileEntry entry)
         {
-            if (StringTools.StringContainsFilter(entry.Name, searchBox.Text))
+            var searchString = searchBox1.SearchString;
+            if (StringTools.StringContainsFilter(entry.Name, searchString))
                 return true;
 
             if (searchInsideFilesCheckBox.CheckState.ToBool())
             {
-                if (StringTools.StringContainsFilter(entry.Comment, searchBox.Text))
+                if (StringTools.StringContainsFilter(entry.Comment, searchString))
                     return true;
-                if (StringTools.StringContainsFilter(entry.Contents, searchBox.Text))
+                if (StringTools.StringContainsFilter(entry.Contents, searchString))
                     return true;
             }
 
@@ -384,8 +383,9 @@ namespace TextToScreen.Controls
 
         private void RefreshListNoSearch()
         {
-            if (!searchBox.Focused)
-                searchBox.Text = Localisation.SearchboxDefaultString;
+            if (!searchBox1.ContainsFocus)
+                searchBox1.ClearSearchBox();
+
             objectListView1.SetObjects(groupFilterComboBox.SelectedIndex > 0
                 ? LastFileSource.Where(CheckGroupMatch)
                 : LastFileSource);
@@ -393,25 +393,15 @@ namespace TextToScreen.Controls
 
         private void RefreshListWithSearch()
         {
-            if (string.IsNullOrEmpty(searchBox.Text) || searchBox.Text.Equals(Localisation.SearchboxDefaultString))
-            {
+            var searchString = searchBox1.SearchString;
+
+            if (string.IsNullOrEmpty(searchString))
                 RefreshListNoSearch();
-            }
             else
-            {
                 objectListView1.SetObjects(LastFileSource.Where(x => CheckGroupMatch(x) && CheckStringMatch(x)));
-            }
         }
-
-        private void searchBox_Enter(object sender, EventArgs e)
-        {
-            if (searchBox.Text.Equals(Localisation.SearchboxDefaultString))
-                searchBox.Text = string.Empty;
-            else
-                searchBox.SelectAll();
-        }
-
-        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        
+        private void searchBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Alt)
                 return;
@@ -433,30 +423,15 @@ namespace TextToScreen.Controls
                     SelectNone();
                     break;
 
-                case Keys.A:
-                    if (e.Control)
-                        searchBox.SelectAll();
-                    else
-                        e.Handled = false;
-                    break;
-
                 default:
                     e.Handled = false;
                     break;
             }
         }
 
-        private void searchBox_KeyUp(object sender, KeyEventArgs e)
+        private void searchBox1_SearchTextChanged(Klocman.Controls.SearchBox arg1, EventArgs arg2)
         {
             RefreshListWithSearch();
-        }
-
-        private void searchBox_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(searchBox.Text))
-            {
-                RefreshListNoSearch();
-            }
         }
 
         private void searchInsideFilesCheckBox_CheckedChanged(object sender, EventArgs e)
