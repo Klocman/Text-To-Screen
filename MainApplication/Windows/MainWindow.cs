@@ -15,9 +15,11 @@ using Klocman.Forms.Tools;
 using Klocman.Subsystems;
 using Klocman.Tools;
 using Microsoft.Win32;
-using TextToScreen.CustomControls;
+using TextToScreen.Controls;
+using TextToScreen.ImportExport;
+using TextToScreen.Misc;
 using TextToScreen.Properties;
-using TextToScreen.SpecialClasses;
+using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
 {

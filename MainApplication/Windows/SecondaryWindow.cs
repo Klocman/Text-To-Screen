@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms;
-using TextToScreen.CustomControls;
+using TextToScreen.Controls;
 using TextToScreen.Properties;
 
 namespace TextToScreen.Windows

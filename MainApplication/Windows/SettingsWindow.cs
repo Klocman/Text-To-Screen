@@ -2,8 +2,8 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using Klocman.Extensions;
+using TextToScreen.Misc;
 using TextToScreen.Properties;
-using TextToScreen.SpecialClasses;
 
 namespace TextToScreen.Windows
 {

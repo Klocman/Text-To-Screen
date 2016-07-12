@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using TextToScreen.SpecialClasses;
+using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
 {

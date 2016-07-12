@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using TextToScreen.Misc;
 using TextToScreen.Properties;
-using TextToScreen.SpecialClasses;
+using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
 {

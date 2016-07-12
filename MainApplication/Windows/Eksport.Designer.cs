@@ -1,4 +1,4 @@
-﻿using TextToScreen.CustomControls;
+﻿using TextToScreen.Controls;
 
 namespace TextToScreen.Windows
 {

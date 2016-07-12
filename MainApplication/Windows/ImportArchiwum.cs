@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Ionic.Zip;
+using TextToScreen.Misc;
 using TextToScreen.Properties;
-using TextToScreen.SpecialClasses;
+using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
 {

@@ -1,4 +1,6 @@
-﻿namespace TextToScreen.Windows
+﻿using TextToScreen.Controls;
+
+namespace TextToScreen.Windows
 {
     sealed partial class PropertiesWindow
     {
@@ -30,7 +32,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertiesWindow));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.filePropertiesViewer1 = new TextToScreen.CustomControls.FilePropertiesViewer();
+            this.filePropertiesViewer1 = new FilePropertiesViewer();
             this.buttonAccept = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -97,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private CustomControls.FilePropertiesViewer filePropertiesViewer1;
+        private FilePropertiesViewer filePropertiesViewer1;
         private System.Windows.Forms.Button buttonAccept;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOk;

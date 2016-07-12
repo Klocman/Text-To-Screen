@@ -1,4 +1,6 @@
-﻿namespace TextToScreen.Windows
+﻿using TextToScreen.Controls;
+
+namespace TextToScreen.Windows
 {
     partial class DodajPlik
     {
@@ -31,7 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodajPlik));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.filePropertiesViewer1 = new TextToScreen.CustomControls.FilePropertiesViewer();
+            this.filePropertiesViewer1 = new FilePropertiesViewer();
             this.SuspendLayout();
             // 
             // button1
@@ -82,7 +84,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private CustomControls.FilePropertiesViewer filePropertiesViewer1;
+        private FilePropertiesViewer filePropertiesViewer1;
 
     }
 }

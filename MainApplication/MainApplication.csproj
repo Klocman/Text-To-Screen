@@ -124,18 +124,47 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="CustomControls\FileEditorTabs.cs" />
-    <Compile Include="CustomControls\FilePropertiesViewerEventArgs.cs" />
-    <Compile Include="CustomControls\MultilineListBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomControls\FilePropertiesViewer.cs">
+    <Compile Include="Controls\FileEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\FilePropertiesViewer.Designer.cs">
+    <Compile Include="Controls\FileEditor.Designer.cs">
+      <DependentUpon>FileEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileEditorTabs.cs" />
+    <Compile Include="Controls\FileListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileListView.Designer.cs">
+      <DependentUpon>FileListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilePropertiesViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilePropertiesViewer.Designer.cs">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\TextDisplayBoxChangePusher.cs" />
+    <Compile Include="Controls\FilePropertiesViewerEventArgs.cs" />
+    <Compile Include="Controls\MultilineListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PreviewScreens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PreviewScreens.Designer.cs">
+      <DependentUpon>PreviewScreens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextDisplayBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextDisplayBox.Designer.cs">
+      <DependentUpon>TextDisplayBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextDisplayBoxChangePusher.cs" />
+    <Compile Include="ImportExport\FileImporter.cs" />
+    <Compile Include="ImportExport\FileImporterResult.cs" />
+    <Compile Include="Misc\MessageBoxes.cs" />
+    <Compile Include="Misc\NameChangeResult.cs" />
+    <Compile Include="Misc\StartupAction.cs" />
     <Compile Include="Properties\Localisation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,11 +180,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SpecialClasses\FileImporter.cs" />
-    <Compile Include="SpecialClasses\NameChangeResult.cs" />
-    <Compile Include="SpecialClasses\SongFileCollection.cs" />
-    <Compile Include="SpecialClasses\SongFileEntry.cs" />
-    <Compile Include="StartupAction.cs" />
+    <Compile Include="SongFile\SongFileArchive.cs" />
+    <Compile Include="SongFile\SongFileCollection.cs" />
+    <Compile Include="SongFile\SongFileEntry.cs" />
     <Compile Include="Windows\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,33 +190,6 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Ustawienia.cs" />
-    <Compile Include="SpecialClasses\FileImporterResult.cs" />
-    <Compile Include="SpecialClasses\MessageBoxes.cs" />
-    <Compile Include="CustomControls\FileEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\FileEditor.Designer.cs">
-      <DependentUpon>FileEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\PreviewScreens.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\PreviewScreens.Designer.cs">
-      <DependentUpon>PreviewScreens.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SpecialClasses\SongFileArchive.cs" />
-    <Compile Include="CustomControls\FileListView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\FileListView.Designer.cs">
-      <DependentUpon>FileListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomControls\TextDisplayBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomControls\TextDisplayBox.Designer.cs">
-      <DependentUpon>TextDisplayBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\DodajPlik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,20 +239,36 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Ustawienia.settings</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomControls\FileEditor.pl.resx">
+    <EmbeddedResource Include="Controls\FileEditor.pl.resx">
       <DependentUpon>FileEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\FileListView.pl.resx">
+    <EmbeddedResource Include="Controls\FileEditor.resx">
+      <DependentUpon>FileEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FileListView.pl.resx">
       <DependentUpon>FileListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\FilePropertiesViewer.pl.resx">
+    <EmbeddedResource Include="Controls\FileListView.resx">
+      <DependentUpon>FileListView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilePropertiesViewer.pl.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\FilePropertiesViewer.resx">
+    <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\PreviewScreens.pl.resx">
+    <EmbeddedResource Include="Controls\PreviewScreens.pl.resx">
       <DependentUpon>PreviewScreens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PreviewScreens.resx">
+      <DependentUpon>PreviewScreens.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextDisplayBox.resx">
+      <DependentUpon>TextDisplayBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.pl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,22 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\FileListView.resx">
-      <DependentUpon>FileListView.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\FileEditor.resx">
-      <DependentUpon>FileEditor.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\PreviewScreens.resx">
-      <DependentUpon>PreviewScreens.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\TextDisplayBox.resx">
-      <DependentUpon>TextDisplayBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\DodajPlik.pl.resx">
@@ -407,6 +407,7 @@
       <Name>KlocTools</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
   </PropertyGroup>

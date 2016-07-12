@@ -236,9 +236,9 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("OpenRecent")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::TextToScreen.StartupAction GeneralStartAction {
+        public global::TextToScreen.Misc.StartupAction GeneralStartAction {
             get {
-                return ((global::TextToScreen.StartupAction)(this["GeneralStartAction"]));
+                return ((global::TextToScreen.Misc.StartupAction)(this["GeneralStartAction"]));
             }
             set {
                 this["GeneralStartAction"] = value;

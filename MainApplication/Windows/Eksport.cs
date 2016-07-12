@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TextToScreen.SpecialClasses;
+using TextToScreen.Misc;
+using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
 {
