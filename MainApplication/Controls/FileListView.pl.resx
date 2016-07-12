@@ -112,16 +112,13 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="resource.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="objectListView1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -131,31 +128,112 @@
   <data name="toolStripButton_save.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
   </data>
-  <data name="toolStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="searchBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="searchSubsection.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="listViewContextMenuStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="nameColumn.Text" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="modifiedColumn.Text" xml:space="preserve">
+    <value>Zmodyfikowany</value>
+  </data>
+  <data name="createdColumn.Text" xml:space="preserve">
+    <value>Dodany</value>
+  </data>
+  <data name="commentColumn.Text" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="groupColumn.Text" xml:space="preserve">
+    <value>Grupa</value>
+  </data>
+  <data name="objectListView1.MenuLabelColumns" xml:space="preserve">
+    <value>Kolumny</value>
+  </data>
+  <data name="objectListView1.MenuLabelLockGroupingOn" xml:space="preserve">
+    <value>Block grouping by '{0}'</value>
+  </data>
+  <data name="objectListView1.MenuLabelSelectColumns" xml:space="preserve">
+    <value>Wybierz kolumny...</value>
+  </data>
+  <data name="objectListView1.MenuLabelTurnOffGroups" xml:space="preserve">
+    <value>Wyłącz grupy</value>
+  </data>
+  <data name="objectListView1.MenuLabelUnlockGroupingOn" xml:space="preserve">
+    <value>Unblock grouping by '{0}'</value>
+  </data>
+  <data name="toolStripButton_new.Text" xml:space="preserve">
+    <value>Nowy</value>
+  </data>
+  <data name="toolStripButton_new.ToolTipText" xml:space="preserve">
+    <value>Nowa piosenka</value>
+  </data>
+  <data name="toolStripButton_del.Text" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="toolStripButton_del.ToolTipText" xml:space="preserve">
+    <value>Usuń wybrane piosenki na stałe</value>
+  </data>
+  <data name="toolStripButton_ren.Text" xml:space="preserve">
+    <value>Zmień nazwę</value>
+  </data>
+  <data name="toolStripButton_ren.ToolTipText" xml:space="preserve">
+    <value>Zmień nazwę wybranej piosenki</value>
+  </data>
+  <data name="propertiesToolStripButton.Text" xml:space="preserve">
+    <value>Własciwości</value>
+  </data>
+  <data name="propertiesToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Pokaż własciwości wybranej piosenki</value>
+  </data>
+  <data name="toolStripButton_ref.Text" xml:space="preserve">
+    <value>Odświerz</value>
+  </data>
+  <data name="toolStripButton_ref.ToolTipText" xml:space="preserve">
+    <value>Ponownie załaduj archiwum z dysku</value>
+  </data>
+  <data name="toolStripButton_save.Text" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="toolStripButton_save.ToolTipText" xml:space="preserve">
+    <value>Zapisz zmiany w otwartym archiwum</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Filtr grupy:</value>
+  </data>
+  <data name="searchInsideFilesCheckBox.Text" xml:space="preserve">
+    <value>Szukaj wewnątrz</value>
+  </data>
+  <data name="searchInsideFilesCheckBox.ToolTip" xml:space="preserve">
+    <value>Szukaj w tekstach piosenek</value>
+  </data>
+  <data name="groupFilterComboBox.ToolTip" xml:space="preserve">
+    <value>Pokaż piosenki tylko z tej grupy</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Wyszyść</value>
+  </data>
+  <data name="button1.ToolTip" xml:space="preserve">
+    <value>Wyszyść wszystkie filtry</value>
+  </data>
+  <data name="searchSubsection.Text" xml:space="preserve">
+    <value>Szukaj</value>
+  </data>
+  <data name="otwórzToolStripMenuItem.Text" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="usuńToolStripMenuItem.Text" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="duplikujToolStripMenuItem.Text" xml:space="preserve">
+    <value>Duplikuj</value>
+  </data>
+  <data name="zmieńNazwęToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zmień nazwę</value>
+  </data>
+  <data name="kopiujDoSchowkaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiuj do schowka</value>
+  </data>
+  <data name="właściwościToolStripMenuItem.Text" xml:space="preserve">
+    <value>Własciwości</value>
   </data>
 </root>

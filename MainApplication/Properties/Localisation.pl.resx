@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddFileWindowTitle" xml:space="preserve">
     <value>Utwórz nową piosenkę...</value>
@@ -265,9 +265,6 @@
   </data>
   <data name="RenameFileWindowTitle" xml:space="preserve">
     <value>Zmień nazwę piosenki...</value>
-  </data>
-  <data name="SearchboxDefaultString" xml:space="preserve">
-    <value>Szukaj...</value>
   </data>
   <data name="SongFileArchive_ToString_Format" xml:space="preserve">
     <value>Tytuł: {0}, Modyfikowany: {1}, Dodany: {2}, Komentarz: {3}</value>
