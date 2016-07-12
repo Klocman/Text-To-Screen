@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -232,16 +233,16 @@ namespace TextToScreen.Controls
             return entry.Group.Equals(filter);
         }
 
-        private bool CheckStringMatch(SongFileEntry entry)
+        private bool CheckStringMatch(SongFileEntry entry, string searchString)
         {
-            var searchString = searchBox1.SearchString;
             if (StringTools.StringContainsFilter(entry.Name, searchString))
+                return true;
+
+            if (StringTools.StringContainsFilter(entry.Comment, searchString))
                 return true;
 
             if (searchInsideFilesCheckBox.CheckState.ToBool())
             {
-                if (StringTools.StringContainsFilter(entry.Comment, searchString))
-                    return true;
                 if (StringTools.StringContainsFilter(entry.Contents, searchString))
                     return true;
             }
@@ -398,7 +399,7 @@ namespace TextToScreen.Controls
             if (string.IsNullOrEmpty(searchString))
                 RefreshListNoSearch();
             else
-                objectListView1.SetObjects(LastFileSource.Where(x => CheckGroupMatch(x) && CheckStringMatch(x)));
+                objectListView1.SetObjects(LastFileSource.Where(x => CheckGroupMatch(x) && CheckStringMatch(x, searchString)));
         }
         
         private void searchBox1_KeyDown(object sender, KeyEventArgs e)
