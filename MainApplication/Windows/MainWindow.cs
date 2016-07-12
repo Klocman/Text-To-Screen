@@ -33,8 +33,9 @@ namespace TextToScreen.Windows
         public MainWindow()
         {
             InitializeComponent();
+            
+            Opacity = 0;
 
-            SuspendLayout();
             // Needs to be called after the generated code because of a bug with generated code ordering
             // (minsize gets placed before splitter distance is set, resulting in exception)
             splitContainer1.Panel1MinSize = 300;
@@ -60,27 +61,35 @@ namespace TextToScreen.Windows
 
             SetupHotkeys();
 
-            switch (Ustawienia.SelectedSettingSet.GeneralStartAction)
-            {
-                case StartupAction.OpenRecent:
-                    if (Ustawienia.SelectedSettingSet.AutoRecentItems.Count > 0)
-                        OpenArchive(
-                            Ustawienia.SelectedSettingSet.AutoRecentItems[
-                                Ustawienia.SelectedSettingSet.AutoRecentItems.Count - 1]);
-                    break;
-
-                case StartupAction.OpenSelected:
-                    if (File.Exists(Ustawienia.SelectedSettingSet.GeneralStartPath))
-                        OpenArchive(Ustawienia.SelectedSettingSet.GeneralStartPath);
-                    break;
-            }
-            ResumeLayout();
-
             SystemEvents.SessionEnding += (x, y) =>
             {
                 if (!AskAndSaveIfNeeded())
                     y.Cancel = true;
             };
+
+            SystemEvents.DisplaySettingsChanged += (sender, args) =>
+            {
+                EnsureWindowsAreVisible();
+            };
+        }
+
+        private void EnsureWindowsAreVisible()
+        {
+            var mscr = Screen.FromControl(this);
+
+            if (!mscr.WorkingArea.Contains(Location))
+            {
+                WindowState = FormWindowState.Normal;
+                Location = mscr.WorkingArea.Location;
+            }
+
+            var rscr = Screen.FromControl(_remoteDisplayWindow);
+
+            if (!rscr.WorkingArea.Contains(_remoteDisplayWindow.Location))
+            {
+                _remoteDisplayWindow.WindowState = FormWindowState.Normal;
+                _remoteDisplayWindow.Location = rscr.WorkingArea.Location;
+            }
         }
 
         private bool IsAlwaysOnTop
@@ -643,6 +652,8 @@ namespace TextToScreen.Windows
             _remoteDisplayWindow.WindowState = Ustawienia.SelectedSettingSet.AutoOknoDoceloweMaximized
                 ? FormWindowState.Maximized
                 : FormWindowState.Normal;
+
+            EnsureWindowsAreVisible();
         }
 
         private void RecentItem_Click(object sender, EventArgs e)
@@ -905,7 +916,9 @@ namespace TextToScreen.Windows
                 _remoteDisplayWindow.Dispose();
 
             _remoteDisplayWindow = new SecondaryWindow();
-            
+
+            _remoteDisplayWindow.Opacity = 0;
+
             _remoteDisplayWindow.Show();
             _remoteDisplayWindow.SetupTextDisplayBoxes(previewScreens.TopDisplayBox, previewScreens.BottomDisplayBox);
 
@@ -1070,6 +1083,28 @@ namespace TextToScreen.Windows
         private void zmieńNazwęToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fileListView.RenameSelected();
+        }
+
+        private void MainWindow_Shown(object sender, EventArgs e)
+        {
+            Application.DoEvents();
+            Opacity = 1;
+            _remoteDisplayWindow.Opacity = 1;
+
+            switch (Ustawienia.SelectedSettingSet.GeneralStartAction)
+            {
+                case StartupAction.OpenRecent:
+                    if (Ustawienia.SelectedSettingSet.AutoRecentItems.Count > 0)
+                        OpenArchive(
+                            Ustawienia.SelectedSettingSet.AutoRecentItems[
+                                Ustawienia.SelectedSettingSet.AutoRecentItems.Count - 1]);
+                    break;
+
+                case StartupAction.OpenSelected:
+                    if (File.Exists(Ustawienia.SelectedSettingSet.GeneralStartPath))
+                        OpenArchive(Ustawienia.SelectedSettingSet.GeneralStartPath);
+                    break;
+            }
         }
     }
 }

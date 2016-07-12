@@ -34,9 +34,9 @@ namespace TextToScreen.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.fileListView = new FileListView();
-            this.fileEditor = new FileEditor();
-            this.previewScreens = new PreviewScreens();
+            this.fileListView = new TextToScreen.Controls.FileListView();
+            this.fileEditor = new TextToScreen.Controls.FileEditor();
+            this.previewScreens = new TextToScreen.Controls.PreviewScreens();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweArchiwumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,11 +142,11 @@ namespace TextToScreen.Windows
             this.fileListView.Name = "fileListView";
             this.fileListView.SaveButtonEnabled = true;
             this.fileListView.StopRefreshingList = false;
-            this.fileListView.ButtonClickDelete += new System.Action<FileListView>(this.fileListView_ButtonClick_Delete);
-            this.fileListView.ButtonClickNew += new System.Action<FileListView>(this.fileListView_ButtonClick_New);
-            this.fileListView.ButtonClickRefresh += new System.Action<FileListView>(this.fileListView_ButtonClick_Refresh);
-            this.fileListView.ButtonClickSave += new System.Action<FileListView>(this.fileListView_ButtonClick_Save);
-            this.fileListView.FileOpened += new System.Action<FileListView, SongFileEntry>(this.fileListView_FileOpened);
+            this.fileListView.ButtonClickDelete += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_Delete);
+            this.fileListView.ButtonClickNew += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_New);
+            this.fileListView.ButtonClickRefresh += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_Refresh);
+            this.fileListView.ButtonClickSave += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_Save);
+            this.fileListView.FileOpened += new System.Action<TextToScreen.Controls.FileListView, TextToScreen.SongFile.SongFileEntry>(this.fileListView_FileOpened);
             this.fileListView.EnabledChanged += new System.EventHandler(this.fileListView_EnabledChanged);
             this.fileListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.fileListView_DragDrop);
             this.fileListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.fileListView_DragEnter);
@@ -159,13 +159,13 @@ namespace TextToScreen.Windows
             this.fileEditor.SelectedFontFamily = null;
             this.fileEditor.SelectedFontSize = 1;
             this.fileEditor.SelectedFontStyle = System.Drawing.FontStyle.Regular;
-            this.fileEditor.FileContentsChanged += new System.Action<FileEditor, SongFileEntry>(this.fileEditor_LoadedFileChanged);
-            this.fileEditor.FileSaved += new System.Action<FileEditor, SongFileEntry>(this.fileEditor_FileSaved);
-            this.fileEditor.LoadedFileChanged += new System.Action<FileEditor, SongFileEntry>(this.fileEditor_LoadedFileChanged);
-            this.fileEditor.SelectedFontChanged += new System.Action<FileEditor>(this.fileEditor_SelectedFontChanged);
-            this.fileEditor.SelectedStringAccepted += new System.Action<FileEditor, string>(this.fileEditor_SelectedStringAccepted);
-            this.fileEditor.SelectedStringChanged += new System.Action<FileEditor, string>(this.fileEditor_SelectedStringChanged);
-            this.fileEditor.SelectedStringCleared += new System.Action<FileEditor>(this.fileEditor_SelectedStringCleared);
+            this.fileEditor.FileContentsChanged += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_LoadedFileChanged);
+            this.fileEditor.FileSaved += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_FileSaved);
+            this.fileEditor.LoadedFileChanged += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_LoadedFileChanged);
+            this.fileEditor.SelectedFontChanged += new System.Action<TextToScreen.Controls.FileEditor>(this.fileEditor_SelectedFontChanged);
+            this.fileEditor.SelectedStringAccepted += new System.Action<TextToScreen.Controls.FileEditor, string>(this.fileEditor_SelectedStringAccepted);
+            this.fileEditor.SelectedStringChanged += new System.Action<TextToScreen.Controls.FileEditor, string>(this.fileEditor_SelectedStringChanged);
+            this.fileEditor.SelectedStringCleared += new System.Action<TextToScreen.Controls.FileEditor>(this.fileEditor_SelectedStringCleared);
             this.fileEditor.EnabledChanged += new System.EventHandler(this.fileEditor_EnabledChanged);
             // 
             // previewScreens
@@ -603,6 +603,7 @@ namespace TextToScreen.Windows
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
+            this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.ResizeEnd += new System.EventHandler(this.MainWindow_PositionDataChanged);
             this.LocationChanged += new System.EventHandler(this.MainWindow_PositionDataChanged);
             this.splitContainer1.Panel1.ResumeLayout(false);

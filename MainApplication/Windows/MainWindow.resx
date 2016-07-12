@@ -148,7 +148,7 @@
     <value>fileListView</value>
   </data>
   <data name="&gt;&gt;fileListView.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.FileListView, TextToScreen, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6037.41132, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileListView.Parent" xml:space="preserve">
     <value>splitContainer3.Panel1</value>
@@ -184,7 +184,7 @@
     <value>fileEditor</value>
   </data>
   <data name="&gt;&gt;fileEditor.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.FileEditor, TextToScreen, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6037.41132, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileEditor.Parent" xml:space="preserve">
     <value>splitContainer3.Panel2</value>
@@ -253,7 +253,7 @@
     <value>previewScreens</value>
   </data>
   <data name="&gt;&gt;previewScreens.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.PreviewScreens, TextToScreen, Version=1.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.PreviewScreens, TextToScreen, Version=1.7.6037.41132, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;previewScreens.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -4491,7 +4491,7 @@
     <value>globalHotkeys</value>
   </data>
   <data name="&gt;&gt;globalHotkeys.Type" xml:space="preserve">
-    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=2.10.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
