@@ -69,10 +69,6 @@ namespace TextToScreen.Windows
             _targetSettings.OknoDoceloweTop = secondary_window_checkBoxTop.CheckState.ToBool();
             _targetSettings.OknoDoceloweHideCursor = secondary_window_checkBoxPointer.CheckState.ToBool();
 
-            _targetSettings.OutputFadeSpeed = (float) secondary_out_numericUpDownSpeed.Value;
-            _targetSettings.OutputBackgroundColor = secondary_out_panelBacCol.BackColor;
-            _targetSettings.OutputTextColor = secondary_out_panelTexCol.BackColor;
-
             buttonAccept.Enabled = false;
         }
 
@@ -148,33 +144,7 @@ namespace TextToScreen.Windows
         {
             SetupTabSecondary(_defaultSettings);
         }
-
-        private void secondary_out_buttonBacCol_Click(object sender, EventArgs e)
-        {
-            colorDialog.Color = secondary_out_panelBacCol.BackColor;
-            colorDialog.ShowDialog();
-            secondary_out_panelBacCol.BackColor = colorDialog.Color;
-        }
-
-        private void secondary_out_buttonTexCol_Click(object sender, EventArgs e)
-        {
-            colorDialog.Color = secondary_out_panelTexCol.BackColor;
-            colorDialog.ShowDialog();
-            secondary_out_panelTexCol.BackColor = colorDialog.Color;
-        }
-
-        private void secondary_out_panelBacCol_BackColorChanged(object sender, EventArgs e)
-        {
-            secondary_out_labelPreview.BackColor = secondary_out_panelBacCol.BackColor;
-            SettingWasChanged(sender, e);
-        }
-
-        private void secondary_out_panelTexCol_BackColorChanged(object sender, EventArgs e)
-        {
-            secondary_out_labelPreview.ForeColor = secondary_out_panelTexCol.BackColor;
-            SettingWasChanged(sender, e);
-        }
-
+        
         // Events ---------------------------------------------------------------------------------------
         private void SettingsWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -244,10 +214,6 @@ namespace TextToScreen.Windows
             secondary_window_checkBoxTop.CheckState = settingSet.OknoDoceloweTop.ToCheckState();
             secondary_window_checkBoxFull.CheckState = settingSet.OknoDoceloweFull.ToCheckState();
             secondary_window_checkBoxPointer.CheckState = settingSet.OknoDoceloweHideCursor.ToCheckState();
-
-            secondary_out_numericUpDownSpeed.Value = (decimal) settingSet.OutputFadeSpeed;
-            secondary_out_panelBacCol.BackColor = settingSet.OutputBackgroundColor;
-            secondary_out_panelTexCol.BackColor = settingSet.OutputTextColor;
         }
     }
 }

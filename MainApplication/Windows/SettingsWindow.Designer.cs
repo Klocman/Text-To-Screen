@@ -61,16 +61,6 @@
             this.main_window_checkBoxFull = new System.Windows.Forms.CheckBox();
             this.main_window_checkBoxTop = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.secondary_out_groupBox1 = new System.Windows.Forms.GroupBox();
-            this.secondary_out_labelPreview = new System.Windows.Forms.Label();
-            this.secondary_out_numericUpDownSpeed = new System.Windows.Forms.NumericUpDown();
-            this.secondary_out_labelSpeed = new System.Windows.Forms.Label();
-            this.secondary_out_panelBacCol = new System.Windows.Forms.Panel();
-            this.secondary_out_labelBacCol = new System.Windows.Forms.Label();
-            this.secondary_out_buttonBacCol = new System.Windows.Forms.Button();
-            this.secondary_out_panelTexCol = new System.Windows.Forms.Panel();
-            this.secondary_out_labelTexCol = new System.Windows.Forms.Label();
-            this.secondary_out_buttonTexCol = new System.Windows.Forms.Button();
             this.secondary_window_groupBox = new System.Windows.Forms.GroupBox();
             this.secondary_window_checkBoxPointer = new System.Windows.Forms.CheckBox();
             this.secondary_window_checkBoxFull = new System.Windows.Forms.CheckBox();
@@ -88,8 +78,6 @@
             this.main_keys_groupBox3.SuspendLayout();
             this.main_window_groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.secondary_out_groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.secondary_out_numericUpDownSpeed)).BeginInit();
             this.secondary_window_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -340,101 +328,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.secondary_out_groupBox1);
             this.tabPage2.Controls.Add(this.secondary_window_groupBox);
             this.tabPage2.Controls.Add(this.secondary_button_factorySettings);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // secondary_out_groupBox1
-            // 
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_labelPreview);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_numericUpDownSpeed);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_labelSpeed);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_panelBacCol);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_labelBacCol);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_buttonBacCol);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_panelTexCol);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_labelTexCol);
-            this.secondary_out_groupBox1.Controls.Add(this.secondary_out_buttonTexCol);
-            resources.ApplyResources(this.secondary_out_groupBox1, "secondary_out_groupBox1");
-            this.secondary_out_groupBox1.Name = "secondary_out_groupBox1";
-            this.secondary_out_groupBox1.TabStop = false;
-            // 
-            // secondary_out_labelPreview
-            // 
-            resources.ApplyResources(this.secondary_out_labelPreview, "secondary_out_labelPreview");
-            this.secondary_out_labelPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.secondary_out_labelPreview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.secondary_out_labelPreview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.secondary_out_labelPreview.Name = "secondary_out_labelPreview";
-            // 
-            // secondary_out_numericUpDownSpeed
-            // 
-            resources.ApplyResources(this.secondary_out_numericUpDownSpeed, "secondary_out_numericUpDownSpeed");
-            this.secondary_out_numericUpDownSpeed.DecimalPlaces = 1;
-            this.secondary_out_numericUpDownSpeed.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.secondary_out_numericUpDownSpeed.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.secondary_out_numericUpDownSpeed.Name = "secondary_out_numericUpDownSpeed";
-            this.secondary_out_numericUpDownSpeed.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // secondary_out_labelSpeed
-            // 
-            resources.ApplyResources(this.secondary_out_labelSpeed, "secondary_out_labelSpeed");
-            this.secondary_out_labelSpeed.Name = "secondary_out_labelSpeed";
-            // 
-            // secondary_out_panelBacCol
-            // 
-            resources.ApplyResources(this.secondary_out_panelBacCol, "secondary_out_panelBacCol");
-            this.secondary_out_panelBacCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.secondary_out_panelBacCol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.secondary_out_panelBacCol.Name = "secondary_out_panelBacCol";
-            this.secondary_out_panelBacCol.BackColorChanged += new System.EventHandler(this.secondary_out_panelBacCol_BackColorChanged);
-            // 
-            // secondary_out_labelBacCol
-            // 
-            resources.ApplyResources(this.secondary_out_labelBacCol, "secondary_out_labelBacCol");
-            this.secondary_out_labelBacCol.Name = "secondary_out_labelBacCol";
-            // 
-            // secondary_out_buttonBacCol
-            // 
-            resources.ApplyResources(this.secondary_out_buttonBacCol, "secondary_out_buttonBacCol");
-            this.secondary_out_buttonBacCol.Name = "secondary_out_buttonBacCol";
-            this.secondary_out_buttonBacCol.UseVisualStyleBackColor = true;
-            this.secondary_out_buttonBacCol.Click += new System.EventHandler(this.secondary_out_buttonBacCol_Click);
-            // 
-            // secondary_out_panelTexCol
-            // 
-            resources.ApplyResources(this.secondary_out_panelTexCol, "secondary_out_panelTexCol");
-            this.secondary_out_panelTexCol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.secondary_out_panelTexCol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.secondary_out_panelTexCol.Name = "secondary_out_panelTexCol";
-            this.secondary_out_panelTexCol.BackColorChanged += new System.EventHandler(this.secondary_out_panelTexCol_BackColorChanged);
-            // 
-            // secondary_out_labelTexCol
-            // 
-            resources.ApplyResources(this.secondary_out_labelTexCol, "secondary_out_labelTexCol");
-            this.secondary_out_labelTexCol.Name = "secondary_out_labelTexCol";
-            // 
-            // secondary_out_buttonTexCol
-            // 
-            resources.ApplyResources(this.secondary_out_buttonTexCol, "secondary_out_buttonTexCol");
-            this.secondary_out_buttonTexCol.Name = "secondary_out_buttonTexCol";
-            this.secondary_out_buttonTexCol.UseVisualStyleBackColor = true;
-            this.secondary_out_buttonTexCol.Click += new System.EventHandler(this.secondary_out_buttonTexCol_Click);
             // 
             // secondary_window_groupBox
             // 
@@ -508,9 +406,6 @@
             this.main_window_groupBox2.ResumeLayout(false);
             this.main_window_groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.secondary_out_groupBox1.ResumeLayout(false);
-            this.secondary_out_groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.secondary_out_numericUpDownSpeed)).EndInit();
             this.secondary_window_groupBox.ResumeLayout(false);
             this.secondary_window_groupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -550,16 +445,6 @@
         private System.Windows.Forms.CheckBox secondary_window_checkBoxPointer;
         private System.Windows.Forms.CheckBox secondary_window_checkBoxFull;
         private System.Windows.Forms.CheckBox secondary_window_checkBoxTop;
-        private System.Windows.Forms.GroupBox secondary_out_groupBox1;
-        private System.Windows.Forms.Label secondary_out_labelPreview;
-        private System.Windows.Forms.NumericUpDown secondary_out_numericUpDownSpeed;
-        private System.Windows.Forms.Label secondary_out_labelSpeed;
-        private System.Windows.Forms.Panel secondary_out_panelBacCol;
-        private System.Windows.Forms.Label secondary_out_labelBacCol;
-        private System.Windows.Forms.Button secondary_out_buttonBacCol;
-        private System.Windows.Forms.Panel secondary_out_panelTexCol;
-        private System.Windows.Forms.Label secondary_out_labelTexCol;
-        private System.Windows.Forms.Button secondary_out_buttonTexCol;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.CheckBox general_other_checkForExternalChanges;
         private System.Windows.Forms.CheckBox general_other_allowExternalArchiveAcces;

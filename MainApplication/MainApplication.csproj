@@ -152,6 +152,12 @@
     <Compile Include="Controls\MultilineListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\OutputAppearanceControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\OutputAppearanceControls.Designer.cs">
+      <DependentUpon>OutputAppearanceControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Screens\OutputCluster.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OutputAppearanceControls.resx">
+      <DependentUpon>OutputAppearanceControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Screens\OutputCluster.resx">
       <DependentUpon>OutputCluster.cs</DependentUpon>
