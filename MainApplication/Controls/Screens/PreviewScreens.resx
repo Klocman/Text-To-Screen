@@ -132,6 +132,33 @@
   <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <data name="elementHost1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="elementHost1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="elementHost1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 339</value>
+  </data>
+  <data name="elementHost1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="elementHost1.Text" xml:space="preserve">
+    <value>elementHost1</value>
+  </data>
+  <data name="&gt;&gt;elementHost1.Name" xml:space="preserve">
+    <value>elementHost1</value>
+  </data>
+  <data name="&gt;&gt;elementHost1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Integration.ElementHost, WindowsFormsIntegration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;elementHost1.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;elementHost1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="fadeProgressBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -157,30 +184,6 @@
     <value>splitContainer2.Panel1</value>
   </data>
   <data name="&gt;&gt;fadeProgressBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="topPreviewScreen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="topPreviewScreen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="topPreviewScreen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 350</value>
-  </data>
-  <data name="topPreviewScreen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;topPreviewScreen.Name" xml:space="preserve">
-    <value>topPreviewScreen</value>
-  </data>
-  <data name="&gt;&gt;topPreviewScreen.Type" xml:space="preserve">
-    <value>TextToScreen.TextDisplayBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;topPreviewScreen.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel1</value>
-  </data>
-  <data name="&gt;&gt;topPreviewScreen.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
@@ -273,28 +276,31 @@
   <data name="&gt;&gt;splitContainer5.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="bottomPreviewScreen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="elementHost2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="bottomPreviewScreen.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="elementHost2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="bottomPreviewScreen.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="elementHost2.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 352</value>
   </data>
-  <data name="bottomPreviewScreen.TabIndex" type="System.Int32, mscorlib">
+  <data name="elementHost2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;bottomPreviewScreen.Name" xml:space="preserve">
-    <value>bottomPreviewScreen</value>
+  <data name="elementHost2.Text" xml:space="preserve">
+    <value>elementHost2</value>
   </data>
-  <data name="&gt;&gt;bottomPreviewScreen.Type" xml:space="preserve">
-    <value>TextToScreen.TextDisplayBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;elementHost2.Name" xml:space="preserve">
+    <value>elementHost2</value>
   </data>
-  <data name="&gt;&gt;bottomPreviewScreen.Parent" xml:space="preserve">
+  <data name="&gt;&gt;elementHost2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Integration.ElementHost, WindowsFormsIntegration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  </data>
+  <data name="&gt;&gt;elementHost2.Parent" xml:space="preserve">
     <value>splitContainer5.Panel2</value>
   </data>
-  <data name="&gt;&gt;bottomPreviewScreen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;elementHost2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;splitContainer5.Panel2.Name" xml:space="preserve">
@@ -371,6 +377,18 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>398, 747</value>
+  </data>
+  <data name="&gt;&gt;previewField1.Name" xml:space="preserve">
+    <value>previewField1</value>
+  </data>
+  <data name="&gt;&gt;previewField1.Type" xml:space="preserve">
+    <value>WindowsFormsIntegration.Design.HostedComponent, WindowsFormsIntegration.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;previewField2.Name" xml:space="preserve">
+    <value>previewField2</value>
+  </data>
+  <data name="&gt;&gt;previewField2.Type" xml:space="preserve">
+    <value>WindowsFormsIntegration.Design.HostedComponent, WindowsFormsIntegration.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PreviewScreens</value>

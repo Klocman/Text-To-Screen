@@ -201,8 +201,8 @@ namespace TextToScreen.Windows
 
         private void ClearOutput()
         {
-            _remoteDisplayWindow.ClearPreviewDisplay();
-            _remoteDisplayWindow.PushToRemoteDisplay();
+            _remoteDisplayWindow.OutputCluster.ClearPreviewDisplay();
+            _remoteDisplayWindow.OutputCluster.PushPreviewToOutput();
         }
 
         private void cofnijToolStripMenuItem_Click(object sender, EventArgs e)
@@ -324,17 +324,17 @@ namespace TextToScreen.Windows
         {
             fileEditor_SelectedStringChanged(x, y);
 
-            _remoteDisplayWindow.PushToRemoteDisplay();
+            _remoteDisplayWindow.OutputCluster.PushPreviewToOutput();
         }
 
         private void fileEditor_SelectedStringChanged(FileEditor x, string y)
         {
-            _remoteDisplayWindow.ShowPreviewText(y, x.GetSelectedFont(), x.SelectedAlignment);
+            _remoteDisplayWindow.OutputCluster.SendToPreviewField(y, x.GetSelectedFont(), x.SelectedAlignment);
         }
 
         private void fileEditor_SelectedStringCleared(FileEditor obj)
         {
-            _remoteDisplayWindow.ClearPreviewDisplay();
+            _remoteDisplayWindow.OutputCluster.ClearPreviewDisplay();
             //previewScreens.PushToOutputDisplay();
         }
 
@@ -604,8 +604,7 @@ namespace TextToScreen.Windows
                 _remoteDisplayWindow.IsCursorHidden = Ustawienia.SelectedSettingSet.OknoDoceloweHideCursor;
                 _remoteDisplayWindow.IsFullScreen = Ustawienia.SelectedSettingSet.OknoDoceloweFull;
 
-                _remoteDisplayWindow.DisplayBackgroudColor = Ustawienia.SelectedSettingSet.OutputBackgroundColor;
-                _remoteDisplayWindow.DisplayTextColor = Ustawienia.SelectedSettingSet.OutputTextColor;
+                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.SelectedSettingSet.OutputTextColor, Ustawienia.SelectedSettingSet.OutputBackgroundColor, null);
             }
 
             if (OpenedSongArchive != null)
@@ -920,7 +919,7 @@ namespace TextToScreen.Windows
             _remoteDisplayWindow.Opacity = 0;
 
             _remoteDisplayWindow.Show();
-            _remoteDisplayWindow.SetupTextDisplayBoxes(previewScreens.TopDisplayBox, previewScreens.BottomDisplayBox);
+            _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens.TopDisplayBox, previewScreens.BottomDisplayBox);
 
             _remoteDisplayWindow.ResizeEnd += SecondaryWindow_PositionDataChanged;
             _remoteDisplayWindow.LocationChanged += SecondaryWindow_PositionDataChanged;
@@ -936,11 +935,12 @@ namespace TextToScreen.Windows
                 }
             };
 
+            /* TODO
             _remoteDisplayWindow.TextChanger.CanChangeChanged += x => previewScreens.ButtonsEnabled = x.CanChange;
             _remoteDisplayWindow.TextChanger.PushProgressChanged += (x, y) =>
                 previewScreens.SetProgressBar(Ustawienia.SelectedSettingSet.OknoGlowneInnePokazujPasekPostepuPrzejscia
                     ? y
-                    : -1);
+                    : -1);*/
         }
 
         private bool ShowNameChangeDialog(SongFileEntry target, bool isNewFile)

@@ -36,8 +36,6 @@ namespace TextToScreen.Windows
             this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideCursorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.remoteTextDisplayBox = new TextDisplayBox();
-            this.previewTextDisplayBox = new TextDisplayBox();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,22 +75,6 @@ namespace TextToScreen.Windows
             resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
             this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
-            // remoteTextDisplayBox
-            // 
-            resources.ApplyResources(this.remoteTextDisplayBox, "remoteTextDisplayBox");
-            this.remoteTextDisplayBox.LabelBackColor = System.Drawing.Color.Black;
-            this.remoteTextDisplayBox.LabelForeColor = System.Drawing.Color.White;
-            this.remoteTextDisplayBox.Name = "remoteTextDisplayBox";
-            this.remoteTextDisplayBox.PreviewDisplayBox = null;
-            // 
-            // previewTextDisplayBox
-            // 
-            resources.ApplyResources(this.previewTextDisplayBox, "previewTextDisplayBox");
-            this.previewTextDisplayBox.LabelBackColor = System.Drawing.Color.Black;
-            this.previewTextDisplayBox.LabelForeColor = System.Drawing.Color.White;
-            this.previewTextDisplayBox.Name = "previewTextDisplayBox";
-            this.previewTextDisplayBox.PreviewDisplayBox = null;
-            // 
             // SecondaryWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -101,8 +83,6 @@ namespace TextToScreen.Windows
             this.BackColor = System.Drawing.Color.LightGray;
             this.ContextMenuStrip = this.contextMenuStrip;
             this.ControlBox = false;
-            this.Controls.Add(this.previewTextDisplayBox);
-            this.Controls.Add(this.remoteTextDisplayBox);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
@@ -119,13 +99,9 @@ namespace TextToScreen.Windows
         }
 
         #endregion
-
-        private TextDisplayBox remoteTextDisplayBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hideCursorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
-        private TextDisplayBox previewTextDisplayBox;
-
     }
 }

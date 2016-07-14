@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms;
 using TextToScreen.Controls;
+using TextToScreen.Controls.Screens;
 using TextToScreen.Properties;
 
 namespace TextToScreen.Windows
@@ -12,36 +13,17 @@ namespace TextToScreen.Windows
     public sealed partial class SecondaryWindow : DraggableForm
     {
         private bool _isCursorHidden;
+        public OutputCluster OutputCluster { get; }
 
         public SecondaryWindow()
         {
             InitializeComponent();
 
-            TextChanger = new TextDisplayBoxChangePusher(previewTextDisplayBox, remoteTextDisplayBox);
-
-            previewTextDisplayBox.SendToBack();
+            OutputCluster = new OutputCluster();
+            OutputCluster.Dock = DockStyle.Fill;
+            Controls.Add(OutputCluster);
         }
-
-        public Color DisplayBackgroudColor
-        {
-            get { return previewTextDisplayBox.LabelBackColor; }
-            set
-            {
-                previewTextDisplayBox.LabelBackColor = value;
-                Ustawienia.SelectedSettingSet.OutputBackgroundColor = value;
-            }
-        }
-
-        public Color DisplayTextColor
-        {
-            get { return previewTextDisplayBox.LabelForeColor; }
-            set
-            {
-                previewTextDisplayBox.LabelForeColor = value;
-                Ustawienia.SelectedSettingSet.OutputTextColor = value;
-            }
-        }
-
+        
         public bool IsAlwaysOnTop
         {
             get { return TopMost; }
@@ -80,9 +62,7 @@ namespace TextToScreen.Windows
                 Ustawienia.SelectedSettingSet.OknoDoceloweFull = value;
             }
         }
-
-        public TextDisplayBoxChangePusher TextChanger { get; }
-
+       
         protected override CreateParams CreateParams
         {
             get
@@ -93,28 +73,6 @@ namespace TextToScreen.Windows
                 cp.ClassStyle |= CS_NOCLOSE;
                 return cp;
             }
-        }
-
-        public void ClearPreviewDisplay()
-        {
-            previewTextDisplayBox.ClearDisplay();
-        }
-
-        public void PushToRemoteDisplay()
-        {
-            TextChanger.PushFadeTime = Ustawienia.SelectedSettingSet.OutputFadeSpeed;
-            TextChanger.DelayedPush();
-        }
-
-        public void SetupTextDisplayBoxes(TextDisplayBox previewPreviewBox, TextDisplayBox previewRemoteBox)
-        {
-            previewTextDisplayBox.PreviewDisplayBox = previewPreviewBox;
-            remoteTextDisplayBox.PreviewDisplayBox = previewRemoteBox;
-        }
-
-        public void ShowPreviewText(string text, Font font, ContentAlignment alignment)
-        {
-            previewTextDisplayBox.ShowText(text, font, alignment);
         }
 
         private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)

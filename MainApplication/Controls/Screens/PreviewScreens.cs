@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace TextToScreen.Controls
+namespace TextToScreen.Controls.Screens
 {
     public sealed partial class PreviewScreens : UserControl
     {
         public PreviewScreens()
         {
             InitializeComponent();
-            PreviewScreens_Resize(null, null);
+
+            TopDisplayBox = (PreviewField)elementHost1.Child;
+            BottomDisplayBox = (PreviewField)elementHost2.Child;
         }
 
-        public TextDisplayBox BottomDisplayBox => bottomPreviewScreen;
+        public PreviewField BottomDisplayBox { get; }
+        public PreviewField TopDisplayBox { get; }
 
         public bool ButtonsEnabled
         {
@@ -23,7 +26,6 @@ namespace TextToScreen.Controls
             }
         }
 
-        public TextDisplayBox TopDisplayBox => topPreviewScreen;
         public event Action<PreviewScreens> ButtonClickClear;
         public event Action<PreviewScreens> ButtonClickSend;
 
@@ -52,15 +54,6 @@ namespace TextToScreen.Controls
         private void button_send_Click(object sender, EventArgs e)
         {
             ButtonClickSend?.Invoke(this);
-        }
-
-        private void PreviewScreens_Resize(object sender, EventArgs e)
-        {
-            var topPart = splitContainer2.Panel1.Height;
-            var botPart = splitContainer5.Panel2.Height;
-            var total = splitContainer2.Height;
-            var deadHeight = total - topPart - botPart;
-            splitContainer2.SplitterDistance = (total - deadHeight + 1)/2;
         }
     }
 }

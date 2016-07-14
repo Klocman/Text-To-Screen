@@ -114,11 +114,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\.Lib\PortableSettingsProvider.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GlobalAssemblyInfo.cs">
@@ -147,21 +152,27 @@
     <Compile Include="Controls\MultilineListBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\PreviewScreens.cs">
+    <Compile Include="Controls\Screens\OutputCluster.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PreviewScreens.Designer.cs">
+    <Compile Include="Controls\Screens\OutputCluster.Designer.cs">
+      <DependentUpon>OutputCluster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Screens\OutputField.xaml.cs">
+      <DependentUpon>OutputField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Screens\PreviewField.xaml.cs">
+      <DependentUpon>PreviewField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Screens\PreviewScreens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Screens\PreviewScreens.Designer.cs">
       <DependentUpon>PreviewScreens.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TextDisplayBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TextDisplayBox.Designer.cs">
-      <DependentUpon>TextDisplayBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TextDisplayBoxChangePusher.cs" />
     <Compile Include="ImportExport\FileImporter.cs" />
     <Compile Include="ImportExport\FileImporterResult.cs" />
+    <Compile Include="Misc\Extensions.cs" />
     <Compile Include="Misc\MessageBoxes.cs" />
     <Compile Include="Misc\NameChangeResult.cs" />
     <Compile Include="Misc\StartupAction.cs" />
@@ -259,15 +270,14 @@
     <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PreviewScreens.pl.resx">
+    <EmbeddedResource Include="Controls\Screens\OutputCluster.resx">
+      <DependentUpon>OutputCluster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Screens\PreviewScreens.pl.resx">
       <DependentUpon>PreviewScreens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PreviewScreens.resx">
+    <EmbeddedResource Include="Controls\Screens\PreviewScreens.resx">
       <DependentUpon>PreviewScreens.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TextDisplayBox.resx">
-      <DependentUpon>TextDisplayBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localisation.pl.resx">
@@ -407,7 +417,16 @@
       <Name>KlocTools</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Controls\Screens\OutputField.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Screens\PreviewField.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
   </PropertyGroup>

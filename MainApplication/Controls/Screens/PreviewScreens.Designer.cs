@@ -1,4 +1,4 @@
-﻿namespace TextToScreen.Controls
+﻿namespace TextToScreen.Controls.Screens
 {
     partial class PreviewScreens
     {
@@ -31,11 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreviewScreens));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.fadeProgressBar = new System.Windows.Forms.ProgressBar();
-            this.topPreviewScreen = new TextDisplayBox();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.button_send = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
-            this.bottomPreviewScreen = new TextDisplayBox();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.previewField1 = new PreviewField();
+            this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
+            this.previewField2 = new PreviewField();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -53,8 +55,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer2.Panel1.Controls.Add(this.elementHost1);
             this.splitContainer2.Panel1.Controls.Add(this.fadeProgressBar);
-            this.splitContainer2.Panel1.Controls.Add(this.topPreviewScreen);
             // 
             // splitContainer2.Panel2
             // 
@@ -70,14 +72,6 @@
             this.fadeProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.fadeProgressBar.Value = 45;
             // 
-            // topPreviewScreen
-            // 
-            resources.ApplyResources(this.topPreviewScreen, "topPreviewScreen");
-            this.topPreviewScreen.LabelBackColor = System.Drawing.Color.Black;
-            this.topPreviewScreen.LabelForeColor = System.Drawing.Color.White;
-            this.topPreviewScreen.Name = "topPreviewScreen";
-            this.topPreviewScreen.PreviewDisplayBox = null;
-            // 
             // splitContainer5
             // 
             this.splitContainer5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -92,7 +86,7 @@
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.bottomPreviewScreen);
+            this.splitContainer5.Panel2.Controls.Add(this.elementHost2);
             this.splitContainer5.TabStop = false;
             // 
             // button_send
@@ -110,13 +104,17 @@
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
-            // bottomPreviewScreen
+            // elementHost1
             // 
-            resources.ApplyResources(this.bottomPreviewScreen, "bottomPreviewScreen");
-            this.bottomPreviewScreen.LabelBackColor = System.Drawing.Color.Black;
-            this.bottomPreviewScreen.LabelForeColor = System.Drawing.Color.White;
-            this.bottomPreviewScreen.Name = "bottomPreviewScreen";
-            this.bottomPreviewScreen.PreviewDisplayBox = null;
+            resources.ApplyResources(this.elementHost1, "elementHost1");
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Child = this.previewField1;
+            // 
+            // elementHost2
+            // 
+            resources.ApplyResources(this.elementHost2, "elementHost2");
+            this.elementHost2.Name = "elementHost2";
+            this.elementHost2.Child = this.previewField2;
             // 
             // PreviewScreens
             // 
@@ -124,7 +122,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer2);
             this.Name = "PreviewScreens";
-            this.Resize += new System.EventHandler(this.PreviewScreens_Resize);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
@@ -141,8 +138,10 @@
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Button button_send;
         private System.Windows.Forms.Button button_clear;
-        private TextDisplayBox topPreviewScreen;
-        private TextDisplayBox bottomPreviewScreen;
         private System.Windows.Forms.ProgressBar fadeProgressBar;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private PreviewField previewField1;
+        private System.Windows.Forms.Integration.ElementHost elementHost2;
+        private PreviewField previewField2;
     }
 }

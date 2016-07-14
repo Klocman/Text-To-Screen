@@ -122,81 +122,31 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="fullScreenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>183, 22</value>
   </data>
   <data name="fullScreenToolStripMenuItem.Text" xml:space="preserve">
     <value>Expand to full screen</value>
   </data>
   <data name="hideCursorToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>183, 22</value>
   </data>
   <data name="hideCursorToolStripMenuItem1.Text" xml:space="preserve">
     <value>Hide cursor</value>
   </data>
   <data name="alwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
+    <value>183, 22</value>
   </data>
   <data name="alwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Always on top</value>
   </data>
   <data name="contextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 70</value>
+    <value>184, 70</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip.Name" xml:space="preserve">
     <value>contextMenuStrip</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="remoteTextDisplayBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="remoteTextDisplayBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="remoteTextDisplayBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 276</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="remoteTextDisplayBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;remoteTextDisplayBox.Name" xml:space="preserve">
-    <value>remoteTextDisplayBox</value>
-  </data>
-  <data name="&gt;&gt;remoteTextDisplayBox.Type" xml:space="preserve">
-    <value>TextToScreen.TextDisplayBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;remoteTextDisplayBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;remoteTextDisplayBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="previewTextDisplayBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="previewTextDisplayBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="previewTextDisplayBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 276</value>
-  </data>
-  <data name="previewTextDisplayBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;previewTextDisplayBox.Name" xml:space="preserve">
-    <value>previewTextDisplayBox</value>
-  </data>
-  <data name="&gt;&gt;previewTextDisplayBox.Type" xml:space="preserve">
-    <value>TextToScreen.TextDisplayBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;previewTextDisplayBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;previewTextDisplayBox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3632,6 +3582,7 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>150, 150</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
   </data>
@@ -3660,6 +3611,6 @@
     <value>SecondaryWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Klocman.Forms.DraggableForm, KlocTools, Version=2.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Klocman.Forms.DraggableForm, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

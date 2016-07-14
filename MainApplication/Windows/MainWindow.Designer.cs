@@ -1,4 +1,5 @@
 ﻿using TextToScreen.Controls;
+using TextToScreen.Controls.Screens;
 using TextToScreen.SongFile;
 
 namespace TextToScreen.Windows
@@ -36,7 +37,7 @@ namespace TextToScreen.Windows
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.fileListView = new TextToScreen.Controls.FileListView();
             this.fileEditor = new TextToScreen.Controls.FileEditor();
-            this.previewScreens = new TextToScreen.Controls.PreviewScreens();
+            this.previewScreens = new PreviewScreens();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweArchiwumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
