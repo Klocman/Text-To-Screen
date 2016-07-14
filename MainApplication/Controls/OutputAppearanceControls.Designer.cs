@@ -39,33 +39,33 @@
             this.secondary_out_buttonTexCol = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.boldToggle = new System.Windows.Forms.ToolStripButton();
-            this.italicToggle = new System.Windows.Forms.ToolStripButton();
-            this.underlineToggle = new System.Windows.Forms.ToolStripButton();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.contentAlignmentBox1 = new Klocman.Controls.ContentAlignmentBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.underlineToggle = new System.Windows.Forms.ToolStripButton();
+            this.italicToggle = new System.Windows.Forms.ToolStripButton();
+            this.boldToggle = new System.Windows.Forms.ToolStripButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pathSelectBox1 = new Klocman.Controls.PathSelectBox();
             ((System.ComponentModel.ISupportInitialize)(this.secondary_out_numericUpDownSpeed)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.toolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,17 +207,6 @@
             this.tabControl1.Size = new System.Drawing.Size(272, 117);
             this.tabControl1.TabIndex = 11;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(264, 91);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Duration and color";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer1);
@@ -249,6 +238,16 @@
             this.splitContainer1.SplitterDistance = 86;
             this.splitContainer1.TabIndex = 12;
             // 
+            // contentAlignmentBox1
+            // 
+            this.contentAlignmentBox1.Location = new System.Drawing.Point(3, 3);
+            this.contentAlignmentBox1.MaximumSize = new System.Drawing.Size(78, 78);
+            this.contentAlignmentBox1.MinimumSize = new System.Drawing.Size(78, 78);
+            this.contentAlignmentBox1.Name = "contentAlignmentBox1";
+            this.contentAlignmentBox1.SelectedContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contentAlignmentBox1.Size = new System.Drawing.Size(78, 78);
+            this.contentAlignmentBox1.TabIndex = 10;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -270,6 +269,67 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(166, 83);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // toolStrip
+            // 
+            this.toolStrip.BackColor = System.Drawing.SystemColors.Window;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.underlineToggle,
+            this.italicToggle,
+            this.boldToggle});
+            this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.toolStrip.Location = new System.Drawing.Point(58, 53);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStrip.Size = new System.Drawing.Size(108, 25);
+            this.toolStrip.TabIndex = 10;
+            this.toolStrip.TabStop = true;
+            // 
+            // underlineToggle
+            // 
+            this.underlineToggle.CheckOnClick = true;
+            this.underlineToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.underlineToggle.Image = ((System.Drawing.Image)(resources.GetObject("underlineToggle.Image")));
+            this.underlineToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.underlineToggle.Name = "underlineToggle";
+            this.underlineToggle.Size = new System.Drawing.Size(23, 22);
+            this.underlineToggle.Text = "Underline";
+            this.underlineToggle.ToolTipText = "Underline";
+            // 
+            // italicToggle
+            // 
+            this.italicToggle.CheckOnClick = true;
+            this.italicToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.italicToggle.Image = ((System.Drawing.Image)(resources.GetObject("italicToggle.Image")));
+            this.italicToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.italicToggle.Name = "italicToggle";
+            this.italicToggle.Size = new System.Drawing.Size(23, 22);
+            this.italicToggle.Text = "Italic";
+            this.italicToggle.ToolTipText = "Italic";
+            // 
+            // boldToggle
+            // 
+            this.boldToggle.CheckOnClick = true;
+            this.boldToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.boldToggle.Image = ((System.Drawing.Image)(resources.GetObject("boldToggle.Image")));
+            this.boldToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.boldToggle.Name = "boldToggle";
+            this.boldToggle.Size = new System.Drawing.Size(23, 22);
+            this.boldToggle.Text = "Bold";
+            this.boldToggle.ToolTipText = "Bold";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(3, 53);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label3.Size = new System.Drawing.Size(52, 19);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Font style";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -280,6 +340,17 @@
             this.label1.Size = new System.Drawing.Size(28, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Font";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label2.Size = new System.Drawing.Size(49, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Font size";
             // 
             // numericUpDown1
             // 
@@ -306,28 +377,6 @@
             0,
             0});
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(3, 27);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label2.Size = new System.Drawing.Size(49, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Font size";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(3, 53);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label3.Size = new System.Drawing.Size(52, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Font style";
-            // 
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -337,55 +386,16 @@
             this.comboBox1.Size = new System.Drawing.Size(102, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // toolStrip
+            // tabPage1
             // 
-            this.toolStrip.BackColor = System.Drawing.SystemColors.Window;
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.underlineToggle,
-            this.italicToggle,
-            this.boldToggle});
-            this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip.Location = new System.Drawing.Point(58, 53);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip.Size = new System.Drawing.Size(108, 25);
-            this.toolStrip.TabIndex = 10;
-            this.toolStrip.TabStop = true;
-            // 
-            // boldToggle
-            // 
-            this.boldToggle.CheckOnClick = true;
-            this.boldToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.boldToggle.Image = ((System.Drawing.Image)(resources.GetObject("boldToggle.Image")));
-            this.boldToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.boldToggle.Name = "boldToggle";
-            this.boldToggle.Size = new System.Drawing.Size(23, 22);
-            this.boldToggle.Text = "Bold";
-            this.boldToggle.ToolTipText = "Bold";
-            // 
-            // italicToggle
-            // 
-            this.italicToggle.CheckOnClick = true;
-            this.italicToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.italicToggle.Image = ((System.Drawing.Image)(resources.GetObject("italicToggle.Image")));
-            this.italicToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.italicToggle.Name = "italicToggle";
-            this.italicToggle.Size = new System.Drawing.Size(23, 22);
-            this.italicToggle.Text = "Italic";
-            this.italicToggle.ToolTipText = "Italic";
-            // 
-            // underlineToggle
-            // 
-            this.underlineToggle.CheckOnClick = true;
-            this.underlineToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.underlineToggle.Image = ((System.Drawing.Image)(resources.GetObject("underlineToggle.Image")));
-            this.underlineToggle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.underlineToggle.Name = "underlineToggle";
-            this.underlineToggle.Size = new System.Drawing.Size(23, 22);
-            this.underlineToggle.Text = "Underline";
-            this.underlineToggle.ToolTipText = "Underline";
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(264, 91);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Duration and color";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -395,18 +405,8 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(264, 91);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Images";
+            this.tabPage3.Text = "Background image";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // contentAlignmentBox1
-            // 
-            this.contentAlignmentBox1.Location = new System.Drawing.Point(3, 3);
-            this.contentAlignmentBox1.MaximumSize = new System.Drawing.Size(78, 78);
-            this.contentAlignmentBox1.MinimumSize = new System.Drawing.Size(78, 78);
-            this.contentAlignmentBox1.Name = "contentAlignmentBox1";
-            this.contentAlignmentBox1.SelectedContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.contentAlignmentBox1.Size = new System.Drawing.Size(78, 78);
-            this.contentAlignmentBox1.TabIndex = 10;
             // 
             // pathSelectBox1
             // 
@@ -430,16 +430,16 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 

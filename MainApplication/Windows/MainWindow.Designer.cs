@@ -36,8 +36,9 @@ namespace TextToScreen.Windows
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.fileListView = new TextToScreen.Controls.FileListView();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.fileEditor = new TextToScreen.Controls.FileEditor();
-            this.previewScreens = new PreviewScreens();
+            this.previewScreens = new TextToScreen.Controls.Screens.PreviewScreens();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noweArchiwumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,12 +97,16 @@ namespace TextToScreen.Windows
             this.openArchiveFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveArchiveDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys = new Klocman.Subsystems.GlobalHotkeys();
+            this.outputAppearanceControls1 = new TextToScreen.Controls.OutputAppearanceControls();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +138,7 @@ namespace TextToScreen.Windows
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.fileEditor);
+            this.splitContainer3.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer3.TabStop = false;
             // 
             // fileListView
@@ -151,6 +156,21 @@ namespace TextToScreen.Windows
             this.fileListView.EnabledChanged += new System.EventHandler(this.fileListView_EnabledChanged);
             this.fileListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.fileListView_DragDrop);
             this.fileListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.fileListView_DragEnter);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.fileEditor);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.outputAppearanceControls1);
             // 
             // fileEditor
             // 
@@ -594,6 +614,11 @@ namespace TextToScreen.Windows
             this.globalHotkeys.StopWhenFormIsDisabled = false;
             this.globalHotkeys.SuppressKeyPresses = true;
             // 
+            // outputAppearanceControls1
+            // 
+            resources.ApplyResources(this.outputAppearanceControls1, "outputAppearanceControls1");
+            this.outputAppearanceControls1.Name = "outputAppearanceControls1";
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -613,6 +638,9 @@ namespace TextToScreen.Windows
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -685,6 +713,8 @@ namespace TextToScreen.Windows
         private System.Windows.Forms.ToolStripMenuItem donateToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private Klocman.Subsystems.GlobalHotkeys globalHotkeys;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private OutputAppearanceControls outputAppearanceControls1;
     }
 }
 
