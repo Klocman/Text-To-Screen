@@ -360,21 +360,22 @@
             // 
             this.numericUpDownFontSize.DecimalPlaces = 1;
             this.numericUpDownFontSize.Dock = System.Windows.Forms.DockStyle.Top;
-            this.numericUpDownFontSize.Increment = new decimal(new int[] {
+            this.numericUpDownFontSize.Location = new System.Drawing.Point(61, 30);
+            this.numericUpDownFontSize.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.numericUpDownFontSize.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numericUpDownFontSize.Location = new System.Drawing.Point(61, 30);
-            this.numericUpDownFontSize.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
             this.numericUpDownFontSize.Name = "numericUpDownFontSize";
             this.numericUpDownFontSize.Size = new System.Drawing.Size(213, 20);
             this.numericUpDownFontSize.TabIndex = 3;
             this.numericUpDownFontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownFontSize.ThousandsSeparator = true;
             this.numericUpDownFontSize.Value = new decimal(new int[] {
             1,
             0,

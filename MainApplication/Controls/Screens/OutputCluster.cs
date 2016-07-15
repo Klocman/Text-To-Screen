@@ -37,6 +37,13 @@ namespace TextToScreen.Controls.Screens
                 PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenFontFamily, this);
+            
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontSize = Convert.ToDouble(args.NewValue);
+                PreviewField.BeginAnimation(true);
+
+            }, ustawienia => ustawienia.ScreenFontSize, this);
 
             binder.Subscribe((obj, args) =>
             {
@@ -105,6 +112,7 @@ namespace TextToScreen.Controls.Screens
         public void SendToPreviewField(string newText)
         {
             PreviewField.NextText = newText;
+            PreviewField.BeginAnimation(true);
         }
 
         public void ClearPreviewDisplay()
