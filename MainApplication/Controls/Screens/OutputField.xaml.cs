@@ -61,16 +61,23 @@ namespace TextToScreen.Controls.Screens
         /// </summary>
         public double GetAnimationProgress()
         {
-            var outStopped = _fadeOut.GetCurrentState() == ClockState.Stopped;
-            var inStopped = _fadeIn.GetCurrentState() == ClockState.Stopped;
+            try
+            {
+                var outStopped = _fadeOut.GetCurrentState(this) == ClockState.Stopped;
+                var inStopped = _fadeIn.GetCurrentState(this) == ClockState.Stopped;
 
-            if (outStopped && inStopped)
+                if (outStopped && inStopped)
+                    return 1;
+
+                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this) / 2 ?? 0.5;
+                var inProgress = _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
+
+                return Math.Round(outProgress + inProgress, 2, MidpointRounding.AwayFromZero);
+            }
+            catch (InvalidOperationException)
+            {
                 return 1;
-
-            var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress() / 2;
-            var inProgress = _fadeIn.GetCurrentProgress() / 2;
-
-            return Math.Round(outProgress + inProgress, 2, MidpointRounding.AwayFromZero);
+            }
         }
 
         public void BeginAnimation(bool skipFadeout = false)
@@ -138,8 +145,9 @@ namespace TextToScreen.Controls.Screens
             NextFontFamily = originField.CurrentFontFamily;
             NextFontSize = originField.CurrentFontSize;
             NextFontAlignment = originField.CurrentFontAlignment;
-
-            BeginAnimation();
+            
+            if(GetAnimationProgress() >= 1)
+                BeginAnimation();
         }
     }
 }
