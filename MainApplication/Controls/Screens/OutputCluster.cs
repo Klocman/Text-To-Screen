@@ -58,12 +58,10 @@ namespace TextToScreen.Controls.Screens
             binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontBold, this);
             binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontItalic, this);
 
-            binder.Subscribe((x,y)=> FinalField.AnimationLength = TimeSpan.FromSeconds(Convert.ToDouble(y.NewValue)), 
+            binder.Subscribe((x, y) => FinalField.AnimationLength = TimeSpan.FromSeconds(Convert.ToDouble(y.NewValue)),
                 ustawienia => ustawienia.ScreenFadeSpeed, this);
 
             binder.SendUpdates(this);
-
-            FinalField.ChangeWithAnimation(PreviewField, true);
         }
 
         private void FontStyleChanged(object sender, SettingChangedEventArgs<bool> args)
@@ -72,7 +70,7 @@ namespace TextToScreen.Controls.Screens
             PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold ? FontWeights.Bold : FontWeights.Normal;
             PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline ? TextDecorations.Underline : null;
         }
-        
+
         public OutputField FinalField { get; }
         public OutputField PreviewField { get; }
 
