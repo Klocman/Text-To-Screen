@@ -275,4 +275,7 @@
   <data name="UnsupportedFileFormat" xml:space="preserve">
     <value>Unsupported file type</value>
   </data>
+  <data name="PreviewScreenInfo" xml:space="preserve">
+    <value>Preview screen</value>
+  </data>
 </root>

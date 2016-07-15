@@ -21,6 +21,7 @@ namespace TextToScreen.Controls.Screens
             PreviewField = (OutputField)elementHost1.Child;
 
             PreviewField.AnimationLength = TimeSpan.Zero;
+            PreviewField.NextText = Localisation.PreviewScreenInfo;
 
             _inDesignMode = (LicenseManager.UsageMode == LicenseUsageMode.Designtime);
 
@@ -29,28 +30,28 @@ namespace TextToScreen.Controls.Screens
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextFontFamily = new FontFamily(args.NewValue);
-                PreviewField.BeginAnimation();
+                PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenFontFamily, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextTextColor = args.NewValue;
-                PreviewField.BeginAnimation();
+                PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenForegroundColor, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextBackgroundColor = args.NewValue;
-                PreviewField.BeginAnimation();
+                PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenBackgroundColor, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextFontAlignment = args.NewValue;
-                PreviewField.BeginAnimation();
+                PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenFontAlignment, this);
 
@@ -69,6 +70,7 @@ namespace TextToScreen.Controls.Screens
             PreviewField.TextBlock.FontStyle = Ustawienia.Default.ScreenFontItalic ? FontStyles.Italic : FontStyles.Normal;
             PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold ? FontWeights.Bold : FontWeights.Normal;
             PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline ? TextDecorations.Underline : null;
+            PreviewField.BeginAnimation(true);
         }
 
         public OutputField FinalField { get; }

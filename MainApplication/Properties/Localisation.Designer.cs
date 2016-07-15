@@ -495,6 +495,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Preview screen.
+        /// </summary>
+        internal static string PreviewScreenInfo {
+            get {
+                return ResourceManager.GetString("PreviewScreenInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rename song....
         /// </summary>
         internal static string RenameFileWindowTitle {

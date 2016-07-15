@@ -72,9 +72,12 @@ namespace TextToScreen.Controls.Screens
             return Math.Round(outProgress + inProgress, 2, MidpointRounding.AwayFromZero);
         }
 
-        public void BeginAnimation()
+        public void BeginAnimation(bool skipFadeout = false)
         {
-            _fadeOut.Begin(this, true);
+            if (skipFadeout)
+                AfterFadeOut(this, EventArgs.Empty);
+            else
+                _fadeOut.Begin(this, true);
         }
 
         private void AfterFadeOut(object sender, EventArgs eventArgs)
@@ -119,7 +122,7 @@ namespace TextToScreen.Controls.Screens
 
             if (!ReferenceEquals(CurrentImage, NextImage))
                 Image.Source = NextImage;
-            
+
             AnimationHalfPoint?.Invoke(sender, eventArgs);
 
             _fadeIn.Begin(this, true);
