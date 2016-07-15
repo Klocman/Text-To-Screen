@@ -176,14 +176,9 @@ namespace TextToScreen.Windows
             // 
             resources.ApplyResources(this.fileEditor, "fileEditor");
             this.fileEditor.Name = "fileEditor";
-            this.fileEditor.SelectedAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.fileEditor.SelectedFontFamily = null;
-            this.fileEditor.SelectedFontSize = 1;
-            this.fileEditor.SelectedFontStyle = System.Drawing.FontStyle.Regular;
             this.fileEditor.FileContentsChanged += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_LoadedFileChanged);
             this.fileEditor.FileSaved += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_FileSaved);
             this.fileEditor.LoadedFileChanged += new System.Action<TextToScreen.Controls.FileEditor, TextToScreen.SongFile.SongFileEntry>(this.fileEditor_LoadedFileChanged);
-            this.fileEditor.SelectedFontChanged += new System.Action<TextToScreen.Controls.FileEditor>(this.fileEditor_SelectedFontChanged);
             this.fileEditor.SelectedStringAccepted += new System.Action<TextToScreen.Controls.FileEditor, string>(this.fileEditor_SelectedStringAccepted);
             this.fileEditor.SelectedStringChanged += new System.Action<TextToScreen.Controls.FileEditor, string>(this.fileEditor_SelectedStringChanged);
             this.fileEditor.SelectedStringCleared += new System.Action<TextToScreen.Controls.FileEditor>(this.fileEditor_SelectedStringCleared);

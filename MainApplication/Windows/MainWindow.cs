@@ -25,7 +25,6 @@ namespace TextToScreen.Windows
 {
     public sealed partial class MainWindow : Form
     {
-        private readonly FontGrabber _fontCollections;
         private SongFileArchive _openedSongArchive;
         private SecondaryWindow _remoteDisplayWindow;
         private bool _skipSaveOnExit;
@@ -44,14 +43,11 @@ namespace TextToScreen.Windows
             splitContainer3.Panel2MinSize = 150;
 
             PremadeDialogs.DefaultOwner = this;
-
-            _fontCollections = new FontGrabber();
+            
             OpenedSongArchive = null; // Fires the property setter for initial setup
 
             SetupRemoteDisplayWindow();
-
-            fileEditor.SetupToolstrip(_fontCollections.ValidFontFamilies.ToArray());
-
+            
             previewScreens.ButtonClickSend += x => SendSelectedToOutput();
             previewScreens.ButtonClickClear += x => ClearOutput();
 
@@ -321,7 +317,7 @@ namespace TextToScreen.Windows
 
         private void fileEditor_SelectedStringChanged(FileEditor x, string y)
         {
-            _remoteDisplayWindow.OutputCluster.SendToPreviewField(y, x.GetSelectedFont(), x.SelectedAlignment);
+            _remoteDisplayWindow.OutputCluster.SendToPreviewField(y);
         }
 
         private void fileEditor_SelectedStringCleared(FileEditor obj)
@@ -610,11 +606,6 @@ namespace TextToScreen.Windows
 
         private void ReadStartupSettings()
         {
-            fileEditor.SelectedFontFamily = _fontCollections.GetFontFamily(Ustawienia.Default.ScreenFontFamily);
-            fileEditor.SelectedFontSize = (int)Math.Round(Ustawienia.Default.ScreenFontSize);
-            fileEditor.SelectedAlignment = Ustawienia.Default.ScreenFontAlignment;
-            //TODO fileEditor.SelectedFontStyle = Ustawienia.Default.AutoStylCzcionki;
-
             if (Ustawienia.Default.AutoOknoGlownePozycja == Point.Empty
                 && Ustawienia.Default.AutoOknoDocelowePozycja == Point.Empty)
             {
@@ -723,14 +714,6 @@ namespace TextToScreen.Windows
 
         private void SaveSettings()
         {
-            // Editor settings TODO move out
-            var f = fileEditor.SelectedFontFamily;
-            if (f != null)
-                Ustawienia.Default.ScreenFontFamily = f.Name;
-            Ustawienia.Default.ScreenFontSize = fileEditor.SelectedFontSize;
-            Ustawienia.Default.ScreenFontAlignment = fileEditor.SelectedAlignment;
-            //TODO Ustawienia.Default.AutoStylCzcionki = fileEditor.SelectedFontStyle;
-
             if (!Ustawienia.Default.GeneralHistoryEnabled)
                 Ustawienia.Default.AutoRecentItems.Clear();
 

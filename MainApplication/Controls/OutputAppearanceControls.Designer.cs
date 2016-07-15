@@ -383,12 +383,14 @@
             // 
             // comboBoxFontFamily
             // 
+            this.comboBoxFontFamily.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxFontFamily.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxFontFamily.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxFontFamily.FormattingEnabled = true;
             this.comboBoxFontFamily.Location = new System.Drawing.Point(61, 3);
             this.comboBoxFontFamily.Name = "comboBoxFontFamily";
             this.comboBoxFontFamily.Size = new System.Drawing.Size(213, 21);
             this.comboBoxFontFamily.TabIndex = 6;
+            this.comboBoxFontFamily.SelectedIndexChanged += new System.EventHandler(this.comboBoxFontFamily_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -416,6 +418,7 @@
             // 
             this.pathSelectBoxImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pathSelectBoxImage.FileName = "";
+            this.pathSelectBoxImage.Filter = "Image Files|*.BMP;*.JPG;*.GIF;*.PNG|All files|*.*";
             this.pathSelectBoxImage.Location = new System.Drawing.Point(3, 3);
             this.pathSelectBoxImage.Name = "pathSelectBoxImage";
             this.pathSelectBoxImage.Size = new System.Drawing.Size(369, 28);

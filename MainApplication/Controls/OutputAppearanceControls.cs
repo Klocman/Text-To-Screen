@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Klocman.Controls;
+using Klocman.Events;
+using Klocman.Subsystems;
 using TextToScreen.Properties;
 
 namespace TextToScreen.Controls
@@ -29,7 +33,14 @@ namespace TextToScreen.Controls
 
             binder.BindProperty(pathSelectBoxImage, box => box.FileName, nameof(PathSelectBox.FileNameChanged),
                 ustawienia => ustawienia.ScreenImagePath, this);
-            
+
+            binder.BindProperty(contentAlignmentBox1, box => box.SelectedContentAlignment, 
+                nameof(ContentAlignmentBox.SelectedContentAlignmentChanged), ustawienia => ustawienia.ScreenFontAlignment, this);
+
+            comboBoxFontFamily.Items.Clear();
+            comboBoxFontFamily.Items.AddRange(new FontGrabber().ValidFontFamilyNames.Cast<object>().ToArray());
+            binder.Subscribe(OnFontFamilyChanged, ustawienia => ustawienia.ScreenFontFamily, this);
+
             binder.SendUpdates(this);
         }
 
@@ -45,6 +56,29 @@ namespace TextToScreen.Controls
             _colorDialog.Color = backgroundColorPreview.BackColor;
             if (_colorDialog.ShowDialog(this) == DialogResult.OK)
                 backgroundColorPreview.BackColor = _colorDialog.Color;
+        }
+
+        private void OnFontFamilyChanged(object sender, SettingChangedEventArgs<string> args)
+        {
+            var item = comboBoxFontFamily.Items.Cast<string>().FirstOrDefault(x => x.Equals(args.NewValue));
+            if (item != null)
+                comboBoxFontFamily.SelectedItem = item;
+            else
+                comboBoxFontFamily.SelectedIndex = 0;
+        }
+
+        private void comboBoxFontFamily_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var sel = comboBoxFontFamily.SelectedItem as string;
+            if (!string.IsNullOrEmpty(sel))
+                Ustawienia.Default.ScreenFontFamily = sel;
+            else
+                comboBoxFontFamily.SelectedIndex = 0;
+
+            var tempFontFamily = new FontFamily((string) comboBoxFontFamily.SelectedItem);
+            boldToggle.Enabled = tempFontFamily.IsStyleAvailable(FontStyle.Bold);
+            italicToggle.Enabled = tempFontFamily.IsStyleAvailable(FontStyle.Italic);
+            underlineToggle.Enabled = tempFontFamily.IsStyleAvailable(FontStyle.Underline);
         }
     }
 }
