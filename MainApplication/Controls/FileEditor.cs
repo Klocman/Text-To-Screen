@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
@@ -14,12 +12,10 @@ namespace TextToScreen.Controls
     {
         private bool _fileWasChanged;
         private SongFileEntry _loadedFile;
-        private FontStyle _selectedFontStyle = FontStyle.Regular;
 
         public FileEditor()
         {
             InitializeComponent();
-            fontSize.NumericUpDownControl.ValueChanged += ToolstripFontSettingChanged;
         }
 
         public bool EditBoxFocused => textBox1.Focused;
@@ -30,7 +26,6 @@ namespace TextToScreen.Controls
             private set
             {
                 _fileWasChanged = value;
-                toolStripButton_save.Enabled = value;
                 OnFileContentsChanged();
             }
         }
@@ -49,71 +44,6 @@ namespace TextToScreen.Controls
             }
         }
 
-        [Browsable(false),
-         EditorBrowsable(EditorBrowsableState.Never)]
-        public ContentAlignment SelectedAlignment
-        {
-            get
-            {
-                var item = toolStripComboBoxAlignment.SelectedItem as string;
-
-                if (!string.IsNullOrEmpty(item) && Enum.IsDefined(typeof(ContentAlignment), item))
-                    return (ContentAlignment)Enum.Parse(typeof(ContentAlignment), item);
-                return ContentAlignment.MiddleCenter;
-            }
-            set
-            {
-                toolStripComboBoxAlignment.SelectedItem = toolStripComboBoxAlignment.Items
-                    .Cast<string>().FirstOrDefault(x => value.ToString().Equals(x));
-            }
-        }
-
-        [Browsable(false),
-         EditorBrowsable(EditorBrowsableState.Never)]
-        public FontFamily SelectedFontFamily
-        {
-            get { return (toolStripComboBoxFont.SelectedItem as FontFamilyCustomToString)?.Value; }
-            set
-            {
-                toolStripComboBoxFont.SelectedItem = toolStripComboBoxFont.Items
-                    .Cast<FontFamilyCustomToString>()
-                    .FirstOrDefault(x => x.Value.Name.Equals(value.Name));
-                if (toolStripComboBoxFont.SelectedItem == null && toolStripComboBoxFont.Items.Count > 0)
-                    toolStripComboBoxFont.SelectedIndex = 0;
-            }
-        }
-
-        [Browsable(false),
-         EditorBrowsable(EditorBrowsableState.Never)]
-        public int SelectedFontSize
-        {
-            get
-            {
-                var size = (int)fontSize.NumericUpDownControl.Value;
-                if (size < 1)
-                {
-                    size = 1;
-                    fontSize.NumericUpDownControl.Value = 1;
-                }
-                return size;
-            }
-            set { fontSize.NumericUpDownControl.Value = value; }
-        }
-
-        [Browsable(false),
-         EditorBrowsable(EditorBrowsableState.Never)]
-        public FontStyle SelectedFontStyle
-        {
-            get { return _selectedFontStyle; }
-            set
-            {
-                // Backing store is changed by toolstripFontSettingChanged event fired by changing checkstates
-                boldToggle.CheckState = ((value & FontStyle.Bold) != 0).ToCheckState();
-                italicToggle.CheckState = ((value & FontStyle.Italic) != 0).ToCheckState();
-                underlineToggle.CheckState = ((value & FontStyle.Underline) != 0).ToCheckState();
-            }
-        }
-
         public string SelectedString
             => multiLineListBox1.SelectedItem == null ? string.Empty : multiLineListBox1.SelectedItem as string;
 
@@ -128,7 +58,6 @@ namespace TextToScreen.Controls
         public event Action<FileEditor, SongFileEntry> FileContentsChanged;
         public event Action<FileEditor, SongFileEntry> FileSaved;
         public event Action<FileEditor, SongFileEntry> LoadedFileChanged;
-        public event Action<FileEditor> SelectedFontChanged;
         public event Action<FileEditor, string> SelectedStringAccepted;
         public event Action<FileEditor, string> SelectedStringChanged;
         public event Action<FileEditor> SelectedStringCleared;
@@ -175,12 +104,7 @@ namespace TextToScreen.Controls
                     break;
             }
         }
-
-        public Font GetSelectedFont()
-        {
-            return new Font(SelectedFontFamily, SelectedFontSize, SelectedFontStyle);
-        }
-
+        
         public bool LoadFile(SongFileEntry file)
         {
             if (!UnloadFile())
@@ -224,21 +148,7 @@ namespace TextToScreen.Controls
             if (tabControl1.SelectedIndex != 1) return;
             textBox1.DeselectAll();
         }
-
-        public void SetupToolstrip(FontFamily[] fontFamilies)
-        {
-            toolStripComboBoxAlignment.Items.Clear();
-            toolStripComboBoxAlignment.Items.AddRange(Enum.GetNames(typeof(ContentAlignment)).Cast<object>().ToArray());
-            toolStripComboBoxAlignment.SelectedIndex = 0;
-
-            toolStripComboBoxFont.Items.Clear();
-            toolStripComboBoxFont.Items.AddRange(fontFamilies.Select(x => new FontFamilyCustomToString(x)).ToArray());
-
-            toolStripComboBoxFont.SelectedIndex = 0;
-
-            fontSize.NumericUpDownControl.Value = 20;
-        }
-
+        
         public void Text_AddVerse()
         {
             if (tabControl1.SelectedIndex != 1) return;
@@ -418,12 +328,7 @@ namespace TextToScreen.Controls
         {
             LoadedFileChanged?.Invoke(this, LoadedFile);
         }
-
-        private void OnSelectedFontChanged()
-        {
-            SelectedFontChanged?.Invoke(this);
-        }
-
+        
         private void OnSelectedStringAccepted()
         {
             SelectedStringAccepted?.Invoke(this, SelectedString);
@@ -462,80 +367,6 @@ namespace TextToScreen.Controls
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             FileWasChanged = true;
-        }
-
-        private void toolStripButton_save_Click(object sender, EventArgs e)
-        {
-            if (toolStripButton_save.Enabled)
-                SaveChanges();
-        }
-
-        private void toolStripComboBoxAlignment_Leave(object sender, EventArgs e)
-        {
-            if (toolStripComboBoxAlignment.SelectedItem == null)
-                toolStripComboBoxAlignment.SelectedIndex = 0;
-        }
-
-        private void toolStripComboBoxFont_Leave(object sender, EventArgs e)
-        {
-            if (toolStripComboBoxFont.SelectedItem == null)
-                toolStripComboBoxFont.SelectedIndex = 0;
-        }
-
-        private void ToolstripFontSettingChanged(object sender, EventArgs e)
-        {
-            boldToggle.Enabled = false;
-            italicToggle.Enabled = false;
-            underlineToggle.Enabled = false;
-            if (SelectedFontFamily == null)
-                return;
-
-            var tempStyle = FontStyle.Regular;
-            var tempFontFamily = SelectedFontFamily;
-            if (tempFontFamily.IsStyleAvailable(FontStyle.Bold))
-            {
-                boldToggle.Enabled = true;
-                if (boldToggle.CheckState == CheckState.Checked)
-                    tempStyle |= FontStyle.Bold;
-            }
-
-            if (tempFontFamily.IsStyleAvailable(FontStyle.Italic))
-            {
-                italicToggle.Enabled = true;
-                if (italicToggle.CheckState == CheckState.Checked)
-                    tempStyle |= FontStyle.Italic;
-            }
-
-            if (tempFontFamily.IsStyleAvailable(FontStyle.Underline))
-            {
-                underlineToggle.Enabled = true;
-                if (underlineToggle.CheckState == CheckState.Checked)
-                    tempStyle |= FontStyle.Underline;
-            }
-
-            _selectedFontStyle = tempStyle;
-
-            OnSelectedFontChanged();
-        }
-
-        private sealed class FontFamilyCustomToString : IDisposable
-        {
-            public readonly FontFamily Value;
-
-            public FontFamilyCustomToString(FontFamily baseFamily)
-            {
-                Value = baseFamily;
-            }
-
-            public void Dispose()
-            {
-                Value.Dispose();
-            }
-
-            public override string ToString()
-            {
-                return Value.Name;
-            }
         }
     }
 }

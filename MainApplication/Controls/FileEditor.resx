@@ -117,180 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="multiLineListBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStrip.AutoSize" type="System.Boolean, mscorlib">
+  <data name="multiLineListBox1.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items" xml:space="preserve">
-    <value>BottomCenter</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items1" xml:space="preserve">
-    <value>BottomLeft</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items2" xml:space="preserve">
-    <value>BottomRight</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items3" xml:space="preserve">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items4" xml:space="preserve">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items5" xml:space="preserve">
-    <value>MiddleRight</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items6" xml:space="preserve">
-    <value>TopCenter</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items7" xml:space="preserve">
-    <value>TopLeft</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.Items8" xml:space="preserve">
-    <value>TopRight</value>
-  </data>
-  <data name="toolStripComboBoxAlignment.MaxDropDownItems" type="System.Int32, mscorlib">
-    <value>12</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripComboBoxAlignment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
+  <data name="multiLineListBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="toolStripComboBoxAlignment.ToolTipText" xml:space="preserve">
-    <value>Text alignment</value>
+  <data name="multiLineListBox1.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
+  <data name="multiLineListBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 618</value>
   </data>
-  <data name="toolStripComboBoxFont.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripComboBoxFont.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 25</value>
-  </data>
-  <data name="toolStripComboBoxFont.ToolTipText" xml:space="preserve">
-    <value>Font</value>
-  </data>
-  <data name="fontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 22</value>
-  </data>
-  <data name="fontSize.Text" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="boldToggle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADFSURBVDhPzZIxCsIwFIZzBM/UveCazSF7r+CayQsU3Ls4
-        9ADOmVx6hq6Zkowxv7zAs3kiiIgf/NCkfz/yQtX/EWPML+JLTt77HVVlUO66ronWOs/zDNGFqjJcMAxD
-        NsY8ifCeqjJcgGdkmqbPBeu6ZmvtY40xyp6nqgwX8PR9n51zOYRwpaoMF2zvAJJlWSDZU71lOwKCj+re
-        OI4QHKne8lUBRkDqGsE9pJQOVG/hAh7MTz/Sjaoy9dhCfDn6+e2v/GOUugMnAzPoJnq55AAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <data name="boldToggle.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="boldToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="boldToggle.Text" xml:space="preserve">
-    <value>Bold</value>
-  </data>
-  <data name="boldToggle.ToolTipText" xml:space="preserve">
-    <value>Bold</value>
-  </data>
-  <data name="italicToggle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADJSURBVDhPzZK9DcMgEEY9QkbJCJF7JI+Qgp4VUnkKpAzh
-        AVxTpXGfAShc2IaS8NC5hnT+pCvg4564n+7a2rbtG0JIZ8QYH2LVta7rzXuf+r4vAYA7ses6jmNwzpVk
-        rTWAj1htyoCXtbYAxnFM+fwWq005YTbGFMA0TdT/FKtN1KyUKoBlWdK+73ex6uIxSSQDASZWm/gu3wZA
-        GZQjVptoGI0DQCNpqFhtYmSMDgCjzIBBrLpYFmommWCZ/log1hXAGayzWJdU1/0AnfC3aV5xxNQAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="italicToggle.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="italicToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="italicToggle.Text" xml:space="preserve">
-    <value>Italic</value>
-  </data>
-  <data name="italicToggle.ToolTipText" xml:space="preserve">
-    <value>Italic</value>
-  </data>
-  <data name="underlineToggle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACNSURBVDhP3Y/BDcMgEAQpJbXQBX8KSSHUQgspIXTgBwKe
-        OIMOyxJG4Wl5pZWO3dGdre6lnHM9W+JpPohSa918Bmf5oIctCCHUUsoLM68u2IwxDXTO1RjjFzOT0cEI
-        Piql9PbeH9estc39TQcj+LV+Fz6A/UswMxmdYNfi/1Ys+CjKfnXmvwtWLPgtpNQOXoBDdmR8cuwAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="underlineToggle.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="underlineToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="underlineToggle.Text" xml:space="preserve">
-    <value>Underline</value>
-  </data>
-  <data name="underlineToggle.ToolTipText" xml:space="preserve">
-    <value>Underline</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="toolStripButton_save.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripButton_save.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton_save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 22</value>
-  </data>
-  <data name="toolStripButton_save.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="toolStripButton_save.ToolTipText" xml:space="preserve">
-    <value>Save changes to opened file</value>
-  </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 25</value>
-  </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+  <data name="multiLineListBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Name" xml:space="preserve">
     <value>multiLineListBox1</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.MultilineListBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.MultilineListBox, TextToScreen, Version=1.7.6040.26994, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -301,12 +153,11 @@
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 599</value>
+    <value>492, 624</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -325,6 +176,24 @@
   </data>
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox1.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 593</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
@@ -384,7 +253,7 @@
     <value>filePropertiesViewer1</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.FilePropertiesViewer, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.7.6040.26994, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -420,10 +289,10 @@
     <value>Fill</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 25</value>
+    <value>0, 0</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 625</value>
+    <value>500, 650</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -440,66 +309,6 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="multiLineListBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="multiLineListBox1.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="multiLineListBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="multiLineListBox1.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="multiLineListBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 593</value>
-  </data>
-  <data name="multiLineListBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;multiLineListBox1.Name" xml:space="preserve">
-    <value>multiLineListBox1</value>
-  </data>
-  <data name="&gt;&gt;multiLineListBox1.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.MultilineListBox, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;multiLineListBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;multiLineListBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox1.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 593</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -508,66 +317,6 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>500, 650</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAlignment.Name" xml:space="preserve">
-    <value>toolStripComboBoxAlignment</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAlignment.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxFont.Name" xml:space="preserve">
-    <value>toolStripComboBoxFont</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxFont.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fontSize.Name" xml:space="preserve">
-    <value>fontSize</value>
-  </data>
-  <data name="&gt;&gt;fontSize.Type" xml:space="preserve">
-    <value>Klocman.Controls.ToolStripNumberControl, KlocTools, Version=2.6.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;boldToggle.Name" xml:space="preserve">
-    <value>boldToggle</value>
-  </data>
-  <data name="&gt;&gt;boldToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;italicToggle.Name" xml:space="preserve">
-    <value>italicToggle</value>
-  </data>
-  <data name="&gt;&gt;italicToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;underlineToggle.Name" xml:space="preserve">
-    <value>underlineToggle</value>
-  </data>
-  <data name="&gt;&gt;underlineToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton_save.Name" xml:space="preserve">
-    <value>toolStripButton_save</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton_save.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FileEditor</value>
