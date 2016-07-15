@@ -1,4 +1,6 @@
-﻿namespace TextToScreen.Properties
+﻿using Klocman.Binding;
+
+namespace TextToScreen.Properties
 {
     // This class allows you to handle specific events on the settings class:
     //  The SettingChanging event is raised before a setting's value is changed.
@@ -7,7 +9,13 @@
     //  The SettingsSaving event is raised before the setting values are saved.
     public sealed partial class Ustawienia
     {
-        public static Ustawienia MainSettingSet { get; } = ((Ustawienia) (Synchronized(new Ustawienia())));
-        public static Ustawienia SelectedSettingSet { get; set; }
+        public Ustawienia()
+        {
+            Binder = new SettingBinder<Ustawienia>(this);
+        }
+        
+        public static Ustawienia DefaultValues { get; } = ((Ustawienia)(Synchronized(new Ustawienia())));
+
+        public SettingBinder<Ustawienia> Binder { get; }
     }
 }

@@ -30,7 +30,7 @@ namespace TextToScreen.Windows
             set
             {
                 TopMost = value;
-                Ustawienia.SelectedSettingSet.OknoDoceloweTop = value;
+                Ustawienia.Default.OknoDoceloweTop = value;
             }
         }
 
@@ -40,7 +40,7 @@ namespace TextToScreen.Windows
             set
             {
                 _isCursorHidden = value;
-                Ustawienia.SelectedSettingSet.OknoDoceloweHideCursor = value;
+                Ustawienia.Default.OknoDoceloweHideCursor = value;
             }
         }
 
@@ -59,7 +59,7 @@ namespace TextToScreen.Windows
                     FormBorderStyle = FormBorderStyle.SizableToolWindow;
                     WindowState = FormWindowState.Normal;
                 }
-                Ustawienia.SelectedSettingSet.OknoDoceloweFull = value;
+                Ustawienia.Default.OknoDoceloweFull = value;
             }
         }
        

@@ -38,6 +38,7 @@ namespace TextToScreen.Windows
             this.fileListView = new TextToScreen.Controls.FileListView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.fileEditor = new TextToScreen.Controls.FileEditor();
+            this.outputAppearanceControls1 = new TextToScreen.Controls.OutputAppearanceControls();
             this.previewScreens = new TextToScreen.Controls.Screens.PreviewScreens();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,7 +98,6 @@ namespace TextToScreen.Windows
             this.openArchiveFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveArchiveDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys = new Klocman.Subsystems.GlobalHotkeys();
-            this.outputAppearanceControls1 = new TextToScreen.Controls.OutputAppearanceControls();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -188,6 +188,11 @@ namespace TextToScreen.Windows
             this.fileEditor.SelectedStringChanged += new System.Action<TextToScreen.Controls.FileEditor, string>(this.fileEditor_SelectedStringChanged);
             this.fileEditor.SelectedStringCleared += new System.Action<TextToScreen.Controls.FileEditor>(this.fileEditor_SelectedStringCleared);
             this.fileEditor.EnabledChanged += new System.EventHandler(this.fileEditor_EnabledChanged);
+            // 
+            // outputAppearanceControls1
+            // 
+            resources.ApplyResources(this.outputAppearanceControls1, "outputAppearanceControls1");
+            this.outputAppearanceControls1.Name = "outputAppearanceControls1";
             // 
             // previewScreens
             // 
@@ -489,7 +494,6 @@ namespace TextToScreen.Windows
             this.preferencjeToolStripMenuItem});
             this.ustawieniaToolStripMenuItem.Name = "ustawieniaToolStripMenuItem";
             resources.ApplyResources(this.ustawieniaToolStripMenuItem, "ustawieniaToolStripMenuItem");
-            this.ustawieniaToolStripMenuItem.DropDownOpening += new System.EventHandler(this.ustawieniaToolStripMenuItem_DropDownOpening);
             // 
             // wyślijDoOknaDocelowegoToolStripMenuItem
             // 
@@ -514,7 +518,6 @@ namespace TextToScreen.Windows
             this.alwaysOnTopToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
             resources.ApplyResources(this.alwaysOnTopToolStripMenuItem, "alwaysOnTopToolStripMenuItem");
-            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
             // 
             // fullScreenToolStripMenuItem
             // 
@@ -522,7 +525,6 @@ namespace TextToScreen.Windows
             this.fullScreenToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
             resources.ApplyResources(this.fullScreenToolStripMenuItem, "fullScreenToolStripMenuItem");
-            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -613,11 +615,6 @@ namespace TextToScreen.Windows
             this.globalHotkeys.ContainerControl = this;
             this.globalHotkeys.StopWhenFormIsDisabled = false;
             this.globalHotkeys.SuppressKeyPresses = true;
-            // 
-            // outputAppearanceControls1
-            // 
-            resources.ApplyResources(this.outputAppearanceControls1, "outputAppearanceControls1");
-            this.outputAppearanceControls1.Name = "outputAppearanceControls1";
             // 
             // MainWindow
             // 

@@ -222,6 +222,9 @@
   <data name="outputAppearanceControls1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="outputAppearanceControls1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>99999, 117</value>
+  </data>
   <data name="outputAppearanceControls1.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>240, 117</value>
   </data>

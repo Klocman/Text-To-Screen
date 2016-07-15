@@ -33,7 +33,7 @@ namespace TextToScreen.Windows
         public MainWindow()
         {
             InitializeComponent();
-            
+
             Opacity = 0;
 
             // Needs to be called after the generated code because of a bug with generated code ordering
@@ -43,7 +43,6 @@ namespace TextToScreen.Windows
             splitContainer3.Panel1MinSize = 150;
             splitContainer3.Panel2MinSize = 150;
 
-            Ustawienia.SelectedSettingSet = Ustawienia.MainSettingSet;
             PremadeDialogs.DefaultOwner = this;
 
             _fontCollections = new FontGrabber();
@@ -58,6 +57,8 @@ namespace TextToScreen.Windows
 
             ReadStartupSettings();
             ReadSettings();
+            BindSettings();
+            Ustawienia.Default.Binder.SendUpdates(this);
 
             SetupHotkeys();
 
@@ -92,23 +93,18 @@ namespace TextToScreen.Windows
             }
         }
 
-        private bool IsAlwaysOnTop
+        private void BindSettings()
         {
-            get { return TopMost; }
-            set
-            {
-                TopMost = value;
-                Ustawienia.SelectedSettingSet.OknoGlowneTop = value;
-            }
-        }
+            var binder = Ustawienia.Default.Binder;
+            binder.BindControl(alwaysOnTopToolStripMenuItem, ustawienia => ustawienia.OknoGlowneTop, this);
+            binder.Subscribe(this, mainWindow => mainWindow.TopMost, ustawienia => ustawienia.OknoGlowneTop, this);
 
-        private bool IsFullScreen
-        {
-            get { return FormBorderStyle == FormBorderStyle.None; }
-            set
+            binder.BindControl(fullScreenToolStripMenuItem, ustawienia => ustawienia.OknoGlowneFull, this);
+            binder.Subscribe(((sender, args) =>
             {
-                if (value) //Going fullscreen now
+                if (args.NewValue)
                 {
+                    //Going fullscreen
                     FormBorderStyle = FormBorderStyle.None;
                     WindowState = FormWindowState.Maximized;
                 }
@@ -117,9 +113,10 @@ namespace TextToScreen.Windows
                     FormBorderStyle = FormBorderStyle.Sizable;
                     //WindowState = FormWindowState.Normal;
                 }
-                Ustawienia.SelectedSettingSet.OknoGlowneFull = value;
-            }
+            }), ustawienia => ustawienia.OknoGlowneFull, this);
+
         }
+
 
         private SongFileArchive OpenedSongArchive
         {
@@ -147,17 +144,12 @@ namespace TextToScreen.Windows
         {
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
-                if (Ustawienia.SelectedSettingSet.AutoRecentItems.Contains(path))
-                    Ustawienia.SelectedSettingSet.AutoRecentItems.Remove(path);
-                Ustawienia.SelectedSettingSet.AutoRecentItems.Add(path);
+                if (Ustawienia.Default.AutoRecentItems.Contains(path))
+                    Ustawienia.Default.AutoRecentItems.Remove(path);
+                Ustawienia.Default.AutoRecentItems.Add(path);
             }
 
             TrimRecentItems();
-        }
-
-        private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IsAlwaysOnTop = !IsAlwaysOnTop;
         }
 
         /// <summary>
@@ -384,11 +376,6 @@ namespace TextToScreen.Windows
             fileEditor.LoadFile(arg2);
         }
 
-        private void fullScreenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IsFullScreen = !IsFullScreen;
-        }
-
         private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -452,8 +439,8 @@ namespace TextToScreen.Windows
                 e.Cancel = true;
                 return;
             }
+
             SaveSettings();
-            SaveStartupSettings();
         }
 
         private void MainWindow_PositionDataChanged(object sender, EventArgs e)
@@ -505,7 +492,7 @@ namespace TextToScreen.Windows
             if (MessageBoxes.FirstStartQuestion(this))
                 MessageBoxes.HelpDefault(this);
             //TODO
-            Ustawienia.SelectedSettingSet._FirstStartCompleted = true;
+            Ustawienia.Default._FirstStartCompleted = true;
         }
 
         private void OpenArchive(string fullPath)
@@ -530,7 +517,7 @@ namespace TextToScreen.Windows
 
         private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var aboutBox = new AboutBox {Owner = this};
+            var aboutBox = new AboutBox { Owner = this };
             aboutBox.ShowDialog();
         }
 
@@ -568,16 +555,16 @@ namespace TextToScreen.Windows
         {
             ostatnioOtwarteToolStripMenuItem.DropDownItems.Clear();
 
-            var histEn = Ustawienia.SelectedSettingSet.GeneralHistoryEnabled &&
-                         Ustawienia.SelectedSettingSet.AutoRecentItems.Count > 0;
+            var histEn = Ustawienia.Default.GeneralHistoryEnabled &&
+                         Ustawienia.Default.AutoRecentItems.Count > 0;
             ostatnioOtwarteToolStripMenuItem.Enabled = histEn;
             if (histEn)
             {
                 TrimRecentItems();
-                for (var i = Ustawienia.SelectedSettingSet.AutoRecentItems.Count - 1; i >= 0; i--)
+                for (var i = Ustawienia.Default.AutoRecentItems.Count - 1; i >= 0; i--)
                 {
-                    var path = Ustawienia.SelectedSettingSet.AutoRecentItems[i];
-                    var newChild = new ToolStripMenuItem {Text = path};
+                    var path = Ustawienia.Default.AutoRecentItems[i];
+                    var newChild = new ToolStripMenuItem { Text = path };
                     newChild.Click += RecentItem_Click;
                     ostatnioOtwarteToolStripMenuItem.DropDownItems.Add(newChild);
                 }
@@ -586,40 +573,36 @@ namespace TextToScreen.Windows
 
         private void preferencjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBoxes.ShowSettingsDialog(this, Ustawienia.SelectedSettingSet, Ustawienia.Default);
+            MessageBoxes.ShowSettingsDialog(this, Ustawienia.Default, Ustawienia.DefaultValues);
             ReadSettings();
         }
 
         private void ReadSettings()
         {
-            if (Ustawienia.SelectedSettingSet.AutoRecentItems == null)
-                Ustawienia.SelectedSettingSet.AutoRecentItems = new StringCollection();
-
-            IsFullScreen = Ustawienia.SelectedSettingSet.OknoGlowneFull;
-            IsAlwaysOnTop = Ustawienia.SelectedSettingSet.OknoGlowneTop;
+            if (Ustawienia.Default.AutoRecentItems == null)
+                Ustawienia.Default.AutoRecentItems = new StringCollection();
 
             if (_remoteDisplayWindow != null)
             {
-                _remoteDisplayWindow.IsAlwaysOnTop = Ustawienia.SelectedSettingSet.OknoDoceloweTop;
-                _remoteDisplayWindow.IsCursorHidden = Ustawienia.SelectedSettingSet.OknoDoceloweHideCursor;
-                _remoteDisplayWindow.IsFullScreen = Ustawienia.SelectedSettingSet.OknoDoceloweFull;
+                _remoteDisplayWindow.IsAlwaysOnTop = Ustawienia.Default.OknoDoceloweTop;
+                _remoteDisplayWindow.IsCursorHidden = Ustawienia.Default.OknoDoceloweHideCursor;
+                _remoteDisplayWindow.IsFullScreen = Ustawienia.Default.OknoDoceloweFull;
 
-                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.SelectedSettingSet.OutputTextColor, Ustawienia.SelectedSettingSet.OutputBackgroundColor, null);
+                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.Default.OutputTextColor, Ustawienia.Default.OutputBackgroundColor, null);
             }
 
             if (OpenedSongArchive != null)
             {
-                OpenedSongArchive.LockArchiveFile = !Ustawienia.SelectedSettingSet.GeneralInneDostepZewnetrznyDoArchiwum;
-                OpenedSongArchive.MonitorExternalChanges =
-                    Ustawienia.SelectedSettingSet.GeneralInneSprawdzajZewnetrzneZmiany;
+                OpenedSongArchive.LockArchiveFile = !Ustawienia.Default.GeneralInneDostepZewnetrznyDoArchiwum;
+                OpenedSongArchive.MonitorExternalChanges = Ustawienia.Default.GeneralInneSprawdzajZewnetrzneZmiany;
             }
 
             UpdateMainWindowTitlebar();
 
-            if (!Ustawienia.SelectedSettingSet._FirstStartCompleted)
+            if (!Ustawienia.Default._FirstStartCompleted)
                 new Thread(() =>
                 {
-                    while(!Visible)
+                    while (!Visible)
                         Thread.Sleep(200);
                     Invoke(new Action(OnFirstStart));
                 }).Start();
@@ -627,28 +610,28 @@ namespace TextToScreen.Windows
 
         private void ReadStartupSettings()
         {
-            fileEditor.SelectedFontFamily = _fontCollections.GetFontFamily(Ustawienia.SelectedSettingSet.AutoCzcionka);
-            fileEditor.SelectedFontSize = Ustawienia.SelectedSettingSet.AutoRozmiarTekstu;
-            fileEditor.SelectedAlignment = Ustawienia.SelectedSettingSet.AutoWyrownanieTekstu;
-            fileEditor.SelectedFontStyle = Ustawienia.SelectedSettingSet.AutoStylCzcionki;
+            fileEditor.SelectedFontFamily = _fontCollections.GetFontFamily(Ustawienia.Default.AutoCzcionka);
+            fileEditor.SelectedFontSize = Ustawienia.Default.AutoRozmiarTekstu;
+            fileEditor.SelectedAlignment = Ustawienia.Default.AutoWyrownanieTekstu;
+            fileEditor.SelectedFontStyle = Ustawienia.Default.AutoStylCzcionki;
 
-            if (Ustawienia.SelectedSettingSet.AutoOknoGlownePozycja == Point.Empty
-                && Ustawienia.SelectedSettingSet.AutoOknoDocelowePozycja == Point.Empty)
+            if (Ustawienia.Default.AutoOknoGlownePozycja == Point.Empty
+                && Ustawienia.Default.AutoOknoDocelowePozycja == Point.Empty)
             {
                 StartPosition = FormStartPosition.WindowsDefaultLocation;
                 _remoteDisplayWindow.StartPosition = FormStartPosition.WindowsDefaultLocation;
                 return;
             }
 
-            Location = Ustawienia.SelectedSettingSet.AutoOknoGlownePozycja;
-            Size = Ustawienia.SelectedSettingSet.AutoOknoGlowneRozmiar;
-            WindowState = Ustawienia.SelectedSettingSet.AutoOknoGlowneMaximized
+            Location = Ustawienia.Default.AutoOknoGlownePozycja;
+            Size = Ustawienia.Default.AutoOknoGlowneRozmiar;
+            WindowState = Ustawienia.Default.AutoOknoGlowneMaximized
                 ? FormWindowState.Maximized
                 : FormWindowState.Normal;
 
-            _remoteDisplayWindow.Location = Ustawienia.SelectedSettingSet.AutoOknoDocelowePozycja;
-            _remoteDisplayWindow.Size = Ustawienia.SelectedSettingSet.AutoOknoDoceloweRozmiar;
-            _remoteDisplayWindow.WindowState = Ustawienia.SelectedSettingSet.AutoOknoDoceloweMaximized
+            _remoteDisplayWindow.Location = Ustawienia.Default.AutoOknoDocelowePozycja;
+            _remoteDisplayWindow.Size = Ustawienia.Default.AutoOknoDoceloweRozmiar;
+            _remoteDisplayWindow.WindowState = Ustawienia.Default.AutoOknoDoceloweMaximized
                 ? FormWindowState.Maximized
                 : FormWindowState.Normal;
 
@@ -657,7 +640,7 @@ namespace TextToScreen.Windows
 
         private void RecentItem_Click(object sender, EventArgs e)
         {
-            var target = ((ToolStripMenuItem) sender).Text;
+            var target = ((ToolStripMenuItem)sender).Text;
             OpenArchive(target);
         }
 
@@ -714,56 +697,48 @@ namespace TextToScreen.Windows
 
         private void SaveMainWindowPosition()
         {
-            if (Ustawienia.SelectedSettingSet != null && !IsFullScreen)
+            if (Ustawienia.Default == null || Ustawienia.Default.OknoGlowneFull) return;
+
+            var glMax = WindowState == FormWindowState.Maximized;
+            Ustawienia.Default.AutoOknoGlowneMaximized = glMax;
+            if (!glMax)
             {
-                var glMax = WindowState == FormWindowState.Maximized;
-                Ustawienia.SelectedSettingSet.AutoOknoGlowneMaximized = glMax;
-                if (!glMax)
-                {
-                    Ustawienia.SelectedSettingSet.AutoOknoGlownePozycja = Location;
-                    Ustawienia.SelectedSettingSet.AutoOknoGlowneRozmiar = Size;
-                }
+                Ustawienia.Default.AutoOknoGlownePozycja = Location;
+                Ustawienia.Default.AutoOknoGlowneRozmiar = Size;
             }
         }
 
         private void SaveSecondaryWindowPosition()
         {
-            if (_remoteDisplayWindow != null && Ustawienia.SelectedSettingSet != null &&
-                !_remoteDisplayWindow.IsFullScreen)
+            if (_remoteDisplayWindow == null || Ustawienia.Default == null || _remoteDisplayWindow.IsFullScreen) return;
+
+            var docMax = _remoteDisplayWindow.WindowState == FormWindowState.Maximized;
+            Ustawienia.Default.AutoOknoDoceloweMaximized = docMax;
+            if (!docMax)
             {
-                var docMax = _remoteDisplayWindow.WindowState == FormWindowState.Maximized;
-                Ustawienia.SelectedSettingSet.AutoOknoDoceloweMaximized = docMax;
-                if (!docMax)
-                {
-                    Ustawienia.SelectedSettingSet.AutoOknoDocelowePozycja = _remoteDisplayWindow.Location;
-                    Ustawienia.SelectedSettingSet.AutoOknoDoceloweRozmiar = _remoteDisplayWindow.Size;
-                }
+                Ustawienia.Default.AutoOknoDocelowePozycja = _remoteDisplayWindow.Location;
+                Ustawienia.Default.AutoOknoDoceloweRozmiar = _remoteDisplayWindow.Size;
             }
         }
 
         private void SaveSettings()
         {
-            Ustawienia.SelectedSettingSet.Save();
-        }
-
-        private void SaveStartupSettings()
-        {
-            // Editor settings
+            // Editor settings TODO move out
             var f = fileEditor.SelectedFontFamily;
             if (f != null)
-                Ustawienia.SelectedSettingSet.AutoCzcionka = f.Name;
-            Ustawienia.SelectedSettingSet.AutoRozmiarTekstu = fileEditor.SelectedFontSize;
-            Ustawienia.SelectedSettingSet.AutoWyrownanieTekstu = fileEditor.SelectedAlignment;
-            Ustawienia.SelectedSettingSet.AutoStylCzcionki = fileEditor.SelectedFontStyle;
+                Ustawienia.Default.AutoCzcionka = f.Name;
+            Ustawienia.Default.AutoRozmiarTekstu = fileEditor.SelectedFontSize;
+            Ustawienia.Default.AutoWyrownanieTekstu = fileEditor.SelectedAlignment;
+            Ustawienia.Default.AutoStylCzcionki = fileEditor.SelectedFontStyle;
 
-            if (!Ustawienia.SelectedSettingSet.GeneralHistoryEnabled)
-                Ustawienia.SelectedSettingSet.AutoRecentItems.Clear();
+            if (!Ustawienia.Default.GeneralHistoryEnabled)
+                Ustawienia.Default.AutoRecentItems.Clear();
 
             // Window positions and stuff
             SaveMainWindowPosition();
             SaveSecondaryWindowPosition();
 
-            Ustawienia.SelectedSettingSet.Save();
+            Ustawienia.Default.Save();
         }
 
         private void SecondaryWindow_PositionDataChanged(object sender, EventArgs e)
@@ -826,7 +801,7 @@ namespace TextToScreen.Windows
                 wyślijDoOknaDocelowegoToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.F8, wyczyśćOknoDoceloweToolStripMenuItem_Click,
                 wyczyśćOknoDoceloweToolStripMenuItem));
-            globalHotkeys.Add(new HotkeyEntry(Keys.F11, fullScreenToolStripMenuItem_Click, fullScreenToolStripMenuItem));
+            globalHotkeys.Add(new HotkeyEntry(Keys.F11, (x, y) => Ustawienia.Default.OknoGlowneFull = !Ustawienia.Default.OknoGlowneFull, fullScreenToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.P, false, true, false, preferencjeToolStripMenuItem_Click,
                 preferencjeToolStripMenuItem));
 
@@ -836,10 +811,10 @@ namespace TextToScreen.Windows
             // Other
             globalHotkeys.Add(new HotkeyEntry(Keys.Left, false, false, false,
                 (x, y) => fileListView.FocusFileList(),
-                null, () => Ustawienia.SelectedSettingSet.OknoGlowneKeysArrows && fileEditor.VerseListFocused));
+                null, () => Ustawienia.Default.OknoGlowneKeysArrows && fileEditor.VerseListFocused));
             globalHotkeys.Add(new HotkeyEntry(Keys.Right, false, false, false,
-                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), 
-                null, () => Ustawienia.SelectedSettingSet.OknoGlowneKeysArrows && fileListView.FileListFocused));
+                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList),
+                null, () => Ustawienia.Default.OknoGlowneKeysArrows && fileListView.FileListFocused));
 
             // Shortcuts
             globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false, (x, y) => fileListView.FocusFileList(),
@@ -864,8 +839,8 @@ namespace TextToScreen.Windows
             {
                 var tempArchive = new SongFileArchive(fullPath)
                 {
-                    LockArchiveFile = !Ustawienia.SelectedSettingSet.GeneralInneDostepZewnetrznyDoArchiwum,
-                    MonitorExternalChanges = Ustawienia.SelectedSettingSet.GeneralInneSprawdzajZewnetrzneZmiany
+                    LockArchiveFile = !Ustawienia.Default.GeneralInneDostepZewnetrznyDoArchiwum,
+                    MonitorExternalChanges = Ustawienia.Default.GeneralInneSprawdzajZewnetrzneZmiany
                 };
 
                 tempArchive.ArchiveLoaded += x =>
@@ -963,9 +938,9 @@ namespace TextToScreen.Windows
 
         private static void TrimRecentItems()
         {
-            while (Ustawienia.SelectedSettingSet.AutoRecentItems.Count >
-                   Ustawienia.SelectedSettingSet.GeneralHistoryPoints)
-                Ustawienia.SelectedSettingSet.AutoRecentItems.RemoveAt(0);
+            while (Ustawienia.Default.AutoRecentItems.Count >
+                   Ustawienia.Default.GeneralHistoryPoints)
+                Ustawienia.Default.AutoRecentItems.RemoveAt(0);
         }
 
         private void UpdateMainWindowTitlebar()
@@ -974,7 +949,7 @@ namespace TextToScreen.Windows
             if (OpenedSongArchive != null)
             {
                 builder.Append(OpenedSongArchive.IsWrittenToDisk
-                    ? (Ustawienia.SelectedSettingSet.OknoGlowneInnePokazujPelnaSciezkeArchiwum
+                    ? (Ustawienia.Default.OknoGlowneInnePokazujPelnaSciezkeArchiwum
                         ? OpenedSongArchive.FullName
                         : OpenedSongArchive.FilenameWithExtension)
                     : Localisation.NewArchiveDefaultName);
@@ -993,12 +968,6 @@ namespace TextToScreen.Windows
                 Assembly.GetExecutingAssembly().GetName().Version.ToString(2));
 
             Text = builder.ToString();
-        }
-
-        private void ustawieniaToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
-        {
-            alwaysOnTopToolStripMenuItem.CheckState = IsAlwaysOnTop ? CheckState.Checked : CheckState.Unchecked;
-            fullScreenToolStripMenuItem.CheckState = IsFullScreen ? CheckState.Checked : CheckState.Unchecked;
         }
 
         private void usuńToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1091,18 +1060,18 @@ namespace TextToScreen.Windows
             Opacity = 1;
             _remoteDisplayWindow.Opacity = 1;
 
-            switch (Ustawienia.SelectedSettingSet.GeneralStartAction)
+            switch (Ustawienia.Default.GeneralStartAction)
             {
                 case StartupAction.OpenRecent:
-                    if (Ustawienia.SelectedSettingSet.AutoRecentItems.Count > 0)
+                    if (Ustawienia.Default.AutoRecentItems.Count > 0)
                         OpenArchive(
-                            Ustawienia.SelectedSettingSet.AutoRecentItems[
-                                Ustawienia.SelectedSettingSet.AutoRecentItems.Count - 1]);
+                            Ustawienia.Default.AutoRecentItems[
+                                Ustawienia.Default.AutoRecentItems.Count - 1]);
                     break;
 
                 case StartupAction.OpenSelected:
-                    if (File.Exists(Ustawienia.SelectedSettingSet.GeneralStartPath))
-                        OpenArchive(Ustawienia.SelectedSettingSet.GeneralStartPath);
+                    if (File.Exists(Ustawienia.Default.GeneralStartPath))
+                        OpenArchive(Ustawienia.Default.GeneralStartPath);
                     break;
             }
         }

@@ -26,7 +26,7 @@ namespace TextToScreen.Windows
             _defaultSettings = defaults;
             PopulateControls();
             tabControl1.SelectedIndex = 0;
-            return base.ShowDialog();
+            return ShowDialog(owner);
         }
 
         protected override void OnHelpButtonClicked(CancelEventArgs e)

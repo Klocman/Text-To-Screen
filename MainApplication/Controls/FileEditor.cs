@@ -362,7 +362,7 @@ namespace TextToScreen.Controls
                     else
                         result--;
 
-                    if (SelectVerseById(result) && Ustawienia.SelectedSettingSet.OknoGlowneKeysNumbers)
+                    if (SelectVerseById(result) && Ustawienia.Default.OknoGlowneKeysNumbers)
                         OnSelectedStringAccepted();
                 }
             }

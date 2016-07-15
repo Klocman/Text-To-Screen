@@ -26,7 +26,7 @@ namespace TextToScreen.Windows
 
             using (var importDialog = new ImportArchiwum())
             {
-                importDialog.Text += Ustawienia.SelectedSettingSet.OknoGlowneInnePokazujPelnaSciezkeArchiwum
+                importDialog.Text += Ustawienia.Default.OknoGlowneInnePokazujPelnaSciezkeArchiwum
                     ? sourceFile
                     : Path.GetFileName(sourceFile);
 
