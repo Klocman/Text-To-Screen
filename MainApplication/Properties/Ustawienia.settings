@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TextToScreen.Properties" GeneratedClassName="Ustawienia">
   <Profiles />
   <Settings>
-    <Setting Name="AutoWyrownanieTekstu" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.ContentAlignment" Scope="User">
+    <Setting Name="ScreenFontAlignment" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.ContentAlignment" Scope="User">
       <Value Profile="(Default)">MiddleCenter</Value>
     </Setting>
-    <Setting Name="AutoCzcionka" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+    <Setting Name="ScreenFontFamily" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">Arial</Value>
     </Setting>
-    <Setting Name="AutoRozmiarTekstu" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
+    <Setting Name="ScreenFontSize" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="AutoOknoGlownePozycja" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Point" Scope="User">
@@ -38,16 +38,16 @@
     <Setting Name="OknoDoceloweHideCursor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OutputFadeSpeed" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Single" Scope="User">
+    <Setting Name="ScreenFadeSpeed" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0.5</Value>
     </Setting>
-    <Setting Name="OutputTextColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ScreenForegroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
-    <Setting Name="OutputBackgroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ScreenBackgroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="GeneralStartAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="TextToScreen.StartupAction" Scope="User">
+    <Setting Name="GeneralStartAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="TextToScreen.Misc.StartupAction" Scope="User">
       <Value Profile="(Default)">OpenRecent</Value>
     </Setting>
     <Setting Name="GeneralStartPath" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
@@ -58,9 +58,6 @@
     </Setting>
     <Setting Name="GeneralHistoryPoints" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
-    </Setting>
-    <Setting Name="AutoStylCzcionki" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.FontStyle" Scope="User">
-      <Value Profile="(Default)">Regular</Value>
     </Setting>
     <Setting Name="AutoOknoDoceloweRozmiar" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
@@ -97,6 +94,18 @@
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;string&gt;Example Song Archive.zip&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ScreenFontBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ScreenFontItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ScreenFontUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ScreenImagePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

@@ -148,7 +148,7 @@
     <value>fileListView</value>
   </data>
   <data name="&gt;&gt;fileListView.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6039.43169, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileListView.Parent" xml:space="preserve">
     <value>splitContainer3.Panel1</value>
@@ -187,7 +187,7 @@
     <value>0, 0</value>
   </data>
   <data name="fileEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>397, 547</value>
+    <value>397, 541</value>
   </data>
   <data name="fileEditor.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -196,7 +196,7 @@
     <value>fileEditor</value>
   </data>
   <data name="&gt;&gt;fileEditor.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6039.43169, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileEditor.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -238,7 +238,7 @@
     <value>outputAppearanceControls1</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6039.43169, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -262,7 +262,7 @@
     <value>401, 669</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>551</value>
+    <value>545</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -340,7 +340,7 @@
     <value>previewScreens</value>
   </data>
   <data name="&gt;&gt;previewScreens.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6039.43169, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;previewScreens.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>

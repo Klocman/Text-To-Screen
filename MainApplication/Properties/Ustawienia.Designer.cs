@@ -28,12 +28,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("MiddleCenter")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.ContentAlignment AutoWyrownanieTekstu {
+        public global::System.Drawing.ContentAlignment ScreenFontAlignment {
             get {
-                return ((global::System.Drawing.ContentAlignment)(this["AutoWyrownanieTekstu"]));
+                return ((global::System.Drawing.ContentAlignment)(this["ScreenFontAlignment"]));
             }
             set {
-                this["AutoWyrownanieTekstu"] = value;
+                this["ScreenFontAlignment"] = value;
             }
         }
         
@@ -42,12 +42,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Arial")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public string AutoCzcionka {
+        public string ScreenFontFamily {
             get {
-                return ((string)(this["AutoCzcionka"]));
+                return ((string)(this["ScreenFontFamily"]));
             }
             set {
-                this["AutoCzcionka"] = value;
+                this["ScreenFontFamily"] = value;
             }
         }
         
@@ -56,12 +56,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public int AutoRozmiarTekstu {
+        public decimal ScreenFontSize {
             get {
-                return ((int)(this["AutoRozmiarTekstu"]));
+                return ((decimal)(this["ScreenFontSize"]));
             }
             set {
-                this["AutoRozmiarTekstu"] = value;
+                this["ScreenFontSize"] = value;
             }
         }
         
@@ -194,12 +194,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public float OutputFadeSpeed {
+        public decimal ScreenFadeSpeed {
             get {
-                return ((float)(this["OutputFadeSpeed"]));
+                return ((decimal)(this["ScreenFadeSpeed"]));
             }
             set {
-                this["OutputFadeSpeed"] = value;
+                this["ScreenFadeSpeed"] = value;
             }
         }
         
@@ -208,12 +208,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("White")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.Color OutputTextColor {
+        public global::System.Drawing.Color ScreenForegroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["OutputTextColor"]));
+                return ((global::System.Drawing.Color)(this["ScreenForegroundColor"]));
             }
             set {
-                this["OutputTextColor"] = value;
+                this["ScreenForegroundColor"] = value;
             }
         }
         
@@ -222,12 +222,12 @@ namespace TextToScreen.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Black")]
         [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.Color OutputBackgroundColor {
+        public global::System.Drawing.Color ScreenBackgroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["OutputBackgroundColor"]));
+                return ((global::System.Drawing.Color)(this["ScreenBackgroundColor"]));
             }
             set {
-                this["OutputBackgroundColor"] = value;
+                this["ScreenBackgroundColor"] = value;
             }
         }
         
@@ -284,20 +284,6 @@ namespace TextToScreen.Properties {
             }
             set {
                 this["GeneralHistoryPoints"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Regular")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.FontStyle AutoStylCzcionki {
-            get {
-                return ((global::System.Drawing.FontStyle)(this["AutoStylCzcionki"]));
-            }
-            set {
-                this["AutoStylCzcionki"] = value;
             }
         }
         
@@ -450,6 +436,54 @@ namespace TextToScreen.Properties {
             }
             set {
                 this["AutoRecentItems"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ScreenFontBold {
+            get {
+                return ((bool)(this["ScreenFontBold"]));
+            }
+            set {
+                this["ScreenFontBold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ScreenFontItalic {
+            get {
+                return ((bool)(this["ScreenFontItalic"]));
+            }
+            set {
+                this["ScreenFontItalic"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ScreenFontUnderline {
+            get {
+                return ((bool)(this["ScreenFontUnderline"]));
+            }
+            set {
+                this["ScreenFontUnderline"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ScreenImagePath {
+            get {
+                return ((string)(this["ScreenImagePath"]));
+            }
+            set {
+                this["ScreenImagePath"] = value;
             }
         }
     }

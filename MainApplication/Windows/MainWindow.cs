@@ -588,7 +588,7 @@ namespace TextToScreen.Windows
                 _remoteDisplayWindow.IsCursorHidden = Ustawienia.Default.OknoDoceloweHideCursor;
                 _remoteDisplayWindow.IsFullScreen = Ustawienia.Default.OknoDoceloweFull;
 
-                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.Default.OutputTextColor, Ustawienia.Default.OutputBackgroundColor, null);
+                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.Default.ScreenForegroundColor, Ustawienia.Default.ScreenBackgroundColor, null);
             }
 
             if (OpenedSongArchive != null)
@@ -610,10 +610,10 @@ namespace TextToScreen.Windows
 
         private void ReadStartupSettings()
         {
-            fileEditor.SelectedFontFamily = _fontCollections.GetFontFamily(Ustawienia.Default.AutoCzcionka);
-            fileEditor.SelectedFontSize = Ustawienia.Default.AutoRozmiarTekstu;
-            fileEditor.SelectedAlignment = Ustawienia.Default.AutoWyrownanieTekstu;
-            fileEditor.SelectedFontStyle = Ustawienia.Default.AutoStylCzcionki;
+            fileEditor.SelectedFontFamily = _fontCollections.GetFontFamily(Ustawienia.Default.ScreenFontFamily);
+            fileEditor.SelectedFontSize = (int)Math.Round(Ustawienia.Default.ScreenFontSize);
+            fileEditor.SelectedAlignment = Ustawienia.Default.ScreenFontAlignment;
+            //TODO fileEditor.SelectedFontStyle = Ustawienia.Default.AutoStylCzcionki;
 
             if (Ustawienia.Default.AutoOknoGlownePozycja == Point.Empty
                 && Ustawienia.Default.AutoOknoDocelowePozycja == Point.Empty)
@@ -726,10 +726,10 @@ namespace TextToScreen.Windows
             // Editor settings TODO move out
             var f = fileEditor.SelectedFontFamily;
             if (f != null)
-                Ustawienia.Default.AutoCzcionka = f.Name;
-            Ustawienia.Default.AutoRozmiarTekstu = fileEditor.SelectedFontSize;
-            Ustawienia.Default.AutoWyrownanieTekstu = fileEditor.SelectedAlignment;
-            Ustawienia.Default.AutoStylCzcionki = fileEditor.SelectedFontStyle;
+                Ustawienia.Default.ScreenFontFamily = f.Name;
+            Ustawienia.Default.ScreenFontSize = fileEditor.SelectedFontSize;
+            Ustawienia.Default.ScreenFontAlignment = fileEditor.SelectedAlignment;
+            //TODO Ustawienia.Default.AutoStylCzcionki = fileEditor.SelectedFontStyle;
 
             if (!Ustawienia.Default.GeneralHistoryEnabled)
                 Ustawienia.Default.AutoRecentItems.Clear();
