@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 using TextToScreen.Misc;
 using Color = System.Drawing.Color;
 using FontFamily = System.Windows.Media.FontFamily;
@@ -124,7 +125,7 @@ namespace TextToScreen.Controls.Screens
                 Image.Source = NextImage;
 
             AnimationHalfPoint?.Invoke(sender, eventArgs);
-
+            
             _fadeIn.Begin(this, true);
         }
 

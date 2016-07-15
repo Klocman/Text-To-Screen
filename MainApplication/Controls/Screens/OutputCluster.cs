@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Klocman.Events;
 using TextToScreen.Properties;
+using FontFamily = System.Windows.Media.FontFamily;
 
 namespace TextToScreen.Controls.Screens
 {
@@ -54,6 +58,28 @@ namespace TextToScreen.Controls.Screens
                 PreviewField.BeginAnimation(true);
 
             }, ustawienia => ustawienia.ScreenFontAlignment, this);
+
+            var imageConverter = new ImageSourceConverter();
+
+            binder.Subscribe((obj, args) =>
+            {
+                if (File.Exists(args.NewValue))
+                {
+                    try
+                    {
+                        PreviewField.NextImage = new BitmapImage(new Uri(args.NewValue));
+                    }
+                    catch
+                    {
+                        PreviewField.NextImage = null;
+                    }
+                }
+                else
+                {
+                    PreviewField.NextImage = null;
+                }
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenImagePath, this);
 
             binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontUnderline, this);
             binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontBold, this);

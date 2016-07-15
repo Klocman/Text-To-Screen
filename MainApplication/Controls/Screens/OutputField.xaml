@@ -10,7 +10,7 @@
 
     <Canvas Background="Black" Name="Canvas">
         <Image Height="{Binding ElementName=Canvas, Path=ActualHeight}" Width="{Binding ElementName=Canvas, Path=ActualWidth}" 
-               Name="Image" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+               Name="Image" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="Both"></Image>
 
         <DockPanel Height="{Binding ElementName=Canvas, Path=ActualHeight}" Width="{Binding ElementName=Canvas, Path=ActualWidth}">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" 
