@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Klocman.Extensions;
 
 namespace TextToScreen.Controls.Screens
 {
@@ -34,16 +35,19 @@ namespace TextToScreen.Controls.Screens
         /// </summary>
         public void SetProgressBar(int position)
         {
-            if (position >= 100 || position < 0)
+            this.SafeInvoke(() =>
             {
-                fadeProgressBar.Visible = false;
-                fadeProgressBar.Value = 0;
-            }
-            else
-            {
-                fadeProgressBar.Visible = true;
-                fadeProgressBar.Value = position;
-            }
+                if (position >= 100 || position < 0)
+                {
+                    fadeProgressBar.Visible = false;
+                    fadeProgressBar.Value = 0;
+                }
+                else
+                {
+                    fadeProgressBar.Visible = true;
+                    fadeProgressBar.Value = position;
+                }
+            });
         }
 
         private void button_clear_Click(object sender, EventArgs e)

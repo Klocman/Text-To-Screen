@@ -875,7 +875,7 @@ namespace TextToScreen.Windows
             _remoteDisplayWindow.Opacity = 0;
 
             _remoteDisplayWindow.Show();
-            _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens.TopDisplayBox, previewScreens.BottomDisplayBox);
+            _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens);
 
             _remoteDisplayWindow.ResizeEnd += SecondaryWindow_PositionDataChanged;
             _remoteDisplayWindow.LocationChanged += SecondaryWindow_PositionDataChanged;

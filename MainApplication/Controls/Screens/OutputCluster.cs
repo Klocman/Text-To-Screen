@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Forms;
@@ -9,13 +7,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Klocman.Events;
 using TextToScreen.Properties;
-using FontFamily = System.Windows.Media.FontFamily;
 
 namespace TextToScreen.Controls.Screens
 {
     public partial class OutputCluster : UserControl
     {
+        private readonly System.Timers.Timer _callbackTimer;
         private readonly bool _inDesignMode;
+        private Action<int> _progressCallback;
 
         public OutputCluster()
         {
@@ -27,7 +26,7 @@ namespace TextToScreen.Controls.Screens
             PreviewField.AnimationLength = TimeSpan.Zero;
             PreviewField.NextText = Localisation.PreviewScreenInfo;
 
-            _inDesignMode = (LicenseManager.UsageMode == LicenseUsageMode.Designtime);
+            _inDesignMode = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
 
             var binder = Ustawienia.Default.Binder;
 
@@ -35,38 +34,31 @@ namespace TextToScreen.Controls.Screens
             {
                 PreviewField.NextFontFamily = new FontFamily(args.NewValue);
                 PreviewField.BeginAnimation(true);
-
             }, ustawienia => ustawienia.ScreenFontFamily, this);
-            
+
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextFontSize = Convert.ToDouble(args.NewValue);
                 PreviewField.BeginAnimation(true);
-
             }, ustawienia => ustawienia.ScreenFontSize, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextTextColor = args.NewValue;
                 PreviewField.BeginAnimation(true);
-
             }, ustawienia => ustawienia.ScreenForegroundColor, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextBackgroundColor = args.NewValue;
                 PreviewField.BeginAnimation(true);
-
             }, ustawienia => ustawienia.ScreenBackgroundColor, this);
 
             binder.Subscribe((obj, args) =>
             {
                 PreviewField.NextFontAlignment = args.NewValue;
                 PreviewField.BeginAnimation(true);
-
             }, ustawienia => ustawienia.ScreenFontAlignment, this);
-
-            var imageConverter = new ImageSourceConverter();
 
             binder.Subscribe((obj, args) =>
             {
@@ -96,18 +88,29 @@ namespace TextToScreen.Controls.Screens
                 ustawienia => ustawienia.ScreenFadeSpeed, this);
 
             binder.SendUpdates(this);
-        }
 
-        private void FontStyleChanged(object sender, SettingChangedEventArgs<bool> args)
-        {
-            PreviewField.TextBlock.FontStyle = Ustawienia.Default.ScreenFontItalic ? FontStyles.Italic : FontStyles.Normal;
-            PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold ? FontWeights.Bold : FontWeights.Normal;
-            PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline ? TextDecorations.Underline : null;
-            PreviewField.BeginAnimation(true);
+            _callbackTimer = new System.Timers.Timer { AutoReset = true, Interval = 160 };
+            _callbackTimer.Elapsed +=
+                (sender, args) => _progressCallback?.Invoke((int)Math.Round(FinalField.GetAnimationProgress() * 100));
+            FinalField.AnimationCompleted += (sender, args) => { _callbackTimer.Stop(); _progressCallback?.Invoke(100); };
         }
 
         public OutputField FinalField { get; }
         public OutputField PreviewField { get; }
+
+        private void FontStyleChanged(object sender, SettingChangedEventArgs<bool> args)
+        {
+            PreviewField.TextBlock.FontStyle = Ustawienia.Default.ScreenFontItalic
+                ? FontStyles.Italic
+                : FontStyles.Normal;
+            PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold
+                ? FontWeights.Bold
+                : FontWeights.Normal;
+            PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline
+                ? TextDecorations.Underline
+                : null;
+            PreviewField.BeginAnimation(true);
+        }
 
         public void SendToPreviewField(string newText)
         {
@@ -122,13 +125,16 @@ namespace TextToScreen.Controls.Screens
 
         public void PushPreviewToOutput()
         {
+            _callbackTimer.Start();
+
             FinalField.ChangeWithAnimation(PreviewField);
         }
 
-        public void RegisterPreviewFields(PreviewField preview, PreviewField output)
+        public void RegisterPreviewFields(PreviewScreens previewScreens)
         {
-            preview.SetPreviewTarget(PreviewField);
-            output.SetPreviewTarget(FinalField);
+            previewScreens.TopDisplayBox.SetPreviewTarget(PreviewField);
+            previewScreens.BottomDisplayBox.SetPreviewTarget(FinalField);
+            _progressCallback = previewScreens.SetProgressBar;
         }
 
         //Pass through mouse events
@@ -138,7 +144,7 @@ namespace TextToScreen.Controls.Screens
                 return;
 
             const int WM_NCHITTEST = 0x0084;
-            const int HTTRANSPARENT = (-1);
+            const int HTTRANSPARENT = -1;
 
             if (m.Msg == WM_NCHITTEST)
             {

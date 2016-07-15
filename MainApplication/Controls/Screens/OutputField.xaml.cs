@@ -70,9 +70,9 @@ namespace TextToScreen.Controls.Screens
                     return 1;
 
                 var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this) / 2 ?? 0.5;
-                var inProgress = _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
+                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
 
-                return Math.Round(outProgress + inProgress, 2, MidpointRounding.AwayFromZero);
+                return Math.Round(outProgress + inProgress, 3, MidpointRounding.AwayFromZero);
             }
             catch (InvalidOperationException)
             {
