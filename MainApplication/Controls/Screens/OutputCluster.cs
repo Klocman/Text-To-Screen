@@ -1,55 +1,102 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
-using TextToScreen.Misc;
-using Color = System.Drawing.Color;
-using UserControl = System.Windows.Forms.UserControl;
+using Klocman.Events;
+using TextToScreen.Properties;
 
 namespace TextToScreen.Controls.Screens
 {
     public partial class OutputCluster : UserControl
     {
         private readonly bool _inDesignMode;
-        
+
         public OutputCluster()
         {
             InitializeComponent();
 
-            FrontOutputField = (OutputField)elementHost2.Child;
-            BackOutputField = (OutputField)elementHost1.Child;
+            FinalField = (OutputField)elementHost2.Child;
+            PreviewField = (OutputField)elementHost1.Child;
 
-            BackOutputField.AnimationLength = TimeSpan.Zero;
+            PreviewField.AnimationLength = TimeSpan.Zero;
 
             _inDesignMode = (LicenseManager.UsageMode == LicenseUsageMode.Designtime);
+
+            var binder = Ustawienia.Default.Binder;
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontFamily = new FontFamily(args.NewValue);
+                PreviewField.BeginAnimation();
+
+            }, ustawienia => ustawienia.ScreenFontFamily, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextTextColor = args.NewValue;
+                PreviewField.BeginAnimation();
+
+            }, ustawienia => ustawienia.ScreenForegroundColor, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextBackgroundColor = args.NewValue;
+                PreviewField.BeginAnimation();
+
+            }, ustawienia => ustawienia.ScreenBackgroundColor, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontAlignment = args.NewValue;
+                PreviewField.BeginAnimation();
+
+            }, ustawienia => ustawienia.ScreenFontAlignment, this);
+
+            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontUnderline, this);
+            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontBold, this);
+            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontItalic, this);
+
+            binder.Subscribe((x,y)=> FinalField.AnimationLength = TimeSpan.FromSeconds(Convert.ToDouble(y.NewValue)), 
+                ustawienia => ustawienia.ScreenFadeSpeed, this);
+
+            binder.SendUpdates(this);
+
+            FinalField.ChangeWithAnimation(PreviewField, true);
         }
 
-        public OutputField FrontOutputField { get; }
-        public OutputField BackOutputField { get; }
+        private void FontStyleChanged(object sender, SettingChangedEventArgs<bool> args)
+        {
+            PreviewField.TextBlock.FontStyle = Ustawienia.Default.ScreenFontItalic ? FontStyles.Italic : FontStyles.Normal;
+            PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold ? FontWeights.Bold : FontWeights.Normal;
+            PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline ? TextDecorations.Underline : null;
+        }
         
+        public OutputField FinalField { get; }
+        public OutputField PreviewField { get; }
+
         public void SendToPreviewField(string newText)
         {
-            BackOutputField.ChangeWithAnimation(newText);
+            PreviewField.NextText = newText;
         }
 
-        public void SendToPreviewField(string newText,
-            Color nextTextColor, Color nextBackgroundColor, ImageSource nextImage)
+        public void ClearPreviewDisplay()
         {
-            BackOutputField.ChangeWithAnimation(newText, nextTextColor, nextBackgroundColor, nextImage);
+            SendToPreviewField(string.Empty);
         }
 
         public void PushPreviewToOutput()
         {
-            FrontOutputField.ChangeWithAnimation(BackOutputField);
+            FinalField.ChangeWithAnimation(PreviewField);
         }
 
         public void RegisterPreviewFields(PreviewField preview, PreviewField output)
         {
-            preview.SetPreviewTarget(BackOutputField);
-            output.SetPreviewTarget(FrontOutputField);
+            preview.SetPreviewTarget(PreviewField);
+            output.SetPreviewTarget(FinalField);
         }
-        
+
         //Pass through mouse events
         protected override void WndProc(ref Message m)
         {
@@ -67,16 +114,6 @@ namespace TextToScreen.Controls.Screens
             {
                 base.WndProc(ref m);
             }
-        }
-
-        public void ClearPreviewDisplay()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void SendToPreviewField(string y, Font font, ContentAlignment selectedAlignment)
-        {
-            BackOutputField.ChangeWithAnimation(y, font, selectedAlignment);
         }
     }
 }

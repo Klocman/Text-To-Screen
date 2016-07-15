@@ -583,8 +583,6 @@ namespace TextToScreen.Windows
                 _remoteDisplayWindow.IsAlwaysOnTop = Ustawienia.Default.OknoDoceloweTop;
                 _remoteDisplayWindow.IsCursorHidden = Ustawienia.Default.OknoDoceloweHideCursor;
                 _remoteDisplayWindow.IsFullScreen = Ustawienia.Default.OknoDoceloweFull;
-
-                _remoteDisplayWindow.OutputCluster.SendToPreviewField(null, Ustawienia.Default.ScreenForegroundColor, Ustawienia.Default.ScreenBackgroundColor, null);
             }
 
             if (OpenedSongArchive != null)

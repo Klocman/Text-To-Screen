@@ -23,9 +23,11 @@ namespace TextToScreen.Controls.Screens
             _fadeOut = (Storyboard)Resources["FadeOut"];
 
             _fadeOut.Completed += AfterFadeOut;
+            _fadeOut.Completed += (sender, args) => AnimationHalfPoint?.Invoke(sender, args);
             _fadeIn.Completed += (sender, args) => AnimationCompleted?.Invoke(sender, args);
         }
 
+        public event EventHandler AnimationHalfPoint;
         public event EventHandler AnimationCompleted;
 
         private readonly Storyboard _fadeIn;
@@ -44,15 +46,15 @@ namespace TextToScreen.Controls.Screens
 
         public FontFamily CurrentFontFamily => TextBlock.FontFamily;
         public double CurrentFontSize => TextBlock.FontSize;
-        public TextAlignment CurrentFontAlignment => TextBlock.TextAlignment;
+        public ContentAlignment CurrentFontAlignment => FormsToWpf.ToContentAlignment(TextBlock.TextAlignment, TextBlock.VerticalAlignment);
 
-        string NextText { get; set; }
-        Color? NextTextColor { get; set; }
-        Color? NextBackgroundColor { get; set; }
-        ImageSource NextImage { get; set; }
-        FontFamily NextFontFamily { get; set; }
-        double? NextFontSize { get; set; }
-        TextAlignment? NextFontAlignment { get; set; }
+        public string NextText { get; set; }
+        public Color? NextTextColor { get; set; }
+        public Color? NextBackgroundColor { get; set; }
+        public ImageSource NextImage { get; set; }
+        public FontFamily NextFontFamily { get; set; }
+        public double? NextFontSize { get; set; }
+        public ContentAlignment? NextFontAlignment { get; set; }
 
         /// <summary>
         /// Overall progress of the animation. 0 at start, 1 when completed.
@@ -71,37 +73,9 @@ namespace TextToScreen.Controls.Screens
             return Math.Round(outProgress + inProgress, 2, MidpointRounding.AwayFromZero);
         }
 
-        public void ChangeWithAnimation(string newText)
+        public void BeginAnimation()
         {
-            NextText = newText;
             _fadeOut.Begin(this, true);
-        }
-
-        public void ChangeWithAnimation(string newText, Color nextTextColor, Color nextBackgroundColor)
-        {
-            NextTextColor = nextTextColor;
-            NextBackgroundColor = nextBackgroundColor;
-            ChangeWithAnimation(newText);
-        }
-
-        internal void ChangeWithAnimation(string newText, Font font, ContentAlignment selectedAlignment)
-        {
-            if (font != null)
-            {
-                NextFontFamily = new FontFamily(font.FontFamily.Name);
-                FontSize = font.Size;
-            }
-
-            //TODO NextContentAlignment = selectedAlignment;
-            ChangeWithAnimation(newText);
-        }
-
-        public void ChangeWithAnimation(string newText,
-            Color nextTextColor, Color nextBackgroundColor, ImageSource nextImage)
-        {
-            if (!ReferenceEquals(CurrentImage, nextImage))
-                NextImage = nextImage;
-            ChangeWithAnimation(newText, nextTextColor, nextBackgroundColor);
         }
 
         private void AfterFadeOut(object sender, EventArgs eventArgs)
@@ -138,7 +112,9 @@ namespace TextToScreen.Controls.Screens
 
             if (NextFontAlignment != null)
             {
-                TextBlock.TextAlignment = NextFontAlignment.Value;
+                var ta = FormsToWpf.ToTextAlignment(NextFontAlignment.Value);
+                TextBlock.TextAlignment = ta.Key;
+                TextBlock.VerticalAlignment = ta.Value;
                 NextFontAlignment = null;
             }
 
@@ -148,15 +124,20 @@ namespace TextToScreen.Controls.Screens
             _fadeIn.Begin(this, true);
         }
 
-        public void ChangeWithAnimation(OutputField originField)
+        public void ChangeWithAnimation(OutputField originField, bool skipFadeout = false)
         {
+            NextText = originField.CurrentText;
             NextTextColor = originField.CurrentTextColor;
             NextBackgroundColor = originField.CurrentBackgroundColor;
             NextImage = originField.CurrentImage;
             NextFontFamily = originField.CurrentFontFamily;
             NextFontSize = originField.CurrentFontSize;
             NextFontAlignment = originField.CurrentFontAlignment;
-            ChangeWithAnimation(originField.CurrentText);
+
+            if (skipFadeout)
+                AfterFadeOut(this, EventArgs.Empty);
+            else
+                BeginAnimation();
         }
     }
 }

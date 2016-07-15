@@ -179,6 +179,7 @@
     <Compile Include="ImportExport\FileImporter.cs" />
     <Compile Include="ImportExport\FileImporterResult.cs" />
     <Compile Include="Misc\Extensions.cs" />
+    <Compile Include="Misc\FormsToWpf.cs" />
     <Compile Include="Misc\MessageBoxes.cs" />
     <Compile Include="Misc\NameChangeResult.cs" />
     <Compile Include="Misc\StartupAction.cs" />
