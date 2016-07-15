@@ -86,7 +86,7 @@
             0});
             this.numericUpDownFadeDuration.Name = "numericUpDownFadeDuration";
             this.numericUpDownFadeDuration.Size = new System.Drawing.Size(75, 20);
-            this.numericUpDownFadeDuration.TabIndex = 1;
+            this.numericUpDownFadeDuration.TabIndex = 3;
             this.numericUpDownFadeDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownFadeDuration.Value = new decimal(new int[] {
             1,
@@ -125,7 +125,7 @@
             this.secondary_out_labelBacCol.Name = "secondary_out_labelBacCol";
             this.secondary_out_labelBacCol.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.secondary_out_labelBacCol.Size = new System.Drawing.Size(91, 19);
-            this.secondary_out_labelBacCol.TabIndex = 5;
+            this.secondary_out_labelBacCol.TabIndex = 2;
             this.secondary_out_labelBacCol.Text = "Background color";
             // 
             // buttonBackColor
@@ -149,7 +149,7 @@
             this.foregroundColorPreview.Location = new System.Drawing.Point(100, 29);
             this.foregroundColorPreview.Name = "foregroundColorPreview";
             this.foregroundColorPreview.Size = new System.Drawing.Size(185, 23);
-            this.foregroundColorPreview.TabIndex = 3;
+            this.foregroundColorPreview.TabIndex = 4;
             this.foregroundColorPreview.Click += new System.EventHandler(this.ForeColor_Click);
             // 
             // secondary_out_labelTexCol
@@ -160,7 +160,7 @@
             this.secondary_out_labelTexCol.Name = "secondary_out_labelTexCol";
             this.secondary_out_labelTexCol.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.secondary_out_labelTexCol.Size = new System.Drawing.Size(54, 19);
-            this.secondary_out_labelTexCol.TabIndex = 2;
+            this.secondary_out_labelTexCol.TabIndex = 1;
             this.secondary_out_labelTexCol.Text = "Text color";
             // 
             // buttonForeColor
@@ -170,7 +170,7 @@
             this.buttonForeColor.Location = new System.Drawing.Point(291, 29);
             this.buttonForeColor.Name = "buttonForeColor";
             this.buttonForeColor.Size = new System.Drawing.Size(75, 23);
-            this.buttonForeColor.TabIndex = 4;
+            this.buttonForeColor.TabIndex = 5;
             this.buttonForeColor.Text = "Change...";
             this.buttonForeColor.UseVisualStyleBackColor = true;
             this.buttonForeColor.Click += new System.EventHandler(this.ForeColor_Click);
@@ -197,7 +197,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 85);
-            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -209,7 +209,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(383, 117);
-            this.tabControl1.TabIndex = 11;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -240,7 +240,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(369, 85);
             this.splitContainer1.SplitterDistance = 86;
-            this.splitContainer1.TabIndex = 12;
+            this.splitContainer1.TabIndex = 0;
             // 
             // contentAlignmentBox1
             // 
@@ -250,7 +250,7 @@
             this.contentAlignmentBox1.Name = "contentAlignmentBox1";
             this.contentAlignmentBox1.SelectedContentAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.contentAlignmentBox1.Size = new System.Drawing.Size(78, 78);
-            this.contentAlignmentBox1.TabIndex = 10;
+            this.contentAlignmentBox1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -287,7 +287,7 @@
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStrip.Size = new System.Drawing.Size(219, 25);
-            this.toolStrip.TabIndex = 10;
+            this.toolStrip.TabIndex = 5;
             this.toolStrip.TabStop = true;
             // 
             // underlineToggle
@@ -331,7 +331,7 @@
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.label3.Size = new System.Drawing.Size(52, 19);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Font style";
             // 
             // label1
@@ -342,7 +342,7 @@
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.label1.Size = new System.Drawing.Size(28, 19);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Font";
             // 
             // label2
@@ -353,7 +353,7 @@
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.label2.Size = new System.Drawing.Size(49, 19);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Font size";
             // 
             // numericUpDownFontSize
@@ -373,7 +373,7 @@
             65536});
             this.numericUpDownFontSize.Name = "numericUpDownFontSize";
             this.numericUpDownFontSize.Size = new System.Drawing.Size(213, 20);
-            this.numericUpDownFontSize.TabIndex = 3;
+            this.numericUpDownFontSize.TabIndex = 4;
             this.numericUpDownFontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownFontSize.ThousandsSeparator = true;
             this.numericUpDownFontSize.Value = new decimal(new int[] {
@@ -390,7 +390,7 @@
             this.comboBoxFontFamily.Location = new System.Drawing.Point(61, 3);
             this.comboBoxFontFamily.Name = "comboBoxFontFamily";
             this.comboBoxFontFamily.Size = new System.Drawing.Size(213, 21);
-            this.comboBoxFontFamily.TabIndex = 6;
+            this.comboBoxFontFamily.TabIndex = 3;
             this.comboBoxFontFamily.SelectedIndexChanged += new System.EventHandler(this.comboBoxFontFamily_SelectedIndexChanged);
             // 
             // tabPage1
