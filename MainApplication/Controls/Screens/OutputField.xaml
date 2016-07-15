@@ -15,7 +15,6 @@
         <DockPanel Height="{Binding ElementName=Canvas, Path=ActualHeight}" Width="{Binding ElementName=Canvas, Path=ActualWidth}">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" 
                        Foreground="White" TextWrapping="WrapWithOverflow" Margin="20" Name="TextBlock">
-                "Test asd a asdTest asd a asdTest asd a asdTest asd a asdTest asd a asdTest asd a asdTest asd a asd"
             </TextBlock>
         </DockPanel>
 
