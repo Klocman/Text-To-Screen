@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Klocman.Binding.Settings;
 using Klocman.Controls;
-using Klocman.Events;
 using Klocman.Subsystems;
 using TextToScreen.Properties;
 

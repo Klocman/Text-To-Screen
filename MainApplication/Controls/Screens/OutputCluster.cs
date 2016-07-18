@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Klocman.Events;
+using Klocman.Binding.Settings;
 using TextToScreen.Properties;
 
 namespace TextToScreen.Controls.Screens
