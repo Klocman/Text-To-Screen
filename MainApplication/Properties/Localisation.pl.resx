@@ -137,7 +137,7 @@
   <data name="FileImportProblemsHeader" xml:space="preserve">
     <value>Następujące pliki nie zostały zimportowane z podanych powodów:</value>
   </data>
-  <data name="FileImportProblemsTitle" xml:space="preserve">
+  <data name="FileImportTitle" xml:space="preserve">
     <value>Problemy z importem plików</value>
   </data>
   <data name="FileNotFoundOnDisk" xml:space="preserve">

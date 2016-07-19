@@ -1,12 +1,9 @@
-﻿using Klocman.Binding.Settings;
+﻿using System;
+using System.IO;
+using Klocman.Binding.Settings;
 
 namespace TextToScreen.Properties
 {
-    // This class allows you to handle specific events on the settings class:
-    //  The SettingChanging event is raised before a setting's value is changed.
-    //  The PropertyChanged event is raised after a setting's value is changed.
-    //  The SettingsLoaded event is raised after the setting values are loaded.
-    //  The SettingsSaving event is raised before the setting values are saved.
     public sealed partial class Ustawienia
     {
         public Ustawienia()
@@ -17,5 +14,29 @@ namespace TextToScreen.Properties
         public static Ustawienia DefaultValues { get; } = ((Ustawienia)(Synchronized(new Ustawienia())));
 
         public SettingBinder<Ustawienia> Binder { get; }
+
+        /// <summary>
+        ///     Add file to recent items if it exists
+        /// </summary>
+        public static void AddRecentItem(string path)
+        {
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                if (Default.AutoRecentItems.Contains(path))
+                    Default.AutoRecentItems.Remove(path);
+                Default.AutoRecentItems.Add(path);
+            }
+
+            TrimRecentItems();
+        }
+
+        /// <summary>
+        ///     Remove recent items that are no longer needed
+        /// </summary>
+        public static void TrimRecentItems()
+        {
+            while (Default.AutoRecentItems.Count > Default.GeneralHistoryPoints && Default.GeneralHistoryPoints > 0)
+                Default.AutoRecentItems.RemoveAt(0);
+        }
     }
 }

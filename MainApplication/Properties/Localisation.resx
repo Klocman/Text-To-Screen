@@ -137,7 +137,7 @@
   <data name="FileImportProblemsHeader" xml:space="preserve">
     <value>Following files were not imported because of respective reasons:</value>
   </data>
-  <data name="FileImportProblemsTitle" xml:space="preserve">
+  <data name="FileImportTitle" xml:space="preserve">
     <value>File import</value>
   </data>
   <data name="FileNotFoundOnDisk" xml:space="preserve">
@@ -277,5 +277,8 @@
   </data>
   <data name="PreviewScreenInfo" xml:space="preserve">
     <value>Preview screen</value>
+  </data>
+  <data name="FileImportSuccessfulCount" xml:space="preserve">
+    <value>{0} files imported successfully.</value>
   </data>
 </root>

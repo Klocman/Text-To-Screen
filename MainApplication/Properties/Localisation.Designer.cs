@@ -117,11 +117,20 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} files imported successfully..
+        /// </summary>
+        internal static string FileImportSuccessfulCount {
+            get {
+                return ResourceManager.GetString("FileImportSuccessfulCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File import.
         /// </summary>
-        internal static string FileImportProblemsTitle {
+        internal static string FileImportTitle {
             get {
-                return ResourceManager.GetString("FileImportProblemsTitle", resourceCulture);
+                return ResourceManager.GetString("FileImportTitle", resourceCulture);
             }
         }
         

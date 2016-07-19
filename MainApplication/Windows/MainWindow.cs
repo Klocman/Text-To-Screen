@@ -134,21 +134,6 @@ namespace TextToScreen.Windows
         }
 
         /// <summary>
-        ///     Add file to recent items if it is valid
-        /// </summary>
-        private void AddRecentItem(string path)
-        {
-            if (!string.IsNullOrEmpty(path) && File.Exists(path))
-            {
-                if (Ustawienia.Default.AutoRecentItems.Contains(path))
-                    Ustawienia.Default.AutoRecentItems.Remove(path);
-                Ustawienia.Default.AutoRecentItems.Add(path);
-            }
-
-            TrimRecentItems();
-        }
-
-        /// <summary>
         ///     Returns false if user cancels the operation
         /// </summary>
         private bool AskAndSaveIfNeeded()
@@ -171,7 +156,7 @@ namespace TextToScreen.Windows
             return true;
         }
 
-        private bool CheckDraggedItems(out IEnumerable<string> filenames, DragEventArgs e)
+        private static bool CheckDraggedItems(out IEnumerable<string> filenames, DragEventArgs e)
         {
             var filenamelist = new List<string>();
 
@@ -200,14 +185,7 @@ namespace TextToScreen.Windows
 
         private void coNowegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start(@"http://klocmansoftware.weebly.com/texttoscreen.html");
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
+            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/texttoscreen.html");
         }
 
         private void CreateNewArchive()
@@ -243,14 +221,7 @@ namespace TextToScreen.Windows
 
         private void donateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start(@"http://klocmansoftware.weebly.com/about.html");
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
+            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/about.html");
         }
 
         private void duplikujToolStripMenuItem_Click(object sender, EventArgs e)
@@ -261,7 +232,6 @@ namespace TextToScreen.Windows
         private void edycjaElementowToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
             var enableArchiveManipulation = fileListView.FileListFocused;
-            //nowyplikToolStripMenuItem.Enabled = enableArchiveManipulation;
             zmieńNazwęToolStripMenuItem.Enabled = enableArchiveManipulation;
             usuńWybranePlikiToolStripMenuItem.Enabled = enableArchiveManipulation;
             duplikujToolStripMenuItem.Enabled = enableArchiveManipulation;
@@ -295,17 +265,11 @@ namespace TextToScreen.Windows
         private void fileEditor_FileSaved(FileEditor arg1, SongFileEntry arg2)
         {
             fileListView.RefreshListElement(arg2);
-            //fileListView.RepopulateItems();
         }
 
         private void fileEditor_LoadedFileChanged(FileEditor arg1, SongFileEntry arg2)
         {
             UpdateMainWindowTitlebar();
-        }
-
-        private void fileEditor_SelectedFontChanged(FileEditor obj)
-        {
-            fileEditor_SelectedStringChanged(obj, obj.SelectedString);
         }
 
         private void fileEditor_SelectedStringAccepted(FileEditor x, string y)
@@ -323,7 +287,6 @@ namespace TextToScreen.Windows
         private void fileEditor_SelectedStringCleared(FileEditor obj)
         {
             _remoteDisplayWindow.OutputCluster.ClearPreviewDisplay();
-            //previewScreens.PushToOutputDisplay();
         }
 
         private void fileListView_ButtonClick_Delete(FileListView obj)
@@ -374,14 +337,7 @@ namespace TextToScreen.Windows
 
         private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Process.Start(@"http://klocmansoftware.weebly.com/texttoscreen.html");
-            }
-            catch (Exception ex)
-            {
-                PremadeDialogs.GenericError(ex);
-            }
+            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/texttoscreen.html");
         }
 
         private void importDialog_FileOk(object sender, CancelEventArgs e)
@@ -397,24 +353,35 @@ namespace TextToScreen.Windows
             var result = FileImporter.AutoImport(filenames);
             OpenedSongArchive.LoadedFiles.AddRangeSafe(result.Results);
 
+            ShowImportFileResultBox(result);
+        }
+
+        private void ShowImportFileResultBox(FileImporterResult result)
+        {
+            var successfulCountString = string.Format(Localisation.FileImportSuccessfulCount, result.Results.Count());
             if (result.Errors.Any())
             {
-                var sb = new StringBuilder();
-                sb.AppendLine(Localisation.FileImportProblemsHeader);
+                var unsuccessfulString = new StringBuilder();
+                unsuccessfulString.AppendLine(Localisation.FileImportProblemsHeader);
                 foreach (var group in result.Errors.GroupBy(el => el.Value))
                 {
-                    sb.AppendLine();
-                    sb.Append("Błąd: ");
-                    sb.AppendLine(group.Key);
+                    unsuccessfulString.AppendLine();
+                    unsuccessfulString.Append("Błąd: ");
+                    unsuccessfulString.AppendLine(group.Key);
                     foreach (var element in group)
                     {
-                        sb.Append("->");
-                        sb.AppendLine(element.Key);
+                        unsuccessfulString.Append("->");
+                        unsuccessfulString.AppendLine(element.Key);
                     }
                 }
 
-                MessageBox.Show(this, sb.ToString(), Localisation.FileImportProblemsTitle, MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show(this, $"{successfulCountString}\n{unsuccessfulString}", Localisation.FileImportTitle, 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show(this, successfulCountString, Localisation.FileImportTitle, 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -487,7 +454,7 @@ namespace TextToScreen.Windows
         {
             if (MessageBoxes.FirstStartQuestion(this))
                 MessageBoxes.HelpDefault(this);
-            //TODO
+            
             Ustawienia.Default._FirstStartCompleted = true;
         }
 
@@ -503,7 +470,7 @@ namespace TextToScreen.Windows
 
             OpenedSongArchive.ReadAllFromDisk(); // Will fire the archive reloaded event
 
-            AddRecentItem(fullPath);
+            Ustawienia.AddRecentItem(fullPath);
         }
 
         private void openArchiveFileDialog_FileOk(object sender, CancelEventArgs e)
@@ -556,7 +523,7 @@ namespace TextToScreen.Windows
             ostatnioOtwarteToolStripMenuItem.Enabled = histEn;
             if (histEn)
             {
-                TrimRecentItems();
+                Ustawienia.TrimRecentItems();
                 for (var i = Ustawienia.Default.AutoRecentItems.Count - 1; i >= 0; i--)
                 {
                     var path = Ustawienia.Default.AutoRecentItems[i];
@@ -849,7 +816,7 @@ namespace TextToScreen.Windows
                 };
                 tempArchive.LoadedFiles.ItemRemoved +=
                     (x, y) => { if (y.Equals(fileEditor.LoadedFile)) fileEditor.UnloadFile(false); };
-                tempArchive.FullNameChanged += x => AddRecentItem(x.FullName);
+                tempArchive.FullNameChanged += x => Ustawienia.AddRecentItem(x.FullName);
                 tempArchive.ArchiveContentsChangedExternally += OnArchiveContentsChangedExternally;
                 tempArchive.ArchiveNameChangedExternally += OnArchiveNameChangedExternally;
 
@@ -870,10 +837,8 @@ namespace TextToScreen.Windows
             if (_remoteDisplayWindow != null && !_remoteDisplayWindow.IsDisposed)
                 _remoteDisplayWindow.Dispose();
 
-            _remoteDisplayWindow = new SecondaryWindow();
-
-            _remoteDisplayWindow.Opacity = 0;
-
+            _remoteDisplayWindow = new SecondaryWindow {Opacity = 0};
+            
             _remoteDisplayWindow.Show();
             _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens);
 
@@ -890,13 +855,6 @@ namespace TextToScreen.Windows
                     Application.Exit();
                 }
             };
-
-            /* TODO
-            _remoteDisplayWindow.TextChanger.CanChangeChanged += x => previewScreens.ButtonsEnabled = x.CanChange;
-            _remoteDisplayWindow.TextChanger.PushProgressChanged += (x, y) =>
-                previewScreens.SetProgressBar(Ustawienia.SelectedSettingSet.OknoGlowneInnePokazujPasekPostepuPrzejscia
-                    ? y
-                    : -1);*/
         }
 
         private bool ShowNameChangeDialog(SongFileEntry target, bool isNewFile)
@@ -915,13 +873,6 @@ namespace TextToScreen.Windows
         private void szukajToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fileListView.FocusSearchBox();
-        }
-
-        private static void TrimRecentItems()
-        {
-            while (Ustawienia.Default.AutoRecentItems.Count >
-                   Ustawienia.Default.GeneralHistoryPoints)
-                Ustawienia.Default.AutoRecentItems.RemoveAt(0);
         }
 
         private void UpdateMainWindowTitlebar()
@@ -1026,7 +977,6 @@ namespace TextToScreen.Windows
 
         private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //fileEditor.Focus();
             fileEditor.SelectAll();
         }
 

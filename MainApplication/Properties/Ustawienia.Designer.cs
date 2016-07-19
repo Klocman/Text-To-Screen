@@ -8,14 +8,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.CodeDom.Compiler;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using TextToScreen.Misc;
+
 namespace TextToScreen.Properties {
     
     
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
-    public sealed partial class Ustawienia : global::System.Configuration.ApplicationSettingsBase {
+    [CompilerGenerated()]
+    [GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    public sealed partial class Ustawienia : ApplicationSettingsBase {
         
-        private static Ustawienia defaultInstance = ((Ustawienia)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Ustawienia())));
+        private static Ustawienia defaultInstance = ((Ustawienia)(ApplicationSettingsBase.Synchronized(new Ustawienia())));
         
         public static Ustawienia Default {
             get {
@@ -23,25 +31,25 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MiddleCenter")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.ContentAlignment ScreenFontAlignment {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("MiddleCenter")]
+        [SettingsManageability(SettingsManageability.Roaming)]
+        public ContentAlignment ScreenFontAlignment {
             get {
-                return ((global::System.Drawing.ContentAlignment)(this["ScreenFontAlignment"]));
+                return ((ContentAlignment)(this["ScreenFontAlignment"]));
             }
             set {
                 this["ScreenFontAlignment"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Arial")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("Arial")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public string ScreenFontFamily {
             get {
                 return ((string)(this["ScreenFontFamily"]));
@@ -51,11 +59,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("20")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public decimal ScreenFontSize {
             get {
                 return ((decimal)(this["ScreenFontSize"]));
@@ -65,37 +73,37 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point AutoOknoGlownePozycja {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0, 0")]
+        public Point AutoOknoGlownePozycja {
             get {
-                return ((global::System.Drawing.Point)(this["AutoOknoGlownePozycja"]));
+                return ((Point)(this["AutoOknoGlownePozycja"]));
             }
             set {
                 this["AutoOknoGlownePozycja"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point AutoOknoDocelowePozycja {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0, 0")]
+        public Point AutoOknoDocelowePozycja {
             get {
-                return ((global::System.Drawing.Point)(this["AutoOknoDocelowePozycja"]));
+                return ((Point)(this["AutoOknoDocelowePozycja"]));
             }
             set {
                 this["AutoOknoDocelowePozycja"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneFull {
             get {
                 return ((bool)(this["OknoGlowneFull"]));
@@ -105,11 +113,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneTop {
             get {
                 return ((bool)(this["OknoGlowneTop"]));
@@ -119,11 +127,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoDoceloweFull {
             get {
                 return ((bool)(this["OknoDoceloweFull"]));
@@ -133,11 +141,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("True")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoDoceloweTop {
             get {
                 return ((bool)(this["OknoDoceloweTop"]));
@@ -147,11 +155,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("True")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneKeysNumbers {
             get {
                 return ((bool)(this["OknoGlowneKeysNumbers"]));
@@ -161,11 +169,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("True")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneKeysArrows {
             get {
                 return ((bool)(this["OknoGlowneKeysArrows"]));
@@ -175,11 +183,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoDoceloweHideCursor {
             get {
                 return ((bool)(this["OknoDoceloweHideCursor"]));
@@ -189,11 +197,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0.5")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public decimal ScreenFadeSpeed {
             get {
                 return ((decimal)(this["ScreenFadeSpeed"]));
@@ -203,53 +211,53 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.Color ScreenForegroundColor {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("White")]
+        [SettingsManageability(SettingsManageability.Roaming)]
+        public Color ScreenForegroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["ScreenForegroundColor"]));
+                return ((Color)(this["ScreenForegroundColor"]));
             }
             set {
                 this["ScreenForegroundColor"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Drawing.Color ScreenBackgroundColor {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("Black")]
+        [SettingsManageability(SettingsManageability.Roaming)]
+        public Color ScreenBackgroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["ScreenBackgroundColor"]));
+                return ((Color)(this["ScreenBackgroundColor"]));
             }
             set {
                 this["ScreenBackgroundColor"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("OpenRecent")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::TextToScreen.Misc.StartupAction GeneralStartAction {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("OpenRecent")]
+        [SettingsManageability(SettingsManageability.Roaming)]
+        public StartupAction GeneralStartAction {
             get {
-                return ((global::TextToScreen.Misc.StartupAction)(this["GeneralStartAction"]));
+                return ((StartupAction)(this["GeneralStartAction"]));
             }
             set {
                 this["GeneralStartAction"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public string GeneralStartPath {
             get {
                 return ((string)(this["GeneralStartPath"]));
@@ -259,11 +267,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("True")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool GeneralHistoryEnabled {
             get {
                 return ((bool)(this["GeneralHistoryEnabled"]));
@@ -273,11 +281,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("5")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public int GeneralHistoryPoints {
             get {
                 return ((int)(this["GeneralHistoryPoints"]));
@@ -287,36 +295,36 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size AutoOknoDoceloweRozmiar {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0, 0")]
+        public Size AutoOknoDoceloweRozmiar {
             get {
-                return ((global::System.Drawing.Size)(this["AutoOknoDoceloweRozmiar"]));
+                return ((Size)(this["AutoOknoDoceloweRozmiar"]));
             }
             set {
                 this["AutoOknoDoceloweRozmiar"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size AutoOknoGlowneRozmiar {
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0, 0")]
+        public Size AutoOknoGlowneRozmiar {
             get {
-                return ((global::System.Drawing.Size)(this["AutoOknoGlowneRozmiar"]));
+                return ((Size)(this["AutoOknoGlowneRozmiar"]));
             }
             set {
                 this["AutoOknoGlowneRozmiar"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
         public bool AutoOknoGlowneMaximized {
             get {
                 return ((bool)(this["AutoOknoGlowneMaximized"]));
@@ -326,10 +334,10 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
         public bool AutoOknoDoceloweMaximized {
             get {
                 return ((bool)(this["AutoOknoDoceloweMaximized"]));
@@ -339,11 +347,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneInnePokazujPelnaSciezkeArchiwum {
             get {
                 return ((bool)(this["OknoGlowneInnePokazujPelnaSciezkeArchiwum"]));
@@ -353,11 +361,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("True")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool OknoGlowneInnePokazujPasekPostepuPrzejscia {
             get {
                 return ((bool)(this["OknoGlowneInnePokazujPasekPostepuPrzejscia"]));
@@ -367,11 +375,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool GeneralInneDostepZewnetrznyDoArchiwum {
             get {
                 return ((bool)(this["GeneralInneDostepZewnetrznyDoArchiwum"]));
@@ -381,11 +389,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool GeneralInneSprawdzajZewnetrzneZmiany {
             get {
                 return ((bool)(this["GeneralInneSprawdzajZewnetrzneZmiany"]));
@@ -395,11 +403,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public bool _FirstStartCompleted {
             get {
                 return ((bool)(this["_FirstStartCompleted"]));
@@ -409,11 +417,11 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("")]
+        [SettingsManageability(SettingsManageability.Roaming)]
         public string OtwarteArchiwum {
             get {
                 return ((string)(this["OtwarteArchiwum"]));
@@ -423,25 +431,25 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(PortableSettingsProvider.PortableSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+        [UserScopedSetting()]
+        [SettingsProvider(typeof(PortableSettingsProvider.PortableSettingsProvider))]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
             "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
             "tring>Example Song Archive.zip</string>\r\n</ArrayOfString>")]
-        [global::System.Configuration.SettingsManageabilityAttribute(global::System.Configuration.SettingsManageability.Roaming)]
-        public global::System.Collections.Specialized.StringCollection AutoRecentItems {
+        [SettingsManageability(SettingsManageability.Roaming)]
+        public StringCollection AutoRecentItems {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["AutoRecentItems"]));
+                return ((StringCollection)(this["AutoRecentItems"]));
             }
             set {
                 this["AutoRecentItems"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
         public bool ScreenFontBold {
             get {
                 return ((bool)(this["ScreenFontBold"]));
@@ -451,9 +459,9 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
         public bool ScreenFontItalic {
             get {
                 return ((bool)(this["ScreenFontItalic"]));
@@ -463,9 +471,9 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("False")]
         public bool ScreenFontUnderline {
             get {
                 return ((bool)(this["ScreenFontUnderline"]));
@@ -475,9 +483,9 @@ namespace TextToScreen.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("")]
         public string ScreenImagePath {
             get {
                 return ((string)(this["ScreenImagePath"]));
