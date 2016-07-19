@@ -2,11 +2,11 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Ionic.Zip;
 using Klocman.Tools;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
-using TextToScreen.Windows;
 
 namespace TextToScreen.SongFile
 {
@@ -19,15 +19,22 @@ namespace TextToScreen.SongFile
         private bool _savedToDisk;
         internal SongFileCollection ParentCollection;
         
-        public static string NewVerse { get; } = Environment.NewLine + "@";
+        public static string NewVerse { get; } = "\r\n@";
+        public static string NewVerseShort { get; } = Environment.NewLine + "\n@";
+
+        private static readonly Regex FixShortLineBreaksRegex = new Regex("(?=[^\r])\n", RegexOptions.Compiled);
+        private static string FixShortLineBreaks(string content)
+        {
+            return FixShortLineBreaksRegex.Replace(content, "\r\n");
+        }
 
         public SongFileEntry(string filename, string fileGroup, string fileContents, string fileComment,
             DateTime lastModifiedDate, DateTime creationDate)
         {
             _name = filename;
             _group = fileGroup;
-            _contents = fileContents;
-            _comment = fileComment ?? String.Empty;
+            _contents = FixShortLineBreaks(fileContents);
+            _comment = fileComment ?? string.Empty;
             LastModified = lastModifiedDate;
             CreationTime = creationDate;
 

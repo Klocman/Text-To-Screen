@@ -5,7 +5,6 @@ using Klocman.Extensions;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
 using TextToScreen.SongFile;
-using TextToScreen.Windows;
 
 namespace TextToScreen.Controls
 {
