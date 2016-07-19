@@ -21,8 +21,7 @@ namespace TextToScreen.Windows
         public SecondaryWindow()
         {
             InitializeComponent();
-            OutputCluster = new OutputCluster();
-            OutputCluster.Dock = DockStyle.Fill;
+            OutputCluster = new OutputCluster {Dock = DockStyle.Fill};
             Controls.Add(OutputCluster);
 
             OutputCluster.FinalField.MouseDown += (sender, args) => OnMouseDown(ToFormsMouseArgs(args, args.ClickCount));
@@ -70,15 +69,21 @@ namespace TextToScreen.Windows
             get { return FormBorderStyle == FormBorderStyle.None; }
             set
             {
-                if (value) //Going fullscreen now
+                if (value)
                 {
+                    //Going fullscreen
+                    SuspendLayout();
+                    WindowState = FormWindowState.Normal;
                     FormBorderStyle = FormBorderStyle.None;
                     WindowState = FormWindowState.Maximized;
+                    ResumeLayout();
                 }
                 else
                 {
+                    SuspendLayout();
                     FormBorderStyle = FormBorderStyle.SizableToolWindow;
                     WindowState = FormWindowState.Normal;
+                    ResumeLayout();
                 }
                 Ustawienia.Default.OknoDoceloweFull = value;
             }
