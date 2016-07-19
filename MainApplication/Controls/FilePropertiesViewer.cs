@@ -71,13 +71,12 @@ namespace TextToScreen.Controls
             var cc = CommentChanged;
             if (nc || gc || cc)
             {
-                return from file in _loadedFiles
-                    select new FilePropertiesViewerEventArgs(
-                        file,
-                        nc ? nameTextBox.Text : file.Name,
-                        gc ? groupTextBox.Text : file.Group,
-                        cc ? commentTextBox.Text : file.Comment
-                        );
+                return _loadedFiles.Select(file => new FilePropertiesViewerEventArgs(
+                    file,
+                    nc ? nameTextBox.Text : file.Name,
+                    gc ? groupTextBox.Text : file.Group,
+                    cc ? commentTextBox.Text : file.Comment
+                    )).ToList();
             }
             return Enumerable.Empty<FilePropertiesViewerEventArgs>();
         }
