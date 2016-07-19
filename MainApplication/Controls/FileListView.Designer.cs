@@ -228,7 +228,6 @@
             this.searchBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.searchBox1.Name = "searchBox1";
             this.searchBox1.SearchTextChanged += new System.Action<Klocman.Controls.SearchBox, System.EventArgs>(this.searchBox1_SearchTextChanged);
-            this.searchBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox1_KeyDown);
             // 
             // label1
             // 

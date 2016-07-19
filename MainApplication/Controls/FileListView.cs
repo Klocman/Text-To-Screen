@@ -45,6 +45,11 @@ namespace TextToScreen.Controls
             };
             createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
             modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
+
+            foreach (var control in searchBox1.GetAllChildren().Concat(new[] { searchBox1 }))
+            {
+                control.KeyDown += searchBox1_KeyDown;
+            }
         }
 
         public bool FileListFocused => objectListView1.Focused;
