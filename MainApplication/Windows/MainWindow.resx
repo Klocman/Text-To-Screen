@@ -148,7 +148,7 @@
     <value>fileListView</value>
   </data>
   <data name="&gt;&gt;fileListView.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileListView.Parent" xml:space="preserve">
     <value>splitContainer3.Panel1</value>
@@ -196,7 +196,7 @@
     <value>fileEditor</value>
   </data>
   <data name="&gt;&gt;fileEditor.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileEditor.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -238,7 +238,7 @@
     <value>outputAppearanceControls1</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -340,7 +340,7 @@
     <value>previewScreens</value>
   </data>
   <data name="&gt;&gt;previewScreens.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6040.23230, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;previewScreens.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>

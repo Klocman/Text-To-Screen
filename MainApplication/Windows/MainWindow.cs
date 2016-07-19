@@ -119,15 +119,22 @@ namespace TextToScreen.Windows
             get { return _openedSongArchive; }
             set
             {
+                if (_openedSongArchive == value)
+                    return;
+
+                _openedSongArchive?.Dispose();
+
+                fileListView.ClearAllItems(true);
+                fileListView.Enabled = false;
+                fileEditor.UnloadFile(false);
+
                 _openedSongArchive = value;
-                if (value == null)
+
+                if (value != null)
                 {
-                    fileListView.ClearAllItems(true);
-                    fileListView.Enabled = false;
-                    fileEditor.UnloadFile(false);
-                }
-                else
                     fileListView.Enabled = true;
+                    fileListView.PopulateItems(_openedSongArchive.LoadedFiles);
+                }
 
                 UpdateMainWindowTitlebar();
             }
@@ -190,9 +197,7 @@ namespace TextToScreen.Windows
 
         private void CreateNewArchive()
         {
-            fileEditor.UnloadFile();
             SetupNewArchive(string.Empty);
-            fileListView.PopulateItems(OpenedSongArchive.LoadedFiles);
         }
 
         private void CreateNewFile()
@@ -820,12 +825,16 @@ namespace TextToScreen.Windows
                 tempArchive.ArchiveContentsChangedExternally += OnArchiveContentsChangedExternally;
                 tempArchive.ArchiveNameChangedExternally += OnArchiveNameChangedExternally;
 
-                OpenedSongArchive?.Dispose(); //Clears out previously assigned event handlers
                 OpenedSongArchive = tempArchive;
             }
             catch (ArgumentException)
             {
                 MessageBoxes.InvalidArchiveInfo(this);
+                return false;
+            }
+            catch (IOException e)
+            {
+                PremadeDialogs.GenericError(e);
                 return false;
             }
 
