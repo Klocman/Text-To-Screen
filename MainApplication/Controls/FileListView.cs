@@ -28,7 +28,7 @@ namespace TextToScreen.Controls
             objectListView1.AlwaysGroupBySortOrder = SortOrder.Ascending;
             groupColumn.GroupKeyToTitleConverter = x =>
             {
-                var groupName = (string) x;
+                var groupName = (string)x;
                 if (string.IsNullOrEmpty(groupName))
                 {
                     return Localisation.DefaultGroupName;
@@ -37,14 +37,14 @@ namespace TextToScreen.Controls
             };
             nameColumn.AspectPutter = (x, y) =>
             {
-                var sfe = (SongFileEntry) x;
-                var newname = (string) y;
+                var sfe = (SongFileEntry)x;
+                var newname = (string)y;
                 if (sfe.CheckName(newname) == NameChangeResult.Ok)
                     sfe.Name = newname;
                 objectListView1.RefreshObject(x);
             };
-            createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
-            modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
+            createdColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
+            modifiedColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
 
             foreach (var control in searchBox1.GetAllChildren().Concat(new[] { searchBox1 }))
             {
@@ -61,7 +61,16 @@ namespace TextToScreen.Controls
             set { toolStripButton_save.Enabled = value; }
         }
 
-        public SongFileEntry SelectedFile => objectListView1.SelectedObject as SongFileEntry;
+        public SongFileEntry SelectedFile
+        {
+            get { return objectListView1.SelectedObject as SongFileEntry; }
+            set
+            {
+                objectListView1.EnsureVisible(objectListView1.IndexOf(value)); 
+                objectListView1.SelectObject(value);
+            }
+        }
+
         public IEnumerable<SongFileEntry> SelectedFiles => objectListView1.SelectedObjects.Cast<SongFileEntry>();
 
         [Category("Appearance")]
@@ -303,46 +312,46 @@ namespace TextToScreen.Controls
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                {
-                    if (SelectedFile == null)
-                        return;
+                    {
+                        if (SelectedFile == null)
+                            return;
 
-                    if (e.Control)
-                    {
-                        ShowProperties();
+                        if (e.Control)
+                        {
+                            ShowProperties();
+                        }
+                        else
+                        {
+                            OnFileOpened(SelectedFile);
+                        }
                     }
-                    else
-                    {
-                        OnFileOpened(SelectedFile);
-                    }
-                }
                     break;
 
                 case Keys.Apps:
-                {
-                    OpenFileContextMenu();
-                }
-                    break;
-
-                case Keys.F10:
-                {
-                    if (e.Shift)
                     {
                         OpenFileContextMenu();
                     }
-                    else
+                    break;
+
+                case Keys.F10:
+                    {
+                        if (e.Shift)
+                        {
+                            OpenFileContextMenu();
+                        }
+                        else
+                        {
+                            e.Handled = false;
+                            e.SuppressKeyPress = false;
+                        }
+                    }
+                    break;
+
+                default:
                     {
                         e.Handled = false;
                         e.SuppressKeyPress = false;
                     }
-                }
-                    break;
-
-                default:
-                {
-                    e.Handled = false;
-                    e.SuppressKeyPress = false;
-                }
                     break;
             }
         }
@@ -406,7 +415,7 @@ namespace TextToScreen.Controls
             else
                 objectListView1.SetObjects(LastFileSource.Where(x => CheckGroupMatch(x) && CheckStringMatch(x, searchString)));
         }
-        
+
         private void searchBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Alt)

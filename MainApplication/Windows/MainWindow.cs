@@ -217,7 +217,10 @@ namespace TextToScreen.Windows
             };
 
             if (ShowNameChangeDialog(newFile, true))
+            {
                 OpenedSongArchive.LoadedFiles.Add(newFile);
+                fileListView.SelectedFile = newFile;
+            }
             else
                 newFile.Dispose();
         }
