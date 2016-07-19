@@ -101,8 +101,11 @@ namespace TextToScreen.Windows
                 if (args.NewValue)
                 {
                     //Going fullscreen
+                    SuspendLayout();
+                    WindowState = FormWindowState.Normal;
                     FormBorderStyle = FormBorderStyle.None;
                     WindowState = FormWindowState.Maximized;
+                    ResumeLayout();
                 }
                 else
                 {
