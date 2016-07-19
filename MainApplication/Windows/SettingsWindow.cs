@@ -143,6 +143,7 @@ namespace TextToScreen.Windows
         private void secondary_button_factorySettings_Click(object sender, EventArgs e)
         {
             SetupTabSecondary(_defaultSettings);
+            buttonAccept.Enabled = true;
         }
         
         // Events ---------------------------------------------------------------------------------------
