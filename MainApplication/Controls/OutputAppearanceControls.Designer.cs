@@ -55,6 +55,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pathSelectBoxImage = new Klocman.Controls.PathSelectBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonClearImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFadeDuration)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -67,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // numericUpDownFadeDuration
@@ -406,6 +409,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.flowLayoutPanel1);
             this.tabPage3.Controls.Add(this.pathSelectBoxImage);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -417,6 +421,7 @@
             // 
             // pathSelectBoxImage
             // 
+            this.pathSelectBoxImage.AutoSize = true;
             this.pathSelectBoxImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pathSelectBoxImage.FileName = "";
             this.pathSelectBoxImage.Filter = "Image Files|*.BMP;*.JPG;*.GIF;*.PNG|All files|*.*";
@@ -424,6 +429,27 @@
             this.pathSelectBoxImage.Name = "pathSelectBoxImage";
             this.pathSelectBoxImage.Size = new System.Drawing.Size(369, 28);
             this.pathSelectBoxImage.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.buttonClearImage);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 31);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(369, 29);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // buttonClearImage
+            // 
+            this.buttonClearImage.Location = new System.Drawing.Point(291, 3);
+            this.buttonClearImage.Name = "buttonClearImage";
+            this.buttonClearImage.Size = new System.Drawing.Size(75, 23);
+            this.buttonClearImage.TabIndex = 0;
+            this.buttonClearImage.Text = "Clear";
+            this.buttonClearImage.UseVisualStyleBackColor = true;
+            this.buttonClearImage.Click += new System.EventHandler(this.buttonClearImage_Click);
             // 
             // OutputAppearanceControls
             // 
@@ -449,6 +475,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -481,5 +509,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
         private Klocman.Controls.PathSelectBox pathSelectBoxImage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button buttonClearImage;
     }
 }

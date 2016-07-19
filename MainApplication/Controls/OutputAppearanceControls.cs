@@ -80,5 +80,10 @@ namespace TextToScreen.Controls
             italicToggle.Enabled = tempFontFamily.IsStyleAvailable(FontStyle.Italic);
             underlineToggle.Enabled = tempFontFamily.IsStyleAvailable(FontStyle.Underline);
         }
+
+        private void buttonClearImage_Click(object sender, EventArgs e)
+        {
+            pathSelectBoxImage.FileName = string.Empty;
+        }
     }
 }
