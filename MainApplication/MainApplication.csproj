@@ -218,6 +218,9 @@
     <Compile Include="Windows\DodajPlik.Designer.cs">
       <DependentUpon>DodajPlik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DraggableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\Eksport.cs">
       <SubType>Form</SubType>
     </Compile>

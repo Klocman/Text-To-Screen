@@ -22,7 +22,7 @@ namespace TextToScreen.Controls.Screens
 
             FinalField = (OutputField)elementHost2.Child;
             PreviewField = (OutputField)elementHost1.Child;
-
+            
             PreviewField.AnimationLength = TimeSpan.Zero;
             PreviewField.NextText = Localisation.PreviewScreenInfo;
 
@@ -135,25 +135,6 @@ namespace TextToScreen.Controls.Screens
             previewScreens.TopDisplayBox.SetPreviewTarget(PreviewField);
             previewScreens.BottomDisplayBox.SetPreviewTarget(FinalField);
             _progressCallback = previewScreens.SetProgressBar;
-        }
-
-        //Pass through mouse events
-        protected override void WndProc(ref Message m)
-        {
-            if (_inDesignMode)
-                return;
-
-            const int WM_NCHITTEST = 0x0084;
-            const int HTTRANSPARENT = -1;
-
-            if (m.Msg == WM_NCHITTEST)
-            {
-                m.Result = (IntPtr)HTTRANSPARENT;
-            }
-            else
-            {
-                base.WndProc(ref m);
-            }
         }
     }
 }
