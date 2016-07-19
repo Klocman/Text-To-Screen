@@ -78,10 +78,10 @@ namespace TextToScreen.SongFile
             get { return _fullName; }
             set
             {
-                var r = !ReferenceEquals(_fullName, value);
+                value = string.IsNullOrEmpty(value) ? string.Empty : Path.GetFullPath(value);
+                if (_fullName == value) return;
                 _fullName = value;
-                if (r)
-                    OnFullNameChanged();
+                OnFullNameChanged();
             }
         }
 
