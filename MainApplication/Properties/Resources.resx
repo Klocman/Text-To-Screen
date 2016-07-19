@@ -181,10 +181,6 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>Text To Screen</value>
   </data>
-  <data name="NewVerse" xml:space="preserve">
-    <value>
-@</value>
-  </data>
   <data name="SongFileExtension" xml:space="preserve">
     <value>.txt</value>
   </data>

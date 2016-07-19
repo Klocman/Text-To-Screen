@@ -8,6 +8,7 @@ using Klocman.Tools;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
 using TextToScreen.SongFile;
+using TextToScreen.Windows;
 
 namespace TextToScreen.ImportExport
 {
@@ -83,7 +84,7 @@ namespace TextToScreen.ImportExport
             var allText = File.ReadAllText(from);
 
             string outputString;
-            if (allText.Contains(Resources.NewVerse))
+            if (allText.Contains(SongFileEntry.NewVerse))
             {
                 // File doesn't need to be converted since it seems to be in a correct fomat already
                 outputString = allText;
@@ -94,7 +95,7 @@ namespace TextToScreen.ImportExport
 
                 foreach (var line in allText.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.None))
                 {
-                    output.Append(string.IsNullOrEmpty(line) ? Resources.NewVerse : line.Trim());
+                    output.Append(string.IsNullOrEmpty(line) ? SongFileEntry.NewVerse : line.Trim());
                 }
 
                 outputString = output.ToString();
@@ -150,7 +151,7 @@ namespace TextToScreen.ImportExport
             output.RemoveAll(string.IsNullOrEmpty);
 
             return new SongFileEntry(targetName, Localisation.ImportGroupName,
-                string.Join(Resources.NewVerse, output.ToArray()),
+                string.Join(SongFileEntry.NewVerse, output.ToArray()),
                 Localisation.ImportCommentSng, DateTime.Now, File.GetCreationTime(from));
         }
     }

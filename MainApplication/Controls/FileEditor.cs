@@ -5,6 +5,7 @@ using Klocman.Extensions;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
 using TextToScreen.SongFile;
+using TextToScreen.Windows;
 
 namespace TextToScreen.Controls
 {
@@ -156,8 +157,8 @@ namespace TextToScreen.Controls
             var selectIndex = textBox1.SelectionStart;
             if (selectIndex >= 0)
             {
-                textBox1.Text = textBox1.Text.Insert(selectIndex, Resources.NewVerse);
-                textBox1.SelectionStart = selectIndex + Resources.NewVerse.Length;
+                textBox1.Text = textBox1.Text.Insert(selectIndex, SongFileEntry.NewVerse);
+                textBox1.SelectionStart = selectIndex + SongFileEntry.NewVerse.Length;
                 textBox1.SelectionLength = 0;
             }
         }
@@ -347,7 +348,7 @@ namespace TextToScreen.Controls
         private void PopulateListBox()
         {
             multiLineListBox1.Items.Clear();
-            multiLineListBox1.Items.AddRange(textBox1.Text.Split(new[] { Resources.NewVerse }, StringSplitOptions.None)
+            multiLineListBox1.Items.AddRange(textBox1.Text.Split(new[] { SongFileEntry.NewVerse }, StringSplitOptions.None)
                 .Cast<object>().ToArray());
         }
 

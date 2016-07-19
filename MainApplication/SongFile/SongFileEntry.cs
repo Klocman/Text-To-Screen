@@ -6,6 +6,7 @@ using Ionic.Zip;
 using Klocman.Tools;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
+using TextToScreen.Windows;
 
 namespace TextToScreen.SongFile
 {
@@ -17,6 +18,8 @@ namespace TextToScreen.SongFile
         private string _name;
         private bool _savedToDisk;
         internal SongFileCollection ParentCollection;
+        
+        public static string NewVerse { get; } = Environment.NewLine + "@";
 
         public SongFileEntry(string filename, string fileGroup, string fileContents, string fileComment,
             DateTime lastModifiedDate, DateTime creationDate)
@@ -24,7 +27,7 @@ namespace TextToScreen.SongFile
             _name = filename;
             _group = fileGroup;
             _contents = fileContents;
-            _comment = fileComment ?? string.Empty;
+            _comment = fileComment ?? String.Empty;
             LastModified = lastModifiedDate;
             CreationTime = creationDate;
 
@@ -58,7 +61,7 @@ namespace TextToScreen.SongFile
                 }
             }
 
-            _comment = entry.Comment ?? string.Empty;
+            _comment = entry.Comment ?? String.Empty;
             LastModified = entry.LastModified;
             CreationTime = entry.CreationTime;
 
@@ -157,7 +160,7 @@ namespace TextToScreen.SongFile
                 throw new ArgumentNullException();
 
             var sb = new StringBuilder();
-            if (!string.IsNullOrEmpty(_group))
+            if (!String.IsNullOrEmpty(_group))
             {
                 sb.Append(_group);
                 sb.Append(Path.DirectorySeparatorChar);
@@ -173,7 +176,7 @@ namespace TextToScreen.SongFile
 
         public NameChangeResult CheckName(string nameToCheck)
         {
-            if (string.IsNullOrEmpty(nameToCheck))
+            if (String.IsNullOrEmpty(nameToCheck))
                 return NameChangeResult.Empty;
             if (nameToCheck.Any(x => StringTools.InvalidFileNameChars.Contains(x)))
                 return NameChangeResult.InvalidChars;
@@ -190,7 +193,7 @@ namespace TextToScreen.SongFile
             _name = source.Name;
             _group = source.Group;
             _contents = source.Contents;
-            _comment = source.Comment ?? string.Empty;
+            _comment = source.Comment ?? String.Empty;
             LastModified = source.LastModified;
             CreationTime = source.CreationTime;
 
@@ -199,11 +202,11 @@ namespace TextToScreen.SongFile
 
         public override string ToString()
         {
-            return string.Format(Localisation.SongFileArchive_ToString_Format,
+            return String.Format(Localisation.SongFileArchive_ToString_Format,
                 Name, LastModified, CreationTime,
-                string.IsNullOrEmpty(Comment) ? Localisation.SongFileArchive_ToString_MissingComment : Comment)
+                String.IsNullOrEmpty(Comment) ? Localisation.SongFileArchive_ToString_MissingComment : Comment)
                    + Environment.NewLine + Environment.NewLine
-                   + Contents.Trim().Replace(Resources.NewVerse, Environment.NewLine + Environment.NewLine);
+                   + Contents.Trim().Replace(NewVerse, Environment.NewLine + Environment.NewLine);
         }
     }
 }
