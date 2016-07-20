@@ -108,6 +108,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string DefaultLanguage {
+            get {
+                return ResourceManager.GetString("DefaultLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Following files were not imported because of respective reasons:.
         /// </summary>
         internal static string FileImportProblemsHeader {
@@ -203,6 +212,24 @@ namespace TextToScreen.Properties {
         internal static string InvalidFileFormat {
             get {
                 return ResourceManager.GetString("InvalidFileFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To change the language you have to restart the application..
+        /// </summary>
+        internal static string Message_RestartNeeded_Text {
+            get {
+                return ResourceManager.GetString("Message_RestartNeeded_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language change.
+        /// </summary>
+        internal static string Message_RestartNeeded_Title {
+            get {
+                return ResourceManager.GetString("Message_RestartNeeded_Title", resourceCulture);
             }
         }
         

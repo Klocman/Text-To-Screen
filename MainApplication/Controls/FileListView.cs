@@ -66,7 +66,9 @@ namespace TextToScreen.Controls
             get { return objectListView1.SelectedObject as SongFileEntry; }
             set
             {
-                objectListView1.EnsureVisible(objectListView1.IndexOf(value)); 
+                var index = objectListView1.IndexOf(value);
+                if (index < 0) return;
+                objectListView1.EnsureVisible(index);
                 objectListView1.SelectObject(value);
             }
         }

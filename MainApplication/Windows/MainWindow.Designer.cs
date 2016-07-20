@@ -98,6 +98,7 @@ namespace TextToScreen.Windows
             this.openArchiveFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveArchiveDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys = new Klocman.Subsystems.GlobalHotkeys();
+            this.changeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -147,6 +148,7 @@ namespace TextToScreen.Windows
             resources.ApplyResources(this.fileListView, "fileListView");
             this.fileListView.Name = "fileListView";
             this.fileListView.SaveButtonEnabled = true;
+            this.fileListView.SelectedFile = null;
             this.fileListView.StopRefreshingList = false;
             this.fileListView.ButtonClickDelete += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_Delete);
             this.fileListView.ButtonClickNew += new System.Action<TextToScreen.Controls.FileListView>(this.fileListView_ButtonClick_New);
@@ -486,6 +488,7 @@ namespace TextToScreen.Windows
             this.alwaysOnTopToolStripMenuItem,
             this.fullScreenToolStripMenuItem,
             this.toolStripSeparator3,
+            this.changeLanguageToolStripMenuItem,
             this.preferencjeToolStripMenuItem});
             this.ustawieniaToolStripMenuItem.Name = "ustawieniaToolStripMenuItem";
             resources.ApplyResources(this.ustawieniaToolStripMenuItem, "ustawieniaToolStripMenuItem");
@@ -611,6 +614,12 @@ namespace TextToScreen.Windows
             this.globalHotkeys.StopWhenFormIsDisabled = false;
             this.globalHotkeys.SuppressKeyPresses = true;
             // 
+            // changeLanguageToolStripMenuItem
+            // 
+            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
+            resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
+            this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -707,6 +716,7 @@ namespace TextToScreen.Windows
         private Klocman.Subsystems.GlobalHotkeys globalHotkeys;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private OutputAppearanceControls outputAppearanceControls1;
+        private System.Windows.Forms.ToolStripMenuItem changeLanguageToolStripMenuItem;
     }
 }
 

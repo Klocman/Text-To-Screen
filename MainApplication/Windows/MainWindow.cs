@@ -1021,5 +1021,14 @@ namespace TextToScreen.Windows
                     break;
             }
         }
+
+        private void changeLanguageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (LanguageChangeWindow.ShowLanguageChangeDialog(this))
+            {
+                MessageBox.Show(this, Localisation.Message_RestartNeeded_Text, Localisation.Message_RestartNeeded_Title,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

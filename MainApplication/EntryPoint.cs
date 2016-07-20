@@ -24,6 +24,7 @@ namespace TextToScreen
 
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
+                CultureConfigurator.SetupCulture();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainWindow());

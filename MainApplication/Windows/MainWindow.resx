@@ -148,7 +148,7 @@
     <value>fileListView</value>
   </data>
   <data name="&gt;&gt;fileListView.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileListView, TextToScreen, Version=1.7.6045.33133, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileListView.Parent" xml:space="preserve">
     <value>splitContainer3.Panel1</value>
@@ -196,7 +196,7 @@
     <value>fileEditor</value>
   </data>
   <data name="&gt;&gt;fileEditor.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FileEditor, TextToScreen, Version=1.7.6045.33133, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;fileEditor.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -238,7 +238,7 @@
     <value>outputAppearanceControls1</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.OutputAppearanceControls, TextToScreen, Version=1.7.6045.33133, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;outputAppearanceControls1.Parent" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -340,7 +340,7 @@
     <value>previewScreens</value>
   </data>
   <data name="&gt;&gt;previewScreens.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6044.26110, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.Screens.PreviewScreens, TextToScreen, Version=1.7.6045.33133, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;previewScreens.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -394,7 +394,7 @@
     <value>178, 22</value>
   </data>
   <data name="otwórzArchiwumToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Open archive</value>
+    <value>&amp;Open archive...</value>
   </data>
   <data name="otwórzFolderArchiwumToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -463,13 +463,13 @@
     <value>204, 22</value>
   </data>
   <data name="nowyplikToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;New song</value>
+    <value>&amp;New song...</value>
   </data>
   <data name="zmieńNazwęToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
   <data name="zmieńNazwęToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Rename song</value>
+    <value>&amp;Rename song...</value>
   </data>
   <data name="usuńWybranePlikiToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
@@ -511,7 +511,7 @@
     <value>204, 22</value>
   </data>
   <data name="właściwościWybranychPiosenekToolStripMenuItem.Text" xml:space="preserve">
-    <value>Song properties</value>
+    <value>Song properties...</value>
   </data>
   <data name="edycjaElementowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 20</value>
@@ -618,11 +618,17 @@
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 6</value>
   </data>
+  <data name="changeLanguageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 22</value>
+  </data>
+  <data name="changeLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Change language...</value>
+  </data>
   <data name="preferencjeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 22</value>
   </data>
   <data name="preferencjeToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Settings</value>
+    <value>&amp;Settings...</value>
   </data>
   <data name="ustawieniaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -631,40 +637,40 @@
     <value>&amp;View</value>
   </data>
   <data name="otworzPomocToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="otworzPomocToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open &amp;help</value>
+    <value>Open &amp;help...</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 6</value>
+    <value>149, 6</value>
   </data>
   <data name="homepageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="homepageToolStripMenuItem.Text" xml:space="preserve">
     <value>Homepage</value>
   </data>
   <data name="donateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="donateToolStripMenuItem.Text" xml:space="preserve">
     <value>Donate</value>
   </data>
   <data name="coNowegoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="coNowegoToolStripMenuItem.Text" xml:space="preserve">
     <value>What's &amp;new?</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 6</value>
+    <value>149, 6</value>
   </data>
   <data name="oProgramieToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="oProgramieToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;About</value>
+    <value>&amp;About...</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -4579,6 +4585,12 @@
   </data>
   <data name="&gt;&gt;globalHotkeys.Type" xml:space="preserve">
     <value>Klocman.Subsystems.GlobalHotkeys, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Name" xml:space="preserve">
+    <value>changeLanguageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;changeLanguageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
