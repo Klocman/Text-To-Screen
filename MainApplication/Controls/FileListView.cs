@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BrightIdeasSoftware;
 using Klocman.Extensions;
 using Klocman.Tools;
 using TextToScreen.Misc;
@@ -50,6 +50,15 @@ namespace TextToScreen.Controls
             {
                 control.KeyDown += searchBox1_KeyDown;
             }
+
+            objectListView1.AdditionalFilter = new ModelFilter(x => ListViewFilter(x as SongFileEntry));
+            objectListView1.UseFiltering = true;
+        }
+
+        private bool ListViewFilter(SongFileEntry sfe)
+        {
+            if (sfe == null) throw new ArgumentNullException();
+            return CheckGroupMatch(sfe) && CheckStringMatch(sfe, searchBox1.SearchString);
         }
 
         public bool FileListFocused => objectListView1.Focused;
@@ -173,7 +182,7 @@ namespace TextToScreen.Controls
             if (StopRefreshingList)
                 return;
 
-            RefreshListWithSearch();
+            objectListView1.SetObjects(songFileEntries);
             objectListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
@@ -236,7 +245,7 @@ namespace TextToScreen.Controls
         private void button_clear_Click(object sender, EventArgs e)
         {
             groupFilterComboBox.SelectedIndex = 0;
-            RefreshListNoSearch();
+            searchBox1.ClearSearchBox();
         }
 
         private bool CheckGroupMatch(SongFileEntry entry)
@@ -273,7 +282,7 @@ namespace TextToScreen.Controls
 
         private void groupFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshListWithSearch();
+            RefreshListFilter();
         }
 
         private void kopiujDoSchowkaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -398,24 +407,9 @@ namespace TextToScreen.Controls
             ShowProperties();
         }
 
-        private void RefreshListNoSearch()
+        private void RefreshListFilter()
         {
-            if (!searchBox1.ContainsFocus)
-                searchBox1.ClearSearchBox();
-
-            objectListView1.SetObjects(groupFilterComboBox.SelectedIndex > 0
-                ? LastFileSource.Where(CheckGroupMatch)
-                : LastFileSource);
-        }
-
-        private void RefreshListWithSearch()
-        {
-            var searchString = searchBox1.SearchString;
-
-            if (string.IsNullOrEmpty(searchString))
-                RefreshListNoSearch();
-            else
-                objectListView1.SetObjects(LastFileSource.Where(x => CheckGroupMatch(x) && CheckStringMatch(x, searchString)));
+            objectListView1.UpdateColumnFiltering();
         }
 
         private void searchBox1_KeyDown(object sender, KeyEventArgs e)
@@ -427,8 +421,8 @@ namespace TextToScreen.Controls
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    RefreshListNoSearch();
                     objectListView1.Focus();
+                    searchBox1.ClearSearchBox();
                     break;
 
                 case Keys.Down:
@@ -448,12 +442,12 @@ namespace TextToScreen.Controls
 
         private void searchBox1_SearchTextChanged(Klocman.Controls.SearchBox arg1, EventArgs arg2)
         {
-            RefreshListWithSearch();
+            RefreshListFilter();
         }
 
         private void searchInsideFilesCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            RefreshListWithSearch();
+            RefreshListFilter();
         }
 
         private void toolStripButton_del_Click(object sender, EventArgs e)
