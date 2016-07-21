@@ -48,7 +48,7 @@ namespace TextToScreen.Windows
             fileEditor.UnloadFile(false);
 
             SetupRemoteDisplayWindow();
-            
+
             previewScreens.ButtonClickSend += x => SendSelectedToOutput();
             previewScreens.ButtonClickClear += x => ClearOutput();
 
@@ -387,12 +387,12 @@ namespace TextToScreen.Windows
                     }
                 }
 
-                MessageBox.Show(this, $"{successfulCountString}\n{unsuccessfulString}", Localisation.FileImportTitle, 
+                MessageBox.Show(this, $"{successfulCountString}\n{unsuccessfulString}", Localisation.FileImportTitle,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show(this, successfulCountString, Localisation.FileImportTitle, 
+                MessageBox.Show(this, successfulCountString, Localisation.FileImportTitle,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -466,7 +466,7 @@ namespace TextToScreen.Windows
         {
             if (MessageBoxes.FirstStartQuestion(this))
                 MessageBoxes.HelpDefault(this);
-            
+
             Ustawienia.Default._FirstStartCompleted = true;
         }
 
@@ -775,6 +775,8 @@ namespace TextToScreen.Windows
             globalHotkeys.Add(new HotkeyEntry(Keys.Right, false, false, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList),
                 null, () => Ustawienia.Default.OknoGlowneKeysArrows && fileListView.FileListFocused));
+            globalHotkeys.Add(new HotkeyEntry(Keys.Add, (x, y) => Ustawienia.Default.ScreenFontSize += 3, null));
+            globalHotkeys.Add(new HotkeyEntry(Keys.Subtract, (x, y) => Ustawienia.Default.ScreenFontSize -= 3, null));
 
             // Shortcuts
             globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false, (x, y) => fileListView.FocusFileList(),
@@ -853,8 +855,8 @@ namespace TextToScreen.Windows
             if (_remoteDisplayWindow != null && !_remoteDisplayWindow.IsDisposed)
                 _remoteDisplayWindow.Dispose();
 
-            _remoteDisplayWindow = new SecondaryWindow {Opacity = 0};
-            
+            _remoteDisplayWindow = new SecondaryWindow { Opacity = 0 };
+
             _remoteDisplayWindow.Show();
             _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens);
 
