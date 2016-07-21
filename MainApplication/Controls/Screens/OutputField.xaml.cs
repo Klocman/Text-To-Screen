@@ -4,10 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 using TextToScreen.Misc;
 using Color = System.Drawing.Color;
 using FontFamily = System.Windows.Media.FontFamily;
+using FontStyle = System.Windows.FontStyle;
 
 namespace TextToScreen.Controls.Screens
 {
@@ -55,6 +55,10 @@ namespace TextToScreen.Controls.Screens
         public FontFamily NextFontFamily { get; set; }
         public double? NextFontSize { get; set; }
         public ContentAlignment? NextFontAlignment { get; set; }
+
+        public FontStyle? NextFontStyle { get; set; }
+        public FontWeight? NextFontWeight { get; set; }
+        public TextDecorationCollection NextTextDecorations { get; set; }
 
         /// <summary>
         /// Overall progress of the animation. 0 at start, 1 when completed.
@@ -128,11 +132,29 @@ namespace TextToScreen.Controls.Screens
                 NextFontAlignment = null;
             }
 
+            if (NextFontStyle != null)
+            {
+                TextBlock.FontStyle = NextFontStyle.Value;
+                NextFontStyle = null;
+            }
+
+            if (NextFontWeight != null)
+            {
+                TextBlock.FontWeight = NextFontWeight.Value;
+                NextFontWeight = null;
+            }
+
+            if (NextTextDecorations != null)
+            {
+                TextBlock.TextDecorations = NextTextDecorations;
+                NextTextDecorations = null;
+            }
+
             if (!ReferenceEquals(CurrentImage, NextImage))
                 Image.Source = NextImage;
 
             AnimationHalfPoint?.Invoke(sender, eventArgs);
-            
+
             _fadeIn.Begin(this, true);
         }
 
@@ -145,8 +167,11 @@ namespace TextToScreen.Controls.Screens
             NextFontFamily = originField.CurrentFontFamily;
             NextFontSize = originField.CurrentFontSize;
             NextFontAlignment = originField.CurrentFontAlignment;
-            
-            if(GetAnimationProgress() >= 1)
+            NextFontStyle = originField.TextBlock.FontStyle;
+            NextFontWeight = originField.TextBlock.FontWeight;
+            NextTextDecorations = originField.TextBlock.TextDecorations;
+
+            if (GetAnimationProgress() >= 1)
                 BeginAnimation();
         }
     }

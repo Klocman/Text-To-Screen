@@ -1,11 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Klocman.Binding.Settings;
 using TextToScreen.Properties;
 
 namespace TextToScreen.Controls.Screens
@@ -13,7 +11,6 @@ namespace TextToScreen.Controls.Screens
     public partial class OutputCluster : UserControl
     {
         private readonly System.Timers.Timer _callbackTimer;
-        private readonly bool _inDesignMode;
         private Action<int> _progressCallback;
 
         public OutputCluster()
@@ -22,12 +19,10 @@ namespace TextToScreen.Controls.Screens
 
             FinalField = (OutputField)elementHost2.Child;
             PreviewField = (OutputField)elementHost1.Child;
-            
+
             PreviewField.AnimationLength = TimeSpan.Zero;
             PreviewField.NextText = Localisation.PreviewScreenInfo;
-
-            _inDesignMode = LicenseManager.UsageMode == LicenseUsageMode.Designtime;
-
+            
             var binder = Ustawienia.Default.Binder;
 
             binder.Subscribe((obj, args) =>
@@ -80,9 +75,23 @@ namespace TextToScreen.Controls.Screens
                 PreviewField.BeginAnimation(true);
             }, ustawienia => ustawienia.ScreenImagePath, this);
 
-            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontUnderline, this);
-            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontBold, this);
-            binder.Subscribe(FontStyleChanged, ustawienia => ustawienia.ScreenFontItalic, this);
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextTextDecorations = args.NewValue ? TextDecorations.Underline : null;
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFontUnderline, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontWeight = args.NewValue ? FontWeights.Bold : FontWeights.Normal;
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFontBold, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontStyle = args.NewValue ? FontStyles.Italic : FontStyles.Normal;
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFontItalic, this);
 
             binder.Subscribe((x, y) => FinalField.AnimationLength = TimeSpan.FromSeconds(Convert.ToDouble(y.NewValue)),
                 ustawienia => ustawienia.ScreenFadeSpeed, this);
@@ -97,20 +106,6 @@ namespace TextToScreen.Controls.Screens
 
         public OutputField FinalField { get; }
         public OutputField PreviewField { get; }
-
-        private void FontStyleChanged(object sender, SettingChangedEventArgs<bool> args)
-        {
-            PreviewField.TextBlock.FontStyle = Ustawienia.Default.ScreenFontItalic
-                ? FontStyles.Italic
-                : FontStyles.Normal;
-            PreviewField.TextBlock.FontWeight = Ustawienia.Default.ScreenFontBold
-                ? FontWeights.Bold
-                : FontWeights.Normal;
-            PreviewField.TextBlock.TextDecorations = Ustawienia.Default.ScreenFontUnderline
-                ? TextDecorations.Underline
-                : null;
-            PreviewField.BeginAnimation(true);
-        }
 
         public void SendToPreviewField(string newText)
         {
