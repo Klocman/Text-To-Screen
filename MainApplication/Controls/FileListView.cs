@@ -53,6 +53,10 @@ namespace TextToScreen.Controls
 
             objectListView1.AdditionalFilter = new ModelFilter(x => ListViewFilter(x as SongFileEntry));
             objectListView1.UseFiltering = true;
+            
+            groupFilterComboBox.Items.Add(Localisation.FileListView_GroupBox_ShowAll);
+            groupFilterComboBox.Items.Add(string.Empty);
+            groupFilterComboBox.SelectedIndex = 0;
         }
 
         private bool ListViewFilter(SongFileEntry sfe)
@@ -170,9 +174,10 @@ namespace TextToScreen.Controls
             var songFileEntries = source as IList<SongFileEntry> ?? source.ToList();
             LastFileSource = songFileEntries;
 
-            groupFilterComboBox.Items.Clear();
-            groupFilterComboBox.Items.Add(string.Empty);
-
+            groupFilterComboBox.SelectedIndex = 0;
+            while (groupFilterComboBox.Items.Count > 2)
+                groupFilterComboBox.Items.RemoveAt(2);
+            
             var query = songFileEntries.GroupBy(x => x.Group)
                 .Select(group => string.IsNullOrEmpty(group.Key) ? Localisation.DefaultGroupName : group.Key)
                 .OrderBy(x => x);
@@ -250,7 +255,7 @@ namespace TextToScreen.Controls
 
         private bool CheckGroupMatch(SongFileEntry entry)
         {
-            if (groupFilterComboBox.SelectedIndex <= 0) return true;
+            if (groupFilterComboBox.SelectedIndex <= 1) return true;
 
             var filter = groupFilterComboBox.SelectedItem as string;
             if (filter == null || filter.Equals(Localisation.DefaultGroupName))
@@ -282,7 +287,10 @@ namespace TextToScreen.Controls
 
         private void groupFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshListFilter();
+            if (groupFilterComboBox.SelectedIndex == 1)
+                groupFilterComboBox.SelectedIndex = 0;
+            else
+                RefreshListFilter();
         }
 
         private void kopiujDoSchowkaToolStripMenuItem_Click(object sender, EventArgs e)

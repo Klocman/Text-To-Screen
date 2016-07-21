@@ -294,4 +294,7 @@
     <value>Your filters do not match any songs</value>
     <comment>Shown when the list can't display anything because of user's filtering settings</comment>
   </data>
+  <data name="FileListView_GroupBox_ShowAll" xml:space="preserve">
+    <value>Show all</value>
+  </data>
 </root>

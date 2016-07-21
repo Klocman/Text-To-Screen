@@ -144,6 +144,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show all.
+        /// </summary>
+        internal static string FileListView_GroupBox_ShowAll {
+            get {
+                return ResourceManager.GetString("FileListView_GroupBox_ShowAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your filters do not match any songs.
         /// </summary>
         internal static string FileListView_NothingMatched {
