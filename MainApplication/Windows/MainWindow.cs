@@ -43,8 +43,9 @@ namespace TextToScreen.Windows
             splitContainer3.Panel2MinSize = 150;
 
             PremadeDialogs.DefaultOwner = this;
-            
-            OpenedSongArchive = null; // Fires the property setter for initial setup
+
+            fileListView.Enabled = false;
+            fileEditor.UnloadFile(false);
 
             SetupRemoteDisplayWindow();
             
