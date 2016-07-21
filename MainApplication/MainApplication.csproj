@@ -291,6 +291,9 @@
     <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OutputAppearanceControls.pl.resx">
+      <DependentUpon>OutputAppearanceControls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\OutputAppearanceControls.resx">
       <DependentUpon>OutputAppearanceControls.cs</DependentUpon>
     </EmbeddedResource>
