@@ -410,6 +410,7 @@ namespace TextToScreen.Controls
         private void RefreshListFilter()
         {
             objectListView1.UpdateColumnFiltering();
+            objectListView1.EmptyListMsg = string.IsNullOrEmpty(searchBox1.SearchString) ? null : Localisation.FileListView_NothingMatched;
         }
 
         private void searchBox1_KeyDown(object sender, KeyEventArgs e)

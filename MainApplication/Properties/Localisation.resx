@@ -290,4 +290,8 @@
   <data name="Message_RestartNeeded_Title" xml:space="preserve">
     <value>Language change</value>
   </data>
+  <data name="FileListView_NothingMatched" xml:space="preserve">
+    <value>Your filters do not match any songs</value>
+    <comment>Shown when the list can't display anything because of user's filtering settings</comment>
+  </data>
 </root>

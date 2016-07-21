@@ -144,6 +144,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your filters do not match any songs.
+        /// </summary>
+        internal static string FileListView_NothingMatched {
+            get {
+                return ResourceManager.GetString("FileListView_NothingMatched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File was not found on the drive.
         /// </summary>
         internal static string FileNotFoundOnDisk {
