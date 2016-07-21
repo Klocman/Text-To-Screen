@@ -721,7 +721,7 @@ namespace TextToScreen.Windows
                 otwórzFolderArchiwumToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.S, false, true, true, zapiszToolStripMenuItem_Click,
                 zapiszToolStripMenuItem));
-            globalHotkeys.Add(new HotkeyEntry(Keys.S, true, true, false, zapiszJakoToolStripMenuItem_Click,
+            globalHotkeys.Add(new HotkeyEntry(Keys.S, true, true, true, zapiszJakoToolStripMenuItem_Click,
                 zapiszJakoToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.F4, true, false, false, zamknijToolStripMenuItem_Click,
                 zamknijToolStripMenuItem));
