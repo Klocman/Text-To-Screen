@@ -5,24 +5,25 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using TextToScreen.Properties;
+using Timer = System.Timers.Timer;
 
 namespace TextToScreen.Controls.Screens
 {
     public partial class OutputCluster : UserControl
     {
-        private readonly System.Timers.Timer _callbackTimer;
+        private readonly Timer _callbackTimer;
         private Action<int> _progressCallback;
 
         public OutputCluster()
         {
             InitializeComponent();
 
-            FinalField = (OutputField)elementHost2.Child;
-            PreviewField = (OutputField)elementHost1.Child;
+            FinalField = (OutputField) elementHost2.Child;
+            PreviewField = (OutputField) elementHost1.Child;
 
             PreviewField.AnimationLength = TimeSpan.Zero;
             PreviewField.NextText = Localisation.PreviewScreenInfo;
-            
+
             var binder = Ustawienia.Default.Binder;
 
             binder.Subscribe((obj, args) =>
@@ -98,10 +99,14 @@ namespace TextToScreen.Controls.Screens
 
             binder.SendUpdates(this);
 
-            _callbackTimer = new System.Timers.Timer { AutoReset = true, Interval = 160 };
+            _callbackTimer = new Timer {AutoReset = true, Interval = 160};
             _callbackTimer.Elapsed +=
-                (sender, args) => _progressCallback?.Invoke((int)Math.Round(FinalField.GetAnimationProgress() * 100));
-            FinalField.AnimationCompleted += (sender, args) => { _callbackTimer.Stop(); _progressCallback?.Invoke(100); };
+                (sender, args) => _progressCallback?.Invoke((int) Math.Round(FinalField.GetAnimationProgress()*100));
+            FinalField.AnimationCompleted += (sender, args) =>
+            {
+                _callbackTimer.Stop();
+                _progressCallback?.Invoke(100);
+            };
         }
 
         public OutputField FinalField { get; }

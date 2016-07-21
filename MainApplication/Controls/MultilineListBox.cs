@@ -49,7 +49,7 @@ namespace TextToScreen.Controls
             {
                 var itemText = Items[e.Index].ToString();
                 var sf = e.Graphics.MeasureString(itemText, Font, Width);
-                var htex = (e.Index == 0) ? 15 : 10;
+                var htex = e.Index == 0 ? 15 : 10;
                 e.ItemHeight = (int) sf.Height + htex;
                 e.ItemWidth = Width;
             }

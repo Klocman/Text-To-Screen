@@ -16,7 +16,6 @@ namespace TextToScreen.Windows
     public sealed partial class SecondaryWindow : DraggableForm
     {
         private bool _isCursorHidden;
-        public OutputCluster OutputCluster { get; }
 
         public SecondaryWindow()
         {
@@ -34,13 +33,7 @@ namespace TextToScreen.Windows
                 };
         }
 
-        private static MouseEventArgs ToFormsMouseArgs(System.Windows.Input.MouseEventArgs args, int clicks)
-        {
-            var screenPoint = args.GetPosition(null);
-            var clientPoint = (new Point((int)screenPoint.X, (int)screenPoint.Y));
-            return new MouseEventArgs(args.LeftButton == MouseButtonState.Pressed ? MouseButtons.Left : MouseButtons.None,
-                clicks, clientPoint.X, clientPoint.Y, 0);
-        }
+        public OutputCluster OutputCluster { get; }
 
         public bool IsAlwaysOnTop
         {
@@ -99,6 +92,15 @@ namespace TextToScreen.Windows
                 cp.ClassStyle |= CS_NOCLOSE;
                 return cp;
             }
+        }
+
+        private static MouseEventArgs ToFormsMouseArgs(System.Windows.Input.MouseEventArgs args, int clicks)
+        {
+            var screenPoint = args.GetPosition(null);
+            var clientPoint = new Point((int) screenPoint.X, (int) screenPoint.Y);
+            return
+                new MouseEventArgs(args.LeftButton == MouseButtonState.Pressed ? MouseButtons.Left : MouseButtons.None,
+                    clicks, clientPoint.X, clientPoint.Y, 0);
         }
 
         private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)

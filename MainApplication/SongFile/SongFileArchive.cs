@@ -154,7 +154,7 @@ namespace TextToScreen.SongFile
                         throw new ArgumentException(Localisation.ArchiveContainsUnsupportedFiles);
 
                     LoadedFiles.Clear();
-                    LoadedFiles.AddRange(zip.Where(x => (!x.IsDirectory)).Select(item => new SongFileEntry(item)));
+                    LoadedFiles.AddRange(zip.Where(x => !x.IsDirectory).Select(item => new SongFileEntry(item)));
                 }
             }
 
@@ -215,9 +215,9 @@ namespace TextToScreen.SongFile
 
         private bool CheckArchiveForBadEntries(IEnumerable<ZipEntry> archive)
         {
-            return !archive.Any(x => (!x.IsDirectory &&
-                                      !string.Equals(Path.GetExtension(x.FileName), Resources.SongFileExtension,
-                                          StringComparison.OrdinalIgnoreCase)));
+            return !archive.Any(x => !x.IsDirectory &&
+                                     !string.Equals(Path.GetExtension(x.FileName), Resources.SongFileExtension,
+                                         StringComparison.OrdinalIgnoreCase));
         }
 
         private void OnArchiveContentsChangedExternally(FileSystemEventArgs e)

@@ -85,7 +85,7 @@ namespace TextToScreen.Controls
         public void FocusTab(FileEditorTabs tab)
         {
             Focus();
-            tabControl1.SelectedIndex = (int)tab;
+            tabControl1.SelectedIndex = (int) tab;
 
             switch (tab)
             {
@@ -104,7 +104,7 @@ namespace TextToScreen.Controls
                     break;
             }
         }
-        
+
         public bool LoadFile(SongFileEntry file)
         {
             if (!UnloadFile())
@@ -148,7 +148,7 @@ namespace TextToScreen.Controls
             if (tabControl1.SelectedIndex != 1) return;
             textBox1.DeselectAll();
         }
-        
+
         public void Text_AddVerse()
         {
             if (tabControl1.SelectedIndex != 1) return;
@@ -328,7 +328,7 @@ namespace TextToScreen.Controls
         {
             LoadedFileChanged?.Invoke(this, LoadedFile);
         }
-        
+
         private void OnSelectedStringAccepted()
         {
             SelectedStringAccepted?.Invoke(this, SelectedString);
@@ -347,8 +347,9 @@ namespace TextToScreen.Controls
         private void PopulateListBox()
         {
             multiLineListBox1.Items.Clear();
-            multiLineListBox1.Items.AddRange(textBox1.Text.Split(new[] { SongFileEntry.NewVerse }, StringSplitOptions.None)
-                .Cast<object>().ToArray());
+            multiLineListBox1.Items.AddRange(
+                textBox1.Text.Split(new[] {SongFileEntry.NewVerse}, StringSplitOptions.None)
+                    .Cast<object>().ToArray());
         }
 
         private bool SelectVerseById(int id)

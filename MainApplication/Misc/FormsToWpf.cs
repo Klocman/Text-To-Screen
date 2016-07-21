@@ -1,114 +1,116 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows;
 
 namespace TextToScreen.Misc
 {
     public static class FormsToWpf
     {
-
-        public static System.Drawing.ContentAlignment ToContentAlignment(TextAlignment ta, VerticalAlignment va)
+        public static ContentAlignment ToContentAlignment(TextAlignment ta, VerticalAlignment va)
         {
             if (va == VerticalAlignment.Top && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.TopLeft;
+                return ContentAlignment.TopLeft;
 
             if (va == VerticalAlignment.Top && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.TopCenter;
+                return ContentAlignment.TopCenter;
 
             if (va == VerticalAlignment.Top && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.TopRight;
+                return ContentAlignment.TopRight;
 
             if (va == VerticalAlignment.Top && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.TopLeft;
+                return ContentAlignment.TopLeft;
 
             if (va == VerticalAlignment.Top && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.TopRight;
+                return ContentAlignment.TopRight;
 
             if (va == VerticalAlignment.Top && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.TopCenter;
+                return ContentAlignment.TopCenter;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.MiddleLeft;
+                return ContentAlignment.MiddleLeft;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.MiddleCenter;
+                return ContentAlignment.MiddleCenter;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.MiddleRight;
+                return ContentAlignment.MiddleRight;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.MiddleLeft;
+                return ContentAlignment.MiddleLeft;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.MiddleCenter;
+                return ContentAlignment.MiddleCenter;
 
             if (va == VerticalAlignment.Center && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.MiddleRight;
+                return ContentAlignment.MiddleRight;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.BottomCenter;
+                return ContentAlignment.BottomCenter;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.BottomRight;
+                return ContentAlignment.BottomRight;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.BottomLeft;
+                return ContentAlignment.BottomLeft;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Center)
-                return System.Drawing.ContentAlignment.BottomCenter;
+                return ContentAlignment.BottomCenter;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Right)
-                return System.Drawing.ContentAlignment.BottomRight;
+                return ContentAlignment.BottomRight;
 
             if (va == VerticalAlignment.Bottom && ta == TextAlignment.Left)
-                return System.Drawing.ContentAlignment.BottomLeft;
+                return ContentAlignment.BottomLeft;
 
             throw new InvalidEnumArgumentException();
         }
-        public static KeyValuePair<TextAlignment, VerticalAlignment> ToTextAlignment(System.Drawing.ContentAlignment alignment)
+
+        public static KeyValuePair<TextAlignment, VerticalAlignment> ToTextAlignment(ContentAlignment alignment)
         {
-            TextAlignment ta; VerticalAlignment va;
+            TextAlignment ta;
+            VerticalAlignment va;
 
             switch (alignment)
             {
-                case System.Drawing.ContentAlignment.TopLeft:
-                case System.Drawing.ContentAlignment.TopCenter:
-                case System.Drawing.ContentAlignment.TopRight:
+                case ContentAlignment.TopLeft:
+                case ContentAlignment.TopCenter:
+                case ContentAlignment.TopRight:
                     va = VerticalAlignment.Top;
                     break;
 
                 default:
-                case System.Drawing.ContentAlignment.MiddleLeft:
-                case System.Drawing.ContentAlignment.MiddleCenter:
-                case System.Drawing.ContentAlignment.MiddleRight:
+                case ContentAlignment.MiddleLeft:
+                case ContentAlignment.MiddleCenter:
+                case ContentAlignment.MiddleRight:
                     va = VerticalAlignment.Center;
                     break;
 
-                case System.Drawing.ContentAlignment.BottomLeft:
-                case System.Drawing.ContentAlignment.BottomCenter:
-                case System.Drawing.ContentAlignment.BottomRight:
+                case ContentAlignment.BottomLeft:
+                case ContentAlignment.BottomCenter:
+                case ContentAlignment.BottomRight:
                     va = VerticalAlignment.Bottom;
                     break;
             }
 
             switch (alignment)
             {
-                case System.Drawing.ContentAlignment.TopLeft:
-                case System.Drawing.ContentAlignment.MiddleLeft:
-                case System.Drawing.ContentAlignment.BottomLeft:
+                case ContentAlignment.TopLeft:
+                case ContentAlignment.MiddleLeft:
+                case ContentAlignment.BottomLeft:
                     ta = TextAlignment.Left;
                     break;
 
                 default:
-                case System.Drawing.ContentAlignment.MiddleCenter:
-                case System.Drawing.ContentAlignment.TopCenter:
-                case System.Drawing.ContentAlignment.BottomCenter:
+                case ContentAlignment.MiddleCenter:
+                case ContentAlignment.TopCenter:
+                case ContentAlignment.BottomCenter:
                     ta = TextAlignment.Center;
                     break;
 
-                case System.Drawing.ContentAlignment.BottomRight:
-                case System.Drawing.ContentAlignment.MiddleRight:
-                case System.Drawing.ContentAlignment.TopRight:
+                case ContentAlignment.BottomRight:
+                case ContentAlignment.MiddleRight:
+                case ContentAlignment.TopRight:
                     ta = TextAlignment.Right;
                     break;
             }

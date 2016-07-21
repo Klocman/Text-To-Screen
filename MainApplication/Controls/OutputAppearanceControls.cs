@@ -34,8 +34,9 @@ namespace TextToScreen.Controls
             binder.BindProperty(pathSelectBoxImage, box => box.FileName, nameof(PathSelectBox.FileNameChanged),
                 ustawienia => ustawienia.ScreenImagePath, this);
 
-            binder.BindProperty(contentAlignmentBox1, box => box.SelectedContentAlignment, 
-                nameof(ContentAlignmentBox.SelectedContentAlignmentChanged), ustawienia => ustawienia.ScreenFontAlignment, this);
+            binder.BindProperty(contentAlignmentBox1, box => box.SelectedContentAlignment,
+                nameof(ContentAlignmentBox.SelectedContentAlignmentChanged),
+                ustawienia => ustawienia.ScreenFontAlignment, this);
 
             comboBoxFontFamily.Items.Clear();
             comboBoxFontFamily.Items.AddRange(new FontGrabber().ValidFontFamilyNames.Cast<object>().ToArray());

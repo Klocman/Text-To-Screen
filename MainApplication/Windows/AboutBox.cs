@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace TextToScreen.Windows
 {
-    sealed partial class AboutBox : Form
+    internal sealed partial class AboutBox : Form
     {
         private readonly Assembly _currentExecutingAssembly = Assembly.GetExecutingAssembly();
 

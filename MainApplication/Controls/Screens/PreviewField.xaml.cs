@@ -3,7 +3,7 @@
 namespace TextToScreen.Controls.Screens
 {
     /// <summary>
-    /// Interaction logic for PreviewField.xaml
+    ///     Interaction logic for PreviewField.xaml
     /// </summary>
     public partial class PreviewField : UserControl
     {

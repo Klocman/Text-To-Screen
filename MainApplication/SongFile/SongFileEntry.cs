@@ -12,21 +12,13 @@ namespace TextToScreen.SongFile
 {
     public sealed class SongFileEntry : IDisposable
     {
+        private static readonly Regex FixShortLineBreaksRegex = new Regex("(?=[^\r])\n", RegexOptions.Compiled);
         private string _comment;
         private string _contents;
         private string _group;
         private string _name;
         private bool _savedToDisk;
         internal SongFileCollection ParentCollection;
-        
-        public static string NewVerse { get; } = "\r\n@";
-        public static string NewVerseShort { get; } = Environment.NewLine + "\n@";
-
-        private static readonly Regex FixShortLineBreaksRegex = new Regex("(?=[^\r])\n", RegexOptions.Compiled);
-        private static string FixShortLineBreaks(string content)
-        {
-            return FixShortLineBreaksRegex.Replace(content, "\r\n");
-        }
 
         public SongFileEntry(string filename, string fileGroup, string fileContents, string fileComment,
             DateTime lastModifiedDate, DateTime creationDate)
@@ -68,12 +60,15 @@ namespace TextToScreen.SongFile
                 }
             }
 
-            _comment = entry.Comment ?? String.Empty;
+            _comment = entry.Comment ?? string.Empty;
             LastModified = entry.LastModified;
             CreationTime = entry.CreationTime;
 
             SavedToDisk = true;
         }
+
+        public static string NewVerse { get; } = "\r\n@";
+        public static string NewVerseShort { get; } = Environment.NewLine + "\n@";
 
         public string Comment
         {
@@ -161,13 +156,18 @@ namespace TextToScreen.SongFile
             ParentCollection = null;
         }
 
+        private static string FixShortLineBreaks(string content)
+        {
+            return FixShortLineBreaksRegex.Replace(content, "\r\n");
+        }
+
         public void AddToArchive(ZipFile archive)
         {
             if (archive == null)
                 throw new ArgumentNullException();
 
             var sb = new StringBuilder();
-            if (!String.IsNullOrEmpty(_group))
+            if (!string.IsNullOrEmpty(_group))
             {
                 sb.Append(_group);
                 sb.Append(Path.DirectorySeparatorChar);
@@ -183,7 +183,7 @@ namespace TextToScreen.SongFile
 
         public NameChangeResult CheckName(string nameToCheck)
         {
-            if (String.IsNullOrEmpty(nameToCheck))
+            if (string.IsNullOrEmpty(nameToCheck))
                 return NameChangeResult.Empty;
             if (nameToCheck.Any(x => StringTools.InvalidFileNameChars.Contains(x)))
                 return NameChangeResult.InvalidChars;
@@ -200,7 +200,7 @@ namespace TextToScreen.SongFile
             _name = source.Name;
             _group = source.Group;
             _contents = source.Contents;
-            _comment = source.Comment ?? String.Empty;
+            _comment = source.Comment ?? string.Empty;
             LastModified = source.LastModified;
             CreationTime = source.CreationTime;
 
@@ -209,9 +209,9 @@ namespace TextToScreen.SongFile
 
         public override string ToString()
         {
-            return String.Format(Localisation.SongFileArchive_ToString_Format,
+            return string.Format(Localisation.SongFileArchive_ToString_Format,
                 Name, LastModified, CreationTime,
-                String.IsNullOrEmpty(Comment) ? Localisation.SongFileArchive_ToString_MissingComment : Comment)
+                string.IsNullOrEmpty(Comment) ? Localisation.SongFileArchive_ToString_MissingComment : Comment)
                    + Environment.NewLine + Environment.NewLine
                    + Contents.Trim().Replace(NewVerse, Environment.NewLine + Environment.NewLine);
         }

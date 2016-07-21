@@ -145,7 +145,7 @@ namespace TextToScreen.Windows
             SetupTabSecondary(_defaultSettings);
             buttonAccept.Enabled = true;
         }
-        
+
         // Events ---------------------------------------------------------------------------------------
         private void SettingsWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -163,7 +163,7 @@ namespace TextToScreen.Windows
         {
             foreach (Control control in controls)
             {
-                var cb = (control as CheckBox);
+                var cb = control as CheckBox;
                 if (cb != null)
                     cb.CheckedChanged += SettingWasChanged;
                 if (control.Controls.Count > 0)

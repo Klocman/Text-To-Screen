@@ -51,8 +51,9 @@ namespace TextToScreen.Windows
                     Path.GetFileName(sourceFile));
 
                 return (from file in importDialog._filesInsideArchive
-                        where importDialog.listBox1.SelectedItems.Contains(file.Key)
-                        select new SongFileEntry(file.Value) { Comment = importComment, Group = Localisation.ImportGroupName }).ToList();
+                    where importDialog.listBox1.SelectedItems.Contains(file.Key)
+                    select new SongFileEntry(file.Value) {Comment = importComment, Group = Localisation.ImportGroupName})
+                    .ToList();
             }
         }
 

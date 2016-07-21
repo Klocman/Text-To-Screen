@@ -12,41 +12,40 @@ using FontStyle = System.Windows.FontStyle;
 namespace TextToScreen.Controls.Screens
 {
     /// <summary>
-    /// Interaction logic for OutputField.xaml
+    ///     Interaction logic for OutputField.xaml
     /// </summary>
     public partial class OutputField : UserControl
     {
+        private readonly Storyboard _fadeIn;
+        private readonly Storyboard _fadeOut;
+
         public OutputField()
         {
             InitializeComponent();
 
-            _fadeIn = (Storyboard)Resources["FadeIn"];
-            _fadeOut = (Storyboard)Resources["FadeOut"];
+            _fadeIn = (Storyboard) Resources["FadeIn"];
+            _fadeOut = (Storyboard) Resources["FadeOut"];
 
             _fadeOut.Completed += AfterFadeOut;
             _fadeIn.Completed += (sender, args) => AnimationCompleted?.Invoke(sender, args);
         }
 
-        public event EventHandler AnimationHalfPoint;
-        public event EventHandler AnimationCompleted;
-
-        private readonly Storyboard _fadeIn;
-        private readonly Storyboard _fadeOut;
-
         public TimeSpan AnimationLength
         {
-            get { return ((Duration)Resources["Duration"]).TimeSpan; }
+            get { return ((Duration) Resources["Duration"]).TimeSpan; }
             set { Resources["Duration"] = new Duration(value); }
         }
 
         public string CurrentText => TextBlock.Text;
         public ImageSource CurrentImage => Image.Source;
-        public Color CurrentTextColor => ((SolidColorBrush)TextBlock.Foreground).Color.ToDrawingColor();
-        public Color CurrentBackgroundColor => ((SolidColorBrush)Canvas.Background).Color.ToDrawingColor();
+        public Color CurrentTextColor => ((SolidColorBrush) TextBlock.Foreground).Color.ToDrawingColor();
+        public Color CurrentBackgroundColor => ((SolidColorBrush) Canvas.Background).Color.ToDrawingColor();
 
         public FontFamily CurrentFontFamily => TextBlock.FontFamily;
         public double CurrentFontSize => TextBlock.FontSize;
-        public ContentAlignment CurrentFontAlignment => FormsToWpf.ToContentAlignment(TextBlock.TextAlignment, TextBlock.VerticalAlignment);
+
+        public ContentAlignment CurrentFontAlignment
+            => FormsToWpf.ToContentAlignment(TextBlock.TextAlignment, TextBlock.VerticalAlignment);
 
         public string NextText { get; set; }
         public Color? NextTextColor { get; set; }
@@ -60,8 +59,11 @@ namespace TextToScreen.Controls.Screens
         public FontWeight? NextFontWeight { get; set; }
         public TextDecorationCollection NextTextDecorations { get; set; }
 
+        public event EventHandler AnimationHalfPoint;
+        public event EventHandler AnimationCompleted;
+
         /// <summary>
-        /// Overall progress of the animation. 0 at start, 1 when completed.
+        ///     Overall progress of the animation. 0 at start, 1 when completed.
         /// </summary>
         public double GetAnimationProgress()
         {
@@ -73,8 +75,8 @@ namespace TextToScreen.Controls.Screens
                 if (outStopped && inStopped)
                     return 1;
 
-                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this) / 2 ?? 0.5;
-                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
+                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this)/2 ?? 0.5;
+                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this)/2 ?? 0.5;
 
                 return Math.Round(outProgress + inProgress, 3, MidpointRounding.AwayFromZero);
             }

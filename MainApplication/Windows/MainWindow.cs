@@ -65,10 +65,34 @@ namespace TextToScreen.Windows
                     y.Cancel = true;
             };
 
-            SystemEvents.DisplaySettingsChanged += (sender, args) =>
+            SystemEvents.DisplaySettingsChanged += (sender, args) => { EnsureWindowsAreVisible(); };
+        }
+
+
+        private SongFileArchive OpenedSongArchive
+        {
+            get { return _openedSongArchive; }
+            set
             {
-                EnsureWindowsAreVisible();
-            };
+                if (_openedSongArchive == value)
+                    return;
+
+                _openedSongArchive?.Dispose();
+
+                fileListView.ClearAllItems(true);
+                fileListView.Enabled = false;
+                fileEditor.UnloadFile(false);
+
+                _openedSongArchive = value;
+
+                if (value != null)
+                {
+                    fileListView.Enabled = true;
+                    fileListView.PopulateItems(_openedSongArchive.LoadedFiles);
+                }
+
+                UpdateMainWindowTitlebar();
+            }
         }
 
         private void EnsureWindowsAreVisible()
@@ -97,7 +121,7 @@ namespace TextToScreen.Windows
             binder.Subscribe(this, mainWindow => mainWindow.TopMost, ustawienia => ustawienia.OknoGlowneTop, this);
 
             binder.BindControl(fullScreenToolStripMenuItem, ustawienia => ustawienia.OknoGlowneFull, this);
-            binder.Subscribe(((sender, args) =>
+            binder.Subscribe((sender, args) =>
             {
                 if (args.NewValue)
                 {
@@ -113,35 +137,7 @@ namespace TextToScreen.Windows
                     FormBorderStyle = FormBorderStyle.Sizable;
                     //WindowState = FormWindowState.Normal;
                 }
-            }), ustawienia => ustawienia.OknoGlowneFull, this);
-
-        }
-
-
-        private SongFileArchive OpenedSongArchive
-        {
-            get { return _openedSongArchive; }
-            set
-            {
-                if (_openedSongArchive == value)
-                    return;
-
-                _openedSongArchive?.Dispose();
-
-                fileListView.ClearAllItems(true);
-                fileListView.Enabled = false;
-                fileEditor.UnloadFile(false);
-
-                _openedSongArchive = value;
-
-                if (value != null)
-                {
-                    fileListView.Enabled = true;
-                    fileListView.PopulateItems(_openedSongArchive.LoadedFiles);
-                }
-
-                UpdateMainWindowTitlebar();
-            }
+            }, ustawienia => ustawienia.OknoGlowneFull, this);
         }
 
         /// <summary>
@@ -492,7 +488,7 @@ namespace TextToScreen.Windows
 
         private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var aboutBox = new AboutBox { Owner = this };
+            var aboutBox = new AboutBox {Owner = this};
             aboutBox.ShowDialog();
         }
 
@@ -539,7 +535,7 @@ namespace TextToScreen.Windows
                 for (var i = Ustawienia.Default.AutoRecentItems.Count - 1; i >= 0; i--)
                 {
                     var path = Ustawienia.Default.AutoRecentItems[i];
-                    var newChild = new ToolStripMenuItem { Text = path };
+                    var newChild = new ToolStripMenuItem {Text = path};
                     newChild.Click += RecentItem_Click;
                     ostatnioOtwarteToolStripMenuItem.DropDownItems.Add(newChild);
                 }
@@ -608,7 +604,7 @@ namespace TextToScreen.Windows
 
         private void RecentItem_Click(object sender, EventArgs e)
         {
-            var target = ((ToolStripMenuItem)sender).Text;
+            var target = ((ToolStripMenuItem) sender).Text;
             OpenArchive(target);
         }
 
@@ -761,7 +757,9 @@ namespace TextToScreen.Windows
                 wyślijDoOknaDocelowegoToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.F8, wyczyśćOknoDoceloweToolStripMenuItem_Click,
                 wyczyśćOknoDoceloweToolStripMenuItem));
-            globalHotkeys.Add(new HotkeyEntry(Keys.F11, (x, y) => Ustawienia.Default.OknoGlowneFull = !Ustawienia.Default.OknoGlowneFull, fullScreenToolStripMenuItem));
+            globalHotkeys.Add(new HotkeyEntry(Keys.F11,
+                (x, y) => Ustawienia.Default.OknoGlowneFull = !Ustawienia.Default.OknoGlowneFull,
+                fullScreenToolStripMenuItem));
             globalHotkeys.Add(new HotkeyEntry(Keys.P, false, true, false, preferencjeToolStripMenuItem_Click,
                 preferencjeToolStripMenuItem));
 
@@ -855,7 +853,7 @@ namespace TextToScreen.Windows
             if (_remoteDisplayWindow != null && !_remoteDisplayWindow.IsDisposed)
                 _remoteDisplayWindow.Dispose();
 
-            _remoteDisplayWindow = new SecondaryWindow { Opacity = 0 };
+            _remoteDisplayWindow = new SecondaryWindow {Opacity = 0};
 
             _remoteDisplayWindow.Show();
             _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens);

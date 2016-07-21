@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Klocman.Binding.Settings;
 
 namespace TextToScreen.Properties
@@ -10,8 +9,8 @@ namespace TextToScreen.Properties
         {
             Binder = new SettingBinder<Ustawienia>(this);
         }
-        
-        public static Ustawienia DefaultValues { get; } = ((Ustawienia)(Synchronized(new Ustawienia())));
+
+        public static Ustawienia DefaultValues { get; } = (Ustawienia) Synchronized(new Ustawienia());
 
         public SettingBinder<Ustawienia> Binder { get; }
 

@@ -10,8 +10,8 @@ namespace TextToScreen.Controls.Screens
         {
             InitializeComponent();
 
-            TopDisplayBox = (PreviewField)elementHost1.Child;
-            BottomDisplayBox = (PreviewField)elementHost2.Child;
+            TopDisplayBox = (PreviewField) elementHost1.Child;
+            BottomDisplayBox = (PreviewField) elementHost2.Child;
         }
 
         public PreviewField BottomDisplayBox { get; }

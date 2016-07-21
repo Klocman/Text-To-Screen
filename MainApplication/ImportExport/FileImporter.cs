@@ -8,7 +8,6 @@ using Klocman.Tools;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
 using TextToScreen.SongFile;
-using TextToScreen.Windows;
 
 namespace TextToScreen.ImportExport
 {
