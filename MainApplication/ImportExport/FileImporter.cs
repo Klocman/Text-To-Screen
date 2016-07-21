@@ -28,7 +28,7 @@ namespace TextToScreen.ImportExport
                         throw new FileNotFoundException(Localisation.FileNotFoundOnDisk);
 
                     SongFileEntry result;
-                    var extension = Path.GetExtension(fileName)?.ToLower();
+                    var extension = Path.GetExtension(fileName)?.ToLower() ?? string.Empty;
                     switch (extension)
                     {
                         case ".sng":
@@ -46,7 +46,7 @@ namespace TextToScreen.ImportExport
                             continue;
 
                         default:
-                            if (Resources.SongFileExtension.Equals(extension))
+                            if (extension.Equals(Resources.SongFileExtension, StringComparison.CurrentCultureIgnoreCase))
                                 result = ImportTextFile(fileName);
                             else
                                 throw new FormatException(Localisation.UnsupportedFileFormat);
