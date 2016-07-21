@@ -30,12 +30,12 @@
         {
             this.p1languageHeading = new System.Windows.Forms.Label();
             this.p1languageDesc = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.panelButtons = new System.Windows.Forms.Panel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.buttonAccept = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel9.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,17 +64,17 @@
             this.p1languageDesc.Text = "You can force Text To Screen to use a specific localization if the default langua" +
     "ge is incorrect. A restart will be performed to apply the new language.";
             // 
-            // panel9
+            // panelButtons
             // 
-            this.panel9.Controls.Add(this.comboBoxLanguage);
-            this.panel9.Controls.Add(this.buttonAccept);
-            this.panel9.Controls.Add(this.buttonCancel);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(6, 63);
-            this.panel9.MinimumSize = new System.Drawing.Size(401, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(401, 27);
-            this.panel9.TabIndex = 9;
+            this.panelButtons.Controls.Add(this.comboBoxLanguage);
+            this.panelButtons.Controls.Add(this.buttonAccept);
+            this.panelButtons.Controls.Add(this.buttonCancel);
+            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelButtons.Location = new System.Drawing.Point(6, 63);
+            this.panelButtons.MinimumSize = new System.Drawing.Size(401, 0);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(401, 27);
+            this.panelButtons.TabIndex = 9;
             // 
             // comboBoxLanguage
             // 
@@ -129,14 +129,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(413, 99);
+            this.ClientSize = new System.Drawing.Size(413, 210);
             this.ControlBox = false;
-            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.p1languageHeading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(429, 9999);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(429, 100);
             this.Name = "LanguageChangeWindow";
             this.Padding = new System.Windows.Forms.Padding(6);
             this.ShowIcon = false;
@@ -144,7 +146,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Change program language";
-            this.panel9.ResumeLayout(false);
+            this.Shown += new System.EventHandler(this.LanguageChangeWindow_Shown);
+            this.panelButtons.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -156,7 +159,7 @@
 
         private System.Windows.Forms.Label p1languageHeading;
         private System.Windows.Forms.Label p1languageDesc;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.ComboBox comboBoxLanguage;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAccept;

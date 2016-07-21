@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
@@ -26,6 +27,8 @@ namespace TextToScreen.Windows
 
         private LanguageChangeWindow()
         {
+            Opacity = 0;
+
             InitializeComponent();
             
             comboBoxLanguage.Items.Add(Localisation.DefaultLanguage);
@@ -54,6 +57,13 @@ namespace TextToScreen.Windows
             Ustawienia.Default.Save();
             
             DialogResult = DialogResult.OK;
+        }
+
+        private void LanguageChangeWindow_Shown(object sender, EventArgs e)
+        {
+            // Autosize the form
+            Height = this.GetBorderHeight() + panelButtons.Location.Y + panelButtons.Height + Padding.Bottom + this.GetBorderWidth();
+            Opacity = 1;
         }
     }
 }
