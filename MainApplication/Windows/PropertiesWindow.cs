@@ -22,16 +22,12 @@ namespace TextToScreen.Windows
             var songFileEntries = targets as IList<SongFileEntry> ?? targets.ToList();
 
             filePropertiesViewer1.Populate(songFileEntries, allowEditing);
-            var count = songFileEntries.Count();
-            if (count > 4)
-            {
-                Text = string.Format("{0} ({1} items)", _originalTitle, count);
-            }
-            else
-            {
-                Text = string.Format("{0} ({1})", _originalTitle,
-                    string.Join(", ", songFileEntries.Select(x => x.Name).ToArray()));
-            }
+            var count = songFileEntries.Count;
+
+            Text = count > 4 ? 
+                $"{_originalTitle} ({count} items)" : 
+                $"{_originalTitle} ({string.Join(", ", songFileEntries.Select(x => x.Name).ToArray())})";
+
             return ShowDialog(owner);
         }
 

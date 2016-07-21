@@ -80,9 +80,6 @@ namespace TextToScreen.Misc
                     break;
 
                 default:
-                case ContentAlignment.MiddleLeft:
-                case ContentAlignment.MiddleCenter:
-                case ContentAlignment.MiddleRight:
                     va = VerticalAlignment.Center;
                     break;
 
@@ -102,9 +99,6 @@ namespace TextToScreen.Misc
                     break;
 
                 default:
-                case ContentAlignment.MiddleCenter:
-                case ContentAlignment.TopCenter:
-                case ContentAlignment.BottomCenter:
                     ta = TextAlignment.Center;
                     break;
 

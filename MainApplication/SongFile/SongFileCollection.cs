@@ -123,9 +123,7 @@ namespace TextToScreen.SongFile
                 throw new ArgumentNullException();
 
             var file = _items.FirstOrDefault(x => x.Name.Equals(name));
-            if (file == null)
-                return false;
-            return Remove(file);
+            return file != null && Remove(file);
         }
 
         public bool Remove(SongFileEntry value)

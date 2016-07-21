@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
@@ -67,25 +68,23 @@ namespace TextToScreen.Controls
         /// </summary>
         public bool AskAndSaveIfNeeded()
         {
-            if (FileWasChanged)
-            {
-                switch (MessageBoxes.SaveChangesToOpenedFile(this))
-                {
-                    case DialogResult.Yes:
-                        SaveChanges();
-                        break;
+            if (!FileWasChanged) return true;
 
-                    case DialogResult.Cancel:
-                        return false;
-                }
+            switch (MessageBoxes.SaveChangesToOpenedFile(this))
+            {
+                case DialogResult.Yes:
+                    SaveChanges();
+                    return true;
+
+                default:
+                    return false;
             }
-            return true;
         }
 
         public void FocusTab(FileEditorTabs tab)
         {
             Focus();
-            tabControl1.SelectedIndex = (int) tab;
+            tabControl1.SelectedIndex = (int)tab;
 
             switch (tab)
             {
@@ -102,6 +101,9 @@ namespace TextToScreen.Controls
                 case FileEditorTabs.Properties:
                     filePropertiesViewer1.Focus();
                     break;
+
+                default:
+                    throw new InvalidEnumArgumentException(nameof(tab), (int)tab, typeof(FileEditorTabs));
             }
         }
 
@@ -348,7 +350,7 @@ namespace TextToScreen.Controls
         {
             multiLineListBox1.Items.Clear();
             multiLineListBox1.Items.AddRange(
-                textBox1.Text.Split(new[] {SongFileEntry.NewVerse}, StringSplitOptions.None)
+                textBox1.Text.Split(new[] { SongFileEntry.NewVerse }, StringSplitOptions.None)
                     .Cast<object>().ToArray());
         }
 

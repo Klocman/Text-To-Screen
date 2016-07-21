@@ -213,7 +213,7 @@ namespace TextToScreen.SongFile
             _fsTools.SetEnabled(true);
         }
 
-        private bool CheckArchiveForBadEntries(IEnumerable<ZipEntry> archive)
+        private static bool CheckArchiveForBadEntries(IEnumerable<ZipEntry> archive)
         {
             return !archive.Any(x => !x.IsDirectory &&
                                      !string.Equals(Path.GetExtension(x.FileName), Resources.SongFileExtension,

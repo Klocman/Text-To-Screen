@@ -29,25 +29,21 @@ namespace TextToScreen.Controls
             objectListView1.AlwaysGroupBySortOrder = SortOrder.Ascending;
             groupColumn.GroupKeyToTitleConverter = x =>
             {
-                var groupName = (string) x;
-                if (string.IsNullOrEmpty(groupName))
-                {
-                    return Localisation.DefaultGroupName;
-                }
-                return groupName;
+                var groupName = (string)x;
+                return string.IsNullOrEmpty(groupName) ? Localisation.DefaultGroupName : groupName;
             };
             nameColumn.AspectPutter = (x, y) =>
             {
-                var sfe = (SongFileEntry) x;
-                var newname = (string) y;
+                var sfe = (SongFileEntry)x;
+                var newname = (string)y;
                 if (sfe.CheckName(newname) == NameChangeResult.Ok)
                     sfe.Name = newname;
                 objectListView1.RefreshObject(x);
             };
-            createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
-            modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
+            createdColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
+            modifiedColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
 
-            foreach (var control in searchBox1.GetAllChildren().Concat(new[] {searchBox1}))
+            foreach (var control in searchBox1.GetAllChildren().Concat(new[] { searchBox1 }))
             {
                 control.KeyDown += searchBox1_KeyDown;
             }
@@ -333,46 +329,46 @@ namespace TextToScreen.Controls
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                {
-                    if (SelectedFile == null)
-                        return;
+                    {
+                        if (SelectedFile == null)
+                            return;
 
-                    if (e.Control)
-                    {
-                        ShowProperties();
+                        if (e.Control)
+                        {
+                            ShowProperties();
+                        }
+                        else
+                        {
+                            OnFileOpened(SelectedFile);
+                        }
                     }
-                    else
-                    {
-                        OnFileOpened(SelectedFile);
-                    }
-                }
                     break;
 
                 case Keys.Apps:
-                {
-                    OpenFileContextMenu();
-                }
-                    break;
-
-                case Keys.F10:
-                {
-                    if (e.Shift)
                     {
                         OpenFileContextMenu();
                     }
-                    else
+                    break;
+
+                case Keys.F10:
+                    {
+                        if (e.Shift)
+                        {
+                            OpenFileContextMenu();
+                        }
+                        else
+                        {
+                            e.Handled = false;
+                            e.SuppressKeyPress = false;
+                        }
+                    }
+                    break;
+
+                default:
                     {
                         e.Handled = false;
                         e.SuppressKeyPress = false;
                     }
-                }
-                    break;
-
-                default:
-                {
-                    e.Handled = false;
-                    e.SuppressKeyPress = false;
-                }
                     break;
             }
         }

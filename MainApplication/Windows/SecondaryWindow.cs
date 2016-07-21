@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Input;
 using Klocman.Extensions;
-using Klocman.Forms;
 using TextToScreen.Controls.Screens;
 using TextToScreen.Properties;
 using Cursor = System.Windows.Forms.Cursor;
@@ -86,10 +85,8 @@ namespace TextToScreen.Windows
         {
             get
             {
-                const int CS_NOCLOSE = 0x200;
-
                 var cp = base.CreateParams;
-                cp.ClassStyle |= CS_NOCLOSE;
+                cp.ClassStyle |= 0x200; // CS_NOCLOSE
                 return cp;
             }
         }

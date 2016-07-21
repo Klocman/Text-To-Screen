@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
 using TextToScreen.Misc;
@@ -16,7 +18,7 @@ namespace TextToScreen.Windows
         {
             InitializeComponent();
 
-            SetupCheckBoxes(Controls);
+            SetupCheckBoxes(Controls.Cast<Control>());
         }
 
         public DialogResult ShowDialog(IWin32Window owner, Ustawienia target, Ustawienia defaults)
@@ -159,15 +161,15 @@ namespace TextToScreen.Windows
             buttonAccept.Enabled = true;
         }
 
-        private void SetupCheckBoxes(Control.ControlCollection controls)
+        private void SetupCheckBoxes(IEnumerable<Control> controls)
         {
-            foreach (Control control in controls)
+            foreach (var control in controls)
             {
                 var cb = control as CheckBox;
                 if (cb != null)
                     cb.CheckedChanged += SettingWasChanged;
                 if (control.Controls.Count > 0)
-                    SetupCheckBoxes(control.Controls);
+                    SetupCheckBoxes(control.Controls.Cast<Control>());
             }
         }
 
@@ -184,6 +186,8 @@ namespace TextToScreen.Windows
                 case StartupAction.OpenSelected:
                     general_appstart_radioButton3.Checked = true;
                     break;
+                default:
+                    throw new InvalidEnumArgumentException();
             }
 
             general_appstart_pathSelectBox1.FileName = settingSet.GeneralStartPath;

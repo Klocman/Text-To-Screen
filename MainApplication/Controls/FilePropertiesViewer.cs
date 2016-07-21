@@ -115,7 +115,7 @@ namespace TextToScreen.Controls
             if (targets != null)
             {
                 var songFileEntries = targets as IList<SongFileEntry> ?? targets.ToList();
-                var count = songFileEntries.Count();
+                var count = songFileEntries.Count;
                 if (count > 0)
                 {
                     var firstElement = songFileEntries.First();

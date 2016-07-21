@@ -38,7 +38,7 @@ namespace TextToScreen.Windows
                         if (extension == null || !extension.ToLower().Contains("txt"))
                             continue;
 
-                        importDialog._filesInsideArchive.Add(Path.GetFileNameWithoutExtension(item.FileName), item);
+                        importDialog._filesInsideArchive.Add(Path.GetFileNameWithoutExtension(item.FileName ?? string.Empty), item);
                     }
                 }
 
@@ -47,8 +47,7 @@ namespace TextToScreen.Windows
                 if (importDialog.ShowDialog() != DialogResult.OK)
                     return Enumerable.Empty<SongFileEntry>();
 
-                var importComment = string.Format("{0} ({1})", Localisation.ImportCommentZip,
-                    Path.GetFileName(sourceFile));
+                var importComment = $"{Localisation.ImportCommentZip} ({Path.GetFileName(sourceFile)})";
 
                 return (from file in importDialog._filesInsideArchive
                     where importDialog.listBox1.SelectedItems.Contains(file.Key)

@@ -122,20 +122,20 @@ namespace TextToScreen.SongFile
             get { return _name; }
             set
             {
-                if (!_name.Equals(value))
+                if (_name.Equals(value)) return;
+
+                switch (CheckName(value))
                 {
-                    switch (CheckName(value))
-                    {
-                        case NameChangeResult.Empty:
-                            throw new ArgumentException(Localisation.NameIsEmpty);
-                        case NameChangeResult.AlreadyTaken:
-                            throw new ArgumentException(Localisation.NameIsAlreadyTaken);
-                        case NameChangeResult.InvalidChars:
-                            throw new ArgumentException(Localisation.NameContainsInvalidChars);
-                    }
-                    _name = value;
-                    SavedToDisk = false;
+                    case NameChangeResult.Empty:
+                        throw new ArgumentException(Localisation.NameIsEmpty);
+                    case NameChangeResult.AlreadyTaken:
+                        throw new ArgumentException(Localisation.NameIsAlreadyTaken);
+                    case NameChangeResult.InvalidChars:
+                        throw new ArgumentException(Localisation.NameContainsInvalidChars);
                 }
+
+                _name = value;
+                SavedToDisk = false;
             }
         }
 

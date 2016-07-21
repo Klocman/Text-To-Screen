@@ -27,11 +27,7 @@ namespace TextToScreen.Windows
             get
             {
                 var attributes = _currentExecutingAssembly.GetCustomAttributes(typeof (AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyCompanyAttribute) attributes[0]).Company;
+                return attributes.Length == 0 ? string.Empty : ((AssemblyCompanyAttribute) attributes[0]).Company;
             }
         }
 
@@ -41,11 +37,7 @@ namespace TextToScreen.Windows
             {
                 var attributes = _currentExecutingAssembly.GetCustomAttributes(typeof (AssemblyCopyrightAttribute),
                     false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyCopyrightAttribute) attributes[0]).Copyright;
+                return attributes.Length == 0 ? string.Empty : ((AssemblyCopyrightAttribute) attributes[0]).Copyright;
             }
         }
 
@@ -55,11 +47,7 @@ namespace TextToScreen.Windows
             {
                 var attributes = _currentExecutingAssembly.GetCustomAttributes(typeof (AssemblyDescriptionAttribute),
                     false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyDescriptionAttribute) attributes[0]).Description;
+                return attributes.Length == 0 ? string.Empty : ((AssemblyDescriptionAttribute) attributes[0]).Description;
             }
         }
 
@@ -68,11 +56,7 @@ namespace TextToScreen.Windows
             get
             {
                 var attributes = _currentExecutingAssembly.GetCustomAttributes(typeof (AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return string.Empty;
-                }
-                return ((AssemblyProductAttribute) attributes[0]).Product;
+                return attributes.Length == 0 ? string.Empty : ((AssemblyProductAttribute) attributes[0]).Product;
             }
         }
 
