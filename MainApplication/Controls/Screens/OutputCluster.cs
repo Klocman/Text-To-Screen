@@ -78,7 +78,7 @@ namespace TextToScreen.Controls.Screens
 
             binder.Subscribe((obj, args) =>
             {
-                PreviewField.NextTextDecorations = args.NewValue ? TextDecorations.Underline : null;
+                PreviewField.NextTextDecorations = args.NewValue ? TextDecorations.Underline : TextDecorations.OverLine;
                 PreviewField.BeginAnimation(true);
             }, ustawienia => ustawienia.ScreenFontUnderline, this);
 

@@ -131,6 +131,7 @@ namespace TextToScreen.Controls.Screens
                 var ta = FormsToWpf.ToTextAlignment(NextFontAlignment.Value);
                 TextBlock.TextAlignment = ta.Key;
                 TextBlock.VerticalAlignment = ta.Value;
+                TextBlock.HorizontalAlignment = FormsToWpf.ToHorizontalAlignment(ta.Key);
                 NextFontAlignment = null;
             }
 
@@ -148,7 +149,7 @@ namespace TextToScreen.Controls.Screens
 
             if (NextTextDecorations != null)
             {
-                TextBlock.TextDecorations = NextTextDecorations;
+                TextBlock.TextDecorations = ReferenceEquals(NextTextDecorations, TextDecorations.OverLine) ? null : NextTextDecorations;
                 NextTextDecorations = null;
             }
 

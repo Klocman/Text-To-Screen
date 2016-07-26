@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows;
@@ -7,6 +8,21 @@ namespace TextToScreen.Misc
 {
     public static class FormsToWpf
     {
+        public static HorizontalAlignment ToHorizontalAlignment(TextAlignment ta)
+        {
+            switch (ta)
+            {
+                case TextAlignment.Left:
+                    return HorizontalAlignment.Left;
+                case TextAlignment.Right:
+                    return HorizontalAlignment.Right;
+                case TextAlignment.Justify:
+                    return HorizontalAlignment.Stretch;
+                default:
+                    return HorizontalAlignment.Center;
+            }
+        }
+
         public static ContentAlignment ToContentAlignment(TextAlignment ta, VerticalAlignment va)
         {
             if (va == VerticalAlignment.Top && ta == TextAlignment.Left)
