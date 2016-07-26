@@ -70,9 +70,9 @@ namespace TextToScreen.Controls
         public event Action<FileEditor> SelectedStringCleared;
 
         /// <summary>
-        ///     Returns false if user cancels the operation
+        ///     Returns false if user doesn't save, Null if user cancels the operation
         /// </summary>
-        public bool AskAndSaveIfNeeded()
+        public bool? AskAndSaveIfNeeded()
         {
             if (!FileWasChanged) return true;
 
@@ -82,8 +82,11 @@ namespace TextToScreen.Controls
                     SaveChanges();
                     return true;
 
-                default:
+                case DialogResult.No:
                     return false;
+
+                default:
+                    return null;
             }
         }
 
@@ -234,7 +237,7 @@ namespace TextToScreen.Controls
 
         public bool UnloadFile(bool askSaveChanges)
         {
-            if (askSaveChanges && !AskAndSaveIfNeeded())
+            if (askSaveChanges && !AskAndSaveIfNeeded().HasValue)
                 return false;
 
             LoadedFile = null;

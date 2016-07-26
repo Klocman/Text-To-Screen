@@ -147,7 +147,7 @@ namespace TextToScreen.Windows
         {
             if (OpenedSongArchive != null && (fileEditor.FileWasChanged || !OpenedSongArchive.AllSavedToDisk))
             {
-                if (!fileEditor.AskAndSaveIfNeeded())
+                if (!fileEditor.AskAndSaveIfNeeded().HasValue)
                     return false;
 
                 switch (MessageBoxes.SaveChangesToOpenedArchive(this))
