@@ -46,7 +46,13 @@ namespace TextToScreen.Controls
         }
 
         public string SelectedString
-            => multiLineListBox1.SelectedItem == null ? string.Empty : multiLineListBox1.SelectedItem as string;
+        {
+            get
+            {
+                var str = multiLineListBox1.SelectedItem as string;
+                return str?.TrimEnd('\n', '\r') ?? string.Empty;
+            }
+        }
 
         public bool VerseListFocused => multiLineListBox1.Focused;
         //IEnumerable<string> VerseList { get { return multiLineListBox1.Items.Cast<string>(); } }
