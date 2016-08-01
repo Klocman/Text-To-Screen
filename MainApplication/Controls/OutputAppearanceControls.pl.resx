@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="underlineToggle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -170,5 +170,54 @@
   </data>
   <data name="secondary_out_labelTexCol.Text" xml:space="preserve">
     <value>Kolor tekstu</value>
+  </data>
+  <data name="buttonBackColor.Text" xml:space="preserve">
+    <value>Zmień...
+</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Obrazek tła</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Styl czcionki</value>
+  </data>
+  <data name="secondary_out_labelSpeed.Text" xml:space="preserve">
+    <value>Szybkość przejścia</value>
+  </data>
+  <data name="buttonForeColor.Text" xml:space="preserve">
+    <value>Zmień...</value>
+  </data>
+  <data name="italicToggle.Text" xml:space="preserve">
+    <value>Pochylenie</value>
+  </data>
+  <data name="underlineToggle.Text" xml:space="preserve">
+    <value>Podkreślenie</value>
+  </data>
+  <data name="underlineToggle.ToolTipText" xml:space="preserve">
+    <value>Podkreślenie</value>
+  </data>
+  <data name="italicToggle.ToolTipText" xml:space="preserve">
+    <value>Pochylenie</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Rozmiar czcionki</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Czcionka i pozycja</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Przejście i kolor</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Czcionka</value>
+  </data>
+  <data name="boldToggle.ToolTipText" xml:space="preserve">
+    <value>Pogrubienie</value>
+  </data>
+  <data name="boldToggle.Text" xml:space="preserve">
+    <value>Pogrubienie</value>
+  </data>
+  <data name="buttonClearImage.Text" xml:space="preserve">
+    <value>Wyczyść</value>
   </data>
 </root>

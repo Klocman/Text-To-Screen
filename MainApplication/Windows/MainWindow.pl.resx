@@ -3916,9 +3916,12 @@
     <value>Strona domowa</value>
   </data>
   <data name="donateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Donacje</value>
+    <value>Dotacje</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Text To Screen</value>
+  </data>
+  <data name="changeLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zmiana języka...</value>
   </data>
 </root>

@@ -180,13 +180,13 @@
     <value>Zmień nazwę wybranej piosenki</value>
   </data>
   <data name="propertiesToolStripButton.Text" xml:space="preserve">
-    <value>Własciwości</value>
+    <value>Właściwości</value>
   </data>
   <data name="propertiesToolStripButton.ToolTipText" xml:space="preserve">
     <value>Pokaż własciwości wybranej piosenki</value>
   </data>
   <data name="toolStripButton_ref.Text" xml:space="preserve">
-    <value>Odświerz</value>
+    <value>Odśwież</value>
   </data>
   <data name="toolStripButton_ref.ToolTipText" xml:space="preserve">
     <value>Ponownie załaduj archiwum z dysku</value>
@@ -210,10 +210,10 @@
     <value>Pokaż piosenki tylko z tej grupy</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Wyszyść</value>
+    <value>Wyczyść</value>
   </data>
   <data name="button1.ToolTip" xml:space="preserve">
-    <value>Wyszyść wszystkie filtry</value>
+    <value>Wyczyść wszystkie filtry</value>
   </data>
   <data name="searchSubsection.Text" xml:space="preserve">
     <value>Szukaj</value>
@@ -234,6 +234,6 @@
     <value>Kopiuj do schowka</value>
   </data>
   <data name="właściwościToolStripMenuItem.Text" xml:space="preserve">
-    <value>Własciwości</value>
+    <value>Właściwości</value>
   </data>
 </root>

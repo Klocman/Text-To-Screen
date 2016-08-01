@@ -135,7 +135,7 @@
     <value>Bez grupy</value>
   </data>
   <data name="FileImportProblemsHeader" xml:space="preserve">
-    <value>Następujące pliki nie zostały zimportowane z podanych powodów:</value>
+    <value>Następujące pliki nie zostały zaimportowane z podanych powodów:</value>
   </data>
   <data name="FileImportTitle" xml:space="preserve">
     <value>Problemy z importem plików</value>
@@ -171,7 +171,7 @@
     <value>Program Text To Screen jest już uruchomiony</value>
   </data>
   <data name="MessageBoxes_ArchiveContentsChangedExternally_Message" xml:space="preserve">
-    <value>Archiwum zostało zmienione przez inny program. Czy odczytać jego nową zawartość? (odczyt spowoduje stratę wszystkich niezapisanych zmian)</value>
+    <value>Archiwum zostało zmienione przez inny program. Czy odczytać jego nową zawartość? (Odczyt spowoduje stratę wszystkich niezapisanych zmian)</value>
   </data>
   <data name="MessageBoxes_ArchiveContentsChangedExternally_Title" xml:space="preserve">
     <value>Zmiana archiwum przez inną aplikację</value>
@@ -201,7 +201,7 @@
     <value>Nieprawidłowa nazwa grupy</value>
   </data>
   <data name="MessageBoxes_InvalidArchiveInfo_Message" xml:space="preserve">
-    <value>Wybrane archiwum ma nieznany format lub zawiera nieobsługiwane pliki. Jeżeli to archiwum zawiera prawidłowe piosenki możesz zaimportować je do otwartego archiwum poprzez Plik&gt;Importuj.</value>
+    <value>Wybrane archiwum ma nieznany format lub zawiera nieobsługiwane pliki. Jeżeli to archiwum zawiera prawidłowe piosenki możesz zaimportować je do otwartego archiwum poprzez Plik&gt;Importuj...</value>
   </data>
   <data name="MessageBoxes_InvalidArchiveInfo_Title" xml:space="preserve">
     <value>Nieznany format archiwum</value>
@@ -274,5 +274,26 @@
   </data>
   <data name="UnsupportedFileFormat" xml:space="preserve">
     <value>Nieobsługiwany typ pliku</value>
+  </data>
+  <data name="PreviewScreenInfo" xml:space="preserve">
+    <value>Podgląd</value>
+  </data>
+  <data name="FileImportSuccessfulCount" xml:space="preserve">
+    <value>{0} plików importowano poprawnie.</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>Domyślnie</value>
+  </data>
+  <data name="Message_RestartNeeded_Text" xml:space="preserve">
+    <value>Aby zmienić język programu musisz uruchomić go ponownie.</value>
+  </data>
+  <data name="Message_RestartNeeded_Title" xml:space="preserve">
+    <value>Zmień język</value>
+  </data>
+  <data name="FileListView_NothingMatched" xml:space="preserve">
+    <value>Nie znaleziono żadnych piosenek</value>
+  </data>
+  <data name="FileListView_GroupBox_ShowAll" xml:space="preserve">
+    <value>Pokaż wszystkie</value>
   </data>
 </root>
