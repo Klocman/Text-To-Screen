@@ -25,7 +25,7 @@ namespace TextToScreen.SongFile
         {
             _name = filename;
             _group = fileGroup;
-            _contents = FixShortLineBreaks(fileContents);
+            Contents = fileContents;
             _comment = fileComment ?? string.Empty;
             LastModified = lastModifiedDate;
             CreationTime = creationDate;
@@ -56,7 +56,7 @@ namespace TextToScreen.SongFile
                 using (var reader = new StreamReader(memoryStream))
                 {
                     memoryStream.Position = 0;
-                    _contents = reader.ReadToEnd();
+                    Contents = reader.ReadToEnd();
                 }
             }
 
@@ -68,7 +68,6 @@ namespace TextToScreen.SongFile
         }
 
         public static string NewVerse { get; } = "\r\n@";
-        public static string NewVerseShort { get; } = Environment.NewLine + "\n@";
 
         public string Comment
         {
@@ -90,7 +89,7 @@ namespace TextToScreen.SongFile
             {
                 if (!ReferenceEquals(_contents, value))
                 {
-                    _contents = value;
+                    _contents = value == null ? string.Empty : FixShortLineBreaksRegex.Replace(value, "\r\n");
                     SavedToDisk = false;
                 }
             }
@@ -156,11 +155,6 @@ namespace TextToScreen.SongFile
             ParentCollection = null;
         }
 
-        private static string FixShortLineBreaks(string content)
-        {
-            return FixShortLineBreaksRegex.Replace(content, "\r\n");
-        }
-
         public void AddToArchive(ZipFile archive)
         {
             if (archive == null)
@@ -175,7 +169,7 @@ namespace TextToScreen.SongFile
             sb.Append(_name);
             sb.Append(Resources.SongFileExtension);
 
-            var ze = archive.AddEntry(sb.ToString(), _contents, Encoding.UTF8);
+            var ze = archive.AddEntry(sb.ToString(), Contents, Encoding.UTF8);
             ze.Comment = _comment;
             ze.CreationTime = CreationTime;
             ze.LastModified = LastModified;
@@ -199,7 +193,7 @@ namespace TextToScreen.SongFile
 
             _name = source.Name;
             _group = source.Group;
-            _contents = source.Contents;
+            Contents = source.Contents;
             _comment = source.Comment ?? string.Empty;
             LastModified = source.LastModified;
             CreationTime = source.CreationTime;

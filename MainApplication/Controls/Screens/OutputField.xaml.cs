@@ -18,6 +18,7 @@ namespace TextToScreen.Controls.Screens
     {
         private readonly Storyboard _fadeIn;
         private readonly Storyboard _fadeOut;
+        private string _nextText;
 
         public OutputField()
         {
@@ -47,7 +48,12 @@ namespace TextToScreen.Controls.Screens
         public ContentAlignment CurrentFontAlignment
             => FormsToWpf.ToContentAlignment(TextBlock.TextAlignment, TextBlock.VerticalAlignment);
 
-        public string NextText { get; set; }
+        public string NextText
+        {
+            get { return _nextText; }
+            set { _nextText = value?.Replace("\r\n", "\n").TrimEnd('\n'); }
+        }
+
         public Color? NextTextColor { get; set; }
         public Color? NextBackgroundColor { get; set; }
         public ImageSource NextImage { get; set; }
