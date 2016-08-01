@@ -766,25 +766,31 @@ namespace TextToScreen.Windows
             // Help
             globalHotkeys.Add(new HotkeyEntry(Keys.F1, otworzPomocToolStripMenuItem_Click, otworzPomocToolStripMenuItem));
 
-            // Other
-            globalHotkeys.Add(new HotkeyEntry(Keys.Left, false, false, false,
-                (x, y) => fileListView.FocusFileList(),
-                null, () => Ustawienia.Default.OknoGlowneKeysArrows && fileEditor.VerseListFocused));
-            globalHotkeys.Add(new HotkeyEntry(Keys.Right, false, false, false,
-                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList),
-                null, () => Ustawienia.Default.OknoGlowneKeysArrows && fileListView.FileListFocused));
+            // Output formatting
             globalHotkeys.Add(new HotkeyEntry(Keys.Add, (x, y) => Ustawienia.Default.ScreenFontSize += 3, null));
             globalHotkeys.Add(new HotkeyEntry(Keys.Subtract, (x, y) => Ustawienia.Default.ScreenFontSize -= 3, null));
-
-            // Shortcuts
-            globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false, (x, y) => fileListView.FocusFileList(),
-                null));
+            globalHotkeys.Add(new HotkeyEntry(Keys.U, false, true, false, 
+                (x, y) => Ustawienia.Default.ScreenFontUnderline = !Ustawienia.Default.ScreenFontUnderline, null));
+            globalHotkeys.Add(new HotkeyEntry(Keys.B, false, true, false,
+                (x, y) => Ustawienia.Default.ScreenFontBold = !Ustawienia.Default.ScreenFontBold, null));
+            globalHotkeys.Add(new HotkeyEntry(Keys.I, false, true, false,
+                (x, y) => Ustawienia.Default.ScreenFontItalic = !Ustawienia.Default.ScreenFontItalic, null));
+            
+            // Navigation between panels
+            globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false, 
+                (x, y) => fileListView.FocusFileList(), null));
             globalHotkeys.Add(new HotkeyEntry(Keys.W, false, true, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), null));
             globalHotkeys.Add(new HotkeyEntry(Keys.E, false, true, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.ContentEditor), null));
             globalHotkeys.Add(new HotkeyEntry(Keys.R, false, true, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.Properties), null));
+            globalHotkeys.Add(new HotkeyEntry(Keys.Left, false, false, false,
+                (x, y) => fileListView.FocusFileList(), null, 
+                () => Ustawienia.Default.OknoGlowneKeysArrows && fileEditor.VerseListFocused));
+            globalHotkeys.Add(new HotkeyEntry(Keys.Right, false, false, false,
+                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), null, 
+                () => Ustawienia.Default.OknoGlowneKeysArrows && fileListView.FileListFocused));
         }
 
         /// <summary>
