@@ -172,7 +172,7 @@ namespace TextToScreen.Controls.Screens
             NextFontAlignment = originField.CurrentFontAlignment;
             NextFontStyle = originField.TextBlock.FontStyle;
             NextFontWeight = originField.TextBlock.FontWeight;
-            NextTextDecorations = originField.TextBlock.TextDecorations;
+            NextTextDecorations = originField.TextBlock.TextDecorations ?? TextDecorations.OverLine;
 
             if (GetAnimationProgress() >= 1)
                 BeginAnimation();
