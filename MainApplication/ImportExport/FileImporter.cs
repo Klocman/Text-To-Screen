@@ -92,10 +92,9 @@ namespace TextToScreen.ImportExport
             {
                 var output = new StringBuilder();
 
-                foreach (var line in allText.Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.None))
-                {
+                foreach (var line in allText
+                    .Split(StringTools.NewLineChars.ToArray(), StringSplitOptions.RemoveEmptyEntries))
                     output.Append(string.IsNullOrEmpty(line) ? SongFileEntry.NewVerse : line.Trim());
-                }
 
                 outputString = output.ToString();
             }
