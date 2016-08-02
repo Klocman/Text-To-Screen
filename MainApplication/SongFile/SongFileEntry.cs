@@ -12,7 +12,6 @@ namespace TextToScreen.SongFile
 {
     public sealed class SongFileEntry : IDisposable
     {
-        private static readonly Regex FixShortLineBreaksRegex = new Regex("(?=[^\r])\n", RegexOptions.Compiled);
         private string _comment;
         private string _contents;
         private string _group;
@@ -74,11 +73,10 @@ namespace TextToScreen.SongFile
             get { return _comment; }
             set
             {
-                if (!_comment.Equals(value))
-                {
-                    _comment = value;
-                    SavedToDisk = false;
-                }
+                if (_comment.Equals(value)) return;
+
+                _comment = value;
+                SavedToDisk = false;
             }
         }
 
@@ -87,11 +85,10 @@ namespace TextToScreen.SongFile
             get { return _contents; }
             set
             {
-                if (!ReferenceEquals(_contents, value))
-                {
-                    _contents = value == null ? string.Empty : FixShortLineBreaksRegex.Replace(value, "\r\n");
-                    SavedToDisk = false;
-                }
+                if (ReferenceEquals(_contents, value)) return;
+
+                _contents = value?.Replace("\r", string.Empty).Replace("\n", "\r\n") ?? string.Empty;
+                SavedToDisk = false;
             }
         }
 
