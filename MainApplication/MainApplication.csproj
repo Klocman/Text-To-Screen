@@ -114,10 +114,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\.Lib\ObjectListView\2.9.0\ObjectListView.dll</HintPath>
     </Reference>
-    <Reference Include="PortableSettingsProvider, Version=1.1.0.31688, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\.Lib\PortableSettingsProvider.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -448,6 +444,10 @@
     <ProjectReference Include="..\..\KlocTools\KlocTools\KlocTools.csproj">
       <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
       <Name>KlocTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.vbproj">
+      <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>
+      <Name>PortableSettingsProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
