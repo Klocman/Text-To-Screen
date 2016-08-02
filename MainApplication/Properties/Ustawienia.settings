@@ -89,19 +89,19 @@
     <Setting Name="OtwarteArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ScreenFontBold" Type="System.Boolean" Scope="User">
+    <Setting Name="ScreenFontBold" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ScreenFontItalic" Type="System.Boolean" Scope="User">
+    <Setting Name="ScreenFontItalic" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ScreenFontUnderline" Type="System.Boolean" Scope="User">
+    <Setting Name="ScreenFontUnderline" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ScreenImagePath" Type="System.String" Scope="User">
+    <Setting Name="ScreenImagePath" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="LanguageOverride" Type="System.String" Scope="User">
+    <Setting Name="LanguageOverride" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AutoRecentItems" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Collections.Specialized.StringCollection" Scope="User">
@@ -110,7 +110,7 @@
   &lt;string&gt;Example Song Archive.zip&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="GeneralCheckForUpdates" Type="System.Boolean" Scope="User">
+    <Setting Name="GeneralCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
