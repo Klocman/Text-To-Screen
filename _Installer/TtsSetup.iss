@@ -1,13 +1,13 @@
 #include "InstallDependancies.iss"
 
-#define MyAppName "Text To Screen" 
-#define MyAppVersion "1.6.0.0"     
+#define MyAppName "Text To Screen"   
+#define MyAppNameShort "TextToScreen"  
 #define MyAppPublisher "Marcin Szeniak"
 #define MyAppURL "http://klocmansoftware.weebly.com/texttoscreen.html"
 #define MyAppExeName "TextToScreen.exe"
-
-#define MyAppNameShort "TextToScreen"   
-#define MyAppVersionShort "1.6"
+  
+#define MyAppVersion "1.7.0.0"     
+#define MyAppVersionShort "1.7"
 
 #include "scripts\PortablePage.iss" 
 #include "scripts\PortableIcons.iss"
