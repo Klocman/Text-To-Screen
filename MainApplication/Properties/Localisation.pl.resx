@@ -138,7 +138,7 @@
     <value>Następujące pliki nie zostały zaimportowane z podanych powodów:</value>
   </data>
   <data name="FileImportTitle" xml:space="preserve">
-    <value>Problemy z importem plików</value>
+    <value>Import plików</value>
   </data>
   <data name="FileNotFoundOnDisk" xml:space="preserve">
     <value>Nie znaleziono pliku na dysku</value>
