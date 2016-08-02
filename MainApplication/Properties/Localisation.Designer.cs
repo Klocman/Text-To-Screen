@@ -592,5 +592,23 @@ namespace TextToScreen.Properties {
                 return ResourceManager.GetString("UnsupportedFileFormat", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version {0} is available. Do you want to go to the download page now?.
+        /// </summary>
+        internal static string UpdateFound_Message {
+            get {
+                return ResourceManager.GetString("UpdateFound_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update found.
+        /// </summary>
+        internal static string UpdateFound_Title {
+            get {
+                return ResourceManager.GetString("UpdateFound_Title", resourceCulture);
+            }
+        }
     }
 }

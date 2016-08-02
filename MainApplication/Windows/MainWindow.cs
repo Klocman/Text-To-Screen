@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Klocman.Extensions;
 using Klocman.Forms.Tools;
 using Klocman.Subsystems;
+using Klocman.Subsystems.Update;
 using Klocman.Tools;
 using Microsoft.Win32;
 using TextToScreen.Controls;
@@ -488,7 +489,7 @@ namespace TextToScreen.Windows
 
         private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var aboutBox = new AboutBox {Owner = this};
+            var aboutBox = new AboutBox { Owner = this };
             aboutBox.ShowDialog();
         }
 
@@ -535,7 +536,7 @@ namespace TextToScreen.Windows
                 for (var i = Ustawienia.Default.AutoRecentItems.Count - 1; i >= 0; i--)
                 {
                     var path = Ustawienia.Default.AutoRecentItems[i];
-                    var newChild = new ToolStripMenuItem {Text = path};
+                    var newChild = new ToolStripMenuItem { Text = path };
                     newChild.Click += RecentItem_Click;
                     ostatnioOtwarteToolStripMenuItem.DropDownItems.Add(newChild);
                 }
@@ -604,7 +605,7 @@ namespace TextToScreen.Windows
 
         private void RecentItem_Click(object sender, EventArgs e)
         {
-            var target = ((ToolStripMenuItem) sender).Text;
+            var target = ((ToolStripMenuItem)sender).Text;
             OpenArchive(target);
         }
 
@@ -769,15 +770,15 @@ namespace TextToScreen.Windows
             // Output formatting
             globalHotkeys.Add(new HotkeyEntry(Keys.Add, (x, y) => Ustawienia.Default.ScreenFontSize += 3, null));
             globalHotkeys.Add(new HotkeyEntry(Keys.Subtract, (x, y) => Ustawienia.Default.ScreenFontSize -= 3, null));
-            globalHotkeys.Add(new HotkeyEntry(Keys.U, false, true, false, 
+            globalHotkeys.Add(new HotkeyEntry(Keys.U, false, true, false,
                 (x, y) => Ustawienia.Default.ScreenFontUnderline = !Ustawienia.Default.ScreenFontUnderline, null));
             globalHotkeys.Add(new HotkeyEntry(Keys.B, false, true, false,
                 (x, y) => Ustawienia.Default.ScreenFontBold = !Ustawienia.Default.ScreenFontBold, null));
             globalHotkeys.Add(new HotkeyEntry(Keys.I, false, true, false,
                 (x, y) => Ustawienia.Default.ScreenFontItalic = !Ustawienia.Default.ScreenFontItalic, null));
-            
+
             // Navigation between panels
-            globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false, 
+            globalHotkeys.Add(new HotkeyEntry(Keys.Q, false, true, false,
                 (x, y) => fileListView.FocusFileList(), null));
             globalHotkeys.Add(new HotkeyEntry(Keys.W, false, true, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), null));
@@ -786,10 +787,10 @@ namespace TextToScreen.Windows
             globalHotkeys.Add(new HotkeyEntry(Keys.R, false, true, false,
                 (x, y) => fileEditor.FocusTab(FileEditorTabs.Properties), null));
             globalHotkeys.Add(new HotkeyEntry(Keys.Left, false, false, false,
-                (x, y) => fileListView.FocusFileList(), null, 
+                (x, y) => fileListView.FocusFileList(), null,
                 () => Ustawienia.Default.OknoGlowneKeysArrows && fileEditor.VerseListFocused));
             globalHotkeys.Add(new HotkeyEntry(Keys.Right, false, false, false,
-                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), null, 
+                (x, y) => fileEditor.FocusTab(FileEditorTabs.VerseList), null,
                 () => Ustawienia.Default.OknoGlowneKeysArrows && fileListView.FileListFocused));
         }
 
@@ -859,7 +860,7 @@ namespace TextToScreen.Windows
             if (_remoteDisplayWindow != null && !_remoteDisplayWindow.IsDisposed)
                 _remoteDisplayWindow.Dispose();
 
-            _remoteDisplayWindow = new SecondaryWindow {Opacity = 0};
+            _remoteDisplayWindow = new SecondaryWindow { Opacity = 0 };
 
             _remoteDisplayWindow.Show();
             _remoteDisplayWindow.OutputCluster.RegisterPreviewFields(previewScreens);
@@ -1027,6 +1028,23 @@ namespace TextToScreen.Windows
                         OpenArchive(Ustawienia.Default.GeneralStartPath);
                     break;
             }
+
+            new Thread(() =>
+            {
+                UpdateSystem.UpdateFeedUri = new Uri(@"https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml");
+                if (UpdateSystem.CheckForUpdates() == UpdateSystem.UpdateStatus.NewAvailable)
+                {
+                    this.SafeInvoke(() =>
+                    {
+                        while (!Visible)
+                            Application.DoEvents();
+
+                        if (MessageBox.Show(this, string.Format(Localisation.UpdateFound_Message, UpdateSystem.LatestReply.GetUpdateVersion()),
+                            Localisation.UpdateFound_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            PremadeDialogs.StartProcessSafely(UpdateSystem.LatestReply.GetDonwnloadLink().ToString());
+                    });
+                }
+            }).Start();
         }
 
         private void changeLanguageToolStripMenuItem_Click(object sender, EventArgs e)

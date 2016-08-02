@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Root>
+  <AppName>BCUninstaller</AppName>
+  <Update>
+    <Version>1.8.0.0</Version>
+    <URL>https://github.com/Klocman/Text-To-Screen/releases</URL>
+    <Changes></Changes>
+    <Hash></Hash>
+  </Update>
+</Root>

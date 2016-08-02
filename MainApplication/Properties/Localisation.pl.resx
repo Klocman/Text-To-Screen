@@ -296,4 +296,10 @@
   <data name="FileListView_GroupBox_ShowAll" xml:space="preserve">
     <value>Pokaż wszystkie</value>
   </data>
+  <data name="UpdateFound_Message" xml:space="preserve">
+    <value>Wersja {0} jest dostępna. Otworzyć stronę pobierania?</value>
+  </data>
+  <data name="UpdateFound_Title" xml:space="preserve">
+    <value>Znaleziono aktualizację</value>
+  </data>
 </root>
