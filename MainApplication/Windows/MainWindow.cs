@@ -1029,22 +1029,25 @@ namespace TextToScreen.Windows
                     break;
             }
 
-            new Thread(() =>
+            if (Ustawienia.Default.GeneralCheckForUpdates)
             {
-                UpdateSystem.UpdateFeedUri = new Uri(@"https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml");
-                if (UpdateSystem.CheckForUpdates() == UpdateSystem.UpdateStatus.NewAvailable)
+                new Thread(() =>
                 {
-                    this.SafeInvoke(() =>
+                    UpdateSystem.UpdateFeedUri = new Uri(@"https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml");
+                    if (UpdateSystem.CheckForUpdates() == UpdateSystem.UpdateStatus.NewAvailable)
                     {
-                        while (!Visible)
-                            Application.DoEvents();
+                        this.SafeInvoke(() =>
+                        {
+                            while (!Visible)
+                                Application.DoEvents();
 
-                        if (MessageBox.Show(this, string.Format(Localisation.UpdateFound_Message, UpdateSystem.LatestReply.GetUpdateVersion()),
-                            Localisation.UpdateFound_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            PremadeDialogs.StartProcessSafely(UpdateSystem.LatestReply.GetDonwnloadLink().ToString());
-                    });
-                }
-            }).Start();
+                            if (MessageBox.Show(this, string.Format(Localisation.UpdateFound_Message, UpdateSystem.LatestReply.GetUpdateVersion()),
+                                Localisation.UpdateFound_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                PremadeDialogs.StartProcessSafely(UpdateSystem.LatestReply.GetDonwnloadLink().ToString());
+                        });
+                    }
+                }).Start();
+            }
         }
 
         private void changeLanguageToolStripMenuItem_Click(object sender, EventArgs e)

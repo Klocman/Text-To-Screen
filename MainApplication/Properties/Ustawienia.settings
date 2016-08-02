@@ -1,135 +1,93 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
-              GeneratedClassNamespace="TextToScreen.Properties" GeneratedClassName="Ustawienia">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TextToScreen.Properties" GeneratedClassName="Ustawienia">
   <Profiles />
   <Settings>
-    <Setting Name="ScreenFontAlignment" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Drawing.ContentAlignment" Scope="User">
+    <Setting Name="ScreenFontAlignment" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.ContentAlignment" Scope="User">
       <Value Profile="(Default)">MiddleCenter</Value>
     </Setting>
-    <Setting Name="ScreenFontFamily" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.String" Scope="User">
+    <Setting Name="ScreenFontFamily" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)">Arial</Value>
     </Setting>
-    <Setting Name="ScreenFontSize" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Decimal" Scope="User">
+    <Setting Name="ScreenFontSize" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="AutoOknoGlownePozycja" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Drawing.Point" Scope="User">
+    <Setting Name="AutoOknoGlownePozycja" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="AutoOknoDocelowePozycja" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Drawing.Point" Scope="User">
+    <Setting Name="AutoOknoDocelowePozycja" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="OknoGlowneFull" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoGlowneFull" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OknoGlowneTop" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoGlowneTop" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OknoDoceloweFull" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoDoceloweFull" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OknoDoceloweTop" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoDoceloweTop" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="OknoGlowneKeysNumbers" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoGlowneKeysNumbers" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="OknoGlowneKeysArrows" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoGlowneKeysArrows" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="OknoDoceloweHideCursor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="OknoDoceloweHideCursor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ScreenFadeSpeed" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Decimal" Scope="User">
+    <Setting Name="ScreenFadeSpeed" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0.5</Value>
     </Setting>
-    <Setting Name="ScreenForegroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ScreenForegroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
-    <Setting Name="ScreenBackgroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ScreenBackgroundColor" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="GeneralStartAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="TextToScreen.Misc.StartupAction" Scope="User">
+    <Setting Name="GeneralStartAction" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="TextToScreen.Misc.StartupAction" Scope="User">
       <Value Profile="(Default)">OpenRecent</Value>
     </Setting>
-    <Setting Name="GeneralStartPath" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.String" Scope="User">
+    <Setting Name="GeneralStartPath" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="GeneralHistoryEnabled" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="GeneralHistoryEnabled" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="GeneralHistoryPoints" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Int32" Scope="User">
+    <Setting Name="GeneralHistoryPoints" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>
     </Setting>
-    <Setting Name="AutoOknoDoceloweRozmiar" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Drawing.Size" Scope="User">
+    <Setting Name="AutoOknoDoceloweRozmiar" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="AutoOknoGlowneRozmiar" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Drawing.Size" Scope="User">
+    <Setting Name="AutoOknoGlowneRozmiar" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
-    <Setting Name="AutoOknoGlowneMaximized" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="AutoOknoGlowneMaximized" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="AutoOknoDoceloweMaximized" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="AutoOknoDoceloweMaximized" Provider="PortableSettingsProvider.PortableSettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OknoGlowneInnePokazujPelnaSciezkeArchiwum"
-             Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean"
-             Scope="User">
+    <Setting Name="OknoGlowneInnePokazujPelnaSciezkeArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OknoGlowneInnePokazujPasekPostepuPrzejscia"
-             Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean"
-             Scope="User">
+    <Setting Name="OknoGlowneInnePokazujPasekPostepuPrzejscia" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="GeneralInneDostepZewnetrznyDoArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Roaming="true" Type="System.Boolean" Scope="User">
+    <Setting Name="GeneralInneDostepZewnetrznyDoArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="GeneralInneSprawdzajZewnetrzneZmiany" Provider="PortableSettingsProvider.PortableSettingsProvider"
-             Roaming="true" Type="System.Boolean" Scope="User">
+    <Setting Name="GeneralInneSprawdzajZewnetrzneZmiany" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="_FirstStartCompleted" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Boolean" Scope="User">
+    <Setting Name="_FirstStartCompleted" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="OtwarteArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.String" Scope="User">
+    <Setting Name="OtwarteArchiwum" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AutoRecentItems" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true"
-             Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)">
-        &lt;?xml version="1.0" encoding="utf-16"?&gt;
-        &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-        &lt;string&gt;Example Song Archive.zip&lt;/string&gt;
-        &lt;/ArrayOfString&gt;
-      </Value>
     </Setting>
     <Setting Name="ScreenFontBold" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -145,6 +103,15 @@
     </Setting>
     <Setting Name="LanguageOverride" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AutoRecentItems" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Example Song Archive.zip&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="GeneralCheckForUpdates" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

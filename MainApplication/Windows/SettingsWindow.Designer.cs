@@ -35,6 +35,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.general_other_groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAutoUpdates = new System.Windows.Forms.CheckBox();
             this.general_other_checkForExternalChanges = new System.Windows.Forms.CheckBox();
             this.general_other_allowExternalArchiveAcces = new System.Windows.Forms.CheckBox();
             this.general_history_groupBox1 = new System.Windows.Forms.GroupBox();
@@ -124,11 +125,20 @@
             // 
             // general_other_groupBox1
             // 
+            this.general_other_groupBox1.Controls.Add(this.checkBoxAutoUpdates);
             this.general_other_groupBox1.Controls.Add(this.general_other_checkForExternalChanges);
             this.general_other_groupBox1.Controls.Add(this.general_other_allowExternalArchiveAcces);
             resources.ApplyResources(this.general_other_groupBox1, "general_other_groupBox1");
             this.general_other_groupBox1.Name = "general_other_groupBox1";
             this.general_other_groupBox1.TabStop = false;
+            // 
+            // checkBoxAutoUpdates
+            // 
+            resources.ApplyResources(this.checkBoxAutoUpdates, "checkBoxAutoUpdates");
+            this.checkBoxAutoUpdates.Checked = true;
+            this.checkBoxAutoUpdates.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAutoUpdates.Name = "checkBoxAutoUpdates";
+            this.checkBoxAutoUpdates.UseVisualStyleBackColor = true;
             // 
             // general_other_checkForExternalChanges
             // 
@@ -452,5 +462,6 @@
         private System.Windows.Forms.CheckBox main_other_showFullPath;
         private System.Windows.Forms.CheckBox main_other_showProgressBar;
         private System.Windows.Forms.Button main_keys_listButton;
+        private System.Windows.Forms.CheckBox checkBoxAutoUpdates;
     }
 }

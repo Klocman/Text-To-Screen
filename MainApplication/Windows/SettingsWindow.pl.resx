@@ -117,44 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 394</value>
-  </data>
-  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="buttonOk.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
-    <value>buttonOk</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 394</value>
-  </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
   </data>
   <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -162,107 +127,17 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>&amp;Anuluj</value>
   </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonAccept.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="buttonAccept.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 394</value>
-  </data>
-  <data name="buttonAccept.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
   <data name="buttonAccept.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="buttonAccept.Text" xml:space="preserve">
     <value>&amp;Zastosuj</value>
   </data>
-  <data name="&gt;&gt;buttonAccept.Name" xml:space="preserve">
-    <value>buttonAccept</value>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;buttonAccept.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAccept.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonAccept.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="general_other_checkForExternalChanges.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_other_checkForExternalChanges.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 43</value>
-  </data>
-  <data name="general_other_checkForExternalChanges.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 17</value>
-  </data>
-  <data name="general_other_checkForExternalChanges.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="general_other_checkForExternalChanges.Text" xml:space="preserve">
-    <value>Monitoruj zmiany archiwum przez inne programy</value>
-  </data>
-  <data name="&gt;&gt;general_other_checkForExternalChanges.Name" xml:space="preserve">
-    <value>general_other_checkForExternalChanges</value>
-  </data>
-  <data name="&gt;&gt;general_other_checkForExternalChanges.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_other_checkForExternalChanges.Parent" xml:space="preserve">
-    <value>general_other_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;general_other_checkForExternalChanges.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="general_other_allowExternalArchiveAcces.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_other_allowExternalArchiveAcces.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="general_other_allowExternalArchiveAcces.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 17</value>
-  </data>
-  <data name="general_other_allowExternalArchiveAcces.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="general_other_allowExternalArchiveAcces.Text" xml:space="preserve">
-    <value>Pozwól innym programom na dostęp do otwartego archiwum</value>
-  </data>
-  <data name="&gt;&gt;general_other_allowExternalArchiveAcces.Name" xml:space="preserve">
-    <value>general_other_allowExternalArchiveAcces</value>
-  </data>
-  <data name="&gt;&gt;general_other_allowExternalArchiveAcces.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_other_allowExternalArchiveAcces.Parent" xml:space="preserve">
-    <value>general_other_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;general_other_allowExternalArchiveAcces.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="general_other_groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 227</value>
-  </data>
-  <data name="general_other_groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 69</value>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Ogólne</value>
   </data>
   <data name="general_other_groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -270,104 +145,25 @@
   <data name="general_other_groupBox1.Text" xml:space="preserve">
     <value>Inne</value>
   </data>
-  <data name="&gt;&gt;general_other_groupBox1.Name" xml:space="preserve">
-    <value>general_other_groupBox1</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 17</value>
   </data>
-  <data name="&gt;&gt;general_other_groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Sprawdź dostępność aktualizacji podczas startu aplikacji
+</value>
   </data>
-  <data name="&gt;&gt;general_other_groupBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="general_other_checkForExternalChanges.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 17</value>
   </data>
-  <data name="&gt;&gt;general_other_groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="general_other_checkForExternalChanges.Text" xml:space="preserve">
+    <value>Monitoruj zmiany archiwum przez inne programy</value>
   </data>
-  <data name="general_history_numericUpDown1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="general_other_allowExternalArchiveAcces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 17</value>
   </data>
-  <data name="general_history_numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 41</value>
-  </data>
-  <data name="general_history_numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
-  </data>
-  <data name="general_history_numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="general_history_numericUpDown1.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;general_history_numericUpDown1.Name" xml:space="preserve">
-    <value>general_history_numericUpDown1</value>
-  </data>
-  <data name="&gt;&gt;general_history_numericUpDown1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_history_numericUpDown1.Parent" xml:space="preserve">
-    <value>general_history_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;general_history_numericUpDown1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="general_history_label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_history_label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="general_history_label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 13</value>
-  </data>
-  <data name="general_history_label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="general_history_label2.Text" xml:space="preserve">
-    <value>Ilość pozycji do zapamiętania:</value>
-  </data>
-  <data name="&gt;&gt;general_history_label2.Name" xml:space="preserve">
-    <value>general_history_label2</value>
-  </data>
-  <data name="&gt;&gt;general_history_label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_history_label2.Parent" xml:space="preserve">
-    <value>general_history_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;general_history_label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="general_history_checkBox3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_history_checkBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 20</value>
-  </data>
-  <data name="general_history_checkBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 17</value>
-  </data>
-  <data name="general_history_checkBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="general_history_checkBox3.Text" xml:space="preserve">
-    <value>Trzymaj historię ostatio otwartych archiwów</value>
-  </data>
-  <data name="&gt;&gt;general_history_checkBox3.Name" xml:space="preserve">
-    <value>general_history_checkBox3</value>
-  </data>
-  <data name="&gt;&gt;general_history_checkBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_history_checkBox3.Parent" xml:space="preserve">
-    <value>general_history_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;general_history_checkBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="general_history_groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 151</value>
-  </data>
-  <data name="general_history_groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 69</value>
+  <data name="general_other_allowExternalArchiveAcces.Text" xml:space="preserve">
+    <value>Pozwól innym programom na dostęp do otwartego archiwum</value>
   </data>
   <data name="general_history_groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -375,26 +171,20 @@
   <data name="general_history_groupBox1.Text" xml:space="preserve">
     <value>Historia</value>
   </data>
-  <data name="&gt;&gt;general_history_groupBox1.Name" xml:space="preserve">
-    <value>general_history_groupBox1</value>
+  <data name="general_history_numericUpDown1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;general_history_groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="general_history_label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;general_history_groupBox1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
+  <data name="general_history_label2.Text" xml:space="preserve">
+    <value>Ilość pozycji do zapamiętania:</value>
   </data>
-  <data name="&gt;&gt;general_history_groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="general_history_checkBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 17</value>
   </data>
-  <data name="general_button_factorySettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="general_button_factorySettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 327</value>
-  </data>
-  <data name="general_button_factorySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 23</value>
+  <data name="general_history_checkBox3.Text" xml:space="preserve">
+    <value>Trzymaj historię ostatio otwartych archiwów</value>
   </data>
   <data name="general_button_factorySettings.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -402,47 +192,8 @@
   <data name="general_button_factorySettings.Text" xml:space="preserve">
     <value>Przywróć ustawienia domyślne</value>
   </data>
-  <data name="&gt;&gt;general_button_factorySettings.Name" xml:space="preserve">
-    <value>general_button_factorySettings</value>
-  </data>
-  <data name="&gt;&gt;general_button_factorySettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_button_factorySettings.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;general_button_factorySettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="general_appstart_pathSelectBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="general_appstart_pathSelectBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 104</value>
-  </data>
-  <data name="general_appstart_pathSelectBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 28</value>
-  </data>
-  <data name="general_appstart_pathSelectBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_pathSelectBox1.Name" xml:space="preserve">
-    <value>general_appstart_pathSelectBox1</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_pathSelectBox1.Type" xml:space="preserve">
-    <value>Klocman.Controls.PathSelectBox, KlocTools, Version=2.6.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_pathSelectBox1.Parent" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_pathSelectBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 17</value>
+  <data name="general_appstart_groupBox.Text" xml:space="preserve">
+    <value>Start aplikacji</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -453,24 +204,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Po starcie aplikacji:</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="general_appstart_radioButton3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_appstart_radioButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 84</value>
-  </data>
   <data name="general_appstart_radioButton3.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
   </data>
@@ -479,24 +212,6 @@
   </data>
   <data name="general_appstart_radioButton3.Text" xml:space="preserve">
     <value>Otwórz archiwum wybrane poniżej</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton3.Name" xml:space="preserve">
-    <value>general_appstart_radioButton3</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton3.Parent" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="general_appstart_radioButton2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_appstart_radioButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 60</value>
   </data>
   <data name="general_appstart_radioButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 17</value>
@@ -507,24 +222,6 @@
   <data name="general_appstart_radioButton2.Text" xml:space="preserve">
     <value>Otwórz ostatnio otwarte archiwum</value>
   </data>
-  <data name="&gt;&gt;general_appstart_radioButton2.Name" xml:space="preserve">
-    <value>general_appstart_radioButton2</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton2.Parent" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="general_appstart_radioButton1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="general_appstart_radioButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 36</value>
-  </data>
   <data name="general_appstart_radioButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 17</value>
   </data>
@@ -534,74 +231,14 @@
   <data name="general_appstart_radioButton1.Text" xml:space="preserve">
     <value>Nic nie rób</value>
   </data>
-  <data name="&gt;&gt;general_appstart_radioButton1.Name" xml:space="preserve">
-    <value>general_appstart_radioButton1</value>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Okno główne</value>
   </data>
-  <data name="&gt;&gt;general_appstart_radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="main_other_groupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;general_appstart_radioButton1.Parent" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_radioButton1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="general_appstart_groupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="general_appstart_groupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 138</value>
-  </data>
-  <data name="general_appstart_groupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="general_appstart_groupBox.Text" xml:space="preserve">
-    <value>Start aplikacji</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_groupBox.Name" xml:space="preserve">
-    <value>general_appstart_groupBox</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_groupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_groupBox.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;general_appstart_groupBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 356</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage1.Text" xml:space="preserve">
-    <value>Ogólne</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="main_other_showFullPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="main_other_showFullPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 43</value>
+  <data name="main_other_groupBox.Text" xml:space="preserve">
+    <value>Inne</value>
   </data>
   <data name="main_other_showFullPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 17</value>
@@ -612,77 +249,11 @@
   <data name="main_other_showFullPath.Text" xml:space="preserve">
     <value>Wyświetlaj pełną ścieżkę archiwum w pasku tytułowym</value>
   </data>
-  <data name="&gt;&gt;main_other_showFullPath.Name" xml:space="preserve">
-    <value>main_other_showFullPath</value>
-  </data>
-  <data name="&gt;&gt;main_other_showFullPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_other_showFullPath.Parent" xml:space="preserve">
-    <value>main_other_groupBox</value>
-  </data>
-  <data name="&gt;&gt;main_other_showFullPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="main_other_showProgressBar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="main_other_showProgressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
   <data name="main_other_showProgressBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 17</value>
   </data>
-  <data name="main_other_showProgressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="main_other_showProgressBar.Text" xml:space="preserve">
     <value>Pokazuj pasek postępu podczas wysyłania na ekran wyjściowy</value>
-  </data>
-  <data name="&gt;&gt;main_other_showProgressBar.Name" xml:space="preserve">
-    <value>main_other_showProgressBar</value>
-  </data>
-  <data name="&gt;&gt;main_other_showProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_other_showProgressBar.Parent" xml:space="preserve">
-    <value>main_other_groupBox</value>
-  </data>
-  <data name="&gt;&gt;main_other_showProgressBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="main_other_groupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 210</value>
-  </data>
-  <data name="main_other_groupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 69</value>
-  </data>
-  <data name="main_other_groupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="main_other_groupBox.Text" xml:space="preserve">
-    <value>Inne</value>
-  </data>
-  <data name="&gt;&gt;main_other_groupBox.Name" xml:space="preserve">
-    <value>main_other_groupBox</value>
-  </data>
-  <data name="&gt;&gt;main_other_groupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_other_groupBox.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;main_other_groupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="main_button_factorySettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="main_button_factorySettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 327</value>
-  </data>
-  <data name="main_button_factorySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 23</value>
   </data>
   <data name="main_button_factorySettings.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -690,26 +261,11 @@
   <data name="main_button_factorySettings.Text" xml:space="preserve">
     <value>Przywróć ustawienia domyślne</value>
   </data>
-  <data name="&gt;&gt;main_button_factorySettings.Name" xml:space="preserve">
-    <value>main_button_factorySettings</value>
+  <data name="main_keys_groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;main_button_factorySettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_button_factorySettings.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;main_button_factorySettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="main_keys_checkBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="main_keys_checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 19</value>
-  </data>
-  <data name="main_keys_checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 31</value>
+  <data name="main_keys_groupBox3.Text" xml:space="preserve">
+    <value>Skróty klawiszowe</value>
   </data>
   <data name="main_keys_checkBox2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -717,550 +273,32 @@
   <data name="main_keys_checkBox2.Text" xml:space="preserve">
     <value>Klawisze strzałek w lewo i prawo przeskakują między listą plików i listą zwrotek</value>
   </data>
-  <data name="&gt;&gt;main_keys_checkBox2.Name" xml:space="preserve">
-    <value>main_keys_checkBox2</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox2.Parent" xml:space="preserve">
-    <value>main_keys_groupBox3</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="main_keys_listButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 92</value>
-  </data>
-  <data name="main_keys_listButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 23</value>
-  </data>
   <data name="main_keys_listButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="main_keys_listButton.Text" xml:space="preserve">
     <value>Spis skrótów klawiszowych</value>
   </data>
-  <data name="&gt;&gt;main_keys_listButton.Name" xml:space="preserve">
-    <value>main_keys_listButton</value>
-  </data>
-  <data name="&gt;&gt;main_keys_listButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_keys_listButton.Parent" xml:space="preserve">
-    <value>main_keys_groupBox3</value>
-  </data>
-  <data name="&gt;&gt;main_keys_listButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="main_keys_checkBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="main_keys_checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 56</value>
-  </data>
-  <data name="main_keys_checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>333, 31</value>
-  </data>
-  <data name="main_keys_checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="main_keys_checkBox1.Text" xml:space="preserve">
     <value>Naciśnięcie 0-9 w liście zwrotek wysyła zwrotkę o tym numerze na ekran wyjściowy (w przeciwnym razie tylko ją zaznacza)</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox1.Name" xml:space="preserve">
-    <value>main_keys_checkBox1</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox1.Parent" xml:space="preserve">
-    <value>main_keys_groupBox3</value>
-  </data>
-  <data name="&gt;&gt;main_keys_checkBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="main_keys_groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 81</value>
-  </data>
-  <data name="main_keys_groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 123</value>
-  </data>
-  <data name="main_keys_groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="main_keys_groupBox3.Text" xml:space="preserve">
-    <value>Skróty klawiszowe</value>
-  </data>
-  <data name="&gt;&gt;main_keys_groupBox3.Name" xml:space="preserve">
-    <value>main_keys_groupBox3</value>
-  </data>
-  <data name="&gt;&gt;main_keys_groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_keys_groupBox3.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;main_keys_groupBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="main_window_checkBoxFull.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="main_window_checkBoxFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 43</value>
-  </data>
-  <data name="main_window_checkBoxFull.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 17</value>
-  </data>
-  <data name="main_window_checkBoxFull.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="main_window_checkBoxFull.Text" xml:space="preserve">
-    <value>Rozszerz okno na cały ekran (ukrywa ramkę okna)</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxFull.Name" xml:space="preserve">
-    <value>main_window_checkBoxFull</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxFull.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxFull.Parent" xml:space="preserve">
-    <value>main_window_groupBox2</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxFull.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="main_window_checkBoxTop.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="main_window_checkBoxTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 20</value>
-  </data>
-  <data name="main_window_checkBoxTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 17</value>
-  </data>
-  <data name="main_window_checkBoxTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="main_window_checkBoxTop.Text" xml:space="preserve">
-    <value>Zawsze trzymaj okno nad innymi aplikacjami</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxTop.Name" xml:space="preserve">
-    <value>main_window_checkBoxTop</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxTop.Parent" xml:space="preserve">
-    <value>main_window_groupBox2</value>
-  </data>
-  <data name="&gt;&gt;main_window_checkBoxTop.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="main_window_groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="main_window_groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 69</value>
-  </data>
-  <data name="main_window_groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="main_window_groupBox2.Text" xml:space="preserve">
     <value>Właściwości okna</value>
   </data>
-  <data name="&gt;&gt;main_window_groupBox2.Name" xml:space="preserve">
-    <value>main_window_groupBox2</value>
-  </data>
-  <data name="&gt;&gt;main_window_groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;main_window_groupBox2.Parent" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;main_window_groupBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 356</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Okno główne</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
-    <value>tabPage3</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="secondary_out_labelPreview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="secondary_out_labelPreview.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 11.25pt, style=Bold</value>
-  </data>
-  <data name="secondary_out_labelPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 103</value>
-  </data>
-  <data name="secondary_out_labelPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 107</value>
-  </data>
-  <data name="secondary_out_labelPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="secondary_out_labelPreview.Text" xml:space="preserve">
-    <value>Leży Jerzy koło wieży i nie wierzy, 
-że na wieży siedzi żołnierz, 
-co ma kołnierz pełen jeży i paździerzy.</value>
-  </data>
-  <data name="secondary_out_labelPreview.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelPreview.Name" xml:space="preserve">
-    <value>secondary_out_labelPreview</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelPreview.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelPreview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="secondary_out_numericUpDownSpeed.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="secondary_out_numericUpDownSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 19</value>
-  </data>
-  <data name="secondary_out_numericUpDownSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="secondary_out_numericUpDownSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="secondary_out_numericUpDownSpeed.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_numericUpDownSpeed.Name" xml:space="preserve">
-    <value>secondary_out_numericUpDownSpeed</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_numericUpDownSpeed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_numericUpDownSpeed.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_numericUpDownSpeed.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="secondary_out_labelSpeed.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_out_labelSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 22</value>
-  </data>
-  <data name="secondary_out_labelSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 13</value>
-  </data>
-  <data name="secondary_out_labelSpeed.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="secondary_out_labelSpeed.Text" xml:space="preserve">
-    <value>Szybkość przejścia do nowego tekstu (sekundy):</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelSpeed.Name" xml:space="preserve">
-    <value>secondary_out_labelSpeed</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelSpeed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelSpeed.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelSpeed.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="secondary_out_panelBacCol.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="secondary_out_panelBacCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 74</value>
-  </data>
-  <data name="secondary_out_panelBacCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 23</value>
-  </data>
-  <data name="secondary_out_panelBacCol.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelBacCol.Name" xml:space="preserve">
-    <value>secondary_out_panelBacCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelBacCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelBacCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelBacCol.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="secondary_out_labelBacCol.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_out_labelBacCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 79</value>
-  </data>
-  <data name="secondary_out_labelBacCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="secondary_out_labelBacCol.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="secondary_out_labelBacCol.Text" xml:space="preserve">
-    <value>Kolor tła okna wyjściowego:</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelBacCol.Name" xml:space="preserve">
-    <value>secondary_out_labelBacCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelBacCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelBacCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelBacCol.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="secondary_out_buttonBacCol.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="secondary_out_buttonBacCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 74</value>
-  </data>
-  <data name="secondary_out_buttonBacCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="secondary_out_buttonBacCol.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="secondary_out_buttonBacCol.Text" xml:space="preserve">
-    <value>Zmień...</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonBacCol.Name" xml:space="preserve">
-    <value>secondary_out_buttonBacCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonBacCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonBacCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonBacCol.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="secondary_out_panelTexCol.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="secondary_out_panelTexCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 45</value>
-  </data>
-  <data name="secondary_out_panelTexCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 23</value>
-  </data>
-  <data name="secondary_out_panelTexCol.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelTexCol.Name" xml:space="preserve">
-    <value>secondary_out_panelTexCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelTexCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelTexCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_panelTexCol.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="secondary_out_labelTexCol.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_out_labelTexCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 50</value>
-  </data>
-  <data name="secondary_out_labelTexCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 13</value>
-  </data>
-  <data name="secondary_out_labelTexCol.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="secondary_out_labelTexCol.Text" xml:space="preserve">
-    <value>Kolor tekstu wyjściowego:</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelTexCol.Name" xml:space="preserve">
-    <value>secondary_out_labelTexCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelTexCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelTexCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_labelTexCol.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="secondary_out_buttonTexCol.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="secondary_out_buttonTexCol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 45</value>
-  </data>
-  <data name="secondary_out_buttonTexCol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="secondary_out_buttonTexCol.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="secondary_out_buttonTexCol.Text" xml:space="preserve">
-    <value>Zmień...</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonTexCol.Name" xml:space="preserve">
-    <value>secondary_out_buttonTexCol</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonTexCol.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonTexCol.Parent" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_buttonTexCol.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="secondary_out_groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 103</value>
-  </data>
-  <data name="secondary_out_groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 218</value>
-  </data>
-  <data name="secondary_out_groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="secondary_out_groupBox1.Text" xml:space="preserve">
-    <value>Wyjście</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_groupBox1.Name" xml:space="preserve">
-    <value>secondary_out_groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_groupBox1.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;secondary_out_groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="secondary_window_checkBoxPointer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_window_checkBoxPointer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 65</value>
-  </data>
-  <data name="secondary_window_checkBoxPointer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 17</value>
-  </data>
-  <data name="secondary_window_checkBoxPointer.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="secondary_window_checkBoxPointer.Text" xml:space="preserve">
-    <value>Ukryj kursor nad oknem (nie wpływa na przyciski myszy)</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxPointer.Name" xml:space="preserve">
-    <value>secondary_window_checkBoxPointer</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxPointer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxPointer.Parent" xml:space="preserve">
-    <value>secondary_window_groupBox</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxPointer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="secondary_window_checkBoxFull.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_window_checkBoxFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 42</value>
-  </data>
-  <data name="secondary_window_checkBoxFull.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="main_window_checkBoxFull.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 17</value>
   </data>
-  <data name="secondary_window_checkBoxFull.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="secondary_window_checkBoxFull.Text" xml:space="preserve">
+  <data name="main_window_checkBoxFull.Text" xml:space="preserve">
     <value>Rozszerz okno na cały ekran (ukrywa ramkę okna)</value>
   </data>
-  <data name="&gt;&gt;secondary_window_checkBoxFull.Name" xml:space="preserve">
-    <value>secondary_window_checkBoxFull</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxFull.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxFull.Parent" xml:space="preserve">
-    <value>secondary_window_groupBox</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxFull.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="secondary_window_checkBoxTop.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="secondary_window_checkBoxTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 19</value>
-  </data>
-  <data name="secondary_window_checkBoxTop.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="main_window_checkBoxTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 17</value>
   </data>
-  <data name="secondary_window_checkBoxTop.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="secondary_window_checkBoxTop.Text" xml:space="preserve">
+  <data name="main_window_checkBoxTop.Text" xml:space="preserve">
     <value>Zawsze trzymaj okno nad innymi aplikacjami</value>
   </data>
-  <data name="&gt;&gt;secondary_window_checkBoxTop.Name" xml:space="preserve">
-    <value>secondary_window_checkBoxTop</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxTop.Parent" xml:space="preserve">
-    <value>secondary_window_groupBox</value>
-  </data>
-  <data name="&gt;&gt;secondary_window_checkBoxTop.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="secondary_window_groupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="secondary_window_groupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 91</value>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Okno wyjściowe</value>
   </data>
   <data name="secondary_window_groupBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1268,104 +306,26 @@ co ma kołnierz pełen jeży i paździerzy.</value>
   <data name="secondary_window_groupBox.Text" xml:space="preserve">
     <value>Właściwości okna</value>
   </data>
-  <data name="&gt;&gt;secondary_window_groupBox.Name" xml:space="preserve">
-    <value>secondary_window_groupBox</value>
+  <data name="secondary_window_checkBoxPointer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 17</value>
   </data>
-  <data name="&gt;&gt;secondary_window_groupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="secondary_window_checkBoxPointer.Text" xml:space="preserve">
+    <value>Ukryj kursor nad oknem (nie wpływa na przyciski myszy)</value>
   </data>
-  <data name="&gt;&gt;secondary_window_groupBox.Parent" xml:space="preserve">
-    <value>tabPage2</value>
+  <data name="secondary_window_checkBoxFull.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 17</value>
   </data>
-  <data name="&gt;&gt;secondary_window_groupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="secondary_window_checkBoxFull.Text" xml:space="preserve">
+    <value>Rozszerz okno na cały ekran (ukrywa ramkę okna)</value>
   </data>
-  <data name="secondary_button_factorySettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="secondary_window_checkBoxTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 17</value>
   </data>
-  <data name="secondary_button_factorySettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 327</value>
-  </data>
-  <data name="secondary_button_factorySettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 23</value>
-  </data>
-  <data name="secondary_button_factorySettings.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="secondary_window_checkBoxTop.Text" xml:space="preserve">
+    <value>Zawsze trzymaj okno nad innymi aplikacjami</value>
   </data>
   <data name="secondary_button_factorySettings.Text" xml:space="preserve">
     <value>Przywróć ustawienia domyślne</value>
-  </data>
-  <data name="&gt;&gt;secondary_button_factorySettings.Name" xml:space="preserve">
-    <value>secondary_button_factorySettings</value>
-  </data>
-  <data name="&gt;&gt;secondary_button_factorySettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondary_button_factorySettings.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;secondary_button_factorySettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 356</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Okno wyjściowe</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 382</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>394, 425</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4864,22 +3824,7 @@ co ma kołnierz pełen jeży i paździerzy.</value>
         AAD//////////////////////////////////////////8AAAAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia aplikacji Text To Screen</value>
-  </data>
-  <data name="&gt;&gt;colorDialog.Name" xml:space="preserve">
-    <value>colorDialog</value>
-  </data>
-  <data name="&gt;&gt;colorDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingsWindow</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

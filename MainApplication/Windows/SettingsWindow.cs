@@ -55,6 +55,8 @@ namespace TextToScreen.Windows
                 general_other_allowExternalArchiveAcces.CheckState.ToBool();
             _targetSettings.GeneralInneSprawdzajZewnetrzneZmiany =
                 general_other_checkForExternalChanges.CheckState.ToBool();
+            _targetSettings.GeneralCheckForUpdates = 
+                checkBoxAutoUpdates.CheckState.ToBool();
 
             // Okno główne
             _targetSettings.OknoGlowneFull = main_window_checkBoxFull.CheckState.ToBool();
@@ -199,6 +201,8 @@ namespace TextToScreen.Windows
                 settingSet.GeneralInneDostepZewnetrznyDoArchiwum.ToCheckState();
             general_other_checkForExternalChanges.CheckState =
                 settingSet.GeneralInneSprawdzajZewnetrzneZmiany.ToCheckState();
+            checkBoxAutoUpdates.CheckState = 
+                _targetSettings.GeneralCheckForUpdates.ToCheckState();
         }
 
         private void SetupTabMain(Ustawienia settingSet)
