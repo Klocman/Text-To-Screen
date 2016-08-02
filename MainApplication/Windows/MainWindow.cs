@@ -1033,6 +1033,7 @@ namespace TextToScreen.Windows
             {
                 new Thread(() =>
                 {
+                    UpdateSystem.CurrentVersion = Assembly.GetAssembly(typeof (MainWindow)).GetName().Version;
                     UpdateSystem.UpdateFeedUri = new Uri(@"https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml");
                     if (UpdateSystem.CheckForUpdates() == UpdateSystem.UpdateStatus.NewAvailable)
                     {
