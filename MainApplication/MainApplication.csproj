@@ -294,6 +294,9 @@
     <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterBox.pl.resx">
+      <DependentUpon>FilterBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilterBox.resx">
       <DependentUpon>FilterBox.cs</DependentUpon>
     </EmbeddedResource>
