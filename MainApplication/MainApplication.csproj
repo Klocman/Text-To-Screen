@@ -117,6 +117,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -128,6 +129,7 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Controls\ComparisonMethod.cs" />
     <Compile Include="Controls\FileEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +150,12 @@
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\FilePropertiesViewerEventArgs.cs" />
+    <Compile Include="Controls\FilterBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterBox.Designer.cs">
+      <DependentUpon>FilterBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MultilineListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -285,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\FilePropertiesViewer.resx">
       <DependentUpon>FilePropertiesViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterBox.resx">
+      <DependentUpon>FilterBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OutputAppearanceControls.pl.resx">
       <DependentUpon>OutputAppearanceControls.cs</DependentUpon>

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -178,7 +178,7 @@
     <value>Unblock grouping by '{0}'</value>
   </data>
   <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 606</value>
+    <value>303, 566</value>
   </data>
   <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -195,6 +195,9 @@
   <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="toolStripButton_new.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -303,149 +306,29 @@
   <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="searchBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="filterBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="searchBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+  <data name="filterBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
   </data>
-  <data name="searchBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
+  <data name="filterBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 93</value>
   </data>
-  <data name="searchBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="filterBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;searchBox1.Name" xml:space="preserve">
-    <value>searchBox1</value>
+  <data name="&gt;&gt;filterBox1.Name" xml:space="preserve">
+    <value>filterBox1</value>
   </data>
-  <data name="&gt;&gt;searchBox1.Type" xml:space="preserve">
-    <value>Klocman.Controls.SearchBox, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;filterBox1.Type" xml:space="preserve">
+    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.7.6187.35517, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;searchBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;filterBox1.Parent" xml:space="preserve">
     <value>searchSubsection</value>
   </data>
-  <data name="&gt;&gt;searchBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;filterBox1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 48</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Group filter:</value>
-  </data>
-  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>searchSubsection</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="searchInsideFilesCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="searchInsideFilesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
-  </data>
-  <data name="searchInsideFilesCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="searchInsideFilesCheckBox.Text" xml:space="preserve">
-    <value>Search inside files</value>
-  </data>
-  <data name="searchInsideFilesCheckBox.ToolTip" xml:space="preserve">
-    <value>Search inside the song text</value>
-  </data>
-  <data name="&gt;&gt;searchInsideFilesCheckBox.Name" xml:space="preserve">
-    <value>searchInsideFilesCheckBox</value>
-  </data>
-  <data name="&gt;&gt;searchInsideFilesCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;searchInsideFilesCheckBox.Parent" xml:space="preserve">
-    <value>searchSubsection</value>
-  </data>
-  <data name="&gt;&gt;searchInsideFilesCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupFilterComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="groupFilterComboBox.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="groupFilterComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 45</value>
-  </data>
-  <data name="groupFilterComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
-  </data>
-  <data name="groupFilterComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="groupFilterComboBox.ToolTip" xml:space="preserve">
-    <value>Show only songs from this group</value>
-  </data>
-  <data name="&gt;&gt;groupFilterComboBox.Name" xml:space="preserve">
-    <value>groupFilterComboBox</value>
-  </data>
-  <data name="&gt;&gt;groupFilterComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupFilterComboBox.Parent" xml:space="preserve">
-    <value>searchSubsection</value>
-  </data>
-  <data name="&gt;&gt;groupFilterComboBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 19</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Clear</value>
-  </data>
-  <data name="button1.ToolTip" xml:space="preserve">
-    <value>Clear all filters</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>searchSubsection</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="searchSubsection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -454,7 +337,7 @@
     <value>0, 0</value>
   </data>
   <data name="searchSubsection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 72</value>
+    <value>303, 112</value>
   </data>
   <data name="searchSubsection.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -490,7 +373,7 @@
     <value>303, 707</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>631</value>
+    <value>591</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -507,6 +390,9 @@
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="listViewContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>110, 17</value>
+  </metadata>
   <data name="otwórzToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
   </data>
@@ -558,6 +444,12 @@
   <data name="&gt;&gt;listViewContextMenuStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>302, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -696,16 +588,4 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>302, 17</value>
-  </metadata>
-  <metadata name="listViewContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>110, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

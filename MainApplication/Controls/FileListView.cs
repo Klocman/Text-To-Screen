@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BrightIdeasSoftware;
-using Klocman.Controls;
 using Klocman.Extensions;
 using Klocman.Tools;
 using TextToScreen.Misc;
@@ -29,21 +28,22 @@ namespace TextToScreen.Controls
             objectListView1.AlwaysGroupBySortOrder = SortOrder.Ascending;
             groupColumn.GroupKeyToTitleConverter = x =>
             {
-                var groupName = (string)x;
+                var groupName = (string) x;
                 return string.IsNullOrEmpty(groupName) ? Localisation.DefaultGroupName : groupName;
             };
             nameColumn.AspectPutter = (x, y) =>
             {
-                var sfe = (SongFileEntry)x;
-                var newname = (string)y;
+                var sfe = (SongFileEntry) x;
+                var newname = (string) y;
                 if (sfe.CheckName(newname) == NameChangeResult.Ok)
                     sfe.Name = newname;
                 objectListView1.RefreshObject(x);
             };
-            createdColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
-            modifiedColumn.AspectToStringConverter = x => ((DateTime)x).ToFuzzyTimeSinceString();
+            createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
+            modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
 
-            foreach (var control in searchBox1.GetAllChildren().Concat(new[] { searchBox1 }))
+            // Attach key handler to the search box for up/down arrows
+            foreach (var control in filterBox1.SearchBox.GetAllChildren().Concat(new[] {filterBox1.SearchBox}))
             {
                 control.KeyDown += searchBox1_KeyDown;
             }
@@ -51,9 +51,7 @@ namespace TextToScreen.Controls
             objectListView1.AdditionalFilter = new ModelFilter(x => ListViewFilter(x as SongFileEntry));
             objectListView1.UseFiltering = true;
 
-            groupFilterComboBox.Items.Add(Localisation.FileListView_GroupBox_ShowAll);
-            groupFilterComboBox.Items.Add(string.Empty);
-            groupFilterComboBox.SelectedIndex = 0;
+            filterBox1.FilterChanged += (sender, args) => RefreshListFilter();
         }
 
         public bool FileListFocused => objectListView1.Focused;
@@ -124,7 +122,9 @@ namespace TextToScreen.Controls
         private bool ListViewFilter(SongFileEntry sfe)
         {
             if (sfe == null) throw new ArgumentNullException();
-            return CheckGroupMatch(sfe) && CheckStringMatch(sfe, searchBox1.SearchString);
+            var result = filterBox1.TestEntry(sfe);
+            // Show undeterminable items
+            return !result.HasValue || result.Value;
         }
 
         public event Action<FileListView> ButtonClickDelete;
@@ -164,7 +164,7 @@ namespace TextToScreen.Controls
         public void FocusSearchBox()
         {
             Focus();
-            searchBox1.FocusSearchBox();
+            filterBox1.FocusSearchbox();
         }
 
         public void PopulateItems(IEnumerable<SongFileEntry> source)
@@ -172,15 +172,7 @@ namespace TextToScreen.Controls
             var songFileEntries = source as IList<SongFileEntry> ?? source.ToList();
             LastFileSource = songFileEntries;
 
-            groupFilterComboBox.SelectedIndex = 0;
-            while (groupFilterComboBox.Items.Count > 2)
-                groupFilterComboBox.Items.RemoveAt(2);
-
-            var query = songFileEntries.GroupBy(x => x.Group)
-                .Select(group => string.IsNullOrEmpty(group.Key) ? Localisation.DefaultGroupName : group.Key)
-                .OrderBy(x => x);
-
-            groupFilterComboBox.Items.AddRange(query.Cast<object>().ToArray());
+            filterBox1.SetGroups(songFileEntries);
 
             if (StopRefreshingList)
                 return;
@@ -245,50 +237,9 @@ namespace TextToScreen.Controls
             }
         }
 
-        private void button_clear_Click(object sender, EventArgs e)
-        {
-            groupFilterComboBox.SelectedIndex = 0;
-            searchBox1.ClearSearchBox();
-        }
-
-        private bool CheckGroupMatch(SongFileEntry entry)
-        {
-            if (groupFilterComboBox.SelectedIndex <= 1) return true;
-
-            var filter = groupFilterComboBox.SelectedItem as string;
-            if (filter == null || filter.Equals(Localisation.DefaultGroupName))
-                filter = string.Empty;
-            return entry.Group.Equals(filter);
-        }
-
-        private bool CheckStringMatch(SongFileEntry entry, string searchString)
-        {
-            if (StringTools.StringContainsFilter(entry.Name, searchString))
-                return true;
-
-            if (StringTools.StringContainsFilter(entry.Comment, searchString))
-                return true;
-
-            if (searchInsideFilesCheckBox.CheckState.ToBool())
-            {
-                if (StringTools.StringContainsFilter(entry.Contents, searchString))
-                    return true;
-            }
-
-            return false;
-        }
-
         private void duplikujToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DuplicateSelected();
-        }
-
-        private void groupFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (groupFilterComboBox.SelectedIndex == 1)
-                groupFilterComboBox.SelectedIndex = 0;
-            else
-                RefreshListFilter();
         }
 
         private void kopiujDoSchowkaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,46 +280,46 @@ namespace TextToScreen.Controls
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    {
-                        if (SelectedFile == null)
-                            return;
+                {
+                    if (SelectedFile == null)
+                        return;
 
-                        if (e.Control)
-                        {
-                            ShowProperties();
-                        }
-                        else
-                        {
-                            OnFileOpened(SelectedFile);
-                        }
+                    if (e.Control)
+                    {
+                        ShowProperties();
                     }
+                    else
+                    {
+                        OnFileOpened(SelectedFile);
+                    }
+                }
                     break;
 
                 case Keys.Apps:
-                    {
-                        OpenFileContextMenu();
-                    }
+                {
+                    OpenFileContextMenu();
+                }
                     break;
 
                 case Keys.F10:
+                {
+                    if (e.Shift)
                     {
-                        if (e.Shift)
-                        {
-                            OpenFileContextMenu();
-                        }
-                        else
-                        {
-                            e.Handled = false;
-                            e.SuppressKeyPress = false;
-                        }
+                        OpenFileContextMenu();
                     }
-                    break;
-
-                default:
+                    else
                     {
                         e.Handled = false;
                         e.SuppressKeyPress = false;
                     }
+                }
+                    break;
+
+                default:
+                {
+                    e.Handled = false;
+                    e.SuppressKeyPress = false;
+                }
                     break;
             }
         }
@@ -415,10 +366,13 @@ namespace TextToScreen.Controls
 
         private void RefreshListFilter()
         {
-            objectListView1.UpdateColumnFiltering();
-            objectListView1.EmptyListMsg = string.IsNullOrEmpty(searchBox1.SearchString)
+            Cursor.Current = Cursors.WaitCursor;
+            objectListView1.EmptyListMsg = filterBox1.SearchStringIsEmpty
                 ? null
                 : Localisation.FileListView_NothingMatched;
+            objectListView1.UpdateColumnFiltering();
+            Application.DoEvents();
+            Cursor.Current = Cursors.Default;
         }
 
         private void searchBox1_KeyDown(object sender, KeyEventArgs e)
@@ -431,7 +385,7 @@ namespace TextToScreen.Controls
             {
                 case Keys.Escape:
                     objectListView1.Focus();
-                    searchBox1.ClearSearchBox();
+                    filterBox1.ClearSearchBox();
                     break;
 
                 case Keys.Down:
@@ -447,16 +401,6 @@ namespace TextToScreen.Controls
                     e.Handled = false;
                     break;
             }
-        }
-
-        private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
-        {
-            RefreshListFilter();
-        }
-
-        private void searchInsideFilesCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            RefreshListFilter();
         }
 
         private void toolStripButton_del_Click(object sender, EventArgs e)

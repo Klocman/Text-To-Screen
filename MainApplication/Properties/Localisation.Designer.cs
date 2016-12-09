@@ -180,6 +180,60 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contains any.
+        /// </summary>
+        internal static string FilterComparisonMethod_Any {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_Any", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contains.
+        /// </summary>
+        internal static string FilterComparisonMethod_Contains {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_Contains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ends with.
+        /// </summary>
+        internal static string FilterComparisonMethod_EndsWith {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_EndsWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equals.
+        /// </summary>
+        internal static string FilterComparisonMethod_Equals {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_Equals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Regex.
+        /// </summary>
+        internal static string FilterComparisonMethod_Regex {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_Regex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Starts with.
+        /// </summary>
+        internal static string FilterComparisonMethod_StartsWith {
+            get {
+                return ResourceManager.GetString("FilterComparisonMethod_StartsWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pomoc.chm.
         /// </summary>
         internal static string HelpFilePath {

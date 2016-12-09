@@ -46,11 +46,7 @@
             this.toolStripButton_ref = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_save = new System.Windows.Forms.ToolStripButton();
             this.searchSubsection = new System.Windows.Forms.GroupBox();
-            this.searchBox1 = new Klocman.Controls.SearchBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchInsideFilesCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupFilterComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.filterBox1 = new TextToScreen.Controls.FilterBox();
             this.listViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.otwórzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -213,53 +209,15 @@
             // 
             // searchSubsection
             // 
-            this.searchSubsection.Controls.Add(this.searchBox1);
-            this.searchSubsection.Controls.Add(this.label1);
-            this.searchSubsection.Controls.Add(this.searchInsideFilesCheckBox);
-            this.searchSubsection.Controls.Add(this.groupFilterComboBox);
-            this.searchSubsection.Controls.Add(this.button1);
+            this.searchSubsection.Controls.Add(this.filterBox1);
             resources.ApplyResources(this.searchSubsection, "searchSubsection");
             this.searchSubsection.Name = "searchSubsection";
             this.searchSubsection.TabStop = false;
             // 
-            // searchBox1
+            // filterBox1
             // 
-            resources.ApplyResources(this.searchBox1, "searchBox1");
-            this.searchBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.searchBox1.Name = "searchBox1";
-            this.searchBox1.SearchTextChanged += new System.Action<Klocman.Controls.SearchBox, System.EventArgs>(this.searchBox1_SearchTextChanged);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // searchInsideFilesCheckBox
-            // 
-            resources.ApplyResources(this.searchInsideFilesCheckBox, "searchInsideFilesCheckBox");
-            this.searchInsideFilesCheckBox.Name = "searchInsideFilesCheckBox";
-            this.toolTip.SetToolTip(this.searchInsideFilesCheckBox, resources.GetString("searchInsideFilesCheckBox.ToolTip"));
-            this.searchInsideFilesCheckBox.UseVisualStyleBackColor = true;
-            this.searchInsideFilesCheckBox.CheckedChanged += new System.EventHandler(this.searchInsideFilesCheckBox_CheckedChanged);
-            // 
-            // groupFilterComboBox
-            // 
-            resources.ApplyResources(this.groupFilterComboBox, "groupFilterComboBox");
-            this.groupFilterComboBox.DropDownHeight = 200;
-            this.groupFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.groupFilterComboBox.DropDownWidth = 300;
-            this.groupFilterComboBox.FormattingEnabled = true;
-            this.groupFilterComboBox.Name = "groupFilterComboBox";
-            this.toolTip.SetToolTip(this.groupFilterComboBox, resources.GetString("groupFilterComboBox.ToolTip"));
-            this.groupFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.groupFilterComboBox_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.toolTip.SetToolTip(this.button1, resources.GetString("button1.ToolTip"));
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_clear_Click);
+            resources.ApplyResources(this.filterBox1, "filterBox1");
+            this.filterBox1.Name = "filterBox1";
             // 
             // listViewContextMenuStrip
             // 
@@ -355,7 +313,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_ren;
         private System.Windows.Forms.ToolStripButton toolStripButton_ref;
         private System.Windows.Forms.GroupBox searchSubsection;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton_save;
         private System.Windows.Forms.ContextMenuStrip listViewContextMenuStrip;
@@ -369,15 +326,12 @@
         private BrightIdeasSoftware.OLVColumn commentColumn;
         private BrightIdeasSoftware.OLVColumn groupColumn;
         private System.Windows.Forms.ToolStripButton propertiesToolStripButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox searchInsideFilesCheckBox;
-        private System.Windows.Forms.ComboBox groupFilterComboBox;
         private System.Windows.Forms.ToolStripMenuItem otwórzToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem duplikujToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem kopiujDoSchowkaToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
-        private Klocman.Controls.SearchBox searchBox1;
+        private FilterBox filterBox1;
     }
 }
