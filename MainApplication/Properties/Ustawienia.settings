@@ -113,5 +113,8 @@
     <Setting Name="GeneralCheckForUpdates" Provider="PortableSettingsProvider.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ScreenFontSizeFlexible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

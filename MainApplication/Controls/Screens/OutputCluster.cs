@@ -34,9 +34,15 @@ namespace TextToScreen.Controls.Screens
 
             binder.Subscribe((obj, args) =>
             {
-                PreviewField.NextFontSize = Convert.ToDouble(args.NewValue);
+                PreviewField.NextFontSize = new FontSizeExtra(Convert.ToDouble(args.NewValue), binder.Settings.ScreenFontSizeFlexible);
                 PreviewField.BeginAnimation(true);
             }, ustawienia => ustawienia.ScreenFontSize, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextFontSize = new FontSizeExtra(Convert.ToDouble(binder.Settings.ScreenFontSize), args.NewValue);
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFontSizeFlexible, this);
 
             binder.Subscribe((obj, args) =>
             {
@@ -78,7 +84,7 @@ namespace TextToScreen.Controls.Screens
 
             binder.Subscribe((obj, args) =>
             {
-                PreviewField.NextTextDecorations = args.NewValue ? TextDecorations.Underline : TextDecorations.OverLine;
+                PreviewField.SNextTextDecorations = args.NewValue ? TextDecorations.Underline : TextDecorations.OverLine;
                 PreviewField.BeginAnimation(true);
             }, ustawienia => ustawienia.ScreenFontUnderline, this);
 

@@ -138,5 +138,11 @@ namespace TextToScreen.Windows
         {
             IsFullScreen = !IsFullScreen;
         }
+
+        private void SecondaryWindow_Shown(object sender, EventArgs e)
+        {
+            // Refresh the output screen to final state
+            OutputCluster.SendToPreviewField(Localisation.PreviewScreenInfo);
+        }
     }
 }

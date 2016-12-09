@@ -24,6 +24,8 @@ namespace TextToScreen.Controls
             binder.BindControl(underlineToggle, ustawienia => ustawienia.ScreenFontUnderline, this);
 
             binder.BindControl(numericUpDownFontSize, ustawienia => ustawienia.ScreenFontSize, this);
+            binder.BindControl(checkBoxFontSizeFlex, ustawienia => ustawienia.ScreenFontSizeFlexible, this);
+
             binder.BindControl(numericUpDownFadeDuration, ustawienia => ustawienia.ScreenFadeSpeed, this);
 
             binder.BindProperty(foregroundColorPreview, panel => panel.BackColor, nameof(BackColorChanged),

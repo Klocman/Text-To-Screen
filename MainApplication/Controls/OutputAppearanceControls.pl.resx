@@ -220,4 +220,7 @@
   <data name="buttonClearImage.Text" xml:space="preserve">
     <value>Wyczyść</value>
   </data>
+  <data name="checkBoxFontSizeFlex.Text" xml:space="preserve">
+    <value>Elastyczny</value>
+  </data>
 </root>

@@ -90,6 +90,7 @@ namespace TextToScreen.Windows
             this.MinimizeBox = false;
             this.Name = "SecondaryWindow";
             this.TopMost = true;
+            this.Shown += new System.EventHandler(this.SecondaryWindow_Shown);
             this.DoubleClick += new System.EventHandler(this.SecondaryWindow_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.Form_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Form_MouseLeave);

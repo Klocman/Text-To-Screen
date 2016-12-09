@@ -522,5 +522,17 @@ namespace TextToScreen.Properties {
                 this["GeneralCheckForUpdates"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ScreenFontSizeFlexible {
+            get {
+                return ((bool)(this["ScreenFontSizeFlexible"]));
+            }
+            set {
+                this["ScreenFontSizeFlexible"] = value;
+            }
+        }
     }
 }

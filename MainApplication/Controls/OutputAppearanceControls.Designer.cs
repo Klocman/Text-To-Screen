@@ -57,6 +57,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonClearImage = new System.Windows.Forms.Button();
             this.pathSelectBoxImage = new Klocman.Controls.PathSelectBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxFontSizeFlex = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -70,23 +72,22 @@
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.contentAlignmentBox1);
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             // 
             // contentAlignmentBox1
@@ -98,17 +99,16 @@
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.toolStrip, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.numericUpDownFontSize, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxFontFamily, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // toolStrip
             // 
-            resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.BackColor = System.Drawing.SystemColors.Window;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -116,29 +116,30 @@
             this.italicToggle,
             this.boldToggle});
             this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip.TabStop = true;
             // 
             // underlineToggle
             // 
-            resources.ApplyResources(this.underlineToggle, "underlineToggle");
             this.underlineToggle.CheckOnClick = true;
             this.underlineToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.underlineToggle, "underlineToggle");
             this.underlineToggle.Name = "underlineToggle";
             // 
             // italicToggle
             // 
-            resources.ApplyResources(this.italicToggle, "italicToggle");
             this.italicToggle.CheckOnClick = true;
             this.italicToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.italicToggle, "italicToggle");
             this.italicToggle.Name = "italicToggle";
             // 
             // boldToggle
             // 
-            resources.ApplyResources(this.boldToggle, "boldToggle");
             this.boldToggle.CheckOnClick = true;
             this.boldToggle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.boldToggle, "boldToggle");
             this.boldToggle.Name = "boldToggle";
             // 
             // label3
@@ -158,8 +159,8 @@
             // 
             // numericUpDownFontSize
             // 
-            resources.ApplyResources(this.numericUpDownFontSize, "numericUpDownFontSize");
             this.numericUpDownFontSize.DecimalPlaces = 1;
+            resources.ApplyResources(this.numericUpDownFontSize, "numericUpDownFontSize");
             this.numericUpDownFontSize.Maximum = new decimal(new int[] {
             20000,
             0,
@@ -179,9 +180,9 @@
             // 
             // comboBoxFontFamily
             // 
-            resources.ApplyResources(this.comboBoxFontFamily, "comboBoxFontFamily");
             this.comboBoxFontFamily.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxFontFamily.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            resources.ApplyResources(this.comboBoxFontFamily, "comboBoxFontFamily");
             this.comboBoxFontFamily.Name = "comboBoxFontFamily";
             this.comboBoxFontFamily.SelectedIndexChanged += new System.EventHandler(this.comboBoxFontFamily_SelectedIndexChanged);
             // 
@@ -266,32 +267,32 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.splitContainer1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.flowLayoutPanel1);
             this.tabPage3.Controls.Add(this.pathSelectBoxImage);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -314,6 +315,19 @@
             this.pathSelectBoxImage.FileName = "";
             this.pathSelectBoxImage.Filter = "Image Files|*.BMP;*.JPG;*.GIF;*.PNG|All files|*.*";
             this.pathSelectBoxImage.Name = "pathSelectBoxImage";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.numericUpDownFontSize);
+            this.panel1.Controls.Add(this.checkBoxFontSizeFlex);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // checkBoxFontSizeFlex
+            // 
+            resources.ApplyResources(this.checkBoxFontSizeFlex, "checkBoxFontSizeFlex");
+            this.checkBoxFontSizeFlex.Name = "checkBoxFontSizeFlex";
+            this.checkBoxFontSizeFlex.UseVisualStyleBackColor = true;
             // 
             // OutputAppearanceControls
             // 
@@ -340,6 +354,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +390,7 @@
         private Klocman.Controls.PathSelectBox pathSelectBoxImage;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button buttonClearImage;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBoxFontSizeFlex;
     }
 }

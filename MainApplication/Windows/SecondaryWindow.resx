@@ -3611,6 +3611,6 @@
     <value>SecondaryWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Klocman.Forms.DraggableForm, KlocTools, Version=3.3.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Windows.DraggableForm, TextToScreen, Version=1.8.6187.40125, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
