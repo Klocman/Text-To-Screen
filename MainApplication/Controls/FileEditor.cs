@@ -87,7 +87,7 @@ namespace TextToScreen.Controls
         public void FocusTab(FileEditorTabs tab)
         {
             Focus();
-            tabControl1.SelectedIndex = (int)tab;
+            tabControl1.SelectedIndex = (int) tab;
 
             switch (tab)
             {
@@ -106,7 +106,7 @@ namespace TextToScreen.Controls
                     break;
 
                 default:
-                    throw new InvalidEnumArgumentException(nameof(tab), (int)tab, typeof(FileEditorTabs));
+                    throw new InvalidEnumArgumentException(nameof(tab), (int) tab, typeof (FileEditorTabs));
             }
         }
 
@@ -353,7 +353,7 @@ namespace TextToScreen.Controls
         {
             multiLineListBox1.Items.Clear();
             multiLineListBox1.Items.AddRange(
-                textBox1.Text.Split(new[] { SongFileEntry.NewVerse }, StringSplitOptions.None)
+                textBox1.Text.Split(new[] {SongFileEntry.NewVerse}, StringSplitOptions.None)
                     .Cast<object>().ToArray());
         }
 

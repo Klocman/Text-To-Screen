@@ -38,7 +38,8 @@ namespace TextToScreen.Windows
                         if (extension == null || !extension.ToLower().Contains("txt"))
                             continue;
 
-                        importDialog._filesInsideArchive.Add(Path.GetFileNameWithoutExtension(item.FileName ?? string.Empty), item);
+                        importDialog._filesInsideArchive.Add(
+                            Path.GetFileNameWithoutExtension(item.FileName ?? string.Empty), item);
                     }
                 }
 

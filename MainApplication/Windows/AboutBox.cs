@@ -47,7 +47,9 @@ namespace TextToScreen.Windows
             {
                 var attributes = _currentExecutingAssembly.GetCustomAttributes(typeof (AssemblyDescriptionAttribute),
                     false);
-                return attributes.Length == 0 ? string.Empty : ((AssemblyDescriptionAttribute) attributes[0]).Description;
+                return attributes.Length == 0
+                    ? string.Empty
+                    : ((AssemblyDescriptionAttribute) attributes[0]).Description;
             }
         }
 

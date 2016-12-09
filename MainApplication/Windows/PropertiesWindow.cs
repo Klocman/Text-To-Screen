@@ -24,9 +24,9 @@ namespace TextToScreen.Windows
             filePropertiesViewer1.Populate(songFileEntries, allowEditing);
             var count = songFileEntries.Count;
 
-            Text = count > 4 ? 
-                $"{_originalTitle} ({count} items)" : 
-                $"{_originalTitle} ({string.Join(", ", songFileEntries.Select(x => x.Name).ToArray())})";
+            Text = count > 4
+                ? $"{_originalTitle} ({count} items)"
+                : $"{_originalTitle} ({string.Join(", ", songFileEntries.Select(x => x.Name).ToArray())})";
 
             return ShowDialog(owner);
         }

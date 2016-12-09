@@ -17,7 +17,7 @@ namespace TextToScreen.Controls
 
         static FilterBox()
         {
-            FilteringOptions = Enum.GetValues(typeof(ComparisonMethod))
+            FilteringOptions = Enum.GetValues(typeof (ComparisonMethod))
                 .Cast<ComparisonMethod>().Select(x => new LocalisedEnumWrapper(x))
                 .OrderBy(x => x.ToString())
                 .ToArray();
@@ -32,7 +32,7 @@ namespace TextToScreen.Controls
 
             comboBoxCompareMethod.Items.AddRange(FilteringOptions.Cast<object>().ToArray());
             comboBoxCompareMethod.SelectedIndex = comboBoxCompareMethod.Items.IndexOf(
-                FilteringOptions.Single(x => (ComparisonMethod)x.TargetEnum == ComparisonMethod.Contains));
+                FilteringOptions.Single(x => (ComparisonMethod) x.TargetEnum == ComparisonMethod.Contains));
         }
 
         public bool SearchStringIsEmpty => string.IsNullOrEmpty(searchBox1.SearchString);
@@ -40,7 +40,7 @@ namespace TextToScreen.Controls
         public Control SearchBox => searchBox1;
 
         private ComparisonMethod SelectedComparisonMethod
-            => (ComparisonMethod)((LocalisedEnumWrapper)comboBoxCompareMethod.SelectedItem).TargetEnum;
+            => (ComparisonMethod) ((LocalisedEnumWrapper) comboBoxCompareMethod.SelectedItem).TargetEnum;
 
         public void ClearSearchBox()
         {
@@ -91,7 +91,9 @@ namespace TextToScreen.Controls
             else
             {
                 // Strip the strings from accents if exact checking is disabled
-                var stripFun = checkBoxExact.Checked ? new Func<string, string>(src => src) : (src => src?.StripAccents());
+                var stripFun = checkBoxExact.Checked
+                    ? new Func<string, string>(src => src)
+                    : (src => src?.StripAccents());
 
                 var filterText = stripFun(searchBox1.SearchString);
                 if (!string.IsNullOrEmpty(filterText))
@@ -99,8 +101,9 @@ namespace TextToScreen.Controls
                     try
                     {
                         // If exact checking is disabled, ignore case
-                        var stringComparison = checkBoxExact.Checked ? 
-                            StringComparison.InvariantCulture : StringComparison.InvariantCultureIgnoreCase;
+                        var stringComparison = checkBoxExact.Checked
+                            ? StringComparison.InvariantCulture
+                            : StringComparison.InvariantCultureIgnoreCase;
 
                         // Select delegate to use for comparisons
                         Func<string, bool> compFun;
@@ -112,7 +115,8 @@ namespace TextToScreen.Controls
 
                             case ComparisonMethod.Any:
                                 compFun = src => src.ContainsAny(
-                                    filterText.Split((char[])null, StringSplitOptions.RemoveEmptyEntries), stringComparison);
+                                    filterText.Split((char[]) null, StringSplitOptions.RemoveEmptyEntries),
+                                    stringComparison);
                                 break;
 
                             case ComparisonMethod.StartsWith:

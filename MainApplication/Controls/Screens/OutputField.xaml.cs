@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -23,20 +21,12 @@ namespace TextToScreen.Controls.Screens
         private readonly Storyboard _fadeOut;
         private string _nextText;
 
-        private static IEnumerable<PropertyInfo> NextSettingPropertyInfos { get; }
-
-        static OutputField()
-        {
-            NextSettingPropertyInfos = typeof(OutputField).GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                .Where(p => p.Name.Contains("Next")).ToList().AsEnumerable();
-        }
-
         public OutputField()
         {
             InitializeComponent();
 
-            _fadeIn = (Storyboard)Resources["FadeIn"];
-            _fadeOut = (Storyboard)Resources["FadeOut"];
+            _fadeIn = (Storyboard) Resources["FadeIn"];
+            _fadeOut = (Storyboard) Resources["FadeOut"];
 
             _fadeOut.Completed += AfterFadeOut;
             _fadeIn.Completed += (sender, args) => AnimationCompleted?.Invoke(sender, args);
@@ -46,14 +36,14 @@ namespace TextToScreen.Controls.Screens
 
         public TimeSpan AnimationLength
         {
-            get { return ((Duration)Resources["Duration"]).TimeSpan; }
+            get { return ((Duration) Resources["Duration"]).TimeSpan; }
             set { Resources["Duration"] = new Duration(value); }
         }
 
         public string CurrentText => TextBlock.Text;
         public ImageSource CurrentImage => Image.Source;
-        public Color CurrentTextColor => ((SolidColorBrush)TextBlock.Foreground).Color.ToDrawingColor();
-        public Color CurrentBackgroundColor => ((SolidColorBrush)Canvas.Background).Color.ToDrawingColor();
+        public Color CurrentTextColor => ((SolidColorBrush) TextBlock.Foreground).Color.ToDrawingColor();
+        public Color CurrentBackgroundColor => ((SolidColorBrush) Canvas.Background).Color.ToDrawingColor();
 
         public FontFamily CurrentFontFamily => TextBlock.FontFamily;
         public FontSizeExtra CurrentFontSize { get; private set; }
@@ -76,7 +66,7 @@ namespace TextToScreen.Controls.Screens
 
         public FontStyle? NextFontStyle { get; set; }
         public FontWeight? NextFontWeight { get; set; }
-        public TextDecorationCollection SNextTextDecorations { get; set; }
+        public TextDecorationCollection NextTextDecorations { get; set; }
 
         public event EventHandler AnimationHalfPoint;
         public event EventHandler AnimationCompleted;
@@ -94,8 +84,8 @@ namespace TextToScreen.Controls.Screens
                 if (outStopped && inStopped)
                     return 1;
 
-                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this) / 2 ?? 0.5;
-                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
+                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this)/2 ?? 0.5;
+                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this)/2 ?? 0.5;
 
                 return Math.Round(outProgress + inProgress, 3, MidpointRounding.AwayFromZero);
             }
@@ -115,7 +105,7 @@ namespace TextToScreen.Controls.Screens
 
         private void AfterFadeOut(object sender, EventArgs eventArgs)
         {
-            bool dirty = false;
+            var dirty = false;
 
             if (NextText != null)
             {
@@ -166,10 +156,12 @@ namespace TextToScreen.Controls.Screens
                 dirty = true;
             }
 
-            if (SNextTextDecorations != null)
+            if (NextTextDecorations != null)
             {
-                TextBlock.TextDecorations = ReferenceEquals(SNextTextDecorations, TextDecorations.OverLine) ? null : SNextTextDecorations;
-                SNextTextDecorations = null;
+                TextBlock.TextDecorations = ReferenceEquals(NextTextDecorations, TextDecorations.OverLine)
+                    ? null
+                    : NextTextDecorations;
+                NextTextDecorations = null;
                 dirty = true;
             }
 
@@ -198,66 +190,55 @@ namespace TextToScreen.Controls.Screens
 
             TextBlock.SetFontSize(TextBlock, CurrentFontSize.Size);
             TextBlock.UpdateLayout();
-            if (CurrentFontSize.Flexible && TextBlock.IsVisible && TextBlock.ActualHeight > 0 && TextBlock.ActualWidth > 0)
+
+            if (!CurrentFontSize.Flexible || !TextBlock.IsVisible || TextBlock.ActualHeight < 1 ||
+                TextBlock.ActualWidth < 1)
+                return;
+
+            // FormattedText is used to measure the whole width of the text held up by TextBlock container
+            var formattedText = new FormattedText(TextBlock.Text,
+                Thread.CurrentThread.CurrentCulture,
+                TextBlock.FlowDirection,
+                new Typeface(TextBlock.FontFamily, TextBlock.FontStyle, TextBlock.FontWeight, TextBlock.FontStretch),
+                CurrentFontSize.Size,
+                TextBlock.Foreground)
+            {MaxTextWidth = TextBlock.ActualWidth};
+
+            var tempFontSize = CurrentFontSize.Size;
+
+            while (true)
             {
-                var textBlock = TextBlock;
-                var typeface = new Typeface(
-                    textBlock.FontFamily,
-                    textBlock.FontStyle,
-                    textBlock.FontWeight,
-                    textBlock.FontStretch);
-
-                // FormattedText is used to measure the whole width of the text held up by TextBlock container
-                var formattedText = new FormattedText(
-                    textBlock.Text,
-                    System.Threading.Thread.CurrentThread.CurrentCulture,
-                    textBlock.FlowDirection,
-                    typeface,
-                    CurrentFontSize.Size,
-                    textBlock.Foreground)
-                { MaxTextWidth = textBlock.ActualWidth };
-
-                double tempFontSize = CurrentFontSize.Size;
-
-                while (true)
+                // When the maximum text width of the FormattedText instance is set to the actual
+                // width of the textBlock, if the textBlock is being trimmed to fit then the formatted
+                // text will report a larger height than the textBlock. Should work whether the
+                // textBlock is single or multi-line.
+                // The width check detects if any single line is too long to fit within the text area, 
+                // this can only happen if there is a long span of text with no spaces.
+                if (formattedText.Height > TextBlock.ActualHeight ||
+                    formattedText.MinWidth > formattedText.MaxTextWidth)
                 {
-                    // When the maximum text width of the FormattedText instance is set to the actual
-                    // width of the textBlock, if the textBlock is being trimmed to fit then the formatted
-                    // text will report a larger height than the textBlock. Should work whether the
-                    // textBlock is single or multi-line.
-                    // The width check detects if any single line is too long to fit within the text area, 
-                    // this can only happen if there is a long span of text with no spaces.
-                    if (formattedText.Height > textBlock.ActualHeight ||
-                        formattedText.MinWidth > formattedText.MaxTextWidth)
-                    {
-                        // Doesn't fit, lower the font size
-                        tempFontSize = Math.Max(tempFontSize - 1, 0.1);
+                    // Doesn't fit, lower the font size and try again
+                    tempFontSize = Math.Max(tempFontSize - 1, 0.1);
 
-                        // Can't lower the size any more, break out to prevent an infinite loop
-                        if (tempFontSize < 0.2)
-                            break;
-
-                        // Recalculate the FormattedText for smaller font size
-                        formattedText.SetFontSize(tempFontSize);
-                    }
-                    else
-                    {
-                        // Text fits just fine
+                    // Can't lower the size any more, break out to prevent an infinite loop
+                    if (tempFontSize < 0.2)
                         break;
-                    }
-                }
 
-                TextBlock.SetFontSize(TextBlock, tempFontSize);
+                    // Recalculate the FormattedText for smaller font size
+                    formattedText.SetFontSize(tempFontSize);
+                }
+                else
+                {
+                    // Text fits just fine
+                    break;
+                }
             }
+
+            TextBlock.SetFontSize(TextBlock, tempFontSize);
         }
 
         public void ChangeWithAnimation(OutputField originField)
         {
-            /*foreach (var propertyInfo in NextSettingPropertyInfos)
-            {
-                propertyInfo.SetValue(this, propertyInfo.GetValue(originField, null), null);
-            }*/
-
             NextText = originField.CurrentText;
             NextTextColor = originField.CurrentTextColor;
             NextBackgroundColor = originField.CurrentBackgroundColor;
@@ -267,8 +248,7 @@ namespace TextToScreen.Controls.Screens
             NextFontAlignment = originField.CurrentFontAlignment;
             NextFontStyle = originField.TextBlock.FontStyle;
             NextFontWeight = originField.TextBlock.FontWeight;
-
-            SNextTextDecorations = originField.TextBlock.TextDecorations ?? TextDecorations.OverLine;
+            NextTextDecorations = originField.TextBlock.TextDecorations ?? TextDecorations.OverLine;
 
             if (GetAnimationProgress() >= 1)
                 BeginAnimation();

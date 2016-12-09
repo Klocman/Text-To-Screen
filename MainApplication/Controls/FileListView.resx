@@ -178,7 +178,7 @@
     <value>Unblock grouping by '{0}'</value>
   </data>
   <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 581</value>
+    <value>303, 580</value>
   </data>
   <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -310,10 +310,10 @@
     <value>Fill</value>
   </data>
   <data name="filterBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>4, 16</value>
   </data>
   <data name="filterBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 78</value>
+    <value>294, 79</value>
   </data>
   <data name="filterBox1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -322,7 +322,7 @@
     <value>filterBox1</value>
   </data>
   <data name="&gt;&gt;filterBox1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.7.6187.36079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.8.6187.40412, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterBox1.Parent" xml:space="preserve">
     <value>searchSubsection</value>
@@ -336,8 +336,11 @@
   <data name="searchSubsection.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="searchSubsection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 5, 3</value>
+  </data>
   <data name="searchSubsection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 97</value>
+    <value>303, 98</value>
   </data>
   <data name="searchSubsection.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -373,7 +376,7 @@
     <value>303, 707</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>606</value>
+    <value>605</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
