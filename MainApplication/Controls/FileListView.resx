@@ -178,7 +178,7 @@
     <value>Unblock grouping by '{0}'</value>
   </data>
   <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 566</value>
+    <value>303, 581</value>
   </data>
   <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -313,7 +313,7 @@
     <value>3, 16</value>
   </data>
   <data name="filterBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 93</value>
+    <value>297, 78</value>
   </data>
   <data name="filterBox1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -322,7 +322,7 @@
     <value>filterBox1</value>
   </data>
   <data name="&gt;&gt;filterBox1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.7.6187.35517, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.7.6187.36079, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterBox1.Parent" xml:space="preserve">
     <value>searchSubsection</value>
@@ -337,7 +337,7 @@
     <value>0, 0</value>
   </data>
   <data name="searchSubsection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 112</value>
+    <value>303, 97</value>
   </data>
   <data name="searchSubsection.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -373,7 +373,7 @@
     <value>303, 707</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>591</value>
+    <value>606</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
