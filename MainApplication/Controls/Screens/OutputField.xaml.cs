@@ -25,8 +25,8 @@ namespace TextToScreen.Controls.Screens
         {
             InitializeComponent();
 
-            _fadeIn = (Storyboard) Resources["FadeIn"];
-            _fadeOut = (Storyboard) Resources["FadeOut"];
+            _fadeIn = (Storyboard)Resources["FadeIn"];
+            _fadeOut = (Storyboard)Resources["FadeOut"];
 
             _fadeOut.Completed += AfterFadeOut;
             _fadeIn.Completed += (sender, args) => AnimationCompleted?.Invoke(sender, args);
@@ -36,14 +36,14 @@ namespace TextToScreen.Controls.Screens
 
         public TimeSpan AnimationLength
         {
-            get { return ((Duration) Resources["Duration"]).TimeSpan; }
+            get { return ((Duration)Resources["Duration"]).TimeSpan; }
             set { Resources["Duration"] = new Duration(value); }
         }
 
         public string CurrentText => TextBlock.Text;
         public ImageSource CurrentImage => Image.Source;
-        public Color CurrentTextColor => ((SolidColorBrush) TextBlock.Foreground).Color.ToDrawingColor();
-        public Color CurrentBackgroundColor => ((SolidColorBrush) Canvas.Background).Color.ToDrawingColor();
+        public Color CurrentTextColor => ((SolidColorBrush)TextBlock.Foreground).Color.ToDrawingColor();
+        public Color CurrentBackgroundColor => ((SolidColorBrush)Canvas.Background).Color.ToDrawingColor();
 
         public FontFamily CurrentFontFamily => TextBlock.FontFamily;
         public FontSizeExtra CurrentFontSize { get; private set; }
@@ -84,8 +84,8 @@ namespace TextToScreen.Controls.Screens
                 if (outStopped && inStopped)
                     return 1;
 
-                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this)/2 ?? 0.5;
-                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this)/2 ?? 0.5;
+                var outProgress = outStopped ? 0.5 : _fadeOut.GetCurrentProgress(this) / 2 ?? 0.5;
+                var inProgress = inStopped ? 0 : _fadeIn.GetCurrentProgress(this) / 2 ?? 0.5;
 
                 return Math.Round(outProgress + inProgress, 3, MidpointRounding.AwayFromZero);
             }
@@ -202,23 +202,18 @@ namespace TextToScreen.Controls.Screens
                 new Typeface(TextBlock.FontFamily, TextBlock.FontStyle, TextBlock.FontWeight, TextBlock.FontStretch),
                 CurrentFontSize.Size,
                 TextBlock.Foreground)
-            {MaxTextWidth = TextBlock.ActualWidth};
+            { MaxTextWidth = TextBlock.ActualWidth };
 
             var tempFontSize = CurrentFontSize.Size;
 
             while (true)
             {
-                // When the maximum text width of the FormattedText instance is set to the actual
-                // width of the textBlock, if the textBlock is being trimmed to fit then the formatted
-                // text will report a larger height than the textBlock. Should work whether the
-                // textBlock is single or multi-line.
-                // The width check detects if any single line is too long to fit within the text area, 
-                // this can only happen if there is a long span of text with no spaces.
-                if (formattedText.Height > TextBlock.ActualHeight ||
-                    formattedText.MinWidth > formattedText.MaxTextWidth)
+                var textHeight = formattedText.Height;
+                var actualHeight = TextBlock.ActualHeight;
+                if (textHeight + 1 > actualHeight)// formattedText.MinWidth > formattedText.MaxTextWidth)
                 {
-                    // Doesn't fit, lower the font size and try again
-                    tempFontSize = Math.Max(tempFontSize - 1, 0.1);
+                    var newSize = actualHeight * tempFontSize / textHeight;
+                    tempFontSize = Math.Max(tempFontSize - Math.Max((tempFontSize - newSize) / 3, 1), 0.1);
 
                     // Can't lower the size any more, break out to prevent an infinite loop
                     if (tempFontSize < 0.2)
