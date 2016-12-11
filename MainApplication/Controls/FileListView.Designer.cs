@@ -46,7 +46,6 @@
             this.toolStripButton_ref = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_save = new System.Windows.Forms.ToolStripButton();
             this.searchSubsection = new System.Windows.Forms.GroupBox();
-            this.filterBox1 = new TextToScreen.Controls.FilterBox();
             this.listViewContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.otwórzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,6 +56,7 @@
             this.kopiujDoSchowkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.właściwościToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.filterBox1 = new TextToScreen.Controls.FilterBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -102,7 +102,7 @@
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.Name = "objectListView1";
             this.objectListView1.ShowGroups = false;
-            this.objectListView1.SortGroupItemsByPrimaryColumn = false;
+            this.objectListView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
             this.objectListView1.VirtualMode = true;
@@ -217,11 +217,6 @@
             this.searchSubsection.Name = "searchSubsection";
             this.searchSubsection.TabStop = false;
             // 
-            // filterBox1
-            // 
-            resources.ApplyResources(this.filterBox1, "filterBox1");
-            this.filterBox1.Name = "filterBox1";
-            // 
             // listViewContextMenuStrip
             // 
             this.listViewContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -287,6 +282,11 @@
             this.właściwościToolStripMenuItem.Name = "właściwościToolStripMenuItem";
             resources.ApplyResources(this.właściwościToolStripMenuItem, "właściwościToolStripMenuItem");
             this.właściwościToolStripMenuItem.Click += new System.EventHandler(this.właściwościToolStripMenuItem_Click);
+            // 
+            // filterBox1
+            // 
+            resources.ApplyResources(this.filterBox1, "filterBox1");
+            this.filterBox1.Name = "filterBox1";
             // 
             // FileListView
             // 

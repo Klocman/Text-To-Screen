@@ -38,6 +38,7 @@ namespace TextToScreen.Controls
             };
             createdColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
             modifiedColumn.AspectToStringConverter = x => ((DateTime) x).ToFuzzyTimeSinceString();
+            objectListView1.PrimarySortColumn = nameColumn;
 
             // Attach key handler to the search box for up/down arrows
             foreach (var control in filterBox1.SearchBox.GetAllChildren().Concat(new[] {filterBox1.SearchBox}))
