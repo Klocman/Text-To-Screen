@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileListView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
+            this.objectListView1 = new BrightIdeasSoftware.FastObjectListView();
             this.nameColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.modifiedColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.createdColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -93,15 +93,19 @@
             this.nameColumn,
             this.modifiedColumn,
             this.createdColumn,
-            this.commentColumn});
+            this.commentColumn,
+            this.groupColumn});
             this.objectListView1.CopySelectionOnControlC = false;
             this.objectListView1.CopySelectionOnControlCUsesDragSource = false;
+            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.objectListView1, "objectListView1");
             this.objectListView1.FullRowSelect = true;
             this.objectListView1.Name = "objectListView1";
+            this.objectListView1.ShowGroups = false;
             this.objectListView1.SortGroupItemsByPrimaryColumn = false;
             this.objectListView1.UseCompatibleStateImageBehavior = false;
             this.objectListView1.View = System.Windows.Forms.View.Details;
+            this.objectListView1.VirtualMode = true;
             this.objectListView1.DoubleClick += new System.EventHandler(this.objectListView1_DoubleClick);
             this.objectListView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.objectListView1_KeyDown);
             this.objectListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.objectListView1_MouseClick);
@@ -117,31 +121,30 @@
             // modifiedColumn
             // 
             this.modifiedColumn.AspectName = "LastModified";
+            resources.ApplyResources(this.modifiedColumn, "modifiedColumn");
             this.modifiedColumn.IsEditable = false;
             this.modifiedColumn.MinimumWidth = 60;
-            resources.ApplyResources(this.modifiedColumn, "modifiedColumn");
             // 
             // createdColumn
             // 
             this.createdColumn.AspectName = "CreationTime";
+            resources.ApplyResources(this.createdColumn, "createdColumn");
             this.createdColumn.IsEditable = false;
             this.createdColumn.MinimumWidth = 60;
-            resources.ApplyResources(this.createdColumn, "createdColumn");
             // 
             // commentColumn
             // 
             this.commentColumn.AspectName = "Comment";
+            resources.ApplyResources(this.commentColumn, "commentColumn");
             this.commentColumn.Groupable = false;
             this.commentColumn.IsEditable = false;
             this.commentColumn.MinimumWidth = 80;
-            resources.ApplyResources(this.commentColumn, "commentColumn");
             // 
             // groupColumn
             // 
             this.groupColumn.AspectName = "Group";
             resources.ApplyResources(this.groupColumn, "groupColumn");
             this.groupColumn.IsEditable = false;
-            this.groupColumn.IsVisible = false;
             // 
             // toolStrip
             // 
@@ -319,7 +322,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmieńNazwęToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem właściwościToolStripMenuItem;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
+        private BrightIdeasSoftware.FastObjectListView objectListView1;
         private BrightIdeasSoftware.OLVColumn nameColumn;
         private BrightIdeasSoftware.OLVColumn modifiedColumn;
         private BrightIdeasSoftware.OLVColumn createdColumn;

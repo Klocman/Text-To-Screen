@@ -23,12 +23,9 @@ namespace TextToScreen.Controls
             InitializeComponent();
 
             objectListView1.ClearObjects();
-            objectListView1.ShowGroups = true;
-            objectListView1.AlwaysGroupByColumn = groupColumn;
-            objectListView1.AlwaysGroupBySortOrder = SortOrder.Ascending;
-            groupColumn.GroupKeyToTitleConverter = x =>
+            groupColumn.AspectGetter = rowObject =>
             {
-                var groupName = (string) x;
+                var groupName = ((SongFileEntry) rowObject).Group;
                 return string.IsNullOrEmpty(groupName) ? Localisation.DefaultGroupName : groupName;
             };
             nameColumn.AspectPutter = (x, y) =>

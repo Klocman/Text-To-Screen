@@ -138,11 +138,20 @@
   <data name="nameColumn.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
+  <data name="modifiedColumn.DisplayIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="modifiedColumn.Text" xml:space="preserve">
     <value>Modified</value>
   </data>
+  <data name="createdColumn.DisplayIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="createdColumn.Text" xml:space="preserve">
     <value>Added</value>
+  </data>
+  <data name="commentColumn.DisplayIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="commentColumn.Text" xml:space="preserve">
     <value>Comment</value>
@@ -151,7 +160,7 @@
     <value>80</value>
   </data>
   <data name="groupColumn.DisplayIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="groupColumn.Text" xml:space="preserve">
     <value>Group</value>
@@ -187,7 +196,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.FastObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -322,7 +331,7 @@
     <value>filterBox1</value>
   </data>
   <data name="&gt;&gt;filterBox1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.8.6187.40412, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilterBox, TextToScreen, Version=1.8.6189.28929, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filterBox1.Parent" xml:space="preserve">
     <value>searchSubsection</value>
@@ -463,31 +472,31 @@
     <value>nameColumn</value>
   </data>
   <data name="&gt;&gt;nameColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;modifiedColumn.Name" xml:space="preserve">
     <value>modifiedColumn</value>
   </data>
   <data name="&gt;&gt;modifiedColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;createdColumn.Name" xml:space="preserve">
     <value>createdColumn</value>
   </data>
   <data name="&gt;&gt;createdColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;commentColumn.Name" xml:space="preserve">
     <value>commentColumn</value>
   </data>
   <data name="&gt;&gt;commentColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;groupColumn.Name" xml:space="preserve">
     <value>groupColumn</value>
   </data>
   <data name="&gt;&gt;groupColumn.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.0.22407, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;toolStripButton_new.Name" xml:space="preserve">
     <value>toolStripButton_new</value>
