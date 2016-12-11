@@ -132,7 +132,10 @@ namespace TextToScreen.Controls
                                 break;
 
                             case ComparisonMethod.Regex:
-                                compFun = src => Regex.IsMatch(src, filterText, RegexOptions.CultureInvariant);
+                                if (regexIsValid)
+                                    compFun = src => Regex.IsMatch(src, filterText, RegexOptions.CultureInvariant);
+                                else
+                                    compFun = src => false;
                                 break;
 
                             default:
@@ -173,8 +176,22 @@ namespace TextToScreen.Controls
 
         public event EventHandler FilterChanged;
 
+        private bool regexIsValid = true;
+
         private void OnFilterChanged(object sender, EventArgs eventArgs)
         {
+            if (SelectedComparisonMethod == ComparisonMethod.Regex)
+            {
+                try
+                {
+                    new Regex(searchBox1.SearchString);
+                    regexIsValid = true;
+                }
+                catch (ArgumentException)
+                {
+                    regexIsValid = false;
+                }
+            }
             FilterChanged?.Invoke(sender, eventArgs);
         }
 
