@@ -33,7 +33,7 @@ namespace TextToScreen.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodajPlik));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.filePropertiesViewer1 = new FilePropertiesViewer();
+            this.filePropertiesViewer1 = new TextToScreen.Controls.FilePropertiesViewer();
             this.SuspendLayout();
             // 
             // button1
@@ -67,7 +67,6 @@ namespace TextToScreen.Windows
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DodajPlik";

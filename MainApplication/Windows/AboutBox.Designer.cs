@@ -49,20 +49,18 @@
             // 
             // splitContainer1
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.logoPictureBox);
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
-            this.splitContainer1.Panel2.Controls.Add(this.okButton);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             // 
             // logoPictureBox
             // 
@@ -73,13 +71,14 @@
             // 
             // okButton
             // 
-            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
             // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.okButton, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.labelCpu, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelProductName, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelVersion, 0, 1);

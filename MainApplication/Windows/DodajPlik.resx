@@ -193,7 +193,7 @@
     <value>filePropertiesViewer1</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Type" xml:space="preserve">
-    <value>TextToScreen.CustomControls.FilePropertiesViewer, TextToScreen, Version=1.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.8.6189.29012, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Parent" xml:space="preserve">
     <value>$this</value>
