@@ -132,8 +132,8 @@ namespace TextToScreen.Controls
                                 break;
 
                             case ComparisonMethod.Regex:
-                                if (regexIsValid)
-                                    compFun = src => Regex.IsMatch(src, filterText, RegexOptions.CultureInvariant);
+                                if (_compiledRegex != null)
+                                    compFun = src => _compiledRegex.IsMatch(src);
                                 else
                                     compFun = src => false;
                                 break;
@@ -176,7 +176,7 @@ namespace TextToScreen.Controls
 
         public event EventHandler FilterChanged;
 
-        private bool regexIsValid = true;
+        private Regex _compiledRegex;
 
         private void OnFilterChanged(object sender, EventArgs eventArgs)
         {
@@ -184,15 +184,29 @@ namespace TextToScreen.Controls
             {
                 try
                 {
-                    new Regex(searchBox1.SearchString);
-                    regexIsValid = true;
+                    // Compile the Regex expression now to check if it's valid.
+                    _compiledRegex = new Regex(searchBox1.SearchString, GetRegexOptions());
                 }
                 catch (ArgumentException)
                 {
-                    regexIsValid = false;
+                    _compiledRegex = null;
                 }
             }
             FilterChanged?.Invoke(sender, eventArgs);
+        }
+
+        private RegexOptions GetRegexOptions()
+        {
+            // TODO Check if there are enough entries to search through to warrant compiling?
+            var options = RegexOptions.Compiled;
+
+            if (!checkBoxExact.Checked)
+                options |= RegexOptions.IgnoreCase | RegexOptions.CultureInvariant;
+
+            // Names and comments are all single line.
+            options |= searchInsideFilesCheckBox.Checked ? RegexOptions.Multiline : RegexOptions.Singleline;
+
+            return options;
         }
 
         private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
