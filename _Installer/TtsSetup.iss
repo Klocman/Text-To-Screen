@@ -6,8 +6,8 @@
 #define MyAppURL "http://klocmansoftware.weebly.com/texttoscreen.html"
 #define MyAppExeName "TextToScreen.exe"
   
-#define MyAppVersion "1.7.0.0"     
-#define MyAppVersionShort "1.7"
+#define MyAppVersion "1.8.0.0"     
+#define MyAppVersionShort "1.8"
 
 #include "scripts\PortablePage.iss" 
 #include "scripts\PortableIcons.iss"
