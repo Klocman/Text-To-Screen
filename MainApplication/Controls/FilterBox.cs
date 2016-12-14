@@ -14,6 +14,7 @@ namespace TextToScreen.Controls
     public partial class FilterBox : UserControl
     {
         private static readonly LocalisedEnumWrapper[] FilteringOptions;
+        private Regex _compiledRegex;
 
         static FilterBox()
         {
@@ -35,16 +36,96 @@ namespace TextToScreen.Controls
                 FilteringOptions.Single(x => (ComparisonMethod) x.TargetEnum == ComparisonMethod.Contains));
         }
 
-        public bool SearchStringIsEmpty => string.IsNullOrEmpty(searchBox1.SearchString);
-
         public Control SearchBox => searchBox1;
+
+        public bool SearchStringIsEmpty => string.IsNullOrEmpty(searchBox1.SearchString);
 
         private ComparisonMethod SelectedComparisonMethod
             => (ComparisonMethod) ((LocalisedEnumWrapper) comboBoxCompareMethod.SelectedItem).TargetEnum;
 
+        public event EventHandler FilterChanged;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchBox1.ClearSearchBox();
+        }
+
+        private bool CheckGroupMatch(SongFileEntry entry)
+        {
+            if (groupFilterComboBox.SelectedIndex <= 1) return true;
+
+            var filter = groupFilterComboBox.SelectedItem as string;
+            if (filter == null || filter.Equals(Localisation.DefaultGroupName))
+                filter = string.Empty;
+            return entry.Group.Equals(filter, StringComparison.CurrentCulture);
+        }
+
         public void ClearSearchBox()
         {
             searchBox1.ClearSearchBox();
+        }
+
+        public void FocusSearchbox()
+        {
+            searchBox1.FocusSearchBox();
+        }
+
+        private RegexOptions GetRegexOptions()
+        {
+            // TODO Check if there are enough entries to search through to warrant compiling?
+            var options = RegexOptions.Compiled;
+
+            if (!checkBoxExact.Checked)
+                options |= RegexOptions.IgnoreCase | RegexOptions.CultureInvariant;
+
+            // Names and comments are all single line.
+            options |= searchInsideFilesCheckBox.Checked ? RegexOptions.Multiline : RegexOptions.Singleline;
+
+            return options;
+        }
+
+        private void groupFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (groupFilterComboBox.SelectedIndex == 1)
+                groupFilterComboBox.SelectedIndex = 0;
+
+            OnFilterChanged(sender, e, true);
+        }
+
+        private void OnFilterChanged(object sender, EventArgs eventArgs)
+        {
+            OnFilterChanged(sender, eventArgs, false);
+        }
+
+        private void OnFilterChanged(object sender, EventArgs eventArgs, bool forceUpdate)
+        {
+            // If there is no search string entered, skip processing non-important changes.
+            if (!forceUpdate && SearchStringIsEmpty)
+                return;
+
+            if (SelectedComparisonMethod == ComparisonMethod.Regex)
+            {
+                try
+                {
+                    // Compile the Regex expression now to check if it's valid.
+                    _compiledRegex = new Regex(searchBox1.SearchString, GetRegexOptions());
+                }
+                catch (ArgumentException)
+                {
+                    _compiledRegex = null;
+                }
+            }
+
+            FilterChanged?.Invoke(sender, eventArgs);
+        }
+
+        private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
+        {
+            //TODO Reposition and enable the clear button?
+            //var enableClear = !SearchStringIsEmpty;
+            //buttonClear.Visible = enableClear;
+            //buttonClear.Enabled = enableClear;
+            OnFilterChanged(arg1, arg2, true);
         }
 
         public void SetGroups(IEnumerable<SongFileEntry> entries)
@@ -58,21 +139,6 @@ namespace TextToScreen.Controls
                 .OrderBy(x => x);
 
             groupFilterComboBox.Items.AddRange(query.Cast<object>().ToArray());
-        }
-
-        public void FocusSearchbox()
-        {
-            searchBox1.FocusSearchBox();
-        }
-
-        private bool CheckGroupMatch(SongFileEntry entry)
-        {
-            if (groupFilterComboBox.SelectedIndex <= 1) return true;
-
-            var filter = groupFilterComboBox.SelectedItem as string;
-            if (filter == null || filter.Equals(Localisation.DefaultGroupName))
-                filter = string.Empty;
-            return entry.Group.Equals(filter, StringComparison.CurrentCulture);
         }
 
         /// <summary>
@@ -158,64 +224,8 @@ namespace TextToScreen.Controls
 
             if (!result.HasValue) return null;
 
+            // Invert value if needed
             return checkBoxInvert.Checked ? !result.Value : result.Value;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            searchBox1.ClearSearchBox();
-        }
-
-        private void groupFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (groupFilterComboBox.SelectedIndex == 1)
-                groupFilterComboBox.SelectedIndex = 0;
-
-            OnFilterChanged(sender, e);
-        }
-
-        public event EventHandler FilterChanged;
-
-        private Regex _compiledRegex;
-
-        private void OnFilterChanged(object sender, EventArgs eventArgs)
-        {
-            if (SelectedComparisonMethod == ComparisonMethod.Regex)
-            {
-                try
-                {
-                    // Compile the Regex expression now to check if it's valid.
-                    _compiledRegex = new Regex(searchBox1.SearchString, GetRegexOptions());
-                }
-                catch (ArgumentException)
-                {
-                    _compiledRegex = null;
-                }
-            }
-            FilterChanged?.Invoke(sender, eventArgs);
-        }
-
-        private RegexOptions GetRegexOptions()
-        {
-            // TODO Check if there are enough entries to search through to warrant compiling?
-            var options = RegexOptions.Compiled;
-
-            if (!checkBoxExact.Checked)
-                options |= RegexOptions.IgnoreCase | RegexOptions.CultureInvariant;
-
-            // Names and comments are all single line.
-            options |= searchInsideFilesCheckBox.Checked ? RegexOptions.Multiline : RegexOptions.Singleline;
-
-            return options;
-        }
-
-        private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
-        {
-            //TODO Reposition and enable the clear button?
-            //var enableClear = !SearchStringIsEmpty;
-            //buttonClear.Visible = enableClear;
-            //buttonClear.Enabled = enableClear;
-            OnFilterChanged(arg1, arg2);
         }
     }
 }
