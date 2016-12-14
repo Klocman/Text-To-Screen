@@ -175,7 +175,7 @@
     <value>2, 2, 2, 0</value>
   </data>
   <data name="searchInsideFilesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 19</value>
+    <value>265, 19</value>
   </data>
   <data name="searchInsideFilesCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -205,7 +205,7 @@
     <value>0, 55</value>
   </data>
   <data name="groupFilterComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>131, 21</value>
   </data>
   <data name="groupFilterComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -235,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 0</value>
+    <value>215, 0</value>
   </data>
   <data name="buttonClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
@@ -277,7 +277,7 @@
     <value>2, 2, 2, 0</value>
   </data>
   <data name="checkBoxInvert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 19</value>
+    <value>265, 19</value>
   </data>
   <data name="checkBoxInvert.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -304,7 +304,7 @@
     <value>0, 15</value>
   </data>
   <data name="comboBoxCompareMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>131, 21</value>
   </data>
   <data name="comboBoxCompareMethod.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -379,7 +379,7 @@
     <value>2, 4, 2, 0</value>
   </data>
   <data name="checkBoxExact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 21</value>
+    <value>265, 21</value>
   </data>
   <data name="checkBoxExact.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -406,7 +406,7 @@
     <value>0, 0</value>
   </data>
   <data name="searchBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
+    <value>265, 20</value>
   </data>
   <data name="searchBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -451,7 +451,7 @@
     <value>400, 100</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>198</value>
+    <value>265</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
