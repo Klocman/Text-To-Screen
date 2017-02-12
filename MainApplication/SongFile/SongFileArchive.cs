@@ -11,7 +11,7 @@ namespace TextToScreen.SongFile
 {
     public sealed class SongFileArchive : IDisposable
     {
-        private readonly FileSystemTools _fsTools;
+        private readonly FileWatcher _fsTools;
         private string _fullName;
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace TextToScreen.SongFile
             if (!IsWrittenToDisk)
                 LoadedFiles.CollectionWasModified = true;
 
-            _fsTools = new FileSystemTools(fullArchivePath)
+            _fsTools = new FileWatcher(fullArchivePath)
             {
                 ContentsChangedExternally = x => OnArchiveContentsChangedExternally(x),
                 NameChangedExternally = x => OnArchiveNameChangedExternally(x)
