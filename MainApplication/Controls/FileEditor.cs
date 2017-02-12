@@ -31,6 +31,7 @@ namespace TextToScreen.Controls
             nums.Type = MarginType.Number;
             nums.Mask = 0;
             scintilla1.Styles[Style.Default].Font = Font.Name;
+            scintilla1.Styles[Style.Default].SizeF = Font.Size;
         }
 
         public bool EditBoxFocused => scintilla1.Focused;
@@ -177,7 +178,7 @@ namespace TextToScreen.Controls
             if (selectIndex >= 0)
             {
                 scintilla1.Text = scintilla1.Text.Insert(selectIndex, SongFileEntry.NewVerse);
-                scintilla1.CurrentPosition = selectIndex + SongFileEntry.NewVerse.Length;
+                scintilla1.SetEmptySelection(selectIndex + SongFileEntry.NewVerse.Length);
                 scintilla1.ScrollCaret();
             }
         }
@@ -308,6 +309,8 @@ namespace TextToScreen.Controls
 
         private void multiLineListBox_Click(object sender, EventArgs e)
         {
+            SelectLineInEditor(multiLineListBox1.SelectedIndex);
+
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
                 multiLineListBox1.ClearSelected();
@@ -315,6 +318,29 @@ namespace TextToScreen.Controls
             }
             else
                 OnSelectedStringChanged();
+        }
+
+        private void SelectLineInEditor(int lineNumber)
+        {
+            if (lineNumber >= 0)
+            {
+                int startIndex = 0;
+                for (var i = 0; i < lineNumber; i++)
+                {
+                    var result = scintilla1.Text.IndexOf(SongFileEntry.NewVerse, startIndex + SongFileEntry.NewVerse.Length,
+                        StringComparison.OrdinalIgnoreCase);
+                    if (result < 0)
+                        break;
+                    startIndex = result;
+                }
+
+                if (startIndex >= 0)
+                {
+                    var endIndex = scintilla1.Text.IndexOf(SongFileEntry.NewVerse, startIndex + SongFileEntry.NewVerse.Length,
+                            StringComparison.OrdinalIgnoreCase);
+                    scintilla1.SetSelection(endIndex >= 0 ? endIndex : scintilla1.Text.Length - 1, startIndex);
+                }
+            }
         }
 
         //Event handlers ---------------------------------------------------------

@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileEditor));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.multiLineListBox1 = new TextToScreen.Controls.MultilineListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.scintilla1 = new ScintillaNET.Scintilla();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.multiLineListBox1 = new TextToScreen.Controls.MultilineListBox();
             this.filePropertiesViewer1 = new TextToScreen.Controls.FilePropertiesViewer();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -59,6 +59,19 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // multiLineListBox1
+            // 
+            resources.ApplyResources(this.multiLineListBox1, "multiLineListBox1");
+            this.multiLineListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.multiLineListBox1.FormattingEnabled = true;
+            this.multiLineListBox1.Name = "multiLineListBox1";
+            this.multiLineListBox1.Click += new System.EventHandler(this.multiLineListBox_Click);
+            this.multiLineListBox1.SelectedIndexChanged += new System.EventHandler(this.multiLineListBox1_SelectedIndexChanged);
+            this.multiLineListBox1.DoubleClick += new System.EventHandler(this.multiLineListBox_DoubleClick);
+            this.multiLineListBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyDown);
+            this.multiLineListBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiLineListBox1_KeyPress);
+            this.multiLineListBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyUp);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.scintilla1);
@@ -72,8 +85,6 @@
             this.scintilla1.MouseSelectionRectangularSwitch = true;
             this.scintilla1.Name = "scintilla1";
             this.scintilla1.WrapMode = ScintillaNET.WrapMode.Word;
-            this.scintilla1.WrapVisualFlagLocation = ScintillaNET.WrapVisualFlagLocation.EndByText;
-            this.scintilla1.WrapVisualFlags = ScintillaNET.WrapVisualFlags.End;
             this.scintilla1.TextChanged += new System.EventHandler(this.scintilla1_TextChanged);
             // 
             // tabPage3
@@ -82,19 +93,6 @@
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // multiLineListBox1
-            // 
-            resources.ApplyResources(this.multiLineListBox1, "multiLineListBox1");
-            this.multiLineListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.multiLineListBox1.FormattingEnabled = true;
-            this.multiLineListBox1.Name = "multiLineListBox1";
-            this.multiLineListBox1.Click += new System.EventHandler(this.multiLineListBox_Click);
-            this.multiLineListBox1.SelectedIndexChanged += new System.EventHandler(this.multiLineListBox1_SelectedIndexChanged);
-            this.multiLineListBox1.DoubleClick += new System.EventHandler(this.multiLineListBox_DoubleClick);
-            this.multiLineListBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyDown);
-            this.multiLineListBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiLineListBox1_KeyPress);
-            this.multiLineListBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyUp);
             // 
             // filePropertiesViewer1
             // 

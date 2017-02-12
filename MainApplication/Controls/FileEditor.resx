@@ -142,7 +142,7 @@
     <value>multiLineListBox1</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.MultilineListBox, TextToScreen, Version=1.9.6252.26509, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.MultilineListBox, TextToScreen, Version=1.9.6252.27905, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -247,7 +247,7 @@
     <value>filePropertiesViewer1</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.9.6252.26509, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.9.6252.27905, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Parent" xml:space="preserve">
     <value>tabPage3</value>
