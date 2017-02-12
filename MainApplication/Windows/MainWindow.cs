@@ -67,6 +67,8 @@ namespace TextToScreen.Windows
             };
 
             SystemEvents.DisplaySettingsChanged += (sender, args) => { EnsureWindowsAreVisible(); };
+
+            Icon = Resources.icon_ico;
         }
 
 

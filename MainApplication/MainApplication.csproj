@@ -76,7 +76,7 @@
     <StartupObject>TextToScreen.EntryPoint</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>full-screen.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -430,6 +430,9 @@
     </Content>
     <Content Include="full-screen-inv.ico" />
     <Content Include="full-screen.ico" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\icon.png" />
+    <None Include="icon.png" />
     <None Include="Resources\aboutImage.jpg" />
     <None Include="Resources\FindHS.png" />
     <None Include="Resources\DoubleLeftArrowHS.png" />

@@ -85,6 +85,7 @@ namespace TextToScreen.Windows
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.changeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preferencjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otworzPomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +99,6 @@ namespace TextToScreen.Windows
             this.openArchiveFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveArchiveDialog = new System.Windows.Forms.SaveFileDialog();
             this.globalHotkeys = new Klocman.Subsystems.GlobalHotkeys();
-            this.changeLanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -529,6 +529,12 @@ namespace TextToScreen.Windows
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
+            // changeLanguageToolStripMenuItem
+            // 
+            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
+            resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
+            this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
+            // 
             // preferencjeToolStripMenuItem
             // 
             this.preferencjeToolStripMenuItem.Image = global::TextToScreen.Properties.Resources.LegendHS;
@@ -613,12 +619,6 @@ namespace TextToScreen.Windows
             this.globalHotkeys.ContainerControl = this;
             this.globalHotkeys.StopWhenFormIsDisabled = false;
             this.globalHotkeys.SuppressKeyPresses = true;
-            // 
-            // changeLanguageToolStripMenuItem
-            // 
-            this.changeLanguageToolStripMenuItem.Name = "changeLanguageToolStripMenuItem";
-            resources.ApplyResources(this.changeLanguageToolStripMenuItem, "changeLanguageToolStripMenuItem");
-            this.changeLanguageToolStripMenuItem.Click += new System.EventHandler(this.changeLanguageToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
