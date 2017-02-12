@@ -1,5 +1,8 @@
 /*
- * This class contains free-to-use code written by Nishant S [nishforever@vsnl.com]
+    Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
+    Apache License Version 2.0
+
+    This class contains free-to-use code written by Nishant S [nishforever@vsnl.com]
 */
 
 using System.Drawing;
