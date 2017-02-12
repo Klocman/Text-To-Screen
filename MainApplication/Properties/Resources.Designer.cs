@@ -110,6 +110,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=TB9DA2P8KQX52.
+        /// </summary>
+        internal static string DonateUrl {
+            get {
+                return ResourceManager.GetString("DonateUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap DoubleLeftArrowHS {
@@ -156,6 +165,15 @@ namespace TextToScreen.Properties {
             get {
                 object obj = ResourceManager.GetObject("Help", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://klocmansoftware.weebly.com/text-to-screen.html.
+        /// </summary>
+        internal static string HomepageUrl {
+            get {
+                return ResourceManager.GetString("HomepageUrl", resourceCulture);
             }
         }
         
@@ -250,6 +268,15 @@ namespace TextToScreen.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://github.com/Klocman/Text-To-Screen/releases.
+        /// </summary>
+        internal static string ReleasesUrl {
+            get {
+                return ResourceManager.GetString("ReleasesUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap RenameFolderHS {
@@ -304,6 +331,15 @@ namespace TextToScreen.Properties {
         internal static string TitlebarFileChangedMark {
             get {
                 return ResourceManager.GetString("TitlebarFileChangedMark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml.
+        /// </summary>
+        internal static string UpdateInfoUrl {
+            get {
+                return ResourceManager.GetString("UpdateInfoUrl", resourceCulture);
             }
         }
     }

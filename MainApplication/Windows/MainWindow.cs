@@ -200,7 +200,7 @@ namespace TextToScreen.Windows
 
         private void coNowegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/texttoscreen.html");
+            PremadeDialogs.StartProcessSafely(Resources.ReleasesUrl);
         }
 
         private void CreateNewArchive()
@@ -237,7 +237,7 @@ namespace TextToScreen.Windows
 
         private void donateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/about.html");
+            PremadeDialogs.StartProcessSafely(Resources.DonateUrl);
         }
 
         private void duplikujToolStripMenuItem_Click(object sender, EventArgs e)
@@ -353,7 +353,7 @@ namespace TextToScreen.Windows
 
         private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(@"http://klocmansoftware.weebly.com/texttoscreen.html");
+            PremadeDialogs.StartProcessSafely(Resources.ReleasesUrl);
         }
 
         private void importDialog_FileOk(object sender, CancelEventArgs e)
@@ -1041,7 +1041,7 @@ namespace TextToScreen.Windows
                 new Thread(() =>
                 {
                     UpdateSystem.CurrentVersion = Assembly.GetAssembly(typeof (MainWindow)).GetName().Version;
-                    UpdateSystem.UpdateFeedUri = new Uri(@"https://raw.githubusercontent.com/Klocman/Text-To-Screen/master/UpdateInfo.xml");
+                    UpdateSystem.UpdateFeedUri = new Uri(Resources.UpdateInfoUrl);
                     if (UpdateSystem.CheckForUpdates() == UpdateSystem.UpdateStatus.NewAvailable)
                     {
                         this.SafeInvoke(() =>
