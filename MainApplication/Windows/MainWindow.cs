@@ -353,7 +353,7 @@ namespace TextToScreen.Windows
 
         private void homepageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PremadeDialogs.StartProcessSafely(Resources.ReleasesUrl);
+            PremadeDialogs.StartProcessSafely(Resources.HomepageUrl);
         }
 
         private void importDialog_FileOk(object sender, CancelEventArgs e)
