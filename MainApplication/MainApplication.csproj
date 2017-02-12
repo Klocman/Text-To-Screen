@@ -102,9 +102,9 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\.Lib\Ionic.Zip.dll</HintPath>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NetSettingBinder, Version=1.1.6062.19744, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NetSettingBinder.1.1.6062.19744\lib\net35\NetSettingBinder.dll</HintPath>
@@ -460,6 +460,10 @@
     <ProjectReference Include="..\..\KlocTools\KlocTools\KlocTools.csproj">
       <Project>{4f843421-01d4-48e8-b88b-cdf30dd671a4}</Project>
       <Name>KlocTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UpdateSystem\UpdateSystem\UpdateSystem.csproj">
+      <Project>{e13a335c-3b81-4ae8-84da-b200f69856a9}</Project>
+      <Name>UpdateSystem</Name>
     </ProjectReference>
     <ProjectReference Include="..\PortableSettingsProvider\PortableSettingsProvider.vbproj">
       <Project>{495a9ea6-b13c-48f9-a2e2-6667cecebfde}</Project>
