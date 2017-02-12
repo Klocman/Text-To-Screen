@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Text To Screen")]
-[assembly: AssemblyDescription("Program służący do wyświetlania oraz zarządzania tekstami piosenek, recytacji itp.")]
+[assembly: AssemblyDescription("Application for displaying of lyrics or scripts on an external display.")]
 [assembly: AssemblyProduct("TextToScreen")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -26,4 +26,4 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("826a6c11-a031-4b91-850c-63cbc2cc9487")]
 [assembly: CLSCompliant(false)]
-[assembly: NeutralResourcesLanguage("")]
+[assembly: NeutralResourcesLanguage("en")]
