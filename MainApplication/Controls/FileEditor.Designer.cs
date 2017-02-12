@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileEditor));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.multiLineListBox1 = new TextToScreen.Controls.MultilineListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.scintilla1 = new ScintillaNET.Scintilla();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.multiLineListBox1 = new TextToScreen.Controls.MultilineListBox();
             this.filePropertiesViewer1 = new TextToScreen.Controls.FilePropertiesViewer();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -59,6 +59,30 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.scintilla1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // scintilla1
+            // 
+            resources.ApplyResources(this.scintilla1, "scintilla1");
+            this.scintilla1.MouseSelectionRectangularSwitch = true;
+            this.scintilla1.Name = "scintilla1";
+            this.scintilla1.WrapMode = ScintillaNET.WrapMode.Word;
+            this.scintilla1.WrapVisualFlagLocation = ScintillaNET.WrapVisualFlagLocation.EndByText;
+            this.scintilla1.WrapVisualFlags = ScintillaNET.WrapVisualFlags.End;
+            this.scintilla1.TextChanged += new System.EventHandler(this.scintilla1_TextChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.filePropertiesViewer1);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // multiLineListBox1
             // 
             resources.ApplyResources(this.multiLineListBox1, "multiLineListBox1");
@@ -71,26 +95,6 @@
             this.multiLineListBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyDown);
             this.multiLineListBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiLineListBox1_KeyPress);
             this.multiLineListBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.multiLineListBox1_KeyUp);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.textBox1);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.filePropertiesViewer1);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // filePropertiesViewer1
             // 
@@ -108,7 +112,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -119,8 +122,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private MultilineListBox multiLineListBox1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private FilePropertiesViewer filePropertiesViewer1;
+        private ScintillaNET.Scintilla scintilla1;
     }
 }

@@ -142,7 +142,7 @@
     <value>multiLineListBox1</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.MultilineListBox, TextToScreen, Version=1.7.6040.26994, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.MultilineListBox, TextToScreen, Version=1.9.6252.26509, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;multiLineListBox1.Parent" xml:space="preserve">
     <value>tabPage1</value>
@@ -177,34 +177,28 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="scintilla1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="scintilla1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="scintilla1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 618</value>
   </data>
-  <data name="textBox1.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
+  <data name="scintilla1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 593</value>
+  <data name="&gt;&gt;scintilla1.Name" xml:space="preserve">
+    <value>scintilla1</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;scintilla1.Type" xml:space="preserve">
+    <value>ScintillaNET.Scintilla, ScintillaNET, Version=3.5.10.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;scintilla1.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scintilla1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
@@ -214,7 +208,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 599</value>
+    <value>492, 624</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -244,7 +238,7 @@
     <value>0, 0</value>
   </data>
   <data name="filePropertiesViewer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 599</value>
+    <value>492, 624</value>
   </data>
   <data name="filePropertiesViewer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -253,7 +247,7 @@
     <value>filePropertiesViewer1</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Type" xml:space="preserve">
-    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.7.6040.26994, Culture=neutral, PublicKeyToken=null</value>
+    <value>TextToScreen.Controls.FilePropertiesViewer, TextToScreen, Version=1.9.6252.26509, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filePropertiesViewer1.Parent" xml:space="preserve">
     <value>tabPage3</value>
@@ -265,7 +259,7 @@
     <value>4, 22</value>
   </data>
   <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 599</value>
+    <value>492, 624</value>
   </data>
   <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

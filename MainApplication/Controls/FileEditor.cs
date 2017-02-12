@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Klocman.Extensions;
+using ScintillaNET;
 using TextToScreen.Misc;
 using TextToScreen.Properties;
 using TextToScreen.SongFile;
@@ -17,9 +19,16 @@ namespace TextToScreen.Controls
         public FileEditor()
         {
             InitializeComponent();
+
+            scintilla1.Styles[Style.LineNumber].BackColor = Color.DarkGray;
+            scintilla1.Styles[Style.LineNumber].ForeColor = Color.LightGray;
+            var nums = scintilla1.Margins[1];
+            nums.Type = MarginType.Number;
+            nums.Mask = 0;
+            scintilla1.Styles[Style.Default].Font = Font.Name;
         }
 
-        public bool EditBoxFocused => textBox1.Focused;
+        public bool EditBoxFocused => scintilla1.Focused;
 
         public bool FileWasChanged
         {
@@ -98,7 +107,7 @@ namespace TextToScreen.Controls
                     break;
 
                 case FileEditorTabs.ContentEditor:
-                    textBox1.Focus();
+                    scintilla1.Focus();
                     break;
 
                 case FileEditorTabs.Properties:
@@ -120,7 +129,8 @@ namespace TextToScreen.Controls
             if (file != null)
             {
                 //Populate stuff
-                textBox1.Text = file.Contents;
+                scintilla1.Text = file.Contents;
+                scintilla1.EmptyUndoBuffer();
                 PopulateListBox();
                 Enabled = true;
             }
@@ -135,7 +145,7 @@ namespace TextToScreen.Controls
         {
             if (LoadedFile == null)
                 return;
-            LoadedFile.Contents = textBox1.Text;
+            LoadedFile.Contents = scintilla1.Text;
             LoadedFile.SavedToDisk = false;
             FileWasChanged = false;
 
@@ -145,25 +155,25 @@ namespace TextToScreen.Controls
         public void SelectAll()
         {
             if (tabControl1.SelectedIndex != 1) return;
-            textBox1.SelectAll();
+            scintilla1.SelectAll();
         }
 
         public void SelectNone()
         {
             if (tabControl1.SelectedIndex != 1) return;
-            textBox1.DeselectAll();
+            scintilla1.SetEmptySelection(scintilla1.CurrentPosition);
         }
 
         public void Text_AddVerse()
         {
             if (tabControl1.SelectedIndex != 1) return;
 
-            var selectIndex = textBox1.SelectionStart;
+            var selectIndex = scintilla1.SelectionStart;
             if (selectIndex >= 0)
             {
-                textBox1.Text = textBox1.Text.Insert(selectIndex, SongFileEntry.NewVerse);
-                textBox1.SelectionStart = selectIndex + SongFileEntry.NewVerse.Length;
-                textBox1.SelectionLength = 0;
+                scintilla1.Text = scintilla1.Text.Insert(selectIndex, SongFileEntry.NewVerse);
+                scintilla1.CurrentPosition = selectIndex + SongFileEntry.NewVerse.Length;
+                scintilla1.ScrollCaret();
             }
         }
 
@@ -171,26 +181,26 @@ namespace TextToScreen.Controls
         {
             if (tabControl1.SelectedIndex != 1) return;
             // Ensure that text is selected in the text box.
-            if (textBox1.SelectionLength > 0)
+            if (!string.IsNullOrEmpty(scintilla1.SelectedText))
                 // Copy the selected text to the Clipboard.
-                textBox1.Copy();
+                scintilla1.Copy();
         }
 
         public void Text_Cut()
         {
             if (tabControl1.SelectedIndex != 1) return;
             // Ensure that text is currently selected in the text box.
-            if (textBox1.SelectedText.Length > 0)
+            if (scintilla1.SelectedText.Length > 0)
                 // Cut the selected text in the control and paste it into the Clipboard.
-                textBox1.Cut();
+                scintilla1.Cut();
         }
 
         public void Text_Delete()
         {
             if (tabControl1.SelectedIndex != 1) return;
             // Determine if last operation can be undone in text box.
-            if (textBox1.SelectedText.Length > 0)
-                textBox1.SelectedText = string.Empty;
+            if (!string.IsNullOrEmpty(scintilla1.SelectedText))
+                scintilla1.ReplaceSelection(string.Empty);
         }
 
         public void Text_Paste()
@@ -199,28 +209,17 @@ namespace TextToScreen.Controls
             // Determine if there is any text in the Clipboard to paste into the text box.
             var clipboardContent = Clipboard.GetDataObject();
             if (clipboardContent != null && clipboardContent.GetDataPresent(DataFormats.Text))
-            {
-                // Determine if any text is selected in the text box.
-                if (textBox1.SelectionLength > 0)
-                {
-                    // Move selection to the point after the current selection and paste.
-                    textBox1.SelectionStart = textBox1.SelectionStart + textBox1.SelectionLength;
-                }
-                // Paste current text in Clipboard into text box.
-                textBox1.Paste();
-            }
+                scintilla1.Paste();
         }
 
         public void Text_Undo()
         {
             if (tabControl1.SelectedIndex != 1) return;
             // Determine if last operation can be undone in text box.
-            if (textBox1.CanUndo)
+            if (scintilla1.CanUndo)
             {
                 // Undo the last operation.
-                textBox1.Undo();
-                // Clear the undo buffer to prevent last action from being redone.
-                textBox1.ClearUndo();
+                scintilla1.Undo();
             }
         }
 
@@ -236,7 +235,7 @@ namespace TextToScreen.Controls
 
             LoadedFile = null;
             multiLineListBox1.Items.Clear();
-            textBox1.Text = string.Empty;
+            scintilla1.Text = string.Empty;
             FileWasChanged = false;
             Enabled = false;
             return true;
@@ -353,7 +352,7 @@ namespace TextToScreen.Controls
         {
             multiLineListBox1.Items.Clear();
             multiLineListBox1.Items.AddRange(
-                textBox1.Text.Split(new[] {SongFileEntry.NewVerse}, StringSplitOptions.None)
+                scintilla1.Text.Split(new[] {SongFileEntry.NewVerse}, StringSplitOptions.None)
                     .Cast<object>().ToArray());
         }
 
@@ -370,7 +369,7 @@ namespace TextToScreen.Controls
             PopulateListBox();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void scintilla1_TextChanged(object sender, EventArgs e)
         {
             FileWasChanged = true;
         }
