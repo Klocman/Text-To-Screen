@@ -12,7 +12,7 @@ using TextToScreen.Windows;
 
 namespace TextToScreen.Misc
 {
-    public static class MessageBoxes
+    internal static class MessageBoxes
     {
         private static readonly Eksport EksportWindow = new Eksport();
         private static readonly DodajPlik FileNameEditWindow = new DodajPlik();

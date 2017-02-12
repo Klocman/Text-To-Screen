@@ -14,7 +14,7 @@ using TextToScreen.Properties;
 
 namespace TextToScreen.Windows
 {
-    public sealed partial class SettingsWindow : Form
+    internal sealed partial class SettingsWindow : Form
     {
         private Ustawienia _defaultSettings;
         private Ustawienia _targetSettings;

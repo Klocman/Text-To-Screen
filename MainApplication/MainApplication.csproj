@@ -409,7 +409,7 @@
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Ustawienia.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Ustawienia.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

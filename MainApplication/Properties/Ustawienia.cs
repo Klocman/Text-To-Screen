@@ -8,7 +8,7 @@ using Klocman.Binding.Settings;
 
 namespace TextToScreen.Properties
 {
-    public sealed partial class Ustawienia
+    internal sealed partial class Ustawienia
     {
         public Ustawienia()
         {
