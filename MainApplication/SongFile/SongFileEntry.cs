@@ -17,6 +17,8 @@ namespace TextToScreen.SongFile
         private string _name;
         private bool _savedToDisk;
         internal SongFileCollection ParentCollection;
+        private DateTime _creationTime;
+        private DateTime _lastModified;
 
         public SongFileEntry(string filename, string fileGroup, string fileContents, string fileComment,
             DateTime lastModifiedDate, DateTime creationDate)
@@ -91,7 +93,16 @@ namespace TextToScreen.SongFile
             }
         }
 
-        public DateTime CreationTime { get; private set; }
+        public DateTime CreationTime
+        {
+            get { return GetFileDateSafe(_creationTime); }
+            private set { _creationTime = GetFileDateSafe(value); }
+        }
+
+        private static DateTime GetFileDateSafe(DateTime value)
+        {
+            return Math.Abs(value.Year - 2000) > 1500 ? new DateTime(2000, 1, 1) : value;
+        }
 
         public string Group
         {
@@ -106,7 +117,11 @@ namespace TextToScreen.SongFile
             }
         }
 
-        public DateTime LastModified { get; private set; }
+        public DateTime LastModified
+        {
+            get { return GetFileDateSafe(_lastModified); }
+            private set { _lastModified = GetFileDateSafe(value); }
+        }
 
         /// <summary>
         ///     Will throw ArgumentExceptions if name contains invalid filename chars
