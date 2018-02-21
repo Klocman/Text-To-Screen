@@ -223,4 +223,13 @@
   <data name="checkBoxFontSizeFlex.Text" xml:space="preserve">
     <value>Elastyczny</value>
   </data>
+  <data name="checkBoxVertical.Text" xml:space="preserve">
+    <value>Odwróć wyjście w pionie</value>
+  </data>
+  <data name="checkBoxHorizontal.Text" xml:space="preserve">
+    <value>Odwróć wyjście w poziomie</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Inne</value>
+  </data>
 </root>
