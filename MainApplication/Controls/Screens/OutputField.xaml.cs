@@ -22,6 +22,8 @@ namespace TextToScreen.Controls.Screens
     /// </summary>
     public partial class OutputField : UserControl
     {
+        private ScaleTransform _textTransform = new ScaleTransform(1, 1);
+
         private readonly Storyboard _fadeIn;
         private readonly Storyboard _fadeOut;
         private string _nextText;
@@ -35,6 +37,9 @@ namespace TextToScreen.Controls.Screens
 
             _fadeOut.Completed += AfterFadeOut;
             _fadeIn.Completed += (sender, args) => AnimationCompleted?.Invoke(sender, args);
+
+            Canvas.RenderTransform = _textTransform;
+            Canvas.RenderTransformOrigin = new System.Windows.Point(0.5, 0.5);
 
             SizeChanged += (sender, args) => UpdateFontSize();
         }
@@ -72,6 +77,9 @@ namespace TextToScreen.Controls.Screens
         public FontStyle? NextFontStyle { get; set; }
         public FontWeight? NextFontWeight { get; set; }
         public TextDecorationCollection NextTextDecorations { get; set; }
+
+        public double? NextXScale { get; set; }
+        public double? NextYScale { get; set; }
 
         public event EventHandler AnimationHalfPoint;
         public event EventHandler AnimationCompleted;
@@ -177,6 +185,11 @@ namespace TextToScreen.Controls.Screens
                 dirty = true;
             }
 
+            if (NextXScale != null)
+                _textTransform.ScaleX = NextXScale.Value;
+            if (NextYScale != null)
+                _textTransform.ScaleY = NextYScale.Value;
+
             if (dirty)
                 UpdateFontSize();
 
@@ -249,6 +262,8 @@ namespace TextToScreen.Controls.Screens
             NextFontStyle = originField.TextBlock.FontStyle;
             NextFontWeight = originField.TextBlock.FontWeight;
             NextTextDecorations = originField.TextBlock.TextDecorations ?? TextDecorations.OverLine;
+            NextXScale = originField._textTransform.ScaleX;
+            NextYScale = originField._textTransform.ScaleY;
 
             if (GetAnimationProgress() >= 1)
                 BeginAnimation();

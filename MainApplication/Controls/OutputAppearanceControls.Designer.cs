@@ -32,6 +32,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.contentAlignmentBox1 = new Klocman.Controls.ContentAlignmentBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.numericUpDownFontSize = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxFontSizeFlex = new System.Windows.Forms.CheckBox();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.underlineToggle = new System.Windows.Forms.ToolStripButton();
             this.italicToggle = new System.Windows.Forms.ToolStripButton();
@@ -39,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDownFontSize = new System.Windows.Forms.NumericUpDown();
             this.comboBoxFontFamily = new System.Windows.Forms.ComboBox();
             this.numericUpDownFadeDuration = new System.Windows.Forms.NumericUpDown();
             this.secondary_out_labelSpeed = new System.Windows.Forms.Label();
@@ -57,14 +59,17 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonClearImage = new System.Windows.Forms.Button();
             this.pathSelectBoxImage = new Klocman.Controls.PathSelectBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxFontSizeFlex = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBoxVertical = new System.Windows.Forms.CheckBox();
+            this.checkBoxHorizontal = new System.Windows.Forms.CheckBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.toolStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).BeginInit();
+            this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFadeDuration)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -72,7 +77,8 @@
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -106,6 +112,40 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBoxFontFamily, 1, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.numericUpDownFontSize);
+            this.panel1.Controls.Add(this.checkBoxFontSizeFlex);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // numericUpDownFontSize
+            // 
+            this.numericUpDownFontSize.DecimalPlaces = 1;
+            resources.ApplyResources(this.numericUpDownFontSize, "numericUpDownFontSize");
+            this.numericUpDownFontSize.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.numericUpDownFontSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownFontSize.Name = "numericUpDownFontSize";
+            this.numericUpDownFontSize.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // checkBoxFontSizeFlex
+            // 
+            resources.ApplyResources(this.checkBoxFontSizeFlex, "checkBoxFontSizeFlex");
+            this.checkBoxFontSizeFlex.Name = "checkBoxFontSizeFlex";
+            this.checkBoxFontSizeFlex.UseVisualStyleBackColor = true;
             // 
             // toolStrip
             // 
@@ -156,27 +196,6 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // numericUpDownFontSize
-            // 
-            this.numericUpDownFontSize.DecimalPlaces = 1;
-            resources.ApplyResources(this.numericUpDownFontSize, "numericUpDownFontSize");
-            this.numericUpDownFontSize.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.numericUpDownFontSize.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownFontSize.Name = "numericUpDownFontSize";
-            this.numericUpDownFontSize.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // comboBoxFontFamily
             // 
@@ -270,6 +289,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -316,18 +336,31 @@
             this.pathSelectBoxImage.Filter = "Image Files|*.BMP;*.JPG;*.GIF;*.PNG|All files|*.*";
             this.pathSelectBoxImage.Name = "pathSelectBoxImage";
             // 
-            // panel1
+            // tabPage4
             // 
-            this.panel1.Controls.Add(this.numericUpDownFontSize);
-            this.panel1.Controls.Add(this.checkBoxFontSizeFlex);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.tabPage4.Controls.Add(this.flowLayoutPanel2);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // checkBoxFontSizeFlex
+            // flowLayoutPanel2
             // 
-            resources.ApplyResources(this.checkBoxFontSizeFlex, "checkBoxFontSizeFlex");
-            this.checkBoxFontSizeFlex.Name = "checkBoxFontSizeFlex";
-            this.checkBoxFontSizeFlex.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxVertical);
+            this.flowLayoutPanel2.Controls.Add(this.checkBoxHorizontal);
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // checkBoxVertical
+            // 
+            resources.ApplyResources(this.checkBoxVertical, "checkBoxVertical");
+            this.checkBoxVertical.Name = "checkBoxVertical";
+            this.checkBoxVertical.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHorizontal
+            // 
+            resources.ApplyResources(this.checkBoxHorizontal, "checkBoxHorizontal");
+            this.checkBoxHorizontal.Name = "checkBoxHorizontal";
+            this.checkBoxHorizontal.UseVisualStyleBackColor = true;
             // 
             // OutputAppearanceControls
             // 
@@ -342,9 +375,11 @@
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).EndInit();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFadeDuration)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -354,8 +389,9 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -392,5 +428,9 @@
         private System.Windows.Forms.Button buttonClearImage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBoxFontSizeFlex;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.CheckBox checkBoxVertical;
+        private System.Windows.Forms.CheckBox checkBoxHorizontal;
     }
 }

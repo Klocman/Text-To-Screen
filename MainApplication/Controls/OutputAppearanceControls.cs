@@ -48,6 +48,9 @@ namespace TextToScreen.Controls
             comboBoxFontFamily.Items.Clear();
             comboBoxFontFamily.Items.AddRange(new FontGrabber().ValidFontFamilyNames.Cast<object>().ToArray());
             binder.Subscribe(OnFontFamilyChanged, ustawienia => ustawienia.ScreenFontFamily, this);
+            
+            binder.BindControl(checkBoxHorizontal, ustawienia => ustawienia.ScreenFlipY, this);
+            binder.BindControl(checkBoxVertical, ustawienia => ustawienia.ScreenFlipX, this);
 
             binder.SendUpdates(this);
         }

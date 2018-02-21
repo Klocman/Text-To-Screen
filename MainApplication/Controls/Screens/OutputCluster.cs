@@ -110,6 +110,18 @@ namespace TextToScreen.Controls.Screens
             binder.Subscribe((x, y) => FinalField.AnimationLength = TimeSpan.FromSeconds(Convert.ToDouble(y.NewValue)),
                 ustawienia => ustawienia.ScreenFadeSpeed, this);
 
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextXScale = args.NewValue ? -1 : 1;
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFlipX, this);
+
+            binder.Subscribe((obj, args) =>
+            {
+                PreviewField.NextYScale = args.NewValue ? -1 : 1;
+                PreviewField.BeginAnimation(true);
+            }, ustawienia => ustawienia.ScreenFlipY, this);
+
             binder.SendUpdates(this);
 
             _callbackTimer = new Timer {AutoReset = true, Interval = 160};
