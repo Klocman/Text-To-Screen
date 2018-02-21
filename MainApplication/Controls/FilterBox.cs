@@ -124,7 +124,7 @@ namespace TextToScreen.Controls
             FilterChanged?.Invoke(sender, eventArgs);
         }
 
-        private void searchBox1_SearchTextChanged(SearchBox arg1, EventArgs arg2)
+        private void searchBox1_SearchTextChanged(object arg1, EventArgs arg2)
         {
             //TODO Reposition and enable the clear button?
             //var enableClear = !SearchStringIsEmpty;
