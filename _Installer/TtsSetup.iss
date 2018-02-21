@@ -3,7 +3,7 @@
 #define MyAppName "Text To Screen"   
 #define MyAppNameShort "TextToScreen"  
 #define MyAppPublisher "Marcin Szeniak"
-#define MyAppURL "http://klocmansoftware.weebly.com/texttoscreen.html"
+#define MyAppURL "https://github.com/Klocman/Text-To-Screen"
 #define MyAppExeName "TextToScreen.exe"
   
 #define MyAppVersion "1.9.0.0"     
