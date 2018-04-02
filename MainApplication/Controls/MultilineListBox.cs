@@ -60,7 +60,7 @@ namespace TextToScreen.Controls
                 // Draw verse number
                 var verseNumber = (e.Index + 1).ToString();
                 e.Graphics.FillRectangle(new SolidBrush(Color.DarkGray), GetNumberBoxBounds(e.Bounds));
-                TextRenderer.DrawText(e.Graphics, verseNumber, Font, GetNumberTextBounds(e.Bounds), Color.LightGray, DrawNumberTextFlags);
+                TextRenderer.DrawText(e.Graphics, verseNumber, Font, GetNumberTextBounds(e.Bounds), Color.White, DrawNumberTextFlags);
                 e.Graphics.DrawRectangle(new Pen(SystemColors.ControlDarkDark), GetNumberBoxBounds(e.Bounds));
             }
         }

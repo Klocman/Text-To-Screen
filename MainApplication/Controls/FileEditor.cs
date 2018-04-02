@@ -26,7 +26,7 @@ namespace TextToScreen.Controls
             InitializeComponent();
 
             scintilla1.Styles[Style.LineNumber].BackColor = Color.DarkGray;
-            scintilla1.Styles[Style.LineNumber].ForeColor = Color.LightGray;
+            scintilla1.Styles[Style.LineNumber].ForeColor = Color.White;
             var nums = scintilla1.Margins[1];
             nums.Type = MarginType.Number;
             nums.Mask = 0;
