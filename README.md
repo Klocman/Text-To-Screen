@@ -1,7 +1,7 @@
 # Description
-TextToScreen is designed to display song lyrics or recital scripts on an external monitor or projector. It has a built in text manager and editor, so it is fully contained.
+TextToScreen is used to display song lyrics or recital scripts on an external monitor or projector. It has a built in text manager and editor, so it is fully contained. It was initially created for use by church choruses.
 
-One of the major features is the WYSIWYG interface. You can see how the output will look like before sending it to the external display.
+One of the major features of this program is its WYSIWYG interface. You can see how the output will look like before sending it to the external display.
 
 You can import texts from external sources or write it inside of TTS. You can easily fix mistakes or add verses while displaying the text without any problems. All of the texts are stored as plain .txt files inside of a .zip archive, no proprietary formats!
 
