@@ -6,8 +6,8 @@
 #define MyAppURL "https://github.com/Klocman/Text-To-Screen"
 #define MyAppExeName "TextToScreen.exe"
   
-#define MyAppVersion "1.9.0.0"     
-#define MyAppVersionShort "1.9"
+#define MyAppVersion "1.10.0.0"     
+#define MyAppVersionShort "1.10"
 
 #include "scripts\PortablePage.iss" 
 #include "scripts\PortableIcons.iss"
