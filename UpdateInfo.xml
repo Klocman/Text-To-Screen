@@ -2,19 +2,13 @@
 <Root>
   <AppName>TextToScreen</AppName>
   <Update>
-    <Version>1.9.0.0</Version>
+    <Version>1.10.0.0</Version>
     <URL>https://github.com/Klocman/Text-To-Screen/releases</URL>
     <Changes>
-Improved appearance of the verse list.
-Upgraded text editor to Scintilla editor.
-Selecting in verse list will now also select in the editor.
-Changed icon to be visible on black and white backgrounds.
-Changed Ionic.Zip to DotNetZip and updated other packages.
-Changed description to English and set neutral language to en.
-Updated website and donation links.
-Fixed crash when saving archive with invalid creation times.
-Fixed some settings not being saved to portable config file.
-Code cleanup, removed unused references, added licence headers.
+Added horizontal and vertical mirroring of output
+Added verse numbers to the verse list
+Changed editor line numbers color to white
+Updated Polish translation
     </Changes>
     <Hash></Hash>
   </Update>
