@@ -336,9 +336,10 @@ namespace TextToScreen.Controls
 
                 if (startIndex >= 0)
                 {
-                    var endIndex = scintilla1.Text.IndexOf(SongFileEntry.NewVerse, startIndex + SongFileEntry.NewVerse.Length,
-                            StringComparison.OrdinalIgnoreCase);
-                    scintilla1.SetSelection(endIndex >= 0 ? endIndex : scintilla1.Text.Length - 1, startIndex);
+                    var endIndex = scintilla1.Text.Length > SongFileEntry.NewVerse.Length 
+                        ? scintilla1.Text.IndexOf(SongFileEntry.NewVerse, startIndex + SongFileEntry.NewVerse.Length, StringComparison.OrdinalIgnoreCase) 
+                        : -1;
+                    scintilla1.SetSelection(endIndex >= 0 ? endIndex : scintilla1.Text.Length, startIndex);
                 }
             }
         }
